@@ -7,7 +7,7 @@ responsible for the public ONS website.
 
 ### Getting started
 
-1. Install the prerequisite
+1. Install the prerequisites
 2. Clone the GitHub repos
 3. Start the services you need for either Web or Publishing
 
