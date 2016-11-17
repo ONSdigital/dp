@@ -16,8 +16,10 @@ Getting started
 The website requires the following components:
 
 * [babbage](https://github.com/ONSdigital/babbage)
+  * use `run.sh`
 * [florence](https://github.com/ONSdigital/florence)
 * [zebedee](https://github.com/ONSdigital/zebedee)
+  * use `run-reader.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens)
 
 #### Publishing
@@ -25,8 +27,11 @@ The website requires the following components:
 The publishing tool requires the following components:
 
 * [babbage](https://github.com/ONSdigital/babbage)
+  * use `run-publishing.sh`
 * [florence](https://github.com/ONSdigital/florence)
+* [ermintrude](https://github.com/ONSdigital/ermintrude)
 * [zebedee](https://github.com/ONSdigital/zebedee)
+  * use `run.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens)
 * [The-Train](https://github.com/ONSdigital/The-Train)
 * [project-brian](https://github.com/ONSdigital/project-brian)
