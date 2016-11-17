@@ -8,7 +8,7 @@ We use GPG to sign our commits.
 
 ### Getting started
 
-* Ask for a [keybase.io](https://keybase.io) invite
+* Ask for a [keybase.io](https://keybase.io) invite if you don't already have an account
 * Get your public GPG key added to CI
 * Configure Git to sign all commits
 

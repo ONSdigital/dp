@@ -11,9 +11,6 @@ These are the Digital Publishing development standards.
   * Configuration info
   * Link to [LICENSE](LICENSE.md) file
   * Link to [contribution guidelines](CONTRIBUTING.md)
-* LICENSE
-  * MIT license
-  * Copyright Office for National Statistics
 * Change log
   * Don't list every commit
   * Include high-level features/bug fixes
@@ -44,10 +41,10 @@ These are the Digital Publishing development standards.
 
 ### Other requirements
 
-* Setup CI integration
+* [Setup CI integration](https://github.com/ONSdigital/dp-ci)
 * Git-flow
-  * `master`/`develop` branches
+  * `master`/`develop` branches - must be protected
   * `feature/feature-name` branches
   * `hotfix/hotfix-name` branches
-  * annotated release tags
-* PR templates
+  * Use GPG signed annotated release tags
+* [Pull request templates](.github/PULL_REQUEST_TEMPLATE.md)
