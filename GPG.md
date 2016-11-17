@@ -4,7 +4,7 @@ Using GPG
 We use GPG to sign our commits.
 
 * Unsigned commits will not be tested, built or deployed.
-* Commits signed by unknown GPG keys will not be test, built or deployed.
+* Commits signed by unknown GPG keys will not be tested, built or deployed.
 
 ### Getting started
 
