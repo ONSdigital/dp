@@ -28,6 +28,15 @@ The website requires the following components:
 
 #### Publishing
 
+Zebedee requires `zebedee_root` to be set and to exist before starting
+the Zebedee CMS server, for example:
+
+```bash
+export zebedee_root=../zebedee-content
+mkdir $zebedee_root
+./run.sh
+```
+
 The publishing tool requires the following components:
 
 * [babbage](https://github.com/ONSdigital/babbage)
