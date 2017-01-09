@@ -9,9 +9,13 @@ responsible for the public ONS website.
 
 * [Getting started](GETTING_STARTED.md)
 * [Development standards](DEV_STANDARDS.md)
+* [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
 * [Contributing guidelines](CONTRIBUTING.md)
 * [GPG commit signing](GPG.md)
 * [Port numbering](PORTS.md)
+* ONS CDN
+  * [ONS assets](https://github.com/ONSdigital/cdn.ons.gov.uk-assets)
+  * [Vendored dependencies](https://github.com/ONSdigital/cdn.ons.gov.uk-vendor)
 
 ### Licence
 
