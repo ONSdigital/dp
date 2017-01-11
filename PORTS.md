@@ -34,4 +34,4 @@ in development without having to configure port numbers etc.
 | 20099 | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | shares port with stub
 | 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
-|       | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) | No code
+| 21100 | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) | Incomplete as yet
