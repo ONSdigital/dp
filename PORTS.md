@@ -13,7 +13,6 @@ in development without having to configure port numbers etc.
 | 2222  | [Dylan](https://github.com/ONSdigital/Dylan) : ssh |
 | 5432  | [dp-compose](https://github.com/ONSdigital/dp-compose) : postgres |
 | 8080  | [babbage](https://github.com/ONSdigital/babbage) |
-| 8080  | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | Conflict - needs updating
 | 8081  | [florence](https://github.com/ONSdigital/florence) |
 | 8082  | [zebedee](https://github.com/ONSdigital/zebedee) |
 | 8083  | [project-brian](https://github.com/ONSdigital/project-brian) |
@@ -31,7 +30,7 @@ in development without having to configure port numbers etc.
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver) |
 | 20030 | [dp-dd-frontend-controller](https://github.com/ONSdigital/dp-dd-frontend-controller) |
 | 20040 | [dp-dd-react-app](https://github.com/ONSdigital/dp-dd-react-app) |
-| 20099 | [dp-dd-api-stub](https://github.com/ONSdigital/dp-dd-api-stub) | 
+| 20099 | [dp-dd-api-stub](https://github.com/ONSdigital/dp-dd-api-stub) |
 | 20099 | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | shares port with stub
 | 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
