@@ -16,9 +16,11 @@ If you're creating a new service, these are some things you'll need to do:
       - `ONSdigital/digitalpublishing`
   - setup the GitHub webhooks - see https://github.com/ONSdigital/dp-ci
 - Setup the project for CI
-  - Add Jenkinsfile to the project repo
-  - Add CodeDeploy scripts to the project repo
-  - Add Dockerfile to the project repo
-  - Add a new ECR repo to dp-ci terraform
-  - Add configs to the dp-ci repo
-  - Add the project repo to the Jenkins ansible script
+  - Add required files to the project repo
+    - Jenkinsfile
+    - CodeDeploy scripts
+    - Dockerfile
+  - Add required entries to the [dp-ci](https://github.com/ONSdigital/dp-ci) repo
+    - Add a new ECR repo to terraform
+    - Add application config files
+    - Add to the Jenkins ansible script
