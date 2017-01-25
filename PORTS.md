@@ -30,6 +30,8 @@ in development without having to configure port numbers etc.
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver) |
 | 20030 | [dp-dd-frontend-controller](https://github.com/ONSdigital/dp-dd-frontend-controller) |
 | 20040 | [dp-dd-react-app](https://github.com/ONSdigital/dp-dd-react-app) |
+| 20050 | [dp-dd-search-indexer](https://github.com/ONSdigital/dp-dd-search-indexer) |
+| 20051 | [dp-dd-search-api](https://github.com/ONSdigital/dp-dd-search-api) |
 | 20099 | [dp-dd-api-stub](https://github.com/ONSdigital/dp-dd-api-stub) |
 | 20099 | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | shares port with stub
 | 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
