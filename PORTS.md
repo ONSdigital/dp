@@ -37,4 +37,5 @@ in development without having to configure port numbers etc.
 | 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
 | 21100 | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) |
+| 21200 | [dp-dd-csv-transformer](https://github.com/ONSdigital/dp-dd-csv-transformer) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
