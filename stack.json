@@ -1,0 +1,252 @@
+{
+    "stacks": [
+        {
+            "id": "ons-website",
+            "name": "ONS website",
+            "log_path": "./logs",
+            "log_pattern": "$STACK_ID$/$TASK_ID$/$INSTANCE_ID$/$NAME$.log",
+            "env": {
+                "inherit_all": false,
+                "inherit": [
+                    "PATH",
+                    "USER",
+                    "HOME",
+                    "GOPATH"
+                ],
+                "remove": [],
+                "set": []
+            },
+            "tasks": [
+                {
+                    "id": "babbage",
+                    "name": "Babbage",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "./run-publishing.sh",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/babbage",
+                    "env": [
+                        "ELASTIC_SEARCH_PORT=36010",
+                        "CONTENT_SERVICE_URL=http://localhost:8082"
+                    ],
+                    "ports": [ 20005 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "sixteens",
+                    "name": "Sixteens",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "./run.sh",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/sixteens",
+                    "env": [],
+                    "ports": [ 9000 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "the-train",
+                    "name": "The train",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "./run.sh",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/the-train",
+                    "env": [],
+                    "ports": [ 8084 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "zebedee",
+                    "name": "Zebedee CMS",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "./run.sh",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/zebedee",
+                    "env": [
+                        "BABBAGE_URL=http://localhost:20005",
+                        "website_url=http://localhost:20005",
+                        "ELASTIC_SEARCH_PORT=36010",
+                        "zebedee_root=/Users/crispinmerriman/Documents"
+                    ],
+                    "ports": [ 8082 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "florence",
+                    "name": "Florence",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "make debug",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/florence",
+                    "env": [
+                        "BABBAGE_URL=http://localhost:20005",
+                        "BIND_ADDR=:$PORT",
+                        "ENABLE_NEW_APP=true",
+                        "HUMAN_LOG=true",
+                        "ZEBEDEE_URL=http://localhost:8082"
+                    ],
+                    "ports": [ 8081 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "dp-frontend-router",
+                    "name": "Frontend router",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "make build && ./build/dp-frontend-router",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/dp-frontend-router",
+                    "env": [
+                        "BIND_ADDR=:$PORT",
+                        "BABBAGE_URL=http://localhost:20005",
+                        "RESOLVER_URL=http://localhost:20020",
+                        "RENDERER_URL=http://localhost:20010",
+                        "HUMAN_LOG=true"
+                    ],
+                    "ports": [ 20000 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "dp-content-resolver",
+                    "name": "Content resolver",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "make build && ./build/dp-content-resolver",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/dp-content-resolver",
+                    "env": [
+                        "BIND_ADDR=:$PORT",
+                        "ZEBEDEE_URL=http://localhost:8082",
+                        "HUMAN_LOG=true"
+                    ],
+                    "ports": [ 20020 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                },
+                {
+                    "id": "dp-frontend-renderer",
+                    "name": "Frontend renderer",
+                    "service": true,
+                    "persist": false,
+                    "driver": "shell",
+                    "command": "make debug",
+                    "args": [],
+                    "pwd": "$GOPATH/src/github.com/ONSdigital/dp-frontend-renderer",
+                    "env": [
+                        "BIND_ADDR=:$PORT",
+                        "ZEBEDEE_URL=http://localhost:8082",
+                        "HUMAN_LOG=true",
+                        "DEBUG=1"
+                    ],
+                    "ports": [ 20010 ],
+                    "#healthchecks": [{
+                        "type": "http",
+                        "target": "http://localhost:$PORT$/",
+                        "healthy_threshold": 10,
+                        "unhealthy_threshold": 2,
+                        "reap_threshold": 10,
+                        "frequency": "30s"
+                    }]
+                }
+            ]
+        },
+        {
+            "id": "third-party",
+            "name": "Third party",
+            "log_path": "./logs",
+            "log_pattern": "$STACK_ID$/$TASK_ID$/$INSTANCE_ID$/$NAME$.log",
+            "env": {
+                "inherit_all": false,
+                "inherit": [
+                    "USER",
+                    "HOME",
+                    "GOPATH"
+                ],
+                "remove": [],
+                "set": []
+            },
+            "tasks": [
+                {
+                    "id": "elasticsearch",
+                    "name": "Elasticsearch",
+                    "service": true,
+                    "persist": false,
+                    "driver": "docker",
+                    "image": "elasticsearch:2.4.2",
+                    "env": [ ],
+                    "ports": [ 36000, 36010 ],
+                    "port_map": [ 9200, 9300 ]
+                },
+                {
+                    "id": "highcharts",
+                    "name": "Highcharts",
+                    "service": true,
+                    "persist": false,
+                    "driver": "docker",
+                    "image": "onsdigital/highcharts-export-docker",
+                    "env": [ ],
+                    "ports": [ 9999 ],
+                    "port_map": [ 8080 ]
+                }
+            ]
+        }
+    ]
+}
