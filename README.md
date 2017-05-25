@@ -9,6 +9,7 @@ responsible for the public ONS website.
 
 * [Getting started](GETTING_STARTED.md)
 * [Development standards](DEV_STANDARDS.md)
+* [Definition of Done](DEFINITION_OF_DONE.md)
 * [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
 * [Contributing guidelines](CONTRIBUTING.md)
 * [GPG commit signing](GPG.md)
