@@ -38,6 +38,9 @@ These are the Digital Publishing development standards.
 * Design patterns and best practices
 * Follow existing code style
 * All tests pass on PR
+* [Clean the campsite](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)
+* Cross-browser support/testing
+* Accessibility - meets [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)
 
 ### Other requirements
 
