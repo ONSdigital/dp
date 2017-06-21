@@ -1,17 +1,21 @@
 Definition of ready
 ==================
 
-Defines what we expect from a user story before it goes into a sprint planning session.
+Defines what we expect to be available to feed into a user story before it goes into a sprint planning session.
 
 ### Before sprint planning
 
+* Agreed capabilities (Dev, BA, QA, PO)
 * User research
 * Analysis
-* Prototypes
+* UX design work
+* Evidence feedback method(s)
 * Story in backlog
-* Prioritised
-* Complexity score (S/M/L)
-* 'L' stories broken down
+* Business priority (BA, PO)
+* Technical priority (Dev)
+* External dependencies identified & resolved
+* Complexity score (S/M/L*)
+  * 'L' stories broken down
 
 ### For sprint planning
 
