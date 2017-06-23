@@ -46,7 +46,7 @@ These are the Digital Publishing development standards.
 * Test coverage should be considered by the developer and reviewer, though we should strive to keep it as high as reasonably possible
 * All tests need to pass on PR
 * Involve members of the QA team where appropriate in the development and review of integration / acceptance tests
-
+* Any bugs found in the system should have a test created at the lowest level that exercises that error condition
 ##### Unit tests
 
 * Should always be in the same solution as the application code
@@ -55,15 +55,15 @@ These are the Digital Publishing development standards.
 
 ##### Integration tests
 
-* Integration tests fall under two categories
-    1) Test the integration of our code talking to external services
-        * Code lives alongside the unit tests, but can run in isolation
-        * Defined by the required usage of the external service
-    2) Test the integration of external services talking to our code
-        * Code lives alongside the acceptance tests, but tests only the interface of a single service
-        * Defined by the service interface spec (swagger for API's)
-* There should be no tests to specifically test the integration between micro services. The integration between services is tested via acceptance tests.
-* Should be isolated and clean up after themselves
+* Generally you should avoid creating integration tests
+* The only potential case for integration tests is testing database access code against a test database instance
+    * Isolated, not sharing data across tests
+    * Coded as unit tests
+    * Must be able to run unit tests and integration tests separately (e.g. passing a flag to test runner to run integration tests)
+* Any other case for integration tests should be discussed with the team. The tests should provide sufficient ROI if they cannot be covered appropriately by unit or acceptance tests
+* If you want to test the interface of a service, do so as a unit test at the highest level possible in code. If testing a HTTP API, call the router in a unit test rather than making HTTP requests to a running instance of the service. 
+* Do not create integration tests that test the configuration of the environment. This is covered in the acceptance tests
+* Do not create integration tests that test the integration between micro services. This is covered in the acceptance tests
 
 ##### Acceptance tests
 
