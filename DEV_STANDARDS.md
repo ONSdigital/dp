@@ -23,7 +23,6 @@ These are the Digital Publishing development standards.
 
 ### Coding standards
 
-* Test coverage
 * Documentation
   * Prefer concise and readable code
   * Include explanatory comments where appropriate
@@ -37,10 +36,41 @@ These are the Digital Publishing development standards.
 * Use meaningful commit messages
 * Design patterns and best practices
 * Follow existing code style
-* All tests pass on PR
 * [Clean the campsite](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)
 * Cross-browser support/testing
 * Accessibility - meets [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)
+
+### Testing standards
+
+* Test code should be subject to the same code quality checks and reviews as application code
+* Test coverage should be considered by the developer and reviewer, though we should strive to keep it as high as reasonably possible
+* All tests need to pass on PR
+* Involve members of the QA team where appropriate in the development and review of integration / acceptance tests
+* Any bugs found in the system should have a test created at the lowest level that exercises that error condition
+##### Unit tests
+
+* Should always be in the same solution as the application code
+* Should test only the application code, and not depend on any external services
+* Should follow [FIRST principles](https://pragprog.com/magazines/2012-01/unit-tests-are-first)
+
+##### Integration tests
+
+* Generally you should avoid creating integration tests
+* The only potential case for integration tests is testing database access code against a test database instance
+    * Isolated, not sharing data across tests
+    * Coded as unit tests
+    * Must be able to run unit tests and integration tests separately (e.g. passing a flag to test runner to run integration tests)
+* Any other case for integration tests should be discussed with the team. The tests should provide sufficient ROI if they cannot be covered appropriately by unit or acceptance tests
+* If you want to test the interface of a service, do so as a unit test at the highest level possible in code. If testing a HTTP API, call the router in a unit test rather than making HTTP requests to a running instance of the service. 
+* Do not create integration tests that test the configuration of the environment. This is covered in the acceptance tests
+* Do not create integration tests that test the integration between micro services. This is covered in the acceptance tests
+
+##### Acceptance tests
+
+* Test via the public interface of the application (user interface or API)
+* Acceptance tests should be cover public and private API interfaces
+* Generally live in a separate dedicated repository
+* Defined by application use cases
 
 ### Other requirements
 
