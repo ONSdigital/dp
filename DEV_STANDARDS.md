@@ -67,7 +67,8 @@ These are the Digital Publishing development standards.
 
 ##### Acceptance tests
 
-* Test via the public interface of the application (user interface or public API)
+* Test via the public interface of the application (user interface or API)
+* Acceptance tests should be cover public and private API interfaces
 * Generally live in a separate dedicated repository
 * Defined by application use cases
 
