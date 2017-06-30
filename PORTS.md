@@ -38,4 +38,12 @@ in development without having to configure port numbers etc.
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
 | 21100 | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) |
 | 21200 | [dp-dd-csv-transformer](https://github.com/ONSdigital/dp-dd-csv-transformer) |
+| 21300 | [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker) | 
+| 21400 | [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) | 
+| 21500 | [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer) | 
+| 21600 | [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) | 
+| 21700 | [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer) | 
+| 21800 | [dp-import-api](https://github.com/ONSdigital/dp-import-api) | 
+| 21900 | [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api) | 
+| 22000 | [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
