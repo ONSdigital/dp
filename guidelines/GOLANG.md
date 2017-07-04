@@ -20,7 +20,7 @@ and the [code review guidelines](https://github.com/golang/go/wiki/CodeReviewCom
 * Utilise the [go-ns](https://github.com/ONSdigital/go-ns) library for common functionality. Extract common code from projects and contribute it to go-ns
     * Use the common logging implementation
     * Default to the go-ns HTTP server implementation
-        * If you don't ensure your server utilises the common middleware handlers
+        * If you don't, ensure your server utilises the common middleware handlers
             * timeout
             * log
             * requestID
