@@ -19,7 +19,6 @@ These are the Digital Publishing development standards.
   * No 'pet' names, must be descriptive
   * e.g. `dp-frontend-renderer`
 * Makefile - `make` target for development
-* CodeDeploy scripts
 
 ### Coding standards
 
