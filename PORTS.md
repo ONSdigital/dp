@@ -43,7 +43,9 @@ in development without having to configure port numbers etc.
 | 21500 | [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer) | 
 | 21600 | [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) | 
 | 21700 | [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer) | 
-| 21800 | [dp-import-api](https://github.com/ONSdigital/dp-import-api) | 
-| 21900 | [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api) | 
+| 21800 | [dp-import-api](https://github.com/ONSdigital/dp-import-api) |
+| 21900 | [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api) |
 | 22000 | [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api) |
+| 22100 | [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) |
+| 22200 | [dp-import-reporter](https://github.com/ONSdigital/dp-import-reporter) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
