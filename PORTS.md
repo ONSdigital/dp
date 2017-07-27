@@ -48,4 +48,5 @@ in development without having to configure port numbers etc.
 | 22000 | [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api) |
 | 22100 | [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) |
 | 22200 | [dp-import-reporter](https://github.com/ONSdigital/dp-import-reporter) |
+| 22300 | [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
