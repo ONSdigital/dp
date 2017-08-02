@@ -50,4 +50,5 @@ in development without having to configure port numbers etc.
 | 22200 | [dp-import-reporter](https://github.com/ONSdigital/dp-import-reporter) |
 | 22300 | [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api) |
 | 22400 | [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api) |
+| 22500 | [dp-dataset-exporter](https://github.com/ONSdigital/dp-dataset-exporter) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
