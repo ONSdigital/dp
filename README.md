@@ -19,6 +19,10 @@ responsible for the public ONS website.
   * [ONS assets](https://github.com/ONSdigital/cdn.ons.gov.uk-assets)
   * [Vendored dependencies](https://github.com/ONSdigital/cdn.ons.gov.uk-vendor)
 
+### Websysd
+
+You can use [websysd](https://github.com/ONSdigital/dp/blob/master/websysd) to run the dp services from a centralised location:
+
 ### Licence
 
 Copyright ©‎ 2016, Office for National Statistics (https://www.ons.gov.uk)
