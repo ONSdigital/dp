@@ -25,11 +25,11 @@ are running.
 
 You will also need to configure postgres by running the following commands:
 
-* Run ```brew install postgres```
-* Run ```brew services start postgres```
-* Run ```createuser dp -d -w```
-* Run ```createdb --owner dp FilterJobs```
-* Run ```psql -U dp FilterJobs -f scripts/InitDatabase.sql```
+- Run ```brew install postgres```
+- Run ```brew services start postgres```
+- Run ```createuser dp -d -w```
+- Run ```createdb --owner dp FilterJobs```
+- Run ```psql -U dp FilterJobs -f scripts/InitDatabase.sql```
 
 You will need the following services cloned:
 
