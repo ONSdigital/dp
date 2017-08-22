@@ -44,6 +44,9 @@ Note this must be cloned under your $GOPATH/src/github.com/ONSdigital:
 - dp-filter-api
 - dp-code-list-api
 - dp-hierarchy-api
+- dp-import-api
+- dp-recipe-api
+- florence
 
 ### Other services:
 
