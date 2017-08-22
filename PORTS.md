@@ -25,6 +25,7 @@ in development without having to configure port numbers etc.
 | 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9999  | [dp-compose](https://github.com/ONSdigital/dp-compose) : highcharts |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) |
+| 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 20010 | [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer) |
 | 20019 | [dp-dd-file-uploader](https://github.com/ONSdigital/dp-dd-file-uploader) |
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver) |
@@ -34,15 +35,16 @@ in development without having to configure port numbers etc.
 | 20051 | [dp-dd-search-api](https://github.com/ONSdigital/dp-dd-search-api) |
 | 20099 | [dp-dd-api-stub](https://github.com/ONSdigital/dp-dd-api-stub) |
 | 20099 | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | shares port with stub
-| 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
+| 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-frontend-router) |
+| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
 | 21100 | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) |
 | 21200 | [dp-dd-csv-transformer](https://github.com/ONSdigital/dp-dd-csv-transformer) |
-| 21300 | [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker) | 
-| 21400 | [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) | 
-| 21500 | [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer) | 
-| 21600 | [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) | 
-| 21700 | [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer) | 
+| 21300 | [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker) |
+| 21400 | [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) |
+| 21500 | [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer) |
+| 21600 | [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) |
+| 21700 | [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer) |
 | 21800 | [dp-import-api](https://github.com/ONSdigital/dp-import-api) |
 | 21900 | [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api) |
 | 22000 | [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api) |
