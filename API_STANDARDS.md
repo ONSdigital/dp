@@ -1,53 +1,62 @@
 API standards
 =============
 
-* `GET` for search endpoints
+### Fields
 
-* Field names snake case, e.g. `items_per_page`
+  * Field names snake case, e.g. `total_count`
+  * Use appropriate types for fields, e.g. numbers should be ints not strings
+  * Resource IDs should use GUIDs not auto-incrementing counts
+  * Timestamps should be UTC (optionally, with a timezone)
+  * Use the `GET` method for search endpoints
+  * Search/list endpoints should contain consistent fields:
+    * Response: `count`, `limit`, `offset`, `total_count`
+    * Request: `limit`, `offset`
+    * `items` array containing results
+    * Internally, set a maximum allowed `limit` to prevent requests above
+        the limit. Should return an error explaining the limit and providing the
+        maximum values.
 
-* Search/list endpoints should contain consistent fields:
-  * Output: `count`, `items_per_page`, `start_index`, `total_count`
-  * Input: `items_per_page`, `start_index`
-  * `items` array containing results
-  * Internally, set a maximum allowed `items_per_page` to prevent requests above
-    the limit. Should return an error explaining the limit and providing the
-    maximum values.
 
-* Use appropriate HTTP status codes
-
-* Resource IDs
-    * Should use GUIDs not auto-incrementing counts
-
-* Placeholder names
-    * Root endpoint IDs should always be referred to as `id`, rather than
-      name-spaced. All IDs under this level will need descriptive placeholder
-      names.
-
-* Field types
-    * Use appropriate types for fields - numbers should be ints not strings
-    * Timestamps should be UTC (optionally, with a timezone)
-
-* Links
-    * Resource should avoid a nested list by having a Links
-    * Links should be fully qualified URLs
-    * `Links` object contains descriptively named objects which each contain
-      an `id` and `link` field. eg
-      {
-        id: thing1
-        data: "i have stuff"
-        links: {
-          "descriptive 1" : {
-            id: "otherthing17"
-            link: "/otherapi/otherthing17"
+### Links
+* Resources should avoid a nested list by having a links to list endpoints
+* Links should be fully qualified URLs
+* `Links` object contains descriptively named objects which each contain
+  an `id` (optional) and `link` field e.g.
+  ```
+  {  
+      "id":"1234",
+      "data":"i have stuff",
+      "links": {  
+          "latest_resource": {  
+              "id":"5678",
+              "link":"/thisapi/1234/subresources/5678"
+          },
+          "external": {  
+              "id":"3456",
+              "link":"/extresources/3456"
+          },
+          "subresources":{
+              "link":"/thisapi/1234/subresources"
           }
-        }
       }
+  }
+  ```
 
-* Errors should return a status code and a JSON payload with the error message
-    * `errors` array containing error messages
+### Spec
+  * Placeholder names
+      * Root endpoint IDs should always be referred to as `id`, rather than
+        name-spaced. All IDs under this level will need descriptive placeholder
+        names.
+  * Concrete path elements should be plural words e.g. /**datasets**/{id} or /**animals**
 
-# TODO
+
+### Responses
+  * Use appropriate HTTP status codes
+  * **Errors** should return a status code and a JSON payload with the error message
+      * `errors` array containing error messages
+
+
+#### TODO
 
 * Consider versioning / base path
-* What is time?!
-* Resources (or rather, database items) should contain a `last_updated` field, which may not be exposed via the public interface
+* Resources (or rather, database items) should contain a `last_updated` field, which might not be exposed via the public interface
