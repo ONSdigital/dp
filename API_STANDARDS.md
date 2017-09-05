@@ -59,4 +59,5 @@ API standards
 #### TODO
 
 * Consider versioning / base path
+* Consider licensing
 * Resources (or rather, database items) should contain a `last_updated` field, which might not be exposed via the public interface
