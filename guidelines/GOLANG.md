@@ -20,11 +20,11 @@ and the [code review guidelines](https://github.com/golang/go/wiki/CodeReviewCom
 * Utilise the [go-ns](https://github.com/ONSdigital/go-ns) library for common functionality. Extract common code from projects and contribute it to go-ns
     * Use the common logging implementation
     * Default to the go-ns HTTP server implementation
+        * By default the go-ns HTTP server will handle OS signals and gracefully shutdown. This can be disabled by setting `srv.HandleOSSignals = false`
         * If you don't, ensure your server utilises the common middleware handlers
-            * timeout
             * log
             * requestID
-        * Use the health check handler for all services
+        * Use the health check handler for all services. You may need to implement a more complex handler to check the health of database connections etc
 * Read environment configuration using [gofigure](https://github.com/ian-kent/gofigure)
 
 
