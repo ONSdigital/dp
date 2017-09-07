@@ -1,0 +1,157 @@
+{
+	"Name": "websysd",
+	"Environment": {
+		"WORKSPACE": "websysd"
+	},
+	"Tasks": [
+		{
+			"Name": "dp-frontend-router",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-frontend-renderer",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-frontend-dataset-controller",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-frontend-filter-dataset-controller",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-filter-api",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-code-list-api",
+			"Command": "sh start-go-service-no-makefile.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-hierarchy-api",
+			"Command": "sh start-go-service-no-makefile.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-compose",
+			"Command": "sh start-dp-compose.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "zebedee-reader",
+			"Command": "sh start-zebedee-reader.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "zebedee-cms",
+			"Command": "sh start-zebedee-cms.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "babbage",
+			"Command": "sh start-babbage.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "sixteens",
+			"Command": "sh start-sixteens.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "florence",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-import-api",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-recipe-api",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		}
+	]
+}

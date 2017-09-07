@@ -1,0 +1,18 @@
+{
+	"Environment": {
+		"WEBSYSD": "true"
+	},
+	"InheritEnvironment": false,
+	"Functions": {
+		"DiskUsage": {
+			"Args": ["$PATH"],
+			"Executor": ["/bin/sh", "-c"],
+			"Command": "du -sh $PATH"
+		},
+		"GitBranch": {
+			"Args": ["$PATH"],
+			"Executor": ["/bin/sh", "-c"],
+			"Command": "git --git-dir $PATH/.git rev-parse --abbrev-ref HEAD"
+		}
+	}
+}
