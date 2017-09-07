@@ -21,7 +21,7 @@ API standards
 * Resources should avoid a nested list by having a links to list endpoints
 * Links should be fully qualified URLs
 * `Links` object contains descriptively named objects which each contain
-  an `id` (optional) and `link` field e.g.
+  an `id` (optional) and `href` field e.g.
   ```
   {  
       "id":"1234",
@@ -29,14 +29,14 @@ API standards
       "links": {  
           "latest_resource": {  
               "id":"5678",
-              "link":"/thisapi/1234/subresources/5678"
+              "href":"/thisapi/1234/subresources/5678"
           },
           "external": {  
               "id":"3456",
-              "link":"/extresources/3456"
+              "href":"/extresources/3456"
           },
           "subresources":{
-              "link":"/thisapi/1234/subresources"
+              "href":"/thisapi/1234/subresources"
           }
       }
   }
