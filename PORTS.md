@@ -35,8 +35,8 @@ in development without having to configure port numbers etc.
 | 20051 | [dp-dd-search-api](https://github.com/ONSdigital/dp-dd-search-api) |
 | 20099 | [dp-dd-api-stub](https://github.com/ONSdigital/dp-dd-api-stub) |
 | 20099 | [dp-dd-dimensional-metadata-api](https://github.com/ONSdigital/dp-dd-dimensional-metadata-api) | shares port with stub
-| 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-frontend-router) |
-| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
+| 20100 | [dp-dd-job-creator-api-stub](https://github.com/ONSdigital/dp-dd-job-creator-api-stub) |
+| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter) |
 | 21100 | [dp-dd-csv-filter](https://github.com/ONSdigital/dp-dd-csv-filter) |
 | 21200 | [dp-dd-csv-transformer](https://github.com/ONSdigital/dp-dd-csv-transformer) |
