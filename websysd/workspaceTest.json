@@ -63,37 +63,6 @@
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
 			"Stderr": "/tmp/$TASK-$RUN.err"
-		},
-		{
-			"Name": "dp-dimension-extractor",
-			"Command": "sh start-go-service.sh",
-			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
-			},
-			"Service": true,
-			"Stdout": "/tmp/$TASK-$RUN.out",
-			"Stderr": "/tmp/$TASK-$RUN.err"
-		},
-		{
-			"Name": "dp-dimension-importer",
-			"Command": "sh start-go-service.sh",
-			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
-			},
-			"Service": true,
-			"Stdout": "/tmp/$TASK-$RUN.out",
-			"Stderr": "/tmp/$TASK-$RUN.err"
-		},
-		{
-			"Name": "dp-observation-extractor",
-			"Command": "sh start-go-service.sh",
-			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
-			},
-			"Service": true,
-			"Stdout": "/tmp/$TASK-$RUN.out",
-			"Stderr": "/tmp/$TASK-$RUN.err"
-		},
-
+		}
 	]
 }
