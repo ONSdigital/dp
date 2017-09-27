@@ -22,6 +22,10 @@ Before you run any services, ensure you have AWS access and set the following en
 
 replacing the ACCESS/SECRET keys with your own.
 
+Run the following to pull all the repositories on the current branch
+
+`./dp-run.sh -p` 
+
 ## Running websysd
 
 To run all the services simply run:

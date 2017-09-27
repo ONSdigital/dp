@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage()  {
-    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -h [prints this message]"; exit 1;
+    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -h [prints this message]"; exit 1;
 }
 
 run() {
@@ -95,10 +95,55 @@ cloneRepo() {
     fi
 }
 
+pull() {
+    pullGoRepo "dp-code-list-api" 
+    pullGoRepo "dp-dataset-api" 
+    pullGoRepo "dp-dataset-exporter" 
+    pullGoRepo "dp-dimension-extractor" 
+    pullGoRepo "dp-dimension-importer" 
+    pullGoRepo "dp-filter-api"
+    pullGoRepo "dp-frontend-dataset-controller"
+    pullGoRepo "dp-frontend-filter-dataset-controller" 
+    pullGoRepo "dp-frontend-renderer" 
+    pullGoRepo "dp-frontend-router" 
+    pullGoRepo "dp-hierarchy-api"
+    pullGoRepo "dp-import-api" 
+    pullGoRepo "dp-import-tracker" 
+    pullGoRepo "dp-observation-extractor"
+    pullGoRepo "dp-observation-importer" 
+    pullGoRepo "dp-recipe-api" 
+    pullGoRepo "florence" 
+
+    pullRepo "babbage" 
+    pullRepo "zebedee" 
+    pullRepo "dp-compose" 
+    pullRepo "sixteens" 
+}
+
+pullRepo() {
+    if [ -d "$HOME/$1" ]; then
+        echo "pulling $1..."
+        cd $HOME/$1
+        git pull
+    else
+        echo "repo $1 missing... please clone"
+    fi
+}
+
+pullGoRepo() {
+    if [ -d "$GOPATH/src/github.com/ONSdigital/$1" ]; then
+        echo "pulling $1..."
+        cd $GOPATH/src/github.com/ONSdigital/$1
+        git pull
+    else
+        echo "repo $1 missing... please clone"
+    fi
+}
+
 prepare() {
     createuser dp -d -w
     createdb --owner dp FilterJobs
-    psql -U dp FilterJobs -f ./$GOPATH/src/github.com/ONSdigital/dp-filter-api/scripts/InitDatabase.sql
+    psql -U dp FilterJobs -f $GOPATH/src/github.com/ONSdigital/dp-filter-api/scripts/InitDatabase.sql
     $GOPATH/src/github.com/ONSdigital/dp-dataset-api/scripts/InitDatabase.sh
     $GOPATH/src/github.com/ONSdigital/dp-code-list-api/scripts/setup.sh
 }
@@ -114,6 +159,9 @@ case "$1" in
         ;;
     -h)
         usage
+        ;;
+    -p)
+        pull
         ;;
     *) 
         prepare
