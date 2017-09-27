@@ -1,66 +1,33 @@
 # Websyd
 
-You can use websysd to run your dp services locally. To start your services
-simply run:
+You can use websysd to run your dp services locally.
 
-```
-./websysd_darwin_amd64
-```
+## Installation
 
-from this directory. Navigate to http://localhost:7050 to view microservices and
-their logs.
+To install a dp-environment on Mac OS from scratch you will first need git access to all the dp services.
 
-## Pre-requisites
+Once you have this you will be able to run:
 
-To start websyd you will need the following installed on your machine:
+`./dp-run.sh -i` to install all dependencies and services.
 
-- Java
-- Maven
-- Go
-- Postgres
-- Kafka
+If you believe you already have the dependencies installed and only wish to clone 
+the services run:
 
-In the case of postgres and kafka, you should also ensure that those services
-are running.
+`./dp-run.sh -c`
 
-You will also need to configure postgres by running the following commands:
+Before you run any services, ensure you have AWS access and set the following environment vars:
 
-- Run ```brew install postgres```
-- Run ```brew services start postgres```
-- Run ```createuser dp -d -w```
-- Run ```createdb --owner dp FilterJobs```
-- Run ```psql -U dp FilterJobs -f scripts/InitDatabase.sql```
+- export AWS_ACCESS_KEY_ID=<ACCESS_KEY>
+- export AWS_SECRET_ACCESS_KEY=<SECRET_KEY>
 
-You will need the following services cloned:
+replacing the ACCESS/SECRET keys with your own.
 
-### Go services:
+## Running websysd
 
-Note this must be cloned under your $GOPATH/src/github.com/ONSdigital:
+To run all the services simply run:
 
-- dp-frontend-router
-- dp-frontend-renderer
-- dp-frontend-datset-controller
-- dp-frontend-filter-dataset-controller
-- dp-filter-api
-- dp-code-list-api
-- dp-hierarchy-api
-- dp-import-api
-- dp-recipe-api
-- florence
+`./dp-run.sh`
 
-### Other services:
+This will preload all data stores with required data and start all services on websysd. To view the status of the services, navigate your browser to:
 
-Note this must be cloned at the top level directory ($HOME):
-
-- dp-compose
-- zebedee
-- babbage
-- sixteens
-
-## Adding services
-
-To add a new Go service to websysd, simply extend the workspace.json file to include
-the new service in the same format as the other Go services.
-
-To add a service in any other language you will need to add a new bash file to start
-that service as well as extending workspace.json.
+http://localhost:7050

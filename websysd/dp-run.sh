@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage()  {
-    echo "-i [set up and run dp env from scratch] || -c [just clone the dp repositories] || -h [prints this message]"; exit 1;
+    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -h [prints this message]"; exit 1;
 }
 
 run() {
@@ -33,11 +33,9 @@ install() {
     brew install mongo ### install mongodb
     brew services restart mongo
 
-    brew install zookeeper #install zookeeper
-    brew services restart zookeeper
-
     brew install kafka #install kafka
-    brew services restart kafka
+    brew services restart zookeeper
+    /usr/local/Cellar/kafka/*/libexec/bin/kafka-server-start.sh -daemon /usr/local/Cellar/kafka/*/libexec/config/server.properties
 
     brew install postgres #install postgres
     brew services restart postgres
@@ -97,11 +95,18 @@ cloneRepo() {
     fi
 }
 
+prepare() {
+    createuser dp -d -w
+    createdb --owner dp FilterJobs
+    psql -U dp FilterJobs -f ./$GOPATH/src/github.com/ONSdigital/dp-filter-api/scripts/InitDatabase.sql
+    $GOPATH/src/github.com/ONSdigital/dp-dataset-api/scripts/InitDatabase.sh
+    $GOPATH/src/github.com/ONSdigital/dp-code-list-api/scripts/setup.sh
+}
+
 case "$1" in
     -i)
         install
         clone
-        run
         ;;
     -c)
         setGOPATH
@@ -111,6 +116,7 @@ case "$1" in
         usage
         ;;
     *) 
+        prepare
         run
         ;;
 esac
