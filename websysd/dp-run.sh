@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage()  {
-    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -h [prints this message]"; exit 1;
+    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -s sets up data stores corrrectly || -h [prints this message]"; exit 1;
 }
 
 run() {
@@ -163,8 +163,10 @@ case "$1" in
     -p)
         pull
         ;;
+    -s)
+	prepare
+	;;
     *) 
-        prepare
         run
         ;;
 esac
