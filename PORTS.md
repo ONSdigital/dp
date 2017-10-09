@@ -55,4 +55,5 @@ in development without having to configure port numbers etc.
 | 22500 | [dp-dataset-exporter](https://github.com/ONSdigital/dp-dataset-exporter) |
 | 22600 | [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api) |
 | 22700 | [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder) |
+| 22800 | [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx) |
 | 23000 | [dp-dd-metadata-editor](https://github.com/ONSdigital/dp-dd-metadata-editor) |
