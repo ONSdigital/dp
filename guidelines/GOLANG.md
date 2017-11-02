@@ -27,5 +27,19 @@ and the [code review guidelines](https://github.com/golang/go/wiki/CodeReviewCom
         * Use the health check handler for all services. You may need to implement a more complex handler to check the health of database connections etc
 * Read environment configuration using [gofigure](https://github.com/ian-kent/gofigure)
 
+#### Code review checklist
 
+* Unit tests pass
+* Code has appropriate test coverage
+* Sufficient and appropriate godocs / comments
+* Sufficient and appropriate logging
+* Sufficient and appropriate error handling
+* gofmt has been run on all code files
+* `golint` / `gometalinter` provides no warnings
+* values that should be configurable can be provided as environment variables
+* Check if associated acceptance tests should be created / updated
+* The README.md file provides sufficient information about the changes
+* Ensure that resources are gracefully closed / cleaned up
+* Ensure that vendor files are added / updated / removed as required
 
+For further code review points see the [CodeReviewComments page on the go wiki](https://github.com/golang/go/wiki/CodeReviewComments)
