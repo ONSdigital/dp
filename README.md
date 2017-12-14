@@ -11,6 +11,7 @@ responsible for the public ONS website.
 * [Development standards](DEV_STANDARDS.md)
 * [Definition of Ready](DEFINITION_OF_READY.md)
 * [Definition of Done](DEFINITION_OF_DONE.md)
+* [Release process](RELEASES.md)
 * [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
 * [Contributing guidelines](CONTRIBUTING.md)
 * [GPG commit signing](GPG.md)
