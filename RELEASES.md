@@ -13,6 +13,7 @@ Release process
 * Code issues identified in pull request are fixed
 * Pull request approved
 * Feature branch merged into `develop`/`cmd-develop`
+* Developer tests feature in develop/cmd-develop environment
 * Developer moves story from team board to release board `PO sign off` column
 
 ## 'PO sign off' column
