@@ -24,11 +24,11 @@ Release process
 
 ## 'Ready for release' column
 
-* Release branch (e.g. `release/1.7.3`) taken from `develop`/`cmd-develop`
+* Release branch (e.g. `release/1.7.3` or `beta/1.0.0`) taken from `develop`/`cmd-develop`
 * Bug fixes applied to release branch
 * Release branch bug fixes regularly merged back to `develop`/`cmd-develop`
 * Pull request from release branch into `master`/`cmd-master`
-* Release tag created from `master`/`cmd-master` and release branch deleted
+* [Release tag created](TAGS.md) from `master`/`cmd-master` and release branch deleted
 
 ## Deployment
 
