@@ -61,3 +61,4 @@ in development without having to configure port numbers etc.
 | 23100 | [dp-search-api](https://github.com/ONSdigital/dp-search-api) |
 | 23200 | [dp-api-router](https://github.com/ONSdigital/dp-api-router) |
 | 23300 | [dp-table-renderer](https://github.com/ONSdigital/dp-table-renderer) |
+| 23400 | [dp-file-downloader](https://github.com/ONSdigital/dp-file-downloader) |
