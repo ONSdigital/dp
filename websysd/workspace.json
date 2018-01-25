@@ -100,7 +100,7 @@
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
 			},
-			"Service": true,
+			"Service": false,
 			"Stdout": "/tmp/$TASK-$RUN.out",
 			"Stderr": "/tmp/$TASK-$RUN.err"
 		},
@@ -110,6 +110,7 @@
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
 			},
+			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
 			"Stderr": "/tmp/$TASK-$RUN.err"
 		},
@@ -215,6 +216,26 @@
 		},
 		{
 			"Name": "dp-dataset-exporter",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-dataset-exporter-xlsx",
+			"Command": "sh start-java-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-hierarchy-builder",
 			"Command": "sh start-go-service.sh",
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
