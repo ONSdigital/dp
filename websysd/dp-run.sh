@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage()  {
-    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -s sets up data stores corrrectly || -h [prints this message]"; exit 1;
+    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -h [prints this message]"; exit 1;
 }
 
 run() {
@@ -25,7 +25,7 @@ install() {
     brew install go ### install golang
     setGOPATH
 
-    brew cask install java ### install java
+    brew cask install java8 ### install java8
     brew install maven ### install maven
     brew install node ### install node
     npm install -g grunt-cli 
@@ -72,11 +72,13 @@ clone() {
     cloneGoRepo "dp-observation-importer" "cmd-develop"
     cloneGoRepo "dp-recipe-api" "cmd-develop"
     cloneGoRepo "florence" "cmd-develop"
+    cloneGoRepo "dp-hierarchy-builder" "cmd-develop"
 
     cloneRepo "babbage" "develop"
     cloneRepo "zebedee" "cmd-develop"
     cloneRepo "dp-compose" "master"
     cloneRepo "sixteens" "cmd-develop"
+    cloneRepo "dp-dataset-exporter-xlsxs"
 }
 
 cloneGoRepo() {
@@ -112,12 +114,14 @@ pull() {
     pullGoRepo "dp-observation-extractor"
     pullGoRepo "dp-observation-importer" 
     pullGoRepo "dp-recipe-api" 
-    pullGoRepo "florence" 
+    pullGoRepo "florence"
+    pullGoRepo "dp-hierarchy-builder"
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
     pullRepo "dp-compose" 
     pullRepo "sixteens" 
+    pullRepo "dp-dataset-exporter-xlsx"
 }
 
 pullRepo() {
@@ -140,14 +144,6 @@ pullGoRepo() {
     fi
 }
 
-prepare() {
-    createuser dp -d -w
-    createdb --owner dp FilterJobs
-    psql -U dp FilterJobs -f $GOPATH/src/github.com/ONSdigital/dp-filter-api/scripts/InitDatabase.sql
-    $GOPATH/src/github.com/ONSdigital/dp-dataset-api/scripts/InitDatabase.sh
-    $GOPATH/src/github.com/ONSdigital/dp-code-list-api/scripts/setup.sh
-}
-
 case "$1" in
     -i)
         install
@@ -163,9 +159,6 @@ case "$1" in
     -p)
         pull
         ;;
-    -s)
-	prepare
-	;;
     *) 
         run
         ;;
