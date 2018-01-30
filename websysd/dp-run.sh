@@ -123,6 +123,8 @@ checkout() {
     checkoutGoRepo "dp-recipe-api" $DEFAULT_BRANCH
     checkoutGoRepo "florence" $DEFAULT_BRANCH
     checkoutGoRepo "dp-hierarchy-builder" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-search-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-search-builder" $DEFAULT_BRANCH
 
     checkoutRepo "babbage" $DEFAULT_BRANCH
     checkoutRepo "zebedee" $DEFAULT_BRANCH
@@ -168,6 +170,8 @@ pull() {
     pullGoRepo "dp-recipe-api" 
     pullGoRepo "florence"
     pullGoRepo "dp-hierarchy-builder"
+    pullGoRepo "dp-search-api"
+    pullGoRepo "dp-search-builder"
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
