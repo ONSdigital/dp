@@ -11,8 +11,8 @@ Getting started
 * [Maven](https://maven.apache.org/)
 * [Docker](https://www.docker.com/products/overview)
 * [Node.js and npm](https://nodejs.org/en/), known working versions:
-  - Node.js version 6.9.1
-  - npm version 3.10.8
+  - Node.js version 8.9.4
+  - npm version 5.6.0
 * [dp-compose](https://github.com/ONSdigital/dp-compose)
 
 #### Web
