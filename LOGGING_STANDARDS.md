@@ -23,7 +23,8 @@ All apps should log important events, especially failures.
   - mask or take sub-strings allows for small portions of credentials more securely
 - on startup, log config
 
-Important fields:
+### Important fields
+
 - `created` - timestamps should be present in all log messages, and should be ISO-8601 formatted
 - `namespace` - identifier for the service - should match the repo name
   - `service_instance` if running multiple instances of a service, an instance-specific identifier - perhaps an *allocation ID*
