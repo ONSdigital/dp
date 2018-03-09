@@ -39,6 +39,8 @@ These are the Digital Publishing development standards.
 * Cross-browser support/testing
 * Accessibility - meets [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)
 
+See also [Logging standards](LOGGING_STANDARDS.md).
+
 ### Testing standards
 
 * Test code should be subject to the same code quality checks and reviews as application code
