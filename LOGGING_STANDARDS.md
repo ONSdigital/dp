@@ -1,27 +1,14 @@
 ## Logging standards
 
 **Does it add value?**
+All apps should log important events, especially failures, and any information
+which adds value is worth including in the event.
 
-All apps should log important events, especially failures.
+### Formatting
 
-- use consistent fields
-- libraries should return (not log) errors
-- callers should log the errors they receive
-- JSON logging
-- timestamps: use ISO 8601 `created` field
-- HTTP Requests
-    - On request
-        - URL (including query string)
-        - Method
-    - Response failures, log:
-        - Response (code)
-        - Expected response
-- log *levels* are not so valuable,  default to `info` if library insists
-- do not log queries (e.g. SQL strings) - log the individual parameters in a structured way
-- use snake-case - all lowercase - keys
-- never log passwords, credentials, auth headers
-  - mask or take sub-strings allows for small portions of credentials more securely
-- on startup, log config
+- JSON formatted
+- Use consistently named fields
+- Keys should be snake_cased and all lowercase
 
 ### Important fields
 
@@ -38,6 +25,18 @@ All apps should log important events, especially failures.
 - `data` - event-specific details in a sub-document
   - key-value pairs for details like `'error':<error from called service>, 'dataset_id':<id>`
 
+### Important events
+
+- On startup, log config
+- Callers should log the errors they receive
+- HTTP Requests
+    - On request
+        - `url` (including query string)
+        - `method`
+    - Response failures, log:
+        - Response (code)
+        - Expected response
+
 ### Apps
 
 Logical blocks should use logs as checkpoints
@@ -49,3 +48,11 @@ Logical blocks should use logs as checkpoints
 
 - Events should refer to an ID to tie the events across services together - whether this is the same ID as used in context, or another identifier, which has previously been logged alongside the context
 - log `topic` and (if consuming) `group` and `offset`
+
+### What not to log?
+
+- log *levels* are not so valuable, default to `info` if library insists
+- do not log queries (e.g. SQL strings) - log the individual parameters in a structured way
+- never log passwords, credentials, auth headers
+  - mask or take sub-strings allows for small portions of credentials more securely
+- libraries should return (not log) errors
