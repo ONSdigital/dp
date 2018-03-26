@@ -243,6 +243,36 @@
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
 			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-search-builder",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-search-api",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-download-service",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
 		}
 	]
 }
