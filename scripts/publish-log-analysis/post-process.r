@@ -32,8 +32,11 @@ melted_grouped_scheduled_releases_by_month[melted_grouped_scheduled_releases_by_
 
 # plot groups by month
 # ggplot(data = melted_grouped_scheduled_releases_by_month[melted_grouped_scheduled_releases_by_month$cat != '',], aes(x=cat, y=value, fill=variable)) + geom_bar(stat = 'identity', position = 'stack') + facet_grid(~ `strftime(PublishDate, "%Y/%m")`)
+# stacked chart
 ggplot(data = melted_grouped_scheduled_releases_by_month[melted_grouped_scheduled_releases_by_month$variable %in% c('Type_bulletin_Count', 'Type_article_Count', 'Type_compendium_Count', 'Type_static_methodology_Count', 'Type_compendium_chapter_Count'),], aes(x=`strftime(PublishDate, "%Y/%m")`, y=value, fill=variable)) + geom_bar(stat = 'identity')
 ggplot(data = melted_grouped_scheduled_releases_by_month[melted_grouped_scheduled_releases_by_month$variable %in% c('Type_bulletin_Words', 'Type_article_Words', 'Type_compendium_Words', 'Type_static_methodology_Words', 'Type_compendium_chapter_Words'),], aes(x=`strftime(PublishDate, "%Y/%m")`, y=value, fill=variable)) + geom_bar(stat = 'identity')
+# line chart (broken!)
+ggplot(data = melted_grouped_scheduled_releases_by_month[melted_grouped_scheduled_releases_by_month$variable %in% c('Type_bulletin_Count', 'Type_article_Count', 'Type_compendium_Count', 'Type_static_methodology_Count', 'Type_compendium_chapter_Count'),], aes(x=`strftime(PublishDate, "%Y/%m")`, y=value, colour=variable)) + geom_line(aes(group=1))
 
 # plot bulletins by week
 # ggplot(data = melted_grouped_scheduled_releases_by_week[melted_grouped_scheduled_releases_by_week$variable %in% c('Type_bulletin_Count', 'Type_article_Count', 'Type_compendium_Count', 'Type_static_methodology_Count', 'Type_compendium_chapter_Count'),], aes(x=`strftime(PublishDate, "%Y/%V")`, y=value, fill=variable)) + geom_bar(stat = 'identity') + theme(axis.text.x = element_text(angle=90)) + scale_x_continuous(breaks=10)
