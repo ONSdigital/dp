@@ -1,7 +1,12 @@
 #!/bin/bash
 
+if [[ $DEFAULT_BRANCH == "" ]]; then
+    export DEFAULT_BRANCH=cmd-develop
+fi
+
 usage()  {
-    echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -h [prints this message]"; exit 1;
+    printf "To change the default branch from cmd-develop, run: export DEFAULT_BRANCH=develop (for example)\n\n"
+    echo "-i [set up dp env from scratch] || -co [checkout branches on default branch] || -c [just clone the dp repositories] || -p [pull all repositories on the current branch] || -h [prints this message]"; exit 1;
 }
 
 run() {
@@ -55,30 +60,32 @@ clone() {
 
     mkdir -p $GOPATH/src/github.com/ONSdigital
 
-    cloneGoRepo "dp-code-list-api" "cmd-develop"
-    cloneGoRepo "dp-dataset-api" "cmd-develop"
-    cloneGoRepo "dp-dataset-exporter" "cmd-develop"
-    cloneGoRepo "dp-dimension-extractor" "cmd-develop"
-    cloneGoRepo "dp-dimension-importer" "cmd-develop"
-    cloneGoRepo "dp-filter-api" "cmd-develop"
-    cloneGoRepo "dp-frontend-dataset-controller" "cmd-develop" 
-    cloneGoRepo "dp-frontend-filter-dataset-controller" "cmd-develop"
-    cloneGoRepo "dp-frontend-renderer" "cmd-develop"
-    cloneGoRepo "dp-frontend-router" "cmd-develop"
-    cloneGoRepo "dp-hierarchy-api" "cmd-develop"
-    cloneGoRepo "dp-import-api" "cmd-develop"
-    cloneGoRepo "dp-import-tracker" "cmd-develop"
-    cloneGoRepo "dp-observation-extractor" "cmd-develop"
-    cloneGoRepo "dp-observation-importer" "cmd-develop"
-    cloneGoRepo "dp-recipe-api" "cmd-develop"
-    cloneGoRepo "florence" "cmd-develop"
-    cloneGoRepo "dp-hierarchy-builder" "cmd-develop"
+    cloneGoRepo "dp-code-list-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-dataset-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-dataset-exporter" $DEFAULT_BRANCH
+    cloneGoRepo "dp-dimension-extractor" $DEFAULT_BRANCH
+    cloneGoRepo "dp-dimension-importer" $DEFAULT_BRANCH
+    cloneGoRepo "dp-filter-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-frontend-dataset-controller" $DEFAULT_BRANCH
+    cloneGoRepo "dp-frontend-filter-dataset-controller" $DEFAULT_BRANCH
+    cloneGoRepo "dp-frontend-renderer" $DEFAULT_BRANCH
+    cloneGoRepo "dp-frontend-router" $DEFAULT_BRANCH
+    cloneGoRepo "dp-hierarchy-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-import-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-import-tracker" $DEFAULT_BRANCH
+    cloneGoRepo "dp-observation-extractor" $DEFAULT_BRANCH
+    cloneGoRepo "dp-observation-importer" $DEFAULT_BRANCH
+    cloneGoRepo "dp-recipe-api" $DEFAULT_BRANCH
+    cloneGoRepo "florence" $DEFAULT_BRANCH
+    cloneGoRepo "dp-hierarchy-builder" $DEFAULT_BRANCH
+    cloneGoRepo "dp-search-builder" $DEFAULT_BRANCH
+    cloneGoRepo "dp-search-api" $DEFAULT_BRANCH
 
-    cloneRepo "babbage" "develop"
-    cloneRepo "zebedee" "cmd-develop"
+    cloneRepo "babbage" $DEFAULT_BRANCH
+    cloneRepo "zebedee" $DEFAULT_BRANCH
     cloneRepo "dp-compose" "master"
-    cloneRepo "sixteens" "cmd-develop"
-    cloneRepo "dp-dataset-exporter-xlsxs"
+    cloneRepo "sixteens" $DEFAULT_BRANCH
+    cloneRepo "dp-dataset-exporter-xlsx" $DEFAULT_BRANCH
 }
 
 cloneGoRepo() {
@@ -95,6 +102,53 @@ cloneRepo() {
     else
         git clone -b $2 git@github.com:ONSdigital/$1.git $HOME/$1
     fi
+}
+
+checkout() {
+    checkoutGoRepo "dp-code-list-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-dataset-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-dataset-exporter" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-dimension-extractor" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-dimension-importer" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-filter-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-frontend-dataset-controller" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-frontend-filter-dataset-controller" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-frontend-renderer" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-frontend-router" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-hierarchy-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-import-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-import-tracker" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-observation-extractor" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-observation-importer" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-recipe-api" $DEFAULT_BRANCH
+    checkoutGoRepo "florence" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-hierarchy-builder" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-search-api" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-search-builder" $DEFAULT_BRANCH
+
+    checkoutRepo "babbage" $DEFAULT_BRANCH
+    checkoutRepo "zebedee" $DEFAULT_BRANCH
+    checkoutRepo "dp-compose" "master"
+    checkoutRepo "sixteens" $DEFAULT_BRANCH
+    checkoutRepo "dp-dataset-exporter-xlsx" $DEFAULT_BRANCH
+}
+
+checkoutRepo() {
+    printf "\033[0;32m Checking out service: $1 on branch: $2 -----------------------------\n \033[0m"
+
+    cd $HOME/$1
+    git checkout $2
+
+    printf "\n"
+}
+
+checkoutGoRepo() {
+    printf "\033[0;32m Checking out service: $1 on branch: $2 -----------------------------\n \033[0m"
+
+    cd $GOPATH/src/github.com/ONSdigital/$1
+    git checkout $2
+
+    printf "\n"
 }
 
 pull() {
@@ -116,6 +170,8 @@ pull() {
     pullGoRepo "dp-recipe-api" 
     pullGoRepo "florence"
     pullGoRepo "dp-hierarchy-builder"
+    pullGoRepo "dp-search-api"
+    pullGoRepo "dp-search-builder"
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
@@ -144,10 +200,21 @@ pullGoRepo() {
     fi
 }
 
+printf "__        __   _                       _ \n"
+printf "\ \      / /__| |__  ___ _   _ ___  __| |\n"
+printf " \ \ /\ / / _ \ '_ \/ __| | | / __|/ _| |\n"
+printf "  \ V  V /  __/ |_) \__ \ |_| \__ \ (_| |\n"
+printf "   \_/\_/ \___|_.__/|___/\__, |___/\__,_|\n"
+printf "                         |___/           \n\n"
+
 case "$1" in
     -i)
         install
         clone
+        ;;
+    -co)
+        setGOPATH
+        checkout
         ;;
     -c)
         setGOPATH
@@ -163,4 +230,3 @@ case "$1" in
         run
         ;;
 esac
-
