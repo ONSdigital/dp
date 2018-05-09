@@ -32,6 +32,9 @@ To run all the services simply run:
 
 `./dp-run.sh`
 
-This will preload all data stores with required data and start all services on websysd. To view the status of the services, navigate your browser to:
+Note that you will need to wait around 30 seconds for the full stack to start correctly. The services will
+cycle through a restart state until kafka has successfully started.
+
+To view the status of the services, navigate your browser to:
 
 http://localhost:7050

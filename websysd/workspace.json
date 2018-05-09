@@ -5,6 +5,26 @@
 	},
 	"Tasks": [
 		{
+			"Name": "kafka",
+			"Command": "./kafka/bin/kafka-server-start.sh kafka/config/server.properties",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "vault",
+			"Command": "vault server -dev",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
 			"Name": "dp-frontend-router",
 			"Command": "sh start-go-service.sh",
 			"Environment": {
@@ -58,7 +78,20 @@
 			"Name": "dp-filter-api",
 			"Command": "sh start-go-service.sh",
 			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"ENABLE_PRIVATE_ENDPOINTS": "false"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "dp-filter-api-publishing",
+			"Command": "sh start-go-service.sh dp-filter-api",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"BIND_ADDR": ":22101",
+				"ENABLE_PRIVATE_ENDPOINTS": "true"
 			},
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
@@ -85,16 +118,6 @@
 			"Stderr": "/tmp/$TASK-$RUN.err"
 		},
 		{
-			"Name": "dp-compose",
-			"Command": "sh start-dp-compose.sh",
-			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
-			},
-			"Service": true,
-			"Stdout": "/tmp/$TASK-$RUN.out",
-			"Stderr": "/tmp/$TASK-$RUN.err"
-		},
-		{
 			"Name": "zebedee-reader",
 			"Command": "sh start-zebedee-reader.sh",
 			"Environment": {
@@ -107,6 +130,16 @@
 		{
 			"Name": "zebedee-cms",
 			"Command": "sh start-zebedee-cms.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
+			"Name": "The-Train",
+			"Command": "sh start-java-service.sh",
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
 			},
@@ -218,7 +251,8 @@
 			"Name": "dp-dataset-exporter",
 			"Command": "sh start-go-service.sh",
 			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"FILTER_API_URL": "http://localhost:22101"
 			},
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
@@ -228,7 +262,8 @@
 			"Name": "dp-dataset-exporter-xlsx",
 			"Command": "sh start-java-service.sh",
 			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"FILTER_API_URL": "http://localhost:22101"
 			},
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",

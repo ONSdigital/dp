@@ -38,19 +38,13 @@ install() {
     brew install mongo ### install mongodb
     brew services restart mongo
 
-    brew install kafka #install kafka
     brew services restart zookeeper
-    /usr/local/Cellar/kafka/*/libexec/bin/kafka-server-start.sh -daemon /usr/local/Cellar/kafka/*/libexec/config/server.properties
-
-    brew install postgres #install postgres
-    brew services restart postgres
-
-    brew install docker # install docker
-    brew services restart docker
 
     brew install neo4j #install neo
     tee -a /usr/local/Cellar/neo4j/*/libexec/conf/neo4j.conf <<< "dbms.security.auth_enabled=false"
     brew services restart neo4j
+
+    sudo cp ./bin/vault /usr/local/bin/vault
 
     go get github.com/websysd/websysd #get websysd
 }
@@ -80,12 +74,13 @@ clone() {
     cloneGoRepo "dp-hierarchy-builder" $DEFAULT_BRANCH
     cloneGoRepo "dp-search-builder" $DEFAULT_BRANCH
     cloneGoRepo "dp-search-api" $DEFAULT_BRANCH
+    cloneGoRepo "dp-download-service" $DEFAULT_BRANCH
 
     cloneRepo "babbage" $DEFAULT_BRANCH
     cloneRepo "zebedee" $DEFAULT_BRANCH
-    cloneRepo "dp-compose" "master"
     cloneRepo "sixteens" $DEFAULT_BRANCH
     cloneRepo "dp-dataset-exporter-xlsx" $DEFAULT_BRANCH
+    cloneRepo "The-Train" $DEFAULT_BRANCH
 }
 
 cloneGoRepo() {
@@ -125,12 +120,13 @@ checkout() {
     checkoutGoRepo "dp-hierarchy-builder" $DEFAULT_BRANCH
     checkoutGoRepo "dp-search-api" $DEFAULT_BRANCH
     checkoutGoRepo "dp-search-builder" $DEFAULT_BRANCH
+    checkoutGoRepo "dp-download-service" $DEFAULT_BRANCH
 
     checkoutRepo "babbage" $DEFAULT_BRANCH
     checkoutRepo "zebedee" $DEFAULT_BRANCH
-    checkoutRepo "dp-compose" "master"
     checkoutRepo "sixteens" $DEFAULT_BRANCH
     checkoutRepo "dp-dataset-exporter-xlsx" $DEFAULT_BRANCH
+    checkoutRepo "The-Train" $DEFAULT_BRANCH
 }
 
 checkoutRepo() {
@@ -172,12 +168,13 @@ pull() {
     pullGoRepo "dp-hierarchy-builder"
     pullGoRepo "dp-search-api"
     pullGoRepo "dp-search-builder"
+    pullGoRepo "dp-download-service"
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
-    pullRepo "dp-compose" 
     pullRepo "sixteens" 
     pullRepo "dp-dataset-exporter-xlsx"
+    pullRepo "The-Train"
 }
 
 pullRepo() {
