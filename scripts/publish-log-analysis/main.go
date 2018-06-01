@@ -11,11 +11,13 @@ import (
 )
 
 type collectionJSON struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	Type        string `json:"type"`
-	PublishDate string `json:"publishDate"`
-	ReleaseURI  string `json:"releaseUri"`
+	ID               string `json:"id"`
+	Name             string `json:"name"`
+	Type             string `json:"type"`
+	PublishDate      string `json:"publishDate"`
+	ReleaseURI       string `json:"releaseUri"`
+	PublishStartDate string `json:"publishStartDate"`
+	PublishEndDate   string `json:"publishEndDate"`
 
 	FileCountByType map[string]int
 	WordCountByType map[string]int
@@ -35,6 +37,7 @@ type dataJSONMarkdownSection struct {
 var collectionData = make(map[string]*collectionJSON)
 
 // const rootDir = "/home/ec2-user/publish-log-test"
+
 const rootDir = "/home/ec2-user/publish-log"
 
 func main() {
@@ -121,7 +124,7 @@ func main() {
 		typeNames = append(typeNames, k)
 	}
 
-	headers := []string{"ID", "Name", "ReleaseURI", "Type", "PublishDate"}
+	headers := []string{"ID", "Name", "ReleaseURI", "Type", "PublishDate", "PublishStartDate", "PublishEndDate"}
 	for _, t := range typeNames {
 		headers = append(headers, "Type_"+t+"_Count")
 		headers = append(headers, "Type_"+t+"_Words")
@@ -134,7 +137,7 @@ func main() {
 	// log.Printf("Found %d collections", len(collectionData))
 	for _, v := range collectionData {
 		// log.Println("Collection:", v.ID)
-		row := []string{v.ID, v.Name, v.ReleaseURI, v.Type, v.PublishDate}
+		row := []string{v.ID, v.Name, v.ReleaseURI, v.Type, v.PublishDate, v.PublishStartDate, v.PublishEndDate}
 		for _, t := range typeNames {
 			if v2, ok := v.FileCountByType[t]; ok {
 				row = append(row, fmt.Sprintf("%d", v2))

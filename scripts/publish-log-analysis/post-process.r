@@ -4,6 +4,11 @@ library(ggplot2)
 library(reshape2)
 
 output <- read_csv("/Users/iankent/dev/src/github.com/ONSdigital/dp/scripts/publish-log-analysis/output.csv")
+
+manual_releases <- data.frame(subset(output, is.na(PublishDate)))
+manual_releases$PublishDate <- as.POSIXct(strptime(manual_releases$PublishDate, "%Y-%m-%d %H:%M:%S"))
+manual_releases_since_launch <- subset(manual_releases, manual_releases$PublishDate > strptime("2016-02-25", "%Y-%m-%d"))
+
 scheduled_releases <- data.frame(subset(output, !(is.na(PublishDate))))
 scheduled_releases$PublishDate <- as.POSIXct(strptime(scheduled_releases$PublishDate, "%Y-%m-%d %H:%M:%S"))
 scheduled_releases_since_launch <- subset(scheduled_releases, scheduled_releases$PublishDate > strptime("2016-02-25", "%Y-%m-%d"))
