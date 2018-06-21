@@ -76,7 +76,7 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 ### Other requirements
 
 * [Setup CI integration](https://github.com/ONSdigital/dp-ci)
-* Git-flow
+* Git-flow (see [A successful git branching model](https://nvie.com/posts/a-successful-git-branching-model/))
   * `master`/`develop` branches - must be protected
   * `feature/feature-name` branches
   * `hotfix/hotfix-name` branches
