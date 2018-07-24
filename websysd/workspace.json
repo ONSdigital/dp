@@ -55,6 +55,16 @@
 			"Stderr": "/tmp/$TASK-$RUN.err"
 		},
 		{
+			"Name": "dp-frontend-geography-controller",
+			"Command": "sh start-go-service.sh",
+			"Environment": {
+				"PATH": "/bin:/usr/bin:/usr/local/bin"
+			},
+			"Service": true,
+			"Stdout": "/tmp/$TASK-$RUN.out",
+			"Stderr": "/tmp/$TASK-$RUN.err"
+		},
+		{
 			"Name": "dp-filter-api",
 			"Command": "sh start-go-service.sh",
 			"Environment": {
