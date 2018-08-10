@@ -64,3 +64,4 @@ in development without having to configure port numbers etc.
 | 23400 | [dp-file-downloader](https://github.com/ONSdigital/dp-file-downloader) |
 | 23500 | [dp-map-renderer](https://github.com/ONSdigital/dp-map-renderer) |
 | 23600 | [dp-developer-site](http://github.com/ONSdigital/dp-developer-site) |
+| 23700 | [dp-frontend-geography-controller](https://github.com/ONSdigital/dp-frontend-geography-controller) |
