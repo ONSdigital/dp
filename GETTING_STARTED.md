@@ -20,9 +20,10 @@ If you need to edit content in Florence, [try this guide](https://github.com/ONS
 #### For CMD:
 
 __Additional app setup:__
+
 6. If you want the feedback forms to work in the Beta banners, [follow this guidance](https://github.com/ONSdigital/dp-frontend-dataset-controller#feedback-service)
 
-7. [Setup API keys in Zebedee](https://github.com/ONSdigital/zebedee#service-authentication-with-zebedee)
+7. [Setup API keys in Zebedee](https://github.com/ONSdigital/zebedee/tree/cmd-develop#service-authentication-with-zebedee)
 
 __Content:__ Your apps should start up/be functional at this point but you'll have no CMD content.
 
@@ -31,7 +32,8 @@ __Content:__ Your apps should start up/be functional at this point but you'll ha
 9. [Import hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder#getting-started)
 
 __Florence steps:__
-10. [Create datasets](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#create-a-cmd-dataset)
+
+10. [Create datasets](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#create-a-cmd-dataset-page)
 
 11. [Import V4 file](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#import-a-v4-file)
 
@@ -42,7 +44,7 @@ __Florence steps:__
 
 * [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Maven](https://maven.apache.org/)
-* [Docker](https://www.docker.com/products/overview)
+* [Docker](https://www.docker.com/get-started)
 * [Node.js and npm](https://nodejs.org/en/), known working versions:
   - Node.js version 8.9.4
   - npm version 5.6.0
@@ -101,12 +103,16 @@ mkdir $zebedee_root
 
 ### CMD
 
+To set up the publishing process for CMD, you will need to run all of the following and the [publishing](#publishing) services.
+
+If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web) services.
+
+#### Dataset journey:
 * [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
 * [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
-* [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
-* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
 
+#### Import services:
 * [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
 * [dp-import-api](https://github.com/ONSdigital/dp-import-api)
 * [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)
@@ -117,6 +123,7 @@ mkdir $zebedee_root
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
 * [dp-search-builder](https://github.com/ONSdigital/dp-search-builder)
 
+#### Filter journey:
 * [dp-search-api](https://github.com/ONSdigital/dp-search-api)
 * [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api)
 * [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api)
