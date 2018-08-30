@@ -33,7 +33,7 @@ __Content:__ Your apps should start up/be functional at this point but you'll ha
 
 __Florence steps:__
 
-10. [Create datasets](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#create-a-cmd-dataset)
+10. [Create datasets](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#create-a-cmd-dataset-page)
 
 11. [Import V4 file](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md#import-a-v4-file)
 
