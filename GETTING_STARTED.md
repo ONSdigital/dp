@@ -57,6 +57,7 @@ For CMD additionally install:
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
 * [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
 * [Kafka](https://kafka.apache.org/quickstart)
+* [Vault](https://www.vaultproject.io/intro/getting-started/install.html)
 
 Elasticsearch will need to be on [version 5](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/gs-installation.html) to work with CMD.
 
@@ -66,7 +67,6 @@ The website requires the following components:
 
 * [babbage](https://github.com/ONSdigital/babbage)
   * use `run.sh`
-* [florence](https://github.com/ONSdigital/florence)
 * [zebedee](https://github.com/ONSdigital/zebedee)
   * use `run-reader.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens)
