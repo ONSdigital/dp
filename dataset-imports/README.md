@@ -14,14 +14,14 @@ This repo is for loading datasets via database imports onto a developers local m
 Note - all the files use the same naming conventions (graph.dump etc) so before downloading a new one, make
 sure to move or delete any previous files downloaded for importing.
 
-* Clone this repo, then cd into on the of sub directories of this directory.
+* Clone the dp repo and navigate to this directory.
 * `chmod +x getData.sh`
 * `./getData.sh <url for s3 bucket>`   # links provided below
 * `chmod +x loadData.sh`
 * `./loadData.sh`
 
-If you have already associated the target dataset with a collection (i.e if a `dataset api` page already exists)
-then the imported dataset will not show - just delete then re-create the `dataset-api` page to fix.
+If you have already associated the target dataset with a collection (i.e if an `API Dataset` page already exists)
+then the imported dataset will not show - just delete then re-create the `API Dataset` page to fix.
 
 
 
