@@ -25,9 +25,9 @@ responsible for the public ONS website.
 
 You can use [websysd](https://github.com/ONSdigital/dp/blob/master/websysd) to run the dp services from a centralised location:
 
-If you are running a publishing stack the global configs should have "ENCRYPTION_DISABLED=true” and "ENABLE_PRIVATE_ENDPOINTS=true".
+If you are running a publishing stack the global configs require have "ENABLE_PRIVATE_ENDPOINTS=true" and "ENCRYPTION_DISABLED=true” if encryption is not setup.
 
-If you are running the publishing stack in terminals configs for [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor), [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) and [florence](https://github.com/ONSdigital/florence) should have "ENCRYPTION_DISABLED=true” and configs for [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api), [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) and [dp-search-api](https://github.com/ONSdigital/dp-search-api) should have "ENABLE_PRIVATE_ENDPOINTS=true".
+if you are running the publishing stack in terminals configs for [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor), [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) and [florence](https://github.com/ONSdigital/florence) should have "ENCRYPTION_DISABLED=true” if encryption is not setup and configs for [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api), [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) and [dp-search-api](https://github.com/ONSdigital/dp-search-api) require have "ENABLE_PRIVATE_ENDPOINTS=true".
 
 ### Licence
 
