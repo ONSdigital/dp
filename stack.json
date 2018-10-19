@@ -96,7 +96,7 @@
                         "BABBAGE_URL=http://localhost:20005",
                         "website_url=http://localhost:20005",
                         "ELASTIC_SEARCH_PORT=36010",
-                        "zebedee_root=/Users/crispinmerriman/Documents"
+                        "zebedee_root=/Users/sullid/ONS/zebedee-content"
                     ],
                     "ports": [ 8082 ],
                     "#healthchecks": [{
@@ -219,13 +219,11 @@
                   "args": [],
                   "pwd": "$GOPATH/src/github.com/ONSdigital/dp-conceptual-search",
                   "env": [
-                      "GA_SALT=YFd8mTkeqYlQL+MI5wh8epRCG5tlt0JR0MsLRBeuJgE=",
-                      "GA_SUBSTR_INDEX=5",
                       "COLOURED_LOGGING_ENABLED=true",
                       "PRETTY_LOGGING=true",
                       "PYTHONIOENCODING=UTF-8",
                       "BIND_PORT=$PORT",
-                      "ELASTIC_SEARCH_SERVER:http://localhost:36000"
+                      "ELASTIC_SEARCH_SERVER=http://localhost:36000"
                   ],
                   "ports": [ 25000 ]
                 }
