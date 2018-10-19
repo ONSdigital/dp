@@ -28,7 +28,10 @@
                     "pwd": "$GOPATH/src/github.com/ONSdigital/babbage",
                     "env": [
                         "ELASTIC_SEARCH_PORT=36010",
-                        "CONTENT_SERVICE_URL=http://localhost:8082"
+                        "CONTENT_SERVICE_URL=http://localhost:8082",
+                        "ENABLE_SEARCH_SERVICE=true",
+                        "EXTERNAL_SPELLCHECK_ENABLED=true",
+                        "EXTERNAL_SEARCH_PORT:25000"
                     ],
                     "ports": [ 20005 ],
                     "#healthchecks": [{
@@ -205,6 +208,26 @@
                         "reap_threshold": 10,
                         "frequency": "30s"
                     }]
+                },
+                {
+                  "id": "dp-conceptual-search",
+                  "name": "Conceptual Search",
+                  "service": true,
+                  "persist": false,
+                  "driver": "shell",
+                  "command": "make debug",
+                  "args": [],
+                  "pwd": "$GOPATH/src/github.com/ONSdigital/dp-conceptual-search",
+                  "env": [
+                      "GA_SALT=YFd8mTkeqYlQL+MI5wh8epRCG5tlt0JR0MsLRBeuJgE=",
+                      "GA_SUBSTR_INDEX=5",
+                      "COLOURED_LOGGING_ENABLED=true",
+                      "PRETTY_LOGGING=true",
+                      "PYTHONIOENCODING=UTF-8",
+                      "BIND_PORT=$PORT",
+                      "ELASTIC_SEARCH_SERVER:http://localhost:36000"
+                  ],
+                  "ports": [ 25000 ]
                 }
             ]
         },
