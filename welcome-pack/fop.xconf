@@ -1,0 +1,15 @@
+<fop version="1.0">
+    <renderers>
+        <renderer mime="application/pdf">
+            <fonts>
+                <!-- <directory>.</directory> -->
+                <font embed-url="./fonts/Hind-Regular.ttf" embedding-mode="subset">
+                    <font-triplet name="Hind" style="normal" weight="normal"/>
+                </font>
+                <font embed-url="./fonts/Hind-Bold.ttf" embedding-mode="subset">
+                    <font-triplet name="Hind" style="normal" weight="bold"/>
+                </font>
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>
