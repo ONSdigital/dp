@@ -2,7 +2,9 @@
 <xsl:stylesheet version="1.0"
       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
       xmlns:fo="http://www.w3.org/1999/XSL/Format">
-  <xsl:output method="xml" indent="yes"/>
+  
+    <xsl:output method="xml" indent="yes" />
+
   <xsl:template match="/">
     <fo:root>
       <fo:layout-master-set>
@@ -13,11 +15,14 @@
       </fo:layout-master-set>
       <fo:page-sequence master-reference="A4-portrait">
         <fo:flow flow-name="xsl-region-body">
-            <fo:block space-after="5em">
-                <fo:external-graphic src="images/ons-logo.svg" height="2em" />
+            <fo:block space-after="1.5em">
+                <fo:external-graphic src="images/ons-logo.png" width="59.53mm" height="11.63mm" content-width="59.53mm" content-height="11.63mm" />
+            </fo:block>
+            <fo:block font-family="Hind" font-size="12pt" space-after="1em">
+                Hi <xsl:value-of select="welcome-pack/name"/>!
             </fo:block>
             <fo:block font-family="Hind" font-size="12pt" space-after="1em" font-weight="bold">
-                Welcome to Digital Publishing!
+                <xsl:value-of select="welcome-pack/title"/>
             </fo:block>
             <xsl:for-each select="welcome-pack/sections/section">
                 <xsl:if test="title">
@@ -25,6 +30,11 @@
                         <xsl:value-of select="title"/>
                     </fo:block>
                 </xsl:if>
+                <xsl:for-each select="emoji">
+                    <fo:block font-family="Noto Emoji Regular" font-size="12pt" space-after="1em" font-weight="normal">
+                        <xsl:value-of select="."/>
+                    </fo:block>
+                </xsl:for-each>
                 <xsl:for-each select="p">
                     <fo:block font-family="Hind" font-size="12pt" space-after="1em" font-weight="normal">
                         <xsl:value-of select="."/>

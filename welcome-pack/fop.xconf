@@ -2,7 +2,6 @@
     <renderers>
         <renderer mime="application/pdf">
             <fonts>
-                <!-- <directory>.</directory> -->
                 <font embed-url="./fonts/Hind-Regular.ttf" embedding-mode="subset">
                     <font-triplet name="Hind" style="normal" weight="normal"/>
                 </font>
