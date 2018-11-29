@@ -34,7 +34,9 @@
 
     p Next you’ll spend some time with people outside your team. Digital Publishing has lots of interesting and varied roles and you’ll get to find out a bit more about what they do and how your role relates to theirs.
 
-    p I’ll introduce you to our publishing and editorial teams where you’ll observe the work they do and chat to some of them about their role. Most of them use the products you’ll be building, so think of this as your first bit of user research.
+    if role == "frontend-engineer"
+
+        p I’ll introduce you to our publishing and editorial teams where you’ll observe the work they do and chat to some of them about their role. Most of them use the products you’ll be building, so think of this as your first bit of user research.
 
     p You might need to have your photo taken at 3pm for your security pass. This should be on your first day but it doesn’t always happen that quickly. Don’t worry if not, you can keep using your temporary pass on your second day.
 
@@ -48,7 +50,9 @@
 
     p If anything from the morning stand-up interests you then feel free to chat to people afterwards to find out more. People are sometimes busy or have meetings to get to, so you might need to find another time to get together.
 
-    p After the morning stand-up you’ll get to talk to more people. I’ll introduce you to our product, delivery and interaction design teams. You’ll find out more about how the teams interact, more about their roles, and have the chance to discuss how you might work together.
+    if role == "frontend-engineer"
+
+        p After the morning stand-up you’ll get to talk to more people. I’ll introduce you to our product, delivery and interaction design teams. You’ll find out more about how the teams interact, more about their roles, and have the chance to discuss how you might work together.
 
     p Some of the team go to lunch together in the canteen, while others prefer to eat at their desk. It’s your choice how you spend your lunch, but you’re welcome to join us.
 
@@ -56,21 +60,23 @@
 
     h2 What to expect for the rest of your first week
 
-    p When you arrive on day three we’ll dive straight into the technical side of your role. 
+    if role == "frontend-engineer"
 
-    p Depending on when you start, this might be our planning and retrospective day. If it is, you’ll go to a show and tell and your team’s retrospective and planning sessions. That means we’ll get less of the other stuff done today.
+        p When you arrive on day three we’ll dive straight into the technical side of your role. 
 
-    p You’ll get a high level overview of the various frontend systems and how they fit together, and we’ll go into more detail on anything you’re interested in - whether that’s how things currently work, what we’re planning on doing, our roadmap for the next few months, or our longer term goals.
+        p Depending on when you start, this might be our planning and retrospective day. If it is, you’ll go to a show and tell and your team’s retrospective and planning sessions. That means we’ll get less of the other stuff done today.
 
-    p You’ll also find out a bit more about our development lifecycle - like how we use Git, how code reviews work, how to access our test environments, and how we build, test and deploy code to production.
+        p You’ll get a high level overview of the various frontend systems and how they fit together, and we’ll go into more detail on anything you’re interested in - whether that’s how things currently work, what we’re planning on doing, our roadmap for the next few months, or our longer term goals.
 
-    p After lunch we’ll get some of the boring development environment setup things done - setting up accounts and creating a GPG key for GitHub, just the essentials to let you start contributing.
+        p You’ll also find out a bit more about our development lifecycle - like how we use Git, how code reviews work, how to access our test environments, and how we build, test and deploy code to production.
 
-    p Once that’s done we’ll give you your first task. We’ll keep it simple and introduce you to a few components at a time. It’ll probably be a minor template or style change.
+        p After lunch we’ll get some of the boring development environment setup things done - setting up accounts and creating a GPG key for GitHub, just the essentials to let you start contributing.
 
-    p You can work at your own pace, so if you’d like to spend a bit of time exploring the codebase and understanding how it fits together you can, and we’ll make sure someone is around to help if you get stuck. We’ll also try to get your work reviewed, signed off, and deployed to production as quickly as possible - your first release <i class="emoji party-popper"></i>
+        p Once that’s done we’ll give you your first task. We’ll keep it simple and introduce you to a few components at a time. It’ll probably be a minor template or style change.
 
-    p The rest of the week will be similar. We’ll increase the complexity of your tasks and show you more of the frontend architecture. We’ll also send you lots of links to information we’ve got on GitHub, some of the tools you might need (like Kibana for logging, or Concourse for CI), and you’ll get plenty of time to explore them.
+        p You can work at your own pace, so if you’d like to spend a bit of time exploring the codebase and understanding how it fits together you can, and we’ll make sure someone is around to help if you get stuck. We’ll also try to get your work reviewed, signed off, and deployed to production as quickly as possible - your first release <i class="emoji party-popper"></i>
+
+        p The rest of the week will be similar. We’ll increase the complexity of your tasks and show you more of the frontend architecture. We’ll also send you lots of links to information we’ve got on GitHub, some of the tools you might need (like Kibana for logging, or Concourse for CI), and you’ll get plenty of time to explore them.
 
     p Some of the Digital Publishing team are based in Titchfield - we’ll try and find time for you to chat to some of them on Skype to find out more about their work.
 
@@ -80,15 +86,25 @@
 
     p We hope you’ll have settled in a bit and got to know most of your team by now.
 
-    p You’ll be in the routine of attending daily stand-ups, and you’ll have some tasks you can work through at your own pace. You can pair program with anyone on your team, or ask anyone on your team to pair with you on one of your tasks.
+    if role == "frontend-engineer"
+
+        p You’ll be in the routine of attending daily stand-ups, and you’ll have some tasks you can work through at your own pace. You can pair program with anyone on your team, or ask anyone on your team to pair with you on one of your tasks.
 
     p We’ll encourage you to find someone in Digital Publishing you haven’t met yet and go for a coffee with them.
 
-    p There might be a bit more boring admin work to do sometime this week, but we’ll try to keep it to a minimum. If you’re eligible, we’ll need to get you security cleared. This is just a form you need to fill out, and you’ve got plenty of time to do it, but it asks for lots of information you probably won’t have immediately available.
+    if role == "frontend-engineer"
+
+        p There might be a bit more boring admin work to do sometime this week, but we’ll try to keep it to a minimum. If you’re eligible, we’ll need to get you security cleared. This is just a form you need to fill out, and you’ve got plenty of time to do it, but it asks for lots of information you probably won’t have immediately available.
+    
+    else
+
+        p There might be a bit more boring admin work to do sometime this week, but we’ll try to keep it to a minimum.
 
     p We’ll also need to go through some of the ONS policies in a bit more detail - it shouldn’t take too long. We’ll talk about things like annual leave, sick leave, pay and security - it’ll be a lot to take in, but I’ll send you links which you can read later.
 
-    p We’ll make sure you’ve got tasks to work on until the start of the next sprint where you’ll join the rest of your team in planning your own work. Sometime in the first two weeks you’ll also get your first 10% time - this is your opportunity to work on anything that interests you.
+    if role == "frontend-engineer"
+
+        p We’ll make sure you’ve got tasks to work on until the start of the next sprint where you’ll join the rest of your team in planning your own work. Sometime in the first two weeks you’ll also get your first 10% time - this is your opportunity to work on anything that interests you.
 
     p We’ll also get together for another chat. We’ll explore how we’ll work together, your personal development goals, and how I can best support you in your new role. These one-to-ones will become a regular opportunity to review your progress, give each other feedback, and discuss your role, the work, the organisation or anything which might be bothering you.
 
