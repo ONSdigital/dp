@@ -1,7 +1,9 @@
-all:
-	fop -c fop.xconf -xml example.xml -xsl example.xsl -pdf output.pdf
+all: how-we-slack your-first-few-weeks
 
-relaxed:
-	relaxed how-we-slack.pug --build-once --locals '{"name": "Ian"}'
+how-we-slack:
+	relaxed how-we-slack.pug --build-once
 
-.PHONY: all
+your-first-few-weeks:
+	relaxed your-first-few-weeks.pug --build-once --locals '{"name": "Somebody"}'
+
+.PHONY: all how-we-slack your-first-few-weeks
