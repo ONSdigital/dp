@@ -1,7 +1,7 @@
 all: how-we-slack your-first-few-weeks useful-things-to-know
 
 how-we-slack:
-	relaxed how-we-slack.pug --build-once
+	relaxed how-we-slack.pug --build-once --locals '{"team": "development", "role": "frontend-engineer"}'
 
 your-first-few-weeks:
 	relaxed your-first-few-weeks.pug --build-once --locals '{"name": "Somebody", "team": "development", "role": "frontend-engineer"}'
