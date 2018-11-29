@@ -1,0 +1,57 @@
+.header
+    object.logo(data='./images/ons-logo.svg' type="image/svg+xml")
+
+.main-text
+    h1 How we Slack
+
+    p In Digital Publishing we use Slack a lot - general chat, discussing code and designs, handling incidents, organising pizza, posting gifs, and we have lots of integrations setup to help us do our jobs.
+    p You can join any channels you’re interested in - don’t wait to be invited - or you can create your own if you think we’re missing some!
+    p If you’re using direct messages or private channels, consider whether the discussion might be useful for others to observe, participate in, or refer back to in future - if it is, try to have the discussion in a public channel instead <i class="emoji hands-pressed-together"></i>
+
+    h2 When you join
+
+    p When you first join our Slack team you’ll automatically join some channels which are shared across Digital Publishing:
+    div <tt>#general</tt> - general chat about anything work related (and a daily calendar update)
+    div <tt>#random</tt> - general chat about everything else (and lots of gifs)
+    div <tt>#introductions</tt> - where people introduce themselves
+    div <tt>#suggestions</tt> - where people can post and discuss suggestions
+    div <tt>#weeknotes</tt> - weekly updates from each team about the work they’ve been doing
+
+    p The first things you should do are
+
+    .list
+        ul
+            li Setup your profile - you don’t need to add much info, just your name and role is enough. You can set a photo or other profile image if you’d like to.
+            li Introduce yourself in the <tt>#introductions</tt> channel <i class="emoji waving-hand-sign"></i> Tell us a bit about yourself, your background, and any bits of your personal life you’d like to share - hobbies, interests, pets, that sort of thing.
+                .spacer 
+                    div You can also look back through the <tt>#introductions</tt> channel to find out more about the people you work with!
+            li Post your first gif in the <tt>#random</tt> channel - giphy and tenor are good sources of gifs, make your first one a good one! You can also use the <tt>/giphy</tt> command, e.g. <tt>/giphy wave</tt>
+    
+    h1 As a frontend engineer
+    p As a frontend engineer, there's some other channels you'll want to join:
+
+    .list
+        ul
+            li The development team have a few of their own channels:  
+                div <tt>#development_general</tt> - general chat about development stuff
+                div <tt>#development_sprint</tt> - chat about the stuff we’re working on now
+                div <tt>#development_weeknotes</tt> - weekly summaries of the work we’ve done
+                div <tt>#dev_code_review</tt> - where we post PRs for review
+            li Some channels give us insight into our production environment:
+                div <tt>#publish-log</tt> - gives information about content which is being published
+                div <tt>#production-alarm</tt> - tells us when our service might be failing
+                div <tt>#production-warning</tt> - tells us when something might be wrong, or things we need to investigate before they become incidents
+                br
+                div There’s similar channels for each test environment, but you probably don’t need to join them all!
+            li Some channels we use for communication in specific circumstances:
+                div <tt>#incidents</tt> - we use this to discuss ongoing incidents, it helps us keep track of progress and avoids cluttering up the alarm and warning channels
+                div <tt>#support</tt> - used by the publishing, editorial and data visualisation teams to let us know when something isn’t working
+                div <tt>#retro</tt> - summaries of our team retrospectives
+                div <tt>#socials</tt> - organising social events, but that often ends up in <tt>#general</tt> since nobody remembers this channel exists
+            li And a couple of others worth knowing about:
+                div <tt>#ci-failures</tt> - status updates from Concourse on failed builds
+                div <tt>#analytics</tt> - updates from our performance analyst on user behaviour and trends
+                div <tt>#bulletins</tt> - the main channel used by the team working on redesigning our bulletin pages, which we’ll be working on sometime next year
+
+style
+    include:scss default.scss

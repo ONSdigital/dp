@@ -1,0 +1,56 @@
+@import 'https://fonts.googleapis.com/css?family=Hind';
+@import 'https://afeld.github.io/emoji-css/emoji.css';
+
+@page {
+    size: 210mm 297mm;
+    margin: 0.5in 0.2in;
+}
+
+html {
+    font-family: 'Hind';
+}
+
+p, div, tt, h1, h2 {
+    font-size: 14pt;
+}
+
+.header {
+    .logo {
+        height: 2em;
+        width: auto;
+    }
+    margin-bottom: 1em;
+}
+
+p, tt {
+    font-weight: 400;
+}
+tt {
+    font-family: 'Courier New';
+}
+
+.list li {
+    margin-bottom: 0.7em;
+}
+.list li div:first-child {
+    margin-top: 0.7em;
+}
+.list li div {
+    line-height: 1.4em;
+}
+.spacer div {
+    margin-top: 0.2em;
+}
+
+.emoji {
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+.hands-pressed-together {
+    background-image: url('images/emoji/person-with-folded-hands_1f64f.png');
+}
+.waving-hand-sign {
+    background-image: url('images/emoji/waving-hand-sign_1f44b.png');
+}
