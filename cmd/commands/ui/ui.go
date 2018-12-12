@@ -6,10 +6,10 @@ import (
 
 	"github.com/ONSdigital/dp/cmd/config"
 	"github.com/ONSdigital/dp/cmd/launch"
-	"gopkg.in/urfave/cli.v1"
+	cli "gopkg.in/urfave/cli.v1"
 )
 
-// Command returns an instance of the ssh command
+// Command returns an instance of the ui command
 func Command(cfg config.Config) cli.Command {
 	cmd := cli.Command{
 		Name:  "ui",

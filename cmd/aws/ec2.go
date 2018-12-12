@@ -1,12 +1,37 @@
 package aws
 
 import (
+	"errors"
+	"fmt"
 	"strings"
 
+	cli "gopkg.in/urfave/cli.v1"
+
+	"github.com/ONSdigital/dp/cmd/config"
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 )
+
+func portHash(username string) int64 {
+	var hash int64
+	for s := range username {
+		hash += int64(s)
+	}
+	// return numbers that (in all expected cases) are between 10000 and 12000
+	port := (hash * 20) + 10000
+
+	// extremely long username strings will exceed allowable port ranges
+	if port > 32766 {
+		panic("Are you sure DP_SSH_USER is correct?")
+	}
+
+	return port
+}
+
+func getEC2Service() *ec2.EC2 {
+	// Create new EC2 client
+	return ec2.New(getAWSSession())
+}
 
 var resultCache = make(map[string][]EC2Result)
 
@@ -16,6 +41,359 @@ type EC2Result struct {
 	Environment   string
 	IPAddress     string
 	AnsibleGroups []string
+}
+
+func GetBastionSGForEnvironment(environment string) (string, error) {
+	ec2Svc := getEC2Service()
+
+	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
+		Filters: []*ec2.Filter{
+			{
+				Name:   aws.String("tag:Environment"),
+				Values: []*string{aws.String(environment)},
+			},
+			{
+				Name:   aws.String("tag:Name"),
+				Values: []*string{aws.String(environment + " - bastion")},
+			},
+		},
+	})
+	if err != nil {
+		return "", err
+	}
+
+	if len(res.SecurityGroups) < 1 {
+		return "", fmt.Errorf("no security groups matching environment: %s", environment)
+	}
+	if len(res.SecurityGroups) > 1 {
+		return "", fmt.Errorf("too many security groups matching environment: %s", environment)
+	}
+	if res.SecurityGroups[0].GroupId == nil {
+		return "", fmt.Errorf("no groupId found for security group: %s", environment)
+	}
+
+	return *res.SecurityGroups[0].GroupId, nil
+}
+
+func GetConcourseWebSG() (string, error) {
+	ec2Svc := getEC2Service()
+
+	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
+		Filters: []*ec2.Filter{
+			{
+				Name:   aws.String("tag:Name"),
+				Values: []*string{aws.String("concourse-ci-web")},
+			},
+		},
+	})
+	if err != nil {
+		return "", err
+	}
+
+	if len(res.SecurityGroups) < 1 {
+		return "", fmt.Errorf("no security groups for concourse")
+	}
+	if len(res.SecurityGroups) > 1 {
+		return "", fmt.Errorf("too many security groups for concourse")
+	}
+	if res.SecurityGroups[0].GroupId == nil {
+		return "", fmt.Errorf("no groupId found for security group")
+	}
+
+	return *res.SecurityGroups[0].GroupId, nil
+}
+
+func GetManagementACLForEnvironment(environment string) (string, error) {
+	ec2Svc := getEC2Service()
+
+	res, err := ec2Svc.DescribeNetworkAcls(&ec2.DescribeNetworkAclsInput{
+		Filters: []*ec2.Filter{
+			{
+				Name:   aws.String("tag:Environment"),
+				Values: []*string{aws.String(environment)},
+			},
+			{
+				Name:   aws.String("tag:Name"),
+				Values: []*string{aws.String(environment + " - management")},
+			},
+		},
+	})
+	if err != nil {
+		return "", err
+	}
+
+	if len(res.NetworkAcls) < 1 {
+		return "", fmt.Errorf("no network acls matching environment: %s", environment)
+	}
+	if len(res.NetworkAcls) > 1 {
+		return "", fmt.Errorf("too many network acls matching environment: %s", environment)
+	}
+	if res.NetworkAcls[0].NetworkAclId == nil {
+		return "", fmt.Errorf("no networkAclId found for network acl: %s", environment)
+	}
+
+	return *res.NetworkAcls[0].NetworkAclId, nil
+}
+
+func AllowIPForConcourse(cfg config.Config) error {
+	ec2Svc := getEC2Service()
+
+	sg, err := GetConcourseWebSG()
+	if err != nil {
+		return err
+	}
+
+	myIP, err := config.GetMyIP()
+	if err != nil {
+		return err
+	}
+
+	var errs []error
+
+	_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
+		GroupId: aws.String(sg),
+		IpPermissions: []*ec2.IpPermission{
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(443)),
+				ToPort:     aws.Int64(int64(443)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+		},
+	})
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error adding rules to sg: %s", err))
+	}
+
+	if len(errs) > 0 {
+		return cli.NewMultiError(errs...)
+	}
+
+	return nil
+}
+
+func DenyIPForConcourse(cfg config.Config) error {
+	ec2Svc := getEC2Service()
+
+	sg, err := GetConcourseWebSG()
+	if err != nil {
+		return err
+	}
+
+	myIP, err := config.GetMyIP()
+	if err != nil {
+		return err
+	}
+
+	var errs []error
+
+	_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
+		GroupId: aws.String(sg),
+		IpPermissions: []*ec2.IpPermission{
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(443)),
+				ToPort:     aws.Int64(int64(443)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+		},
+	})
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error removing rules from sg: %s", err))
+	}
+
+	if len(errs) > 0 {
+		return cli.NewMultiError(errs...)
+	}
+
+	return nil
+}
+
+func DenyIPForEnvironment(cfg config.Config, environment string) error {
+	ec2Svc := getEC2Service()
+
+	if len(cfg.SSHUser) == 0 {
+		return errors.New("please set DP_SSH_USER to allow remote access")
+	}
+	ruleBase := portHash(cfg.SSHUser)
+
+	sg, err := GetBastionSGForEnvironment(environment)
+	if err != nil {
+		return err
+	}
+
+	acl, err := GetManagementACLForEnvironment(environment)
+	if err != nil {
+		return err
+	}
+
+	myIP, err := config.GetMyIP()
+	if err != nil {
+		return err
+	}
+
+	var errs []error
+
+	_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
+		GroupId: aws.String(sg),
+		IpPermissions: []*ec2.IpPermission{
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(22)),
+				ToPort:     aws.Int64(int64(22)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(443)),
+				ToPort:     aws.Int64(int64(443)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+		},
+	})
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error removing rules from sg: %s", err))
+	}
+
+	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+		Egress:       aws.Bool(false),
+		NetworkAclId: aws.String(acl),
+		RuleNumber:   aws.Int64(ruleBase), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+	}
+
+	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+		Egress:       aws.Bool(false),
+		NetworkAclId: aws.String(acl),
+		RuleNumber:   aws.Int64(ruleBase + 1), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+	}
+
+	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+		Egress:       aws.Bool(true),
+		NetworkAclId: aws.String(acl),
+		RuleNumber:   aws.Int64(ruleBase + 2), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+	}
+
+	if len(errs) > 0 {
+		return cli.NewMultiError(errs...)
+	}
+
+	return nil
+}
+
+func AllowIPForEnvironment(cfg config.Config, environment string) error {
+	ec2Svc := getEC2Service()
+
+	if len(cfg.SSHUser) == 0 {
+		return errors.New("please set DP_SSH_USER to allow remote access")
+	}
+	ruleBase := portHash(cfg.SSHUser)
+
+	sg, err := GetBastionSGForEnvironment(environment)
+	if err != nil {
+		return err
+	}
+
+	acl, err := GetManagementACLForEnvironment(environment)
+	if err != nil {
+		return err
+	}
+
+	myIP, err := config.GetMyIP()
+	if err != nil {
+		return err
+	}
+
+	var errs []error
+
+	_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
+		GroupId: aws.String(sg),
+		IpPermissions: []*ec2.IpPermission{
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(22)),
+				ToPort:     aws.Int64(int64(22)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+			{
+				IpProtocol: aws.String("tcp"),
+				FromPort:   aws.Int64(int64(443)),
+				ToPort:     aws.Int64(int64(443)),
+				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+			},
+		},
+	})
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error adding rules to sg: %s", err))
+	}
+
+	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+		CidrBlock:    aws.String(myIP + "/32"),
+		Egress:       aws.Bool(false),
+		Protocol:     aws.String("6"),
+		RuleAction:   aws.String("allow"),
+		NetworkAclId: aws.String(acl),
+		PortRange: &ec2.PortRange{
+			From: aws.Int64(int64(22)),
+			To:   aws.Int64(int64(22)),
+		},
+		RuleNumber: aws.Int64(int64(ruleBase)), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+	}
+
+	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+		CidrBlock:    aws.String(myIP + "/32"),
+		Egress:       aws.Bool(false),
+		Protocol:     aws.String("6"),
+		RuleAction:   aws.String("allow"),
+		NetworkAclId: aws.String(acl),
+		PortRange: &ec2.PortRange{
+			From: aws.Int64(int64(443)),
+			To:   aws.Int64(int64(443)),
+		},
+		RuleNumber: aws.Int64(ruleBase + 1), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+	}
+
+	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+		CidrBlock:    aws.String(myIP + "/32"),
+		Egress:       aws.Bool(true),
+		Protocol:     aws.String("6"),
+		RuleAction:   aws.String("allow"),
+		NetworkAclId: aws.String(acl),
+		PortRange: &ec2.PortRange{
+			From: aws.Int64(int64(32768)),
+			To:   aws.Int64(int64(61000)),
+		},
+		RuleNumber: aws.Int64(ruleBase + 2), // 1 to 32766
+	})
+
+	if err != nil {
+		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+	}
+
+	if len(errs) > 0 {
+		return cli.NewMultiError(errs...)
+	}
+
+	return nil
 }
 
 func ListEC2ByAnsibleGroup(environment string, ansibleGroup string) ([]EC2Result, error) {
@@ -44,12 +422,7 @@ func ListEC2(environment string) ([]EC2Result, error) {
 	}
 	resultCache[environment] = make([]EC2Result, 0)
 
-	sess := session.Must(session.NewSessionWithOptions(session.Options{
-		SharedConfigState: session.SharedConfigEnable,
-	}))
-
-	// Create new EC2 client
-	ec2Svc := ec2.New(sess)
+	ec2Svc := getEC2Service()
 
 	var result *ec2.DescribeInstancesOutput
 	var err error

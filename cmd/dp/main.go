@@ -4,10 +4,11 @@ import (
 	"log"
 	"os"
 
+	"github.com/ONSdigital/dp/cmd/commands/remote"
 	"github.com/ONSdigital/dp/cmd/commands/ssh"
 	"github.com/ONSdigital/dp/cmd/commands/ui"
 	"github.com/ONSdigital/dp/cmd/config"
-	"gopkg.in/urfave/cli.v1"
+	cli "gopkg.in/urfave/cli.v1"
 )
 
 func main() {
@@ -21,10 +22,11 @@ func main() {
 	app.Version = "0.1.0"
 	app.Usage = "digital publishing helper command"
 
-	app.Commands = []cli.Command{
-		ssh.Command(cfg),
+	sshCommands := ssh.Command(cfg)
+	app.Commands = append(sshCommands,
 		ui.Command(cfg),
-	}
+		remote.Command(cfg),
+	)
 
 	err = app.Run(os.Args)
 	if err != nil {

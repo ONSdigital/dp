@@ -5,17 +5,11 @@ import (
 	"go/build"
 	"io"
 	"io/ioutil"
-	"net/http"
 	"os"
 	"strings"
-	"time"
 
 	"gopkg.in/yaml.v2"
 )
-
-var httpClient = &http.Client{
-	Timeout: 5 * time.Second,
-}
 
 // Config is the application config
 type Config struct {
