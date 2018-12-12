@@ -1,12 +1,21 @@
 package config
 
 import (
+	"fmt"
 	"go/build"
+	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
+	"strings"
+	"time"
 
 	"gopkg.in/yaml.v2"
 )
+
+var httpClient = &http.Client{
+	Timeout: 5 * time.Second,
+}
 
 // Config is the application config
 type Config struct {
@@ -46,16 +55,44 @@ func Load() (Config, error) {
 		path = "config.yml"
 	}
 
-	if _, err := os.Stat(path); err == nil {
-		b, err := ioutil.ReadFile(path)
+	var b []byte
+	var err error
+
+	if strings.HasPrefix(path, "https://") {
+		res, err := httpClient.Get(path)
 		if err != nil {
 			return config, err
 		}
 
-		err = yaml.Unmarshal(b, &config)
+		defer func() {
+			io.Copy(ioutil.Discard, res.Body)
+		}()
+
+		if res.StatusCode >= 400 {
+			return config, fmt.Errorf("unexpected status code fetching config: %d", res.StatusCode)
+		}
+
+		b, err = ioutil.ReadAll(res.Body)
 		if err != nil {
 			return config, err
 		}
+	} else {
+		if _, err := os.Stat(path); err != nil {
+			if path == "config.yml" {
+				return config, nil
+			}
+			return config, err
+		}
+
+		b, err = ioutil.ReadFile(path)
+		if err != nil {
+			return config, err
+		}
+	}
+
+	err = yaml.Unmarshal(b, &config)
+	if err != nil {
+		return config, err
 	}
 
 	return config, nil
