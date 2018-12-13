@@ -4,6 +4,7 @@ import (
 	"log"
 	"os"
 
+	configCmd "github.com/ONSdigital/dp/cmd/commands/config"
 	"github.com/ONSdigital/dp/cmd/commands/remote"
 	"github.com/ONSdigital/dp/cmd/commands/ssh"
 	"github.com/ONSdigital/dp/cmd/commands/ui"
@@ -26,6 +27,7 @@ func main() {
 	app.Commands = append(sshCommands,
 		ui.Command(cfg),
 		remote.Command(cfg),
+		configCmd.Command(cfg),
 	)
 
 	err = app.Run(os.Args)
