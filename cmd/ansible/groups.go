@@ -13,7 +13,7 @@ import (
 
 // GetGroupsForEnvironment returns a list of ansible groups for the specified environment
 func GetGroupsForEnvironment(cfg config.Config, environment string) ([]string, error) {
-	hostsPath := filepath.Join(cfg.GoPath, "src", cfg.SetupRepo, "ansible/inventories", environment, "hosts")
+	hostsPath := filepath.Join(cfg.GetDPSetupPath(), "ansible/inventories", environment, "hosts")
 
 	b, err := ioutil.ReadFile(hostsPath)
 	if err != nil {

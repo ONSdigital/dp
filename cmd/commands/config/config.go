@@ -23,7 +23,7 @@ func Command(cfg config.Config) cli.Command {
 			Usage: "open " + env.Name,
 			Action: func(c *cli.Context) error {
 				fmt.Println("decrypting vault config for " + env.Name)
-				pwd := filepath.Join(cfg.GoPath, "src", cfg.SetupRepo, "ansible")
+				pwd := filepath.Join(cfg.GetDPSetupPath(), "ansible")
 
 				return launch.Command(pwd, "../scripts/decrypt_inline_vault", fmt.Sprintf("%s@.%s.pass", env.Name, env.Name), fmt.Sprintf("inventories/%s/group_vars/all", env.Name))
 			},

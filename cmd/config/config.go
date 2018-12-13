@@ -6,6 +6,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"strings"
 
 	yaml "gopkg.in/yaml.v2"
@@ -32,6 +33,16 @@ type App struct {
 // Environment represents an environment
 type Environment struct {
 	Name string `yaml:"name"`
+}
+
+// GetDPSetupPath resolves the location of the dp-setup repo
+func (c Config) GetDPSetupPath() string {
+	// If it's an absolute path, just return it
+	if len(c.SetupRepo) > 0 && c.SetupRepo[0] == '/' {
+		return c.SetupRepo
+	}
+	// Otherwise assume it's in GOPATH/src
+	return filepath.Join(c.GoPath, "src", c.SetupRepo)
 }
 
 // Load loads the config
