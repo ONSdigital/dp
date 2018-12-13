@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	"gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v2"
 )
 
 // Config is the application config
@@ -16,7 +16,8 @@ type Config struct {
 	CommonApps      []App         `yaml:"common_apps"`
 	EnvironmentApps []App         `yaml:"environment_apps"`
 	Environments    []Environment `yaml:"environments"`
-	SetupRepo       string        `yaml:"setupRepo"`
+
+	SetupRepo string `yaml:"setupRepo"`
 
 	GoPath  string `yaml:"-"`
 	SSHUser string `yaml:"-"`
@@ -48,6 +49,14 @@ func Load() (Config, error) {
 	if len(path) == 0 {
 		path = "config.yml"
 	}
+
+	defer func() {
+		// Do this last so it overrides anything loaded in the config file
+		setupRepo := os.Getenv("DP_SETUP")
+		if len(setupRepo) > 0 {
+			config.SetupRepo = setupRepo
+		}
+	}()
 
 	var b []byte
 	var err error

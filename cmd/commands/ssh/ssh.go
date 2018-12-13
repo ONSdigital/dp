@@ -84,6 +84,7 @@ func Command(cfg config.Config) []cli.Command {
 					inst = r[0]
 				}
 				fmt.Printf("[%d] %s: %s %s\n", rIndex, inst.Name, inst.IPAddress, inst.AnsibleGroups)
+
 				// if scp {
 				// 	return launch.SCP(cfg, cfg.SSHUser, inst.IPAddress, c.Args().Tail()...)
 				// } else {
