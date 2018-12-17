@@ -1,0 +1,120 @@
+.header
+    object.logo(data='../welcome-pack/images/ons-logo.svg' type="image/svg+xml")
+
+.main-text
+    h1 #{title} - Digital Publishing
+
+    p You’ll be part of an in-house development team in the Digital Publishing division at 
+        |  the Office for National Statistics. You’ll ensure high quality code is delivered
+        |  to meet user needs.
+        if role == "backend-engineer"
+            |  You’ll work with our open data team and other backend engineers
+            |  to build robust data processing pipelines and APIs for internal and external use.
+        if role == "frontend-engineer"
+            |  You’ll work with user researchers and UX designers to build robust and accessible
+            |  user interfaces.
+
+    p You’ll thrive using agile methods and enjoy working openly, collaboratively and
+        |  as part of a multidisciplinary team of front-end engineers, back-end engineers,
+        |  site reliability engineers, interaction designers, user researchers, service manager,
+        |  product owner and performance analyst.
+
+    p As a member of the Digital Publishing team, you’ll share responsibility for:
+
+    ul
+        li The ONS website – <a href="https://www.ons.gov.uk">https://www.ons.gov.uk</a>
+        li Our developer site – <a href="https://developer.ons.gov.uk">https://developer.ons.gov.uk</a>
+        li Our performance dashboard – <a href="https://performance.ons.gov.uk">https://performance.ons.gov.uk</a>
+        li Florence (our CMS) – <a href="https://github.com/ONSdigital/florence">https://github.com/ONSdigital/florence</a>
+
+    if role == "backend-engineer"
+        p Our current back-end technology stack includes Go, Java, Python, Apache Kafka, MongoDB
+            |  and Neo4j. You’ll also contribute to some front-end components built with Go.
+    if role == "frontend-engineer"
+        p Our current front-end technology stack includes HTML5, CSS3, Javascript and ReactJS.
+            |  You’ll also contribute to some front-end components built with Go.
+
+    h2 Main responsibilities
+
+    ul
+        if role == "backend-engineer"
+            li build APIs for internal and external users to access, filter and download
+                |  statistical data and metadata
+            li build Kafka powered data import and export pipelines to import, store, publish
+                |  and export statistical datasets
+        if role == "frontend-engineer"
+            li build accessible interfaces to web services to serve a variety of citizen and
+                |  government needs, taking responsibility for the quality of code you produce
+        li build automated tests to support our continuous integration environment
+        li support the day to day operation of our live services, through investigating and
+            |  fixing live service incidents, performance improvements and ongoing maintenance
+        li share knowledge of tools and techniques with your team (both developers and
+        if role == "backend-engineer"
+            |  non-developers) and with the wider backend community
+        if role == "frontend-engineer"
+            |  non-developers) and with the wider frontend community
+
+    h2 Things you might be working on in a typical day
+
+    ul
+        if role == "frontend-engineer"
+            li investigate, prototype and develop improvements to our website, content
+                |  management system, developer site and performance dashboard
+            li contribute to the development of frontend web services
+        if role == "backend-engineer"
+            li design and build APIs for internal and external users
+            li extend our data import and export services to support new datasets
+        li participate in technical planning, design and code reviews
+
+    h2 What we’ll do for you
+
+    ul
+        li provide you with training, mentoring and support from an experienced 
+            |  multidisciplinary team
+        li give you the freedom to work with modern and relevant technologies including
+            if role == "backend-engineer"
+                |  Go, Java, MongoDB, Neo4j and Amazon Web Services 
+            if role == "frontend-engineer"
+                |  React, ES6, Go and Amazon Web Services
+            |  with a MacBook Pro development environment
+
+    h2 Skills and experience
+
+    p These are the skills and experiences that might be suitable for this role. An interest in
+        |  solving the problems we face is much more important than having experience in everything
+        |  listed.
+
+    ul
+        if role == "frontend-engineer"
+            li experience in front-end development, with detailed knowledge of HTML, CSS and
+                |  Javascript, including cross-browser and cross-platform support
+            li experience of building and maintaining complex client-side Javascript applications
+            li experience of building products which meet the GDS digital service standards
+            li understanding of software design principles, including progressive enhancement
+            li experience in building robust and accessible interfaces that work for as many
+                |  users as possible, regardless of their needs
+        if role == "backend-engineer"
+            li experience in back-end development, ideally within a distributed systems environment
+                |  hosted on public cloud infrastructure
+            li experience of Go, Java or Python
+            li experience of developing in microservice and event driven architectures
+            li understanding of software design principles and techniques for building secure, 
+                |  maintainable and resilient services
+            li experience of search technology, e.g. Elasticsearch
+            li awareness or experience of machine learning tools, libraries, algorithms and natural
+                |  language processing
+        li ability to quickly research and learn new programming tools and techniques
+        li a systematic approach to solving problems, and using testing to validate solutions
+        li understanding of agile environments and version control
+        if role == "frontend-engineer"
+            li an understanding of front-end web security including standards compliance, OWASP
+                |  and common attack vectors
+        if role == "backend-engineer"
+            li an understanding of data and web security including encryption, standards compliance,
+                |  OWASP and common attack vectors
+        li an awareness of technologies used for web applications, e.g. HTTPS, JSON and CDNs,
+            |  and use of Unix-like operating systems, e.g. Linux and/or Mac OS
+
+
+style
+    include:scss ../welcome-pack/default.scss
