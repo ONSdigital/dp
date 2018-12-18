@@ -13,6 +13,9 @@
         if role == "frontend-engineer"
             |  You’ll work with user researchers and UX designers to build robust and accessible
             |  user interfaces.
+        if role == "site-reliability-engineer"
+            |  You’ll work with our product teams to deliver infrastructure, build and deployment
+            |  pipelines.
 
     p You’ll thrive using agile methods and enjoy working openly, collaboratively and
         |  as part of a multidisciplinary team of front-end engineers, back-end engineers,
@@ -33,6 +36,11 @@
     if role == "frontend-engineer"
         p Our current front-end technology stack includes HTML5, CSS3, Javascript and ReactJS.
             |  You’ll also contribute to some front-end components built with Go.
+    if role == "site-reliability-engineer"
+        p We’ve just launched a new container platform built with AWS, Docker and the Hashicorp
+            |  stack (including Consul, Nomad and Vault). We also work with tools including
+            |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
+            |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
 
     h2 Main responsibilities
 
@@ -45,6 +53,13 @@
         if role == "frontend-engineer"
             li build accessible interfaces to web services to serve a variety of citizen and
                 |  government needs, taking responsibility for the quality of code you produce
+        if role == "site-reliability-engineer"
+            li build secure, resilient and scalable infrastructure to support the needs of the
+                |  ONS digital publishing platform
+            li contribute to the design, development, deployment and support of the ONS digital
+                |  publishing platform, taking responsibility for the quality of code you produce
+            li provide support, documentation and tooling to enable the product team to share
+                |  responsibility for ops work
         li build automated tests to support our continuous integration environment
         li support the day to day operation of our live services, through investigating and
             |  fixing live service incidents, performance improvements and ongoing maintenance
@@ -53,6 +68,8 @@
             |  non-developers) and with the wider backend community
         if role == "frontend-engineer"
             |  non-developers) and with the wider frontend community
+        if role == "site-reliability-engineer"
+            |  non-developers) and with the wider ops community
 
     h2 Things you might be working on in a typical day
 
@@ -64,6 +81,13 @@
         if role == "backend-engineer"
             li design and build APIs for internal and external users
             li extend our data import and export services to support new datasets
+        if role == "site-reliability-engineer"
+            li iterate on the design and implementation of our container hosting platform
+                |  and continuous integration and deployment pipelines
+            li improving the resilience, performance and observability of the platform and
+                |  services which form the ONS website
+            li contribute to the development and live support of microservices and data
+                |  processing pipelines
         li participate in technical planning, design and code reviews
 
     h2 What we’ll do for you
@@ -76,6 +100,8 @@
                 |  Go, Java, MongoDB, Neo4j and Amazon Web Services 
             if role == "frontend-engineer"
                 |  React, ES6, Go and Amazon Web Services
+            if role == "site-reliability-engineer"
+                |  Amazon Web Services
             |  with a MacBook Pro development environment
 
     h2 Skills and experience
@@ -103,6 +129,16 @@
             li experience of search technology, e.g. Elasticsearch
             li awareness or experience of machine learning tools, libraries, algorithms and natural
                 |  language processing
+        if role == "site-reliability-engineer"
+            li experience in infrastructure and operations with detailed knowledge of AWS, Terraform
+                |  and Ansible, and an understanding of web security, and microservice and platform
+                |  observability and alerting
+            li understanding of software design principles, including event driven architecture,
+                |  microservices and 12-factor apps
+            li experience of back-end development tools and technologies including Go and Java
+            li experience of data technologies including PostgreSQL, MongoDB, Redis and Kafka
+            li experience of build and deployment tools including Jenkins and Concourse CI using
+                |  continuous integration and deployment techniques
         li experience of mentoring and supporting junior engineers
         li ability to quickly research and learn new programming tools and techniques
         li a systematic approach to solving problems, and using testing to validate solutions
@@ -110,7 +146,7 @@
         if role == "frontend-engineer"
             li an understanding of front-end web security including standards compliance, OWASP
                 |  and common attack vectors
-        if role == "backend-engineer"
+        if role == "backend-engineer" || role == "site-reliability-engineer"
             li an understanding of data and web security including encryption, standards compliance,
                 |  OWASP and common attack vectors
         li an awareness of technologies used for web applications, e.g. HTTPS, JSON and CDNs,
