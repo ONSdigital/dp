@@ -16,6 +16,9 @@
         if role == "site-reliability-engineer"
             |  You’ll work with our product teams to deliver infrastructure, build and deployment
             |  pipelines.
+        if role == "full-stack-engineer"
+            |  You'll work with our product teams to deliver web services, backend processing
+            |  systems and infrastructure/platform tooling.
 
     p You’ll thrive using agile methods and enjoy working openly, collaboratively and
         |  as part of a multidisciplinary team of front-end engineers, back-end engineers,
@@ -41,6 +44,11 @@
             |  stack (including Consul, Nomad and Vault). We also work with tools including
             |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
             |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
+    if role == "full-stack-engineer"
+        p We're looking for someone who can work across disciplines (frontend, backend and
+            |  site reliability engineering), who can help to improve the way we work, the
+            |  tooling we use, and help multiple product teams work towards similar technical
+            |  standards.
 
     h2 Main responsibilities
 
@@ -60,6 +68,13 @@
                 |  publishing platform, taking responsibility for the quality of code you produce
             li provide support, documentation and tooling to enable the product team to share
                 |  responsibility for ops work
+        if role == "full-stack-engineer"
+            li build web services, APIs, backend processing systems, internal tooling and
+                |  infrastructure to support the needs of our product teams
+            li work with the software engineering community to share our experience and learn
+                |  from other teams, departments and the wider industry
+            li contribute to the design, development, deployment and support of the ONS digital
+                |  publishing platform, taking responsibility for the quality of code you produce
         li build automated tests to support our continuous integration environment
         li support the day to day operation of our live services, through investigating and
             |  fixing live service incidents, performance improvements and ongoing maintenance
@@ -70,6 +85,8 @@
             |  non-developers) and with the wider frontend community
         if role == "site-reliability-engineer"
             |  non-developers) and with the wider ops community
+        if role == "full-stack-engineer"
+            |  non-developers) and with the wider engineering and technology community
 
     h2 Things you might be working on in a typical day
 
@@ -88,6 +105,12 @@
                 |  services which form the ONS website
             li contribute to the development and live support of microservices and data
                 |  processing pipelines
+        if role == "full-stack-engineer"
+            li contribute to the development of frontend web services
+            li design and build APIs for internal and external users
+            li extend our data import and export services to support new datasets
+            li iterate on the design and implementation of our container hosting platform
+                |  and continuous integration and deployment pipelines
         li participate in technical planning, design and code reviews
 
     h2 What we’ll do for you
@@ -102,6 +125,8 @@
                 |  React, ES6, Go and Amazon Web Services
             if role == "site-reliability-engineer"
                 |  Amazon Web Services
+            if role == "full-stack-engineer"
+                |  Go, Java, React, ES6 and Amazon Web Services
             |  with a MacBook Pro development environment
 
     h2 Skills and experience
@@ -137,8 +162,17 @@
                 |  microservices and 12-factor apps
             li experience of back-end development tools and technologies including Go and Java
             li experience of data technologies including PostgreSQL, MongoDB, Redis and Kafka
-            li experience of build and deployment tools including Jenkins and Concourse CI using
+            li experience of build and deployment tools including Concourse CI using
                 |  continuous integration and deployment techniques
+        if role == "full-stack-engineer"
+            li experience in front-end development, with a solid understanding of HTML, CSS and
+                |  Javascript, including cross-browser and cross-platform support
+            li experience in back-end development, ideally within a distributed systems environment
+            li understanding of software design principles, including event driven architecture,
+                |  microservices and 12-factor apps
+            li experience of build and deployment tools including Concourse CI, and using
+                |  continuous integration and deployment techniques
+            li experience of data technologies including PostgreSQL, MongoDB, Redis and Kafka
         li experience of mentoring and supporting junior engineers
         li ability to quickly research and learn new programming tools and techniques
         li a systematic approach to solving problems, and using testing to validate solutions
@@ -146,12 +180,11 @@
         if role == "frontend-engineer"
             li an understanding of front-end web security including standards compliance, OWASP
                 |  and common attack vectors
-        if role == "backend-engineer" || role == "site-reliability-engineer"
+        if role == "backend-engineer" || role == "site-reliability-engineer" || role == "full-stack-engineer"
             li an understanding of data and web security including encryption, standards compliance,
                 |  OWASP and common attack vectors
         li an awareness of technologies used for web applications, e.g. HTTPS, JSON and CDNs,
             |  and use of Unix-like operating systems, e.g. Linux and/or Mac OS
-
 
 style
     include:scss ../assets/default.scss
