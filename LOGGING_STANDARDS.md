@@ -1,16 +1,72 @@
-## Logging standards
+Logging standards
+=================
 
-**Does it add value?**
-All apps should log important events, especially failures, and any information
-which adds value is worth including in the event.
+## Libraries
 
-### Formatting
+We have libraries for Go, Java and Javascript which match the logging standards defined below.
 
-- JSON formatted
+* Go - [github.com/ONSdigital/go-ns/log](https://github.com/ONSdigital/go-ns/tree/master/log)
+* Java - [com.github.onsdigital.logging](https://github.com/ONSdigital/dp-logging)
+* Javascript - [app/utilities/log.js](https://github.com/ONSdigital/florence/blob/develop/src/app/utilities/log.js)
+
+## What we should be logging
+
+All services should log important events, especially failures, and any information which adds value
+is worth including in the event. If you're unsure, log more rather than less.
+
+Always consider the performance impact of logging:
+
+* loops
+* log-specific conditionals ("should I log this")
+* JSON serialisation
+* deeply nested data structures
+
+## Output formatting
+
+- [JSON Lines](http://jsonlines.org/) - one JSON object per line
+- Use UTF8
 - Use consistently named fields
-- Keys should be snake_cased and all lowercase
+- Field names should be snake_cased and all lowercase
 
-### Important fields
+## Log data
+
+We have defined the data structures we use for logging, including field names and types.
+
+This is important to allow Elasticsearch to properly index the data and make it searchable.
+
+### Common fields
+
+| Field name | Type        | Example                 | Description
+| ---------- | ----------- | ----------------------- | -----------
+| created    | Date string | "2019-01-22T08:39:15Z"  | ISO8601 date string
+| namespace  | String      | "dp-frontend-router"    | Service name or other identifier
+| trace_id   | String      |                         | Trace ID from OpenCensus
+| span_id    | String      |                         | Span ID from OpenCensus
+| event      | String      | "Connecting to MongoDB" | The event being logged (see below for a full explanation)
+| level      | String      | "info"                  | The log level (see below for a full explanation)
+| http       | Object      | {}                      | HTTP event data (see below for a full explanation)
+| data       | Object      | {}                      | Arbitrary key-value pairs (see below for a full explanation)
+
+#### HTTP event data
+
+HTTP events are so common that we've defined a specific top-level field to capture it. The `http` field also
+defines it's own common fields.
+
+This can be used to log inbound or outbound HTTP event data.
+
+| Field name  | Type        | Example                 | Description
+| ----------- | ----------- | ----------------------- | -----------
+| status_code | Number      | 200                     | The HTTP status code
+| start       | Date string | "2019-01-22T08:39:15Z"  | ISO8601 date string of the request start time
+| end         | Date string | "2019-01-22T08:39:15Z"  | ISO8601 date string of the request end time
+| duration    | Number      | 236578                  | Difference between `start` and `end` in nanoseconds
+| method      | String      | "GET"                   | The HTTP method used
+| path        | String      | "/healthcheck"          | The request path from the URL
+| query       | String      | "x=1&y=1"               | The unparsed query string from the URL
+| scheme      | String      | "https"                 | The scheme or protocol from the URL
+| host        | String      | "localhost"             | The hostname from the URL
+| port        | Number      | 443                     | The port number from the URL
+
 
 - `created` - timestamps should be present in all log messages, and should be ISO-8601 formatted
 - `namespace` - identifier for the service - should match the repo name
