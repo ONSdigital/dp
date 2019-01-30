@@ -60,17 +60,18 @@ Although "human readable" formatting is useful for local development, all apps d
 
 The following are the only top level fields. If you have app specific details you wish to add, it is likely that they should be added under `data` rather than creating a new field.
 
-| Field name   | Required       | Type                       | Example                      | Description
-| ------------ | -------------- | -------------------------- | ---------------------------- | -----------------------------
-| `created_at` | Yes            | `datetime`<sup>1</sup>     | `"2019-01-21T16:19:12.356Z"` | Date and time of the log event (ISO8601 extended date and time string)
-| `namespace`  | Yes            | `string`                   | `"dp-frontend-router"`       | Service name or other identifier
-| `event`      | Yes            | `string`                   | `"connecting to mongodb"`    | [The event being logged](#effective-event-types)
-| `trace_id`   | No<sup>2</sup> | `string`                   |                              | [Trace ID from OpenCensus](https://opencensus.io/tracing/span/traceid/)
-| `span_id`    | No             | `string`                   |                              | [Span ID from OpenCensus](https://opencensus.io/tracing/span/spanid/)
-| `severity`   | No             | `int8`                     | `2`                          | [The event severity level code](#severity-levels)
-| `http`       | No             | [`http`](#http-event-data) |                              | [HTTP event data](#http-event-data)
-| `auth`       | No             | [`auth`](#auth-event-data) |                              | [Authentication event data](#auth-event-data)
-| `data`       | No             | `object`<sup>3</sup>       |                              | Arbitrary key-value pairs (see below for a full explanation)
+| Field name   | Required       | Type                         | Example                      | Description
+| ------------ | -------------- | ---------------------------- | ---------------------------- | -----------------------------
+| `created_at` | Yes            | `datetime`<sup>1</sup>       | `"2019-01-21T16:19:12.356Z"` | Date and time of the log event (ISO8601 extended date and time string)
+| `namespace`  | Yes            | `string`                     | `"dp-frontend-router"`       | Service name or other identifier
+| `event`      | Yes            | `string`                     | `"connecting to mongodb"`    | [The event being logged](#effective-event-types)
+| `trace_id`   | No<sup>2</sup> | `string`                     |                              | [Trace ID from OpenCensus](https://opencensus.io/tracing/span/traceid/)
+| `span_id`    | No             | `string`                     |                              | [Span ID from OpenCensus](https://opencensus.io/tracing/span/spanid/)
+| `severity`   | No             | `int8`                       | `2`                          | [The event severity level code](#severity-levels)
+| `http`       | No             | [`http`](#http-event-data)   |                              | [HTTP event data](#http-event-data)
+| `auth`       | No             | [`auth`](#auth-event-data)   |                              | [Authentication event data](#auth-event-data)
+| `error`      | No             | [`error`](#error-event-data) |                              | [Error event data](#error-event-data)
+| `data`       | No             | `object`<sup>3</sup>         |                              | [Arbitrary key-value pairs](#arbitrary-data-fields)
 
 <sup>1</sup> All dates must be UTC and in ISO8601 extended date time format: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`)
 
@@ -108,6 +109,27 @@ The `auth` field defines the common auth event data.
 | `identity`      | Yes      | `string`               | `"dp-import-tracker"` | The user id or service id
 | `identity_type` | Yes      | `string`               | `"service"`           | The identity type (i.e. `user` or `service`)
 
+#### Error event data
+
+The `error` field defines the common error event data.
+
+| Field name      | Required | Type                                    | Example               | Description
+| --------------- | -------- | --------------------------------------- | --------------------- | -----------
+| `message`       | Yes      | `string`                                |`"connection refused"` | The error cause
+| `stack_trace`   | No       | [`[]stack_trace`](#stack-trace-element) |                       | [Stack trace as an array](#stack-trace-element)
+| `data`          | No       | `object`<sup>1</sup>                    |                       | [Arbitrary key-value pairs](#arbitrary-data-fields)
+
+<sup>1</sup> The error-specific details in `data` are input as an object/map in code, but are stored as a text string by the centralised logging service to allow additional detail to be added to an event without needing to worry about key name collision.  These details can still be searched using a general text search on the `data` field.
+
+##### Stack trace element
+
+The stack trace is logged as an array.  Each element of the array has the following fields.
+
+| Field name      | Required | Type      | Example                | Description
+| --------------- | -------- | --------- | ---------------------- | -----------
+| `file`          | No       | `string`  | `"/some/path/main.go"` | The source file containing the code throwing an error
+| `function`      | No       | `string`  | `"main.main"`          | The function in which the error is occurring
+| `line`          | No       | `int16`   | `18`                   | The line in the source file that is throwing the error
 
 ### Effective `event` types
 
@@ -141,6 +163,12 @@ There are four severity levels:
 | 3    | INFO     | All non-failure events
 
 For example, if in the process of serving an HTTP request an action is retried three times, the first two failures would have a severity of `WARN`, whereas the third time would have an `ERROR`.
+
+### Arbitrary data fields
+
+There are two arbitrary `data` fields in the logging spec.  One at the top level for general event specific data and one under `error` for error specific data.  These fields are a map/object in code, but will be stored as a string field by the centralised logging service to allow additional detail to be added to an event without needing to worry about key name collision.  These details can still be searched using a general text search on the `data` field.
+
+The `data` fields are a means of adding event specific details that help in understanding the event, but are not common enough to justify a field in the spec. These fields are an important part of the event data and it is important that the data be useful and well structured.
 
 ##### Kafka
 
