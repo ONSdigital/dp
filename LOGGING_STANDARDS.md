@@ -71,6 +71,7 @@ The following are the only top level fields. If you have app specific details yo
 | `http`       | No             | [`http`](#http-event-data)   |                              | [HTTP event data](#http-event-data)
 | `auth`       | No             | [`auth`](#auth-event-data)   |                              | [Authentication event data](#auth-event-data)
 | `error`      | No             | [`error`](#error-event-data) |                              | [Error event data](#error-event-data)
+| `raw`        | No             | `string`                     |                              | [Log message captured from a third party library](#third-party-logs)
 | `data`       | No             | `object`<sup>3</sup>         |                              | [Arbitrary key-value pairs](#arbitrary-data-fields)
 
 <sup>1</sup> All dates must be UTC and in ISO8601 extended date time format: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`)
@@ -163,6 +164,23 @@ There are four severity levels:
 | 3    | INFO     | All non-failure events
 
 For example, if in the process of serving an HTTP request an action is retried three times, the first two failures would have a severity of `WARN`, whereas the third time would have an `ERROR`.
+
+### Third party logs
+
+The [log libraries](#libraries) attempt to intercept all logs from third party libraries in order to prevent collision with our logging specification.  These intercepted log messages should be output as a string under the `raw` field with the `event` as `"third party log"` and `severity` of `3` (INFO).  All other relevant fields (e.g. `created_at`, `namespace`, `trace_id`, `span_id`, etc) should be set as they would normally.
+
+For example:
+
+```
+{
+  "created_at" : "2019-02-01T13:45:24.157Z",
+  "namespace" : "my-app",
+  "trace_id": "1105cb0c04f86a4b6a1abaf74246b87f",
+  "severity" : 3,
+  "event": "third party log",
+  "raw" : "Started ServerConnector@7f4fedd{HTTP/1.1,[http/1.1]}{0.0.0.0:4567}"
+}
+```
 
 ### Arbitrary data fields
 
