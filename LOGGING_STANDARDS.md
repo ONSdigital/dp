@@ -74,7 +74,7 @@ The following are the only top level fields. If you have app specific details yo
 | `raw`        | No             | `string`                     |                              | [Log message captured from a third party library](#third-party-logs)
 | `data`       | No             | `object`<sup>3</sup>         |                              | [Arbitrary key-value pairs](#arbitrary-data-fields)
 
-<sup>1</sup> All dates must be UTC and in ISO8601 extended date time format: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`)
+<sup>1</sup> All dates must be UTC and in ISO8601 extended date time format with at least millisecond precision: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`).
 
 <sup>2</sup> Not mandatory, but must be included for all events created during the handling of a request.
 
@@ -89,17 +89,17 @@ This can be used to log inbound or outbound HTTP event data.
 | Field name    | Required | Type                   | Example                      | Description
 | ------------- | -------- | ---------------------- | ---------------------------- | -----------
 | `method`      | Yes      | `string`               | `"GET"`                      | The HTTP method used
-| `path`        | Yes      | `string`               | `"/healthcheck"`             | The request path from the URL
-| `query`       | Yes      | `string`               | `"x=1&y=1"`                  | The unparsed query string from the URL
 | `scheme`      | Yes      | `string`               | `"https"`                    | The scheme or protocol from the URL
 | `host`        | Yes      | `string`               | `"10.100.20.1"`              | The hostname or ip from the URL
 | `port`        | Yes      | `int32`                | `443`                        | The port number from the URL
+| `path`        | Yes      | `string`               | `"/healthcheck"`             | The request path from the URL
+| `query`       | No       | `string`               | `"x=1&y=1"`                  | The unparsed query string from the URL
 | `status_code` | No       | `int16`                | `200`                        | The HTTP status code
-| `started_at`  | No       | `datetime`<sup>1</sup> | `"2019-01-21T16:19:12.356Z"` | ISO8601 date string of the request start time
+| `started_at`  | Yes      | `datetime`<sup>1</sup> | `"2019-01-21T16:19:12.356Z"` | ISO8601 date string of the request start time
 | `ended_at`    | No       | `datetime`<sup>1</sup> | `"2019-01-21T16:19:12.356Z"` | ISO8601 date string of the request end time
 | `duration`    | No       | `int64`                | `236578`                     | Difference between `started_at` and `ended_at` in nanoseconds
 
-<sup>1</sup> All dates must be UTC and in ISO8601 extended date time format: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`)
+<sup>1</sup> All dates must be UTC and in ISO8601 extended date time format with at least millisecond precision: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`).
 
 #### Auth event data
 
