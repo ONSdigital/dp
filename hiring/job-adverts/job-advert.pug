@@ -4,21 +4,29 @@
 .main-text
     h1 #{title} - Digital Publishing
 
-    p You’ll be part of an in-house development team in the Digital Publishing division at 
-        |  the Office for National Statistics. You’ll ensure high quality code is delivered
-        |  to meet user needs.
-        if role == "backend-engineer"
-            |  You’ll work with our open data team and other backend engineers
-            |  to build robust data processing pipelines and APIs for internal and external use.
-        if role == "frontend-engineer"
-            |  You’ll work with user researchers and UX designers to build robust and accessible
-            |  user interfaces.
-        if role == "site-reliability-engineer"
-            |  You’ll work with our product teams to deliver infrastructure, build and deployment
-            |  pipelines.
-        if role == "full-stack-engineer"
-            |  You'll work with our product teams to deliver web services, backend processing
-            |  systems and infrastructure/platform tooling.
+    if role == "backend-engineer"
+        p  You'll be part of our API and Data team in the Digital Publishing division at the 
+            |  Office for National Statistics. As a #{title}, you'll build robust data
+            |  import and export pipelines and APIs for internal and external use.
+    if role == "frontend-engineer"
+        p  You'll be part of our Web and CMS team in the Digital Publishing division at the
+            |  Office for National Statistics. As a #{title}, you’ll work with user
+            |  researchers and interaction designers to build robust and accessible user
+            |  interfaces for internal and external users.
+    if role == "site-reliability-engineer"
+        p  You’ll be part of our platform team in the Digital Publishing division at the
+            |  Office for National Statistics. As a #{title}, you'll spend half of your time
+            |  working on our platform and tooling, and the other half working with our product
+            |  teams to improve the reliability of their services.
+    if role == "full-stack-engineer"
+        p  You'll work with our platform and product teams in the Digital Publishing division
+            |  at the Office for National Statistics. You'll build robust data piplines, APIs,
+            |  developer tooling and user interfaces for internal and external users.
+    if role == "platform-engineer"
+        p  You'll be part of our platform team in the Digital Publishing division at the
+            |  Office for National Statistics. As a #{title}, you'll build our container hosting
+            |  platform and tooling to host our development, test and production environments for
+            |  our product teams.
 
     p You’ll thrive using agile methods and enjoy working openly, collaboratively and
         |  as part of a multidisciplinary team of front-end engineers, back-end engineers,
@@ -44,6 +52,11 @@
             |  stack (including Consul, Nomad and Vault). We also work with tools including
             |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
             |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
+    if role == "platform-engineer"
+        p We’ve just launched a new container platform built with AWS, Docker and the Hashicorp
+            |  stack (including Consul, Nomad and Vault). We also work with tools including
+            |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
+            |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
     if role == "full-stack-engineer"
         p We're looking for someone who can work across disciplines (frontend, backend and
             |  site reliability engineering), who can help to improve the way we work, the
@@ -61,13 +74,18 @@
         if role == "frontend-engineer"
             li build accessible interfaces to web services to serve a variety of citizen and
                 |  government needs, taking responsibility for the quality of code you produce
-        if role == "site-reliability-engineer"
+        if role == "site-reliability-engineer" || role == "platform-engineer"
             li build secure, resilient and scalable infrastructure to support the needs of the
                 |  ONS digital publishing platform
             li contribute to the design, development, deployment and support of the ONS digital
                 |  publishing platform, taking responsibility for the quality of code you produce
             li provide support, documentation and tooling to enable the product team to share
                 |  responsibility for ops work
+        if role == "site-reliability-engineer"
+            li work with our product teams, helping them improve the reliability of their
+                |  products and services
+        if role == "platform-engineer"
+
         if role == "full-stack-engineer"
             li build web services, APIs, backend processing systems, internal tooling and
                 |  infrastructure to support the needs of our product teams
@@ -83,7 +101,7 @@
             |  non-developers) and with the wider backend community
         if role == "frontend-engineer"
             |  non-developers) and with the wider frontend community
-        if role == "site-reliability-engineer"
+        if role == "site-reliability-engineer" || role == "platform-engineer"
             |  non-developers) and with the wider ops community
         if role == "full-stack-engineer"
             |  non-developers) and with the wider engineering and technology community
@@ -98,13 +116,16 @@
         if role == "backend-engineer"
             li design and build APIs for internal and external users
             li extend our data import and export services to support new datasets
-        if role == "site-reliability-engineer"
+        if role == "site-reliability-engineer" || role == "platform-engineer"
             li iterate on the design and implementation of our container hosting platform
                 |  and continuous integration and deployment pipelines
-            li improving the resilience, performance and observability of the platform and
+            li improve the resilience, performance and observability of the platform and
                 |  services which form the ONS website
-            li contribute to the development and live support of microservices and data
-                |  processing pipelines
+        if role == "site-reliability-engineer"
+            li work with other engineers to help improve the stability, performance and
+                |  reliability of their services on our container platform
+        if role == "platform-engineer"
+            li build tooling to help other engineers use our platform more effectively
         if role == "full-stack-engineer"
             li contribute to the development of frontend web services
             li design and build APIs for internal and external users
@@ -123,7 +144,7 @@
                 |  Go, Java, MongoDB, Neo4j and Amazon Web Services 
             if role == "frontend-engineer"
                 |  React, ES6, Go and Amazon Web Services
-            if role == "site-reliability-engineer"
+            if role == "site-reliability-engineer" || role == "platform-engineer"
                 |  Amazon Web Services
             if role == "full-stack-engineer"
                 |  Go, Java, React, ES6 and Amazon Web Services
@@ -154,7 +175,7 @@
             li experience of search technology, e.g. Elasticsearch
             li awareness or experience of machine learning tools, libraries, algorithms and natural
                 |  language processing
-        if role == "site-reliability-engineer"
+        if role == "site-reliability-engineer" || role == "platform-engineer"
             li experience in infrastructure and operations with detailed knowledge of AWS, Terraform
                 |  and Ansible, and an understanding of web security, and microservice and platform
                 |  observability and alerting
@@ -180,7 +201,7 @@
         if role == "frontend-engineer"
             li an understanding of front-end web security including standards compliance, OWASP
                 |  and common attack vectors
-        if role == "backend-engineer" || role == "site-reliability-engineer" || role == "full-stack-engineer"
+        if role == "backend-engineer" || role == "site-reliability-engineer" || role == "full-stack-engineer" || role == "platform-engineer"
             li an understanding of data and web security including encryption, standards compliance,
                 |  OWASP and common attack vectors
         li an awareness of technologies used for web applications, e.g. HTTPS, JSON and CDNs,
