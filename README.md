@@ -29,6 +29,10 @@ If you are running the publishing stack, then you must set "ENABLE_PRIVATE_ENDPO
 
 If you are running the publishing stack in terminals [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor), [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) and [florence](https://github.com/ONSdigital/florence) should have "ENCRYPTION_DISABLED=true” if encryption is not setup. For [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api), [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) and [dp-search-api](https://github.com/ONSdigital/dp-search-api) you require having "ENABLE_PRIVATE_ENDPOINTS=true".
 
+### Zebedee
+
+Zebedee requires a very specific file structure in order to run along with additional environment variables. You can use [dp-zebedee-utils](https://github.com/ONSdigital/dp-zebedee-utils/tree/master/content) to simplify the setup process.
+
 ### Licence
 
 Copyright ©‎ 2016, Office for National Statistics (https://www.ons.gov.uk)
