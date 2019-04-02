@@ -56,7 +56,7 @@
                     |  meeting some other members of the team. The interview is based on the 
                     |  <a href="https://www.gov.uk/government/publications/success-profiles">Civil Service Success Profiles</a>.
                 p We know three hours is a long time, so we’ll make sure we give you plenty of
-                    |  opportunities to take a break. We’ll also make sure there’s pens, paper and
+                    |  opportunities to take a break. We’ll also make sure there are pens, paper and
                     |  post-its available, and we’ll give you time to think or make notes before you
                     |  answer.
                 p There’s no dress code for your interview - you can wear anything you feel
@@ -72,23 +72,42 @@
                                 |  in difficult situations, and how you approach problem solving.
 
                         li
-                            p We’ll then spend around fifteen minutes reviewing some code in either Go or Java
-                                |  (whichever you'd prefer), as though you're reviewing a pull request on GitHub.
-                            p You’ll get a few minutes to review the code, then we’ll discuss the changes we
-                                |  might make to improve the performance, stability or readability of the code.
-
-                        li
                             p Next we'll ask you to help us prioritise some tasks.
                             p We’re not too worried about the actual priority order you choose, but we do
                                 |  care about the kind of questions you ask, the things you consider, and why
                                 |  you prioritise the tasks in the way you do.
 
-                        li
-                            p We'll design a new service together.
-                            P We’ll give you a scenario (for example, “publish a dataset”) and spend around
-                                |  thirty minutes discussing the most important features. We’ll talk about how we
-                                |  might implement some of those features, and look at what trade-offs and
-                                |  technology choices we could make.
+                        if role == "backend-engineer" || role == "full-stack-engineer"
+                            li
+                                p We’ll then spend around fifteen minutes reviewing some code in either Go or Java
+                                    |  (whichever you'd prefer), as though you're reviewing a pull request on GitHub.
+                                p You’ll get a few minutes to review the code, then we’ll discuss the changes we
+                                    |  might make to improve the performance, stability or readability of the code.
+                                    
+                            li
+                                p We'll design a new service together.
+                                P We’ll take the code review activity and spend around thirty minutes discussing
+                                    |  how we might implement some of those features, how we might make it horizontally
+                                    |  scalable with no single points of failure, and look at what trade-offs
+                                    |  and technology choices we could make.
+                        
+                        if role == "frontend-engineer"
+                            li
+                                p We’ll then spend around fifteen minutes reviewing some code using HTML, CSS and
+                                    |  Javascript, as though you're reviewing a pull request on GitHub.
+                                p You’ll get a few minutes to review the code, then we’ll discuss the changes we
+                                    |  might make to improve the performance, stability or readability of the code.
+                            
+                            li
+                                p We'll design a service together.
+                                p We'll take a user interface prototype and spend around thirty minutes discussing
+                                    |  how we might implement it. We'll look at how we might break it up into
+                                    |  components, what success or failure scenarios it might include, and how
+                                    |  we might build, test and deploy it.
+
+                        if role == "platform-engineer" || role == "site-reliability-engineer"
+                            li
+                                p TODO
 
                         li 
                             p You’ll spend time with some of the team.
