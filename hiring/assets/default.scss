@@ -10,7 +10,14 @@ html {
     font-family: 'Hind';
 }
 
-p, div, tt, h1, h2 {
+h1 {
+    font-size: 16pt;
+}
+h2 {
+    font-size: 15pt;
+}
+
+p, div, tt, h3 {
     font-size: 14pt;
 }
 
@@ -40,6 +47,14 @@ tt {
 }
 .spacer div {
     margin-top: 0.2em;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.benefit {
+    padding: 1em;
 }
 
 .emoji {

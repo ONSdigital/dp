@@ -40,4 +40,10 @@ technical-lead-job-advert:
 engineering-manager-job-advert:
 	relaxed job-advert.pug output/engineering-manager-job-advert.pdf --build-once --locals '{"title":"Engineering Manager", "role": "engineering-manager", "category": "leadership"}'
 
+additional-information:
+	relaxed additional-information.pug output/additional-information-original-benefits.pdf --build-once --locals '{"version":"original", "benefits": true}'
+	relaxed additional-information.pug output/additional-information-simplified-benefits.pdf --build-once --locals '{"version":"simplified", "benefits": true}'
+	relaxed additional-information.pug output/additional-information-original.pdf --build-once --locals '{"version":"original", "benefits": false}'
+	relaxed additional-information.pug output/additional-information-simplified.pdf --build-once --locals '{"version":"simplified", "benefits": false}'
+
 .PHONY: all hiring-process backend-engineer-hiring-process full-stack-engineer-hiring-process job-adverts backend-engineer-job-advert frontend-engineer-job-advert site-reliability-engineer-job-advert full-stack-engineer-job-advert technical-lead-job-advert engineering-manager-job-advert
