@@ -48,9 +48,16 @@ pivot_manual <- df_manual %>%
 #ggplot(data = melted, aes(x=`strftime(start_date, "%Y/%m")`, y=value, colour=variable)) + geom_line(aes(group=variable)) + geom_smooth(method = "lm", aes(group=variable)) + xlab("Month") + ylab("Words") + ggtitle("Number of words by page type by month") + scale_y_continuous(label=comma)
 
 pivot_x <- pivot[!(pivot$maxDuration > 100000),]
+pivot_x_scheduled <- pivot_scheduled[!(pivot_scheduled$maxDuration > 100000),]
+pivot_x_manual <- pivot_manual[!(pivot_manual$maxDuration > 100000),]
 
 pivot_gathered <- pivot_x %>%
   gather(key = 'key', value = 'value', -start_date)
+pivot_gathered_scheduled <- pivot_x_scheduled %>%
+  gather(key = 'key', value = 'value', -start_date)
+pivot_gathered_manual <- pivot_x_manual %>%
+  gather(key = 'key', value = 'value', -start_date)
 
 ggplot(pivot_gathered, aes(x = start_date, y = value, color = key)) + geom_line() + geom_smooth(method="lm", aes(group=key)) + scale_y_continuous(sec.axis = sec_axis(~./1000))
-
+ggplot(pivot_gathered_scheduled, aes(x = start_date, y = value, color = key)) + geom_line() + geom_smooth(method="lm", aes(group=key)) + scale_y_continuous(sec.axis = sec_axis(~./1000))
+ggplot(pivot_gathered_manual, aes(x = start_date, y = value, color = key)) + geom_line() + geom_smooth(method="lm", aes(group=key)) + scale_y_continuous(sec.axis = sec_axis(~./1000))
