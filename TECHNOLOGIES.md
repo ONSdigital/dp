@@ -17,12 +17,14 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [npm](https://www.npmjs.com/)
   * [Babel](https://babeljs.io/)
   * [JQuery](https://jquery.com/)
-* [browserstack](https://www.browserstack.com/)
+* [BrowserStack](https://www.browserstack.com/)
 * [Puppeteer](https://github.com/GoogleChrome/puppeteer)
 * [Selenium](https://www.seleniumhq.org/)
 * [JestJS](https://jestjs.io/)
 * [MockJS](https://www.npmjs.com/package/mockjs)
 * [Firebase](https://firebase.google.com/)
+* [Python](https://www.python.org/)
+* [MiniMongo](https://www.npmjs.com/package/minimongo)
 
 # Server-side
 
@@ -33,23 +35,23 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [ElasticSearch](https://www.elastic.co/)
   * [PostgreSQL](https://www.postgresql.org/)
   * [MongoDB](https://www.mongodb.com/)
-  * [MiniMongo](https://www.npmjs.com/package/minimongo)
   * [Neo4j](https://neo4j.com/)
   * [Neptune](https://aws.amazon.com/neptune/)
   * [Kafka](https://kafka.apache.org/)
+* Documentation Tools
   * [DapperDox](http://dapperdox.io/)
 * Build tools
   * [Make](https://www.gnu.org/software/make/)
 
-# Ops
+# Platform
 
 * [Terraform](https://www.terraform.io/)
 * [Ansible](https://www.ansible.com/)
+* [Molecule](https://molecule.readthedocs.io/en/stable/)
 * [Concourse](https://concourse-ci.org/)
 * [Docker](https://www.docker.com/)
 * [Pingdom](https://www.pingdom.com/)
 * [CloudFlare](https://www.cloudflare.com/)
-
 * [Hashicorp](https://www.hashicorp.com/)
   * [Nomad](https://www.nomadproject.io/)
   * [Consul](https://www.consul.io/)
@@ -63,8 +65,14 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [SES](https://aws.amazon.com/ses/)
   * [Route53](https://aws.amazon.com/route53/)
   * [CloudFront](https://aws.amazon.com/cloudfront/)
+  * [SQS](https://aws.amazon.com/sqs/)
+  * [IAM](https://aws.amazon.com/iam/)
+  * [RDS](https://aws.amazon.com/rds/)
 * [ELK Stack](https://www.elastic.co/elk-stack)
   * [Kibana](https://www.elastic.co/products/kibana)
   * [Elasticsearch](https://www.elastic.co/products/elasticsearch)
   * [Logstash](https://www.elastic.co/products/logstash)
 * [Prometheus](https://prometheus.io/)
+  * [Alertmanager](https://prometheus.io/docs/alerting/alertmanager/)
+* [Grafana](https://grafana.com/)
+
