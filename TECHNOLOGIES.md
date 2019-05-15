@@ -23,7 +23,6 @@ This is a partially-complete list of technologies used by Digital Publishing.
 * [JestJS](https://jestjs.io/)
 * [MockJS](https://www.npmjs.com/package/mockjs)
 * [Firebase](https://firebase.google.com/)
-* [Python](https://www.python.org/)
 * [MiniMongo](https://www.npmjs.com/package/minimongo)
 
 # Server-side
@@ -31,6 +30,7 @@ This is a partially-complete list of technologies used by Digital Publishing.
 * Languages
   * [Go](https://golang.org/)
   * [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+  * [Python](https://www.python.org/)
 * Data
   * [ElasticSearch](https://www.elastic.co/)
   * [PostgreSQL](https://www.postgresql.org/)
