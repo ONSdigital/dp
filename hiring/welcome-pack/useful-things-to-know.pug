@@ -1,0 +1,93 @@
+.header
+    object.logo(data='../assets/images/ons-logo.svg' type="image/svg+xml")
+
+.main-text
+    h1 Useful things to know
+
+    p In your first few weeks we’ll cover a lot of the corporate policies and procedures you’ll need to know about - things like pay, annual leave, sick leave and security. Until then, this guide gives you the essential information you might need in your first few days.
+
+    .list: ul
+        li Flexible working
+
+            div We try our best to accomodate any style of working that works for you.
+
+            div We have flexible working hours - you can work from the office any time between 7am and 7pm. We also work remotely a lot - if you want to work from home, you can (although we’d ask you to be in the office as much as possible for your first few weeks).
+
+            div You need to work an average of 37 hours a week (excluding lunch) - but we’ll cover that in more detail soon.
+        
+        li If you're unwell
+
+            div If you’re feeling unwell we won’t expect you to be in work. If you’re feeling well enough to work from home you can, but if not then we’d recommend getting some rest instead.
+
+            div Let us know on Slack if you won’t be in, or if you’ll be working from home.
+
+            div We have policies around sick leave which we’ll make you aware of when you start, but that’s not something you need to think about while you’re unwell.
+
+        li Internet
+
+            div We have WiFi throughout the building. You can use our guest WiFi or GovWiFi (https://www.gov.uk/government/collections/connect-to-govwifi), and we’ll give you more details (passwords etc) on your first day.
+
+            div You can use this from your own personal devices too.
+
+        li Security
+
+            div This is mostly just being sensible and taking precautions:
+
+            ul
+            
+                li Don't wear your security pass unless you're in an ONS office
+
+                li Lock your laptops whenever you leave your desk!
+
+        li Finding your way around
+
+            div Our Newport office is a big place, and it can be daunting until you get used to it.
+
+            div But don't worry, we’ll show you how to find the important bits - your desk, the toilets, the shop and canteen.
+
+            div Our room numbers are made up of three parts, for example <strong>A.001</strong>:
+
+            .roomnumber: table
+                tr
+                    th A.
+                    td Block number
+                tr
+                    th 0
+                    td Floor number
+                tr
+                    th 01
+                    td Room number
+
+            div We have five blocks:
+
+            .roomnumber: table
+                tr
+                    th A
+                    td The annex
+                    td The single-storey building in front of reception
+                tr
+                    th D
+                    td Data block
+                    td To the left of reception as you're facing the building
+                tr
+                    th R
+                    td Recreation block
+                    td Canteen, shop and conference rooms
+                tr
+                    th 1
+                    td Block 1
+                    td To the right of reception as you're facing the building
+                tr
+                    th 2
+                    td Block 2
+                    td The other side of block 1 from reception
+
+            div The room numbers have lots of gaps - for example, there’s a room 101, 123 and 126 - but none of the others! But they always flow in one direction around the building, and there's signs above most doorways that tell you which rooms you're approaching.
+
+            div Don’t be afraid to ask if you get lost - we’ve all done it! But generally if you keep walking in the same direction you’ll end up back where you started.
+
+            div There’s also maps near most communal areas and corridors - but they’re not the easiest things to read!
+
+style
+    include:scss ../assets/default.scss
+    include:scss useful-things-to-know.scss

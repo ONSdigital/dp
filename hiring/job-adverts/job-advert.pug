@@ -1,0 +1,385 @@
+.header
+    object.logo(data='../assets/images/ons-logo.svg' type="image/svg+xml")
+
+.main-text
+    h1 #{title} - Digital Publishing
+
+    if category == "engineering"
+        if role == "backend-engineer"
+            p  You'll be part of our API and Data team in the Digital Publishing division at the 
+                |  Office for National Statistics. As a #{title}, you'll build robust data
+                |  import and export pipelines and APIs for internal and external use.
+        if role == "frontend-engineer"
+            p  You'll be part of our Web and CMS team in the Digital Publishing division at the
+                |  Office for National Statistics. As a #{title}, you’ll work with user
+                |  researchers and interaction designers to build robust and accessible user
+                |  interfaces for internal and external users.
+        if role == "site-reliability-engineer"
+            p  You’ll be part of our platform team in the Digital Publishing division at the
+                |  Office for National Statistics. As a #{title}, you'll spend half of your time
+                |  working on our platform and tooling, and the other half working with our product
+                |  teams to improve the reliability of their services.
+        if role == "full-stack-engineer"
+            p  You'll work with our platform and product teams in the Digital Publishing division
+                |  at the Office for National Statistics. You'll build robust data piplines, APIs,
+                |  developer tooling and user interfaces for internal and external users.
+        if role == "platform-engineer"
+            p  You'll be part of our platform team in the Digital Publishing division at the
+                |  Office for National Statistics. As a #{title}, you'll build our container hosting
+                |  platform and tooling to host our development, test and production environments for
+                |  our product teams.
+
+        p You’ll thrive using agile methods and enjoy working openly, collaboratively and
+            |  as part of a multidisciplinary team of front-end engineers, back-end engineers,
+            |  site reliability engineers, interaction designers, user researchers, service manager,
+            |  product owner and performance analyst.
+
+    if role == "technical-lead"
+        p  You’ll lead the technical delivery of our in-house development teams in the Digital
+            |  Publishing division at the Office for National Statistics. You’ll work closely
+            |  with our software engineers to set the technical direction of our digital products,
+            |  providing advice and guidance to help our development teams deliver high quality
+            |  solutions to meet the needs of our internal and external users.
+
+        p  As a member of the senior management team, you’ll collaborate with our service owner,
+            |  product owners, delivery managers, engineering manager and others, ensuring we have
+            |  a clear vision for the future of digital publishing, a roadmap to work towards it,
+            |  and the capability to successfully deliver it.
+        
+        p  You’ll have a background in software development, with experience of backend, frontend
+            |  and platform engineering, and will thrive in an open, autonomous, and user-centred
+            |  agile environment.
+
+    if role == "engineering-manager"
+        p  You’ll help build high performing teams, attracting and hiring engineers from a diverse
+            |  range of backgrounds, supporting their personal and professional development,
+            |  and helping them keep their skills relevant, up to date, transferrable and in
+            |  line with industry standards and expectations.
+        
+        p  As a member of the senior management team, you’ll collaborate with our service owner,
+            |  product owners, delivery managers, technical lead and others, ensuring we have a
+            |  clear vision for the future of digital publishing, a roadmap to work towards it,
+            |  and the capability to successfully deliver it.
+
+        p  You’ll have a background in software development, with experience of line management,
+            |  coaching and mentoring of engineers at all levels, and will thrive helping people
+            |  become high performing members of their team.
+
+
+    p As a member of the Digital Publishing team, you’ll share responsibility for:
+
+    ul
+        li The ONS website – <a href="https://www.ons.gov.uk">https://www.ons.gov.uk</a>
+        li Our API - <a href="https://api.ons.gov.uk">https://api.ons.gov.uk</a>
+        li Our developer site – <a href="https://developer.ons.gov.uk">https://developer.ons.gov.uk</a>
+        li Our performance dashboard – <a href="https://performance.ons.gov.uk">https://performance.ons.gov.uk</a>
+        li Florence (our CMS) – <a href="https://github.com/ONSdigital/florence">https://github.com/ONSdigital/florence</a>
+
+    if role == "backend-engineer"
+        p Our current back-end technology stack includes Go, Java, Python, Apache Kafka, MongoDB
+            |  and Neo4j. You’ll also contribute to some front-end components built with Go.
+    if role == "frontend-engineer"
+        p Our current front-end technology stack includes HTML5, CSS3, Javascript and ReactJS.
+            |  You’ll also contribute to some front-end components built with Go.
+    if role == "site-reliability-engineer"
+        p We’ve just launched a new container platform built with AWS, Docker and the Hashicorp
+            |  stack (including Consul, Nomad and Vault). We also work with tools including
+            |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
+            |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
+    if role == "platform-engineer"
+        p We’ve just launched a new container platform built with AWS, Docker and the Hashicorp
+            |  stack (including Consul, Nomad and Vault). We also work with tools including
+            |  Elasticsearch, Kibana and Prometheus. You’ll also contribute to development work
+            |  with Go, Java, Python, Kafka, MongoDB, PostgreSQL and Neo4j.
+    if role == "full-stack-engineer"
+        p We're looking for someone who can work across disciplines (frontend, backend and
+            |  site reliability engineering), who can help to improve the way we work, the
+            |  tooling we use, and help multiple product teams work towards similar technical
+            |  standards.
+
+    p If you'd like to discuss this role in more detail, you can contact us at 
+        <a href="mailto:digital.publishing@ons.gov.uk">digital.publishing@ons.gov.uk</a>.
+
+    h2 Main responsibilities
+
+    ul
+        if category == "engineering"
+            if role == "backend-engineer"
+                li build APIs for internal and external users to access, filter and download
+                    |  statistical data and metadata
+                li build Kafka powered data import and export pipelines to import, store, publish
+                    |  and export statistical datasets
+            if role == "frontend-engineer"
+                li build accessible interfaces to web services to serve a variety of citizen and
+                    |  government needs, taking responsibility for the quality of code you produce
+            if role == "site-reliability-engineer" || role == "platform-engineer"
+                li build secure, resilient and scalable infrastructure to support the needs of the
+                    |  ONS digital publishing platform
+                li contribute to the design, development, deployment and support of the ONS digital
+                    |  publishing platform, taking responsibility for the quality of code you produce
+                li provide support, documentation and tooling to enable the product team to share
+                    |  responsibility for ops work
+            if role == "site-reliability-engineer"
+                li work with our product teams, helping them improve the reliability of their
+                    |  products and services
+            if role == "platform-engineer"
+
+            if role == "full-stack-engineer"
+                li build web services, APIs, backend processing systems, internal tooling and
+                    |  infrastructure to support the needs of our product teams
+                li work with the software engineering community to share our experience and learn
+                    |  from other teams, departments and the wider industry
+                li contribute to the design, development, deployment and support of the ONS digital
+                    |  publishing platform, taking responsibility for the quality of code you produce
+            li build automated tests to support our continuous integration environment
+            li support the day to day operation of our live services, through investigating and
+                |  fixing live service incidents, performance improvements and ongoing maintenance
+            li share knowledge of tools and techniques with your team (both developers and
+            if role == "backend-engineer"
+                |  non-developers) and with the wider backend community
+            if role == "frontend-engineer"
+                |  non-developers) and with the wider frontend community
+            if role == "site-reliability-engineer" || role == "platform-engineer"
+                |  non-developers) and with the wider ops community
+            if role == "full-stack-engineer"
+                |  non-developers) and with the wider engineering and technology community
+
+        if category == "leadership"
+            if role == "technical-lead"
+                li Work with software engineers to design, develop and support a collection of internal
+                    |  and external digital web and API services for the publication of statistics
+                li Work with the engineering manager, ensuring we have the skills and capability we
+                    |  need to deliver our digital services
+                li Deliver digital services in line with the Government Digital Service Standard,
+                    |  ensuring we put the the needs of our users first
+                li Have ownership of and accountability for the performance, stability, resilience
+                    |  and availability of our digital services
+                li Inform the selection of technology choices used in the publication of statistics,
+                    |  making use of open source solutions where appropriate
+                li Own the infrastructure, systems and data architectures which underpin our publishing
+                    |  platform, ensuring it remains fit for purpose and cost effective
+                li Work with software engineers and others in our product development teams to continually
+                    |  improve our development workflow and tooling
+            if role == "engineering-manager"
+                li Help software engineers become high performing members of their team, supporting
+                    |  their personal and professional development through regular 121s, feedback, mentoring
+                    |  and coaching
+                li Identify and respond to warning signs that engineers are suffering from burn out, working
+                    |  with engineering teams and other managers to minimise the likelihood of it occurring,
+                    |  and addressing it quickly and effectively if it does
+                li Work with software engineers across multiple product teams to identify best practice or
+                    |  areas for improvement, and work with the technical lead and software engineers to
+                    |  implement standards, improve workflows and tooling
+                li Work with the technical lead and service manager, ensuring we have the skills and
+                    |  capability we need to deliver our digital services
+                li Engage with the wider industry, including underrepresented and disadvantaged groups,
+                    |  to help build our reputation as a forward-thinking digital organisation, share the
+                    |  work we’re doing, and attract diverse talent
+                li Take the lead on engineering recruitment, working with software engineers and our
+                    |  recruitment team to continually improve the candidate experience, streamline the hiring
+                    |  process, iterating on our job adverts, interview format and onboarding process
+                li Work with other teams and communities across the organisation to identify and share best
+                    |  practice, helping make ONS a great place for engineers to work
+
+    if role == "technical-lead"
+        p This role is not expected to have line management responsibilities, although this may
+            |  not be possible in all circumstances. Please contact us at 
+            |  <a href="mailto:digital.publishing@ons.gov.uk">digital.publishing@ons.gov.uk</a> if
+            |  you'd like to discuss this in more detail.
+
+    h2 Things you might be working on in a typical day
+
+    ul
+        if category == "engineering"
+            if role == "frontend-engineer"
+                li investigate, prototype and develop improvements to our website, content
+                    |  management system, developer site and performance dashboard
+                li contribute to the development of frontend web services
+            if role == "backend-engineer"
+                li design and build APIs for internal and external users
+                li extend our data import and export services to support new datasets
+            if role == "site-reliability-engineer" || role == "platform-engineer"
+                li iterate on the design and implementation of our container hosting platform
+                    |  and continuous integration and deployment pipelines
+                li improve the resilience, performance and observability of the platform and
+                    |  services which form the ONS website
+            if role == "site-reliability-engineer"
+                li work with other engineers to help improve the stability, performance and
+                    |  reliability of their services on our container platform
+            if role == "platform-engineer"
+                li build tooling to help other engineers use our platform more effectively
+            if role == "full-stack-engineer"
+                li contribute to the development of frontend web services
+                li design and build APIs for internal and external users
+                li extend our data import and export services to support new datasets
+                li iterate on the design and implementation of our container hosting platform
+                    |  and continuous integration and deployment pipelines
+            li participate in technical planning, design and code reviews
+        
+        if category == "leadership"
+            if role == "technical-lead"
+                li Leading and facilitating technical discussions with software engineers and
+                    |  others, ensuring system and service designs align with our technical
+                    |  strategy, are cost-effective, and meet the needs of our users 
+                li Identifying security risks and technical debt which affect the products we
+                    |  build, working with the service owner, product owners, and product teams
+                    |  to prioritise, design and implement improvements
+                li Working with the engineering manager to help guide the professional development
+                    |  of software engineers, ensuring their skills are relevant, up to date,
+                    |  transferrable and in line with industry standards and expectations
+            if role == "engineering-manager"
+                li Holding 121s with your software engineers, helping them identify and understand
+                    |  their career goals, and finding training and development opportunities which
+                    |  help them reach those goals
+                li Iterating on our hiring process, interview format and onboarding process, improving
+                    |  the candidate experience, and giving candidates the best possible opportunities
+                    |  to demonstrate their potential
+                li Working with our technical lead and software engineers to find bottlenecks and
+                    |  inefficiencies in our development workflow or tooling, identifying potential
+                    |  improvements, and coordinating with our service owner, product owners, delivery
+                    |  managers and others to introduce changes
+
+    h2 What we’ll do for you
+
+    ul
+        if category == "engineering"
+            li provide you with training, mentoring and support from an experienced 
+                |  multidisciplinary team
+            li give you the freedom to work with modern and relevant technologies including
+                if role == "backend-engineer"
+                    |  Go, Java, MongoDB, Neo4j and Amazon Web Services 
+                if role == "frontend-engineer"
+                    |  React, ES6, Go and Amazon Web Services
+                if role == "site-reliability-engineer" || role == "platform-engineer"
+                    |  Amazon Web Services
+                if role == "full-stack-engineer"
+                    |  Go, Java, React, ES6 and Amazon Web Services
+                |  with a MacBook Pro development environment
+        if category == "leadership"
+            if role == "technical-lead"
+                li Ensure you have the authority and autonomy to define the technical strategy
+                    |  for Digital Publishing and make appropriate technology choices
+            if role == "engineering-manager"
+                li Ensure you have the time and resources you need to keep your technical
+                    |  skills up to date, and have everything you need to support your software
+                    |  engineers in the best way possible
+            li Support your personal and professional development, making sure you have
+                |  access to training, conferences, accreditation and qualifications
+
+    h2 Skills and experience
+
+    p These are the skills and experiences that might be suitable for this role. An interest in
+        |  solving the problems we face is much more important than having experience in everything
+        |  listed.
+
+    ul
+        if category == "engineering"
+            if role == "frontend-engineer"
+                li experience in front-end development, with detailed knowledge of HTML, CSS and
+                    |  Javascript, including cross-browser and cross-platform support
+                li experience of building and maintaining complex client-side Javascript applications
+                li experience of building products which meet the GDS digital service standards
+                li understanding of software design principles, including progressive enhancement
+                li experience in building robust and accessible interfaces that work for as many
+                    |  users as possible, regardless of their needs
+            if role == "backend-engineer"
+                li experience in back-end development, ideally within a distributed systems environment
+                    |  hosted on public cloud infrastructure
+                li experience of Go, Java or Python
+                li experience of developing in microservice and event driven architectures
+                li understanding of software design principles and techniques for building secure, 
+                    |  maintainable and resilient services
+                li experience of search technology, e.g. Elasticsearch
+                li awareness or experience of machine learning tools, libraries, algorithms and natural
+                    |  language processing
+            if role == "site-reliability-engineer" || role == "platform-engineer"
+                li experience in infrastructure and operations with detailed knowledge of AWS, Terraform
+                    |  and Ansible, and an understanding of web security, and microservice and platform
+                    |  observability and alerting
+                li understanding of software design principles, including event driven architecture,
+                    |  microservices and 12-factor apps
+                li experience of back-end development tools and technologies including Go and Java
+                li experience of data technologies including PostgreSQL, MongoDB, Redis and Kafka
+                li experience of build and deployment tools including Concourse CI using
+                    |  continuous integration and deployment techniques
+            if role == "full-stack-engineer"
+                li experience in front-end development, with a solid understanding of HTML, CSS and
+                    |  Javascript, including cross-browser and cross-platform support
+                li experience in back-end development, ideally within a distributed systems environment
+                li understanding of software design principles, including event driven architecture,
+                    |  microservices and 12-factor apps
+                li experience of build and deployment tools including Concourse CI, and using
+                    |  continuous integration and deployment techniques
+                li experience of data technologies including PostgreSQL, MongoDB, Redis and Kafka
+            li experience of mentoring and supporting junior engineers
+            li ability to quickly research and learn new programming tools and techniques
+            li a systematic approach to solving problems, and using testing to validate solutions
+            li understanding of agile environments and version control
+            if role == "frontend-engineer"
+                li an understanding of front-end web security including standards compliance, OWASP
+                    |  and common attack vectors
+            if role == "backend-engineer" || role == "site-reliability-engineer" || role == "full-stack-engineer" || role == "platform-engineer"
+                li an understanding of data and web security including encryption, standards compliance,
+                    |  OWASP and common attack vectors
+            li an awareness of technologies used for web applications, e.g. HTTPS, JSON and CDNs,
+                |  and use of Unix-like operating systems, e.g. Linux and/or Mac OS
+
+        if category == "leadership"
+            if role == "technical-lead"
+                li experience of coaching and mentoring software engineers on technical aspects of
+                    |  their role, including pair programming and code reviews
+                li significant experience of at least one industry standard programming language,
+                    |  ideally Go, Java or Javascript
+                li experience of frontend, backend, infrastructure/platform engineering and system
+                    |  administration in a distributed microservices cloud-hosted environment
+                li experience of designing and implementing horizontally scalable distributed
+                    |  architectures, minimising or eliminating single points of failure
+                li experience of data storage and queueing systems, ideally PostgreSQL, MongoDB
+                    |  and Kafka, and an awareness of graph database technologies
+                li experience of designing, building and maintaining public HTTP JSON APIs
+                li experience of technologies used for web applications, e.g. HTTPS, JSON, CDNs,
+                    |  and use of Unix-like operating systems, e.g. Linux and/or Mac OS
+                li experience of modern frontend development techniques, including
+                    |  cross-browser/cross-device compatibility, accessibility, responsive design,
+                    |  progressive enhancement and semantic markup
+                li a detailed understanding of data and web security including encryption, standards
+                    |  compliance, OWASP and common attack vectors
+                li strong written and verbal communication skills, with an ability to communicate
+                    |  technical concepts to a non-technical audience
+
+            if role == "engineering-manager"
+                li significant experience in a technical role (ideally engineering), with a detailed
+                    |  understanding of frontend, backend and infrastructure/platform engineering
+                li experience of coaching and mentoring software engineers on technical aspects of
+                    |  their role, including pair programming and code reviews
+                li strong written and verbal communication skills, with an ability to communicate
+                    |  technical concepts to a non-technical audience
+                li experience of recruitment, including hiring and onboarding new engineers at all
+                    |  levels, and supporting them with their professional development
+                li an understanding of current industry trends and new technologies which are likely
+                    |  to influence the way we deliver digital products in future
+
+    if category == "leadership"
+        h2 Why you should apply
+
+        ul
+            if role == "technical-lead"
+                li You enjoy helping engineers design and build digital services using modern industry
+                    |  standard technologies such as Go, Java, React and AWS
+
+            if role == "engineering-manager"
+                li You’re empathetic and understanding of the needs of others, and enjoy helping others
+                    |  succeed, both personally and professionally
+                li You’re enthusiastic about technology and have a flair for leadership and people management
+
+            li You want to improve the lives of millions through the effective and timely publication 
+                |  of official statistics which inform public debate
+            li You want to modernise the publication of statistical data in the UK, and be part of
+                |  publishing the results of Census 2021
+            li You share an interest in making complex statistical datasets easily available and consumable
+                |  by the widest possible audience including citizens, government, ministers, researchers,
+                |  financial institutions, media and fact-checkers
+
+
+style
+    include:scss ../assets/default.scss

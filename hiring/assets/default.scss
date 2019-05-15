@@ -1,0 +1,86 @@
+@import 'https://fonts.googleapis.com/css?family=Hind';
+@import 'https://afeld.github.io/emoji-css/emoji.css';
+
+@page {
+    size: 210mm 297mm;
+    margin: 0.5in 0.2in;
+}
+
+html {
+    font-family: 'Hind';
+}
+
+h1 {
+    font-size: 16pt;
+}
+h2 {
+    font-size: 15pt;
+}
+
+p, div, tt, h3 {
+    font-size: 14pt;
+}
+
+.header {
+    .logo {
+        height: 2em;
+        width: auto;
+    }
+    margin-bottom: 1em;
+}
+
+p, tt {
+    font-weight: 400;
+}
+tt {
+    font-family: 'Courier New';
+}
+
+.list li {
+    margin-bottom: 0.7em;
+}
+.list li div:first-child {
+    margin-top: 0.7em;
+}
+.list li div {
+    line-height: 1.4em;
+}
+.spacer div {
+    margin-top: 0.2em;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.benefit {
+    padding: 1em;
+}
+
+.emoji {
+    background-size: contain;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+.hands-pressed-together {
+    background-image: url('../assets/images/emoji/person-with-folded-hands_1f64f.png');
+}
+.waving-hand-sign {
+    background-image: url('../assets/images/emoji/waving-hand-sign_1f44b.png');
+}
+.robot-face {
+    background-image: url('../assets/images/emoji/robot-face-1f916.png');
+}
+.smiling-face-with-smiling-eyes {
+    background-image: url('../assets/images/emoji/smiling-face-with-smiling-eyes_1f60a.png');
+}
+.hugging-face {
+    background-image: url('../assets/images/emoji/hugging-face_1f917.png');
+}
+.thumbs-up-sign {
+    background-image: url('../assets/images/emoji/thumbs-up-sign_1f44d.png');
+}
+.party-popper {
+    background-image: url('../assets/images/emoji/party-popper-1f389.png');
+}

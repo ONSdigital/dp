@@ -1,0 +1,128 @@
+.header
+    object.logo(data='../assets/images/ons-logo.svg' type="image/svg+xml")
+
+.main-text
+    h1 #{title} - Digital Publishing
+
+    p Thank you for your interest in joining Digital Publishing as a #{title}. 
+
+    p We want to give you the best opportunities we can to demonstrate your suitability. 
+        |  We hope that being open and transparent about our hiring process will help with that, 
+        |  but let us know if there’s anything else we can to do to support you.
+
+    p If you have any other questions about the #{title} role or hiring process, 
+        |  please email <a href="mailto:ons.resourcing@ons.gov.uk">ons.resourcing@ons.gov.uk</a>.
+
+    h2 The hiring process
+
+    p It takes approximately four to six weeks from the application closing
+        |  date to us making a job offer – but we’ll try to make it faster if we can.
+
+    p We focus on skills, experience, behaviours and potential – we won’t ask any trick
+        |  questions, and we don’t expect you to know anything to a textbook level of detail.
+
+    .list
+        ol
+            li CV and covering letter
+                p The first stage of the application process is a CV and covering letter.
+                    |  At this stage we want to find out more about you, your background, what 
+                    |  interests and motivates you, and why you feel you’ll be a good fit at ONS.
+                p As a rough guide, your CV should be around two to three A4 pages, and your
+                    |  covering letter around one A4 page – but there’s no strict limits.
+                p We’ll let you know if you’ve been successful within a few days of the closing
+                    |  date.
+
+            li Telephone interview
+                p If you’re successful at the application stage we’ll invite you to a 30-minute
+                    |  telephone interview. This will be a technical interview to explore your
+                    |  skills and capability in a bit more detail.
+                p We’ll ask you for an example of some difficult technical work you’ve done
+                    |  recently. This could be a challenging coding problem or a complex system
+                    |  requirement. We’ll ask some follow up questions to understand your technical
+                    |  capability.
+                p We’ll typically conduct our telephone interviews over a week, so you might
+                    |  have to wait a few days to hear if you’ve been successful.
+
+            li Invitation to interview
+                p If you’re successful at the telephone interview stage we’ll invite you to an
+                    |  on-site interview at ONS in Newport.
+                p You shouldn’t need to prepare for this – we’re not testing your ability to 
+                    |  remember things, but it’s worth reviewing your CV and covering letter, and
+                    |  thinking about some examples of the work you’ve been doing recently.
+
+            li Your interview
+                p Your interview will be on-site at ONS in Newport. It’ll take around two to three
+                    |  hours, and will be a technical and behavioural interview, followed by
+                    |  meeting some other members of the team. The interview is based on the 
+                    |  <a href="https://www.gov.uk/government/publications/success-profiles">Civil Service Success Profiles</a>.
+                p We know three hours is a long time, so we’ll make sure we give you plenty of
+                    |  opportunities to take a break. We’ll also make sure there are pens, paper and
+                    |  post-its available, and we’ll give you time to think or make notes before you
+                    |  answer.
+                p There’s no dress code for your interview - you can wear anything you feel
+                    |  comfortable with.
+
+                .list
+                    ul
+                        li 
+                            p We'll spend around twenty minutes talking about your previous experience.
+                                |  Since this is a senior role, we’ll focus on mentoring and how you support
+                                |  junior engineers.
+                            p We’ll also ask you some scenario-based questions to understand how you respond
+                                |  in difficult situations, and how you approach problem solving.
+
+                        li
+                            p Next we'll ask you to help us prioritise some tasks.
+                            p We’re not too worried about the actual priority order you choose, but we do
+                                |  care about the kind of questions you ask, the things you consider, and why
+                                |  you prioritise the tasks in the way you do.
+
+                        if role == "backend-engineer" || role == "full-stack-engineer"
+                            li
+                                p We’ll then spend around fifteen minutes reviewing some code in either Go or Java
+                                    |  (whichever you'd prefer), as though you're reviewing a pull request on GitHub.
+                                p You’ll get a few minutes to review the code, then we’ll discuss the changes we
+                                    |  might make to improve the performance, stability or readability of the code.
+                                    
+                            li
+                                p We'll design a new service together.
+                                P We’ll take the code review activity and spend around thirty minutes discussing
+                                    |  how we might implement some of those features, how we might make it horizontally
+                                    |  scalable with no single points of failure, and look at what trade-offs
+                                    |  and technology choices we could make.
+                        
+                        if role == "frontend-engineer"
+                            li
+                                p We’ll then spend around fifteen minutes reviewing some code using HTML, CSS and
+                                    |  Javascript, as though you're reviewing a pull request on GitHub.
+                                p You’ll get a few minutes to review the code, then we’ll discuss the changes we
+                                    |  might make to improve the performance, stability or readability of the code.
+                            
+                            li
+                                p We'll design a service together.
+                                p We'll take a user interface prototype and spend around thirty minutes discussing
+                                    |  how we might implement it. We'll look at how we might break it up into
+                                    |  components, what success or failure scenarios it might include, and how
+                                    |  we might build, test and deploy it.
+
+                        if role == "platform-engineer" || role == "site-reliability-engineer"
+                            li
+                                p TODO
+
+                        li 
+                            p You’ll spend time with some of the team.
+                            p You’ll spend between 30 and 60 minutes with two members of the Digital Publishing
+                                |  team. This is your chance to find out more about the work we do, what it’s
+                                |  like to work here, and how you might fit into the organisation. It’s also a
+                                |  chance for other members of the team to get to know you a bit.
+
+            li Getting a job offer
+                p We’ll get the interview results out within a few days, and regardless of the outcome,
+                    |  we’ll make sure you get feedback on your application and interview.
+                p If you’ve been successful, our recruitment team will work with you to get any paperwork
+                    |  and security checks completed.
+                p We’ll then agree a start date, and send you useful information to help you get ready for
+                    |  your new role in Digital Publishing.
+
+style
+    include:scss ../assets/default.scss

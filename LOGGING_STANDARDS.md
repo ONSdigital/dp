@@ -150,6 +150,13 @@ For example:
 'event': 'file could not be read from s3'
 ```
 
+These are guidelines only - there are some exceptions where it's ok to ignore them, for example when
+using uppercase to refer to a constant or environment variable:
+
+```
+'event': 'DEBUG is not a boolean'
+```
+
 ### Severity levels
 
 The event severity levels are used to identify how critical an event is, especially failure events.
