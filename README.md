@@ -31,7 +31,7 @@ If you are running the publishing stack in terminals [dp-dimension-extractor](ht
 
 ### Zebedee
 
-Zebedee requires a very specific file structure in order to run along with additional environment variables. You can use [dp-zebedee-utils](https://github.com/ONSdigital/dp-zebedee-utils/tree/master/content) to simplify the setup process.
+Zebedee requires a very specific file structure in order to run along with additional environment variables. You can use [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) to simplify the setup process.
 
 ### Licence
 
