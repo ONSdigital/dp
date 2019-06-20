@@ -1,4 +1,4 @@
-Digital Publishing Whistlestop Tour
+Digital Publishing Overview
 ===========================
 
 In Digital Publishing we are responsible for the ONS website, its corresponding APIs and content management system that allows our Publishing Team to prepare and publish all content for the organisation. To give an idea of what this looks like in practice, we've put together this list of relevant links to our products, documentation and code bases. 
