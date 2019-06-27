@@ -12,6 +12,15 @@ import (
 	cli "gopkg.in/urfave/cli.v1"
 )
 
+const (
+	colWarn   = "\033[31;1m"
+	colAlt    = "\033[32m"
+	colHi     = "\033[1m"
+	colReset  = "\033[0m"
+	widthName = -30
+	widthIP   = -15
+)
+
 // Command returns an instance of the ssh command
 func Command(cfg config.Config) []cli.Command {
 	sshCmd := cli.Command{
@@ -43,7 +52,7 @@ func Command(cfg config.Config) []cli.Command {
 		var actionFunc = func(grp string, env config.Environment, scp bool) func(c *cli.Context) error {
 			return func(c *cli.Context) error {
 				if len(cfg.SSHUser) == 0 {
-					return fmt.Errorf("DP_SSH_USER environment variable must be set")
+					return cli.NewExitError("DP_SSH_USER environment variable must be set", 22)
 				}
 
 				idx := c.Args().First()
@@ -60,7 +69,11 @@ func Command(cfg config.Config) []cli.Command {
 				// if scp {
 				// 	fmt.Println("scp to " + grp + " in " + env.Name)
 				// } else {
-				fmt.Println("ssh to " + grp + " in " + env.Name)
+				colEnv := colAlt
+				if env.Name == "production" {
+					colEnv = colWarn
+				}
+				fmt.Println("ssh to " + colAlt + grp + colReset + " in " + colEnv + env.Name + colReset)
 				// }
 
 				r, err := aws.ListEC2ByAnsibleGroup(env.Name, grp)
@@ -70,25 +83,33 @@ func Command(cfg config.Config) []cli.Command {
 				if len(r) == 0 {
 					return errors.New("no matching instances found")
 				}
-				var inst aws.EC2Result
-				if len(r) > 1 {
-					if rIndex < 0 {
-						for i, v := range r {
-							fmt.Printf("[%d] %s: %s %s\n", i, v.Name, v.IPAddress, v.AnsibleGroups)
-						}
-						return errors.New("use an index to select a specific instance")
-					}
-
-					inst = r[rIndex]
-				} else {
-					inst = r[0]
+				if rIndex >= len(r) {
+					return cli.NewExitError(fmt.Sprintf("too few hosts found (%d) for requested instance[index] %s[%d]\n", len(r), grp, rIndex), 2)
 				}
-				fmt.Printf("[%d] %s: %s %s\n", rIndex, inst.Name, inst.IPAddress, inst.AnsibleGroups)
+
+				for i, v := range r {
+					if rIndex >= 0 && rIndex != i {
+						continue // args selected one, but not this one
+					}
+					colSwitch := ""
+					if i%2 == 0 {
+						colSwitch = colAlt
+					}
+					fmt.Printf(colSwitch+"["+colHi+"%2d"+colReset+colSwitch+"] %*s: "+colHi+"%*s"+colReset+" "+colSwitch+"%s"+colReset+"\n",
+						i,
+						widthName, v.Name,
+						widthIP, v.IPAddress,
+						v.AnsibleGroups,
+					)
+				}
+				if rIndex < 0 {
+					return cli.NewExitError("use an index to select a specific instance", 2)
+				}
 
 				// if scp {
 				// 	return launch.SCP(cfg, cfg.SSHUser, inst.IPAddress, c.Args().Tail()...)
 				// } else {
-				return launch.SSH(cfg, cfg.SSHUser, inst.IPAddress)
+				return launch.SSH(cfg, cfg.SSHUser, r[rIndex].IPAddress)
 				// }
 			}
 		}

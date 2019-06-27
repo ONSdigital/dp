@@ -20,11 +20,11 @@ func main() {
 
 	app := cli.NewApp()
 	app.Name = "dp"
-	app.Version = "0.1.0"
+	app.Version = "0.1.1"
 	app.Usage = "digital publishing helper command"
 
-	sshCommands := ssh.Command(cfg)
-	app.Commands = append(sshCommands,
+	app.Commands = append(
+		ssh.Command(cfg),
 		ui.Command(cfg),
 		remote.Command(cfg),
 		configCmd.Command(cfg),
