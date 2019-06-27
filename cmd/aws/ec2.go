@@ -432,6 +432,10 @@ func ListEC2(environment string) ([]EC2Result, error) {
 				Name:   aws.String("tag:Environment"),
 				Values: []*string{aws.String(environment)},
 			},
+			{
+				Name:   aws.String("instance-state-name"),
+				Values: []*string{aws.String(ec2.InstanceStateNameRunning)},
+			},
 		},
 	}
 
