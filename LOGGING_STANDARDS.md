@@ -5,7 +5,7 @@ Logging standards
 
 We have libraries the following libaries which match the logging standards defined below:
 
-* Go - [github.com/ONSdigital/go-ns/log](https://github.com/ONSdigital/go-ns/tree/master/log)
+* Go - [github.com/ONSdigital/log.go](https://github.com/ONSdigital/log.go)
 * Java - [com.github.onsdigital.logging](https://github.com/ONSdigital/dp-logging)
 * Javascript - [app/utilities/log.js](https://github.com/ONSdigital/florence/blob/develop/src/app/utilities/log.js)
 * Python - [dp4py_logging](https://github.com/ONSdigital/dp4py-logging)
