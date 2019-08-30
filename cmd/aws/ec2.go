@@ -157,7 +157,7 @@ func AllowIPForConcourse(cfg config.Config) error {
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(443)),
 				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 		},
 	})
@@ -194,7 +194,7 @@ func DenyIPForConcourse(cfg config.Config) error {
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(443)),
 				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 		},
 	})
@@ -241,13 +241,13 @@ func DenyIPForEnvironment(cfg config.Config, environment string) error {
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(22)),
 				ToPort:     aws.Int64(int64(22)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 			{
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(443)),
 				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 		},
 	})
@@ -324,13 +324,13 @@ func AllowIPForEnvironment(cfg config.Config, environment string) error {
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(22)),
 				ToPort:     aws.Int64(int64(22)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 			{
 				IpProtocol: aws.String("tcp"),
 				FromPort:   aws.Int64(int64(443)),
 				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   []*ec2.IpRange{{CidrIp: aws.String(myIP + "/32")}},
+				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
 			},
 		},
 	})
@@ -481,4 +481,13 @@ func ListEC2(environment string) ([]EC2Result, error) {
 	}
 
 	return resultCache[environment], nil
+}
+
+func getIpRangesFor(myIP, sshUser string) []*ec2.IpRange {
+	return []*ec2.IpRange{
+		{
+			CidrIp:      aws.String(myIP + "/32"),
+			Description: &sshUser,
+		},
+	}
 }
