@@ -43,6 +43,11 @@ func Command(cfg config.Config) []cli.Command {
 		// 	Usage: "scp to " + env.Name,
 		// }
 
+		profile := cfg.DefaultEnvProfile
+		if e.Profile != "" {
+			profile = e.Profile
+		}
+
 		groups, err := ansible.GetGroupsForEnvironment(cfg, env.Name)
 		if err != nil {
 			fmt.Printf("error loading ansible hosts for %s: %s\n", env.Name, err)
@@ -76,7 +81,7 @@ func Command(cfg config.Config) []cli.Command {
 				fmt.Println("ssh to " + colAlt + grp + colReset + " in " + colEnv + env.Name + colReset)
 				// }
 
-				r, err := aws.ListEC2ByAnsibleGroup(env.Name, grp)
+				r, err := aws.ListEC2ByAnsibleGroup(env.Name, profile, grp)
 				if err != nil {
 					return fmt.Errorf("error fetching ec2: %s", err)
 				}

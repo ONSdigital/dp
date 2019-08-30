@@ -28,9 +28,9 @@ func portHash(username string) int64 {
 	return port
 }
 
-func getEC2Service() *ec2.EC2 {
+func getEC2Service(environment, profile string) *ec2.EC2 {
 	// Create new EC2 client
-	return ec2.New(getAWSSession())
+	return ec2.New(getAWSSession(environment, profile))
 }
 
 var resultCache = make(map[string][]EC2Result)
@@ -43,8 +43,8 @@ type EC2Result struct {
 	AnsibleGroups []string
 }
 
-func GetBastionSGForEnvironment(environment string) (string, error) {
-	ec2Svc := getEC2Service()
+func GetBastionSGForEnvironment(environment, profile string) (string, error) {
+	ec2Svc := getEC2Service(environment, profile)
 
 	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
 		Filters: []*ec2.Filter{
@@ -76,7 +76,7 @@ func GetBastionSGForEnvironment(environment string) (string, error) {
 }
 
 func GetConcourseWebSG() (string, error) {
-	ec2Svc := getEC2Service()
+	ec2Svc := getEC2Service("", "")
 
 	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
 		Filters: []*ec2.Filter{
@@ -103,8 +103,8 @@ func GetConcourseWebSG() (string, error) {
 	return *res.SecurityGroups[0].GroupId, nil
 }
 
-func GetManagementACLForEnvironment(environment string) (string, error) {
-	ec2Svc := getEC2Service()
+func GetManagementACLForEnvironment(environment, profile string) (string, error) {
+	ec2Svc := getEC2Service(environment, profile)
 
 	res, err := ec2Svc.DescribeNetworkAcls(&ec2.DescribeNetworkAclsInput{
 		Filters: []*ec2.Filter{
@@ -136,7 +136,7 @@ func GetManagementACLForEnvironment(environment string) (string, error) {
 }
 
 func AllowIPForConcourse(cfg config.Config) error {
-	ec2Svc := getEC2Service()
+	ec2Svc := getEC2Service("", "")
 
 	sg, err := GetConcourseWebSG()
 	if err != nil {
@@ -173,7 +173,7 @@ func AllowIPForConcourse(cfg config.Config) error {
 }
 
 func DenyIPForConcourse(cfg config.Config) error {
-	ec2Svc := getEC2Service()
+	ec2Svc := getEC2Service("", "")
 
 	sg, err := GetConcourseWebSG()
 	if err != nil {
@@ -209,20 +209,20 @@ func DenyIPForConcourse(cfg config.Config) error {
 	return nil
 }
 
-func DenyIPForEnvironment(cfg config.Config, environment string) error {
-	ec2Svc := getEC2Service()
+func DenyIPForEnvironment(cfg config.Config, environment, profile string) error {
+	ec2Svc := getEC2Service(environment, profile)
 
 	if len(cfg.SSHUser) == 0 {
 		return errors.New("please set DP_SSH_USER to allow remote access")
 	}
 	ruleBase := portHash(cfg.SSHUser)
 
-	sg, err := GetBastionSGForEnvironment(environment)
+	sg, err := GetBastionSGForEnvironment(environment, profile)
 	if err != nil {
 		return err
 	}
 
-	acl, err := GetManagementACLForEnvironment(environment)
+	acl, err := GetManagementACLForEnvironment(environment, profile)
 	if err != nil {
 		return err
 	}
@@ -292,20 +292,20 @@ func DenyIPForEnvironment(cfg config.Config, environment string) error {
 	return nil
 }
 
-func AllowIPForEnvironment(cfg config.Config, environment string) error {
-	ec2Svc := getEC2Service()
+func AllowIPForEnvironment(cfg config.Config, environment, profile string) error {
+	ec2Svc := getEC2Service(environment, profile)
 
 	if len(cfg.SSHUser) == 0 {
 		return errors.New("please set DP_SSH_USER to allow remote access")
 	}
 	ruleBase := portHash(cfg.SSHUser)
 
-	sg, err := GetBastionSGForEnvironment(environment)
+	sg, err := GetBastionSGForEnvironment(environment, profile)
 	if err != nil {
 		return err
 	}
 
-	acl, err := GetManagementACLForEnvironment(environment)
+	acl, err := GetManagementACLForEnvironment(environment, profile)
 	if err != nil {
 		return err
 	}
@@ -396,8 +396,8 @@ func AllowIPForEnvironment(cfg config.Config, environment string) error {
 	return nil
 }
 
-func ListEC2ByAnsibleGroup(environment string, ansibleGroup string) ([]EC2Result, error) {
-	r, err := ListEC2(environment)
+func ListEC2ByAnsibleGroup(environment, profile string, ansibleGroup string) ([]EC2Result, error) {
+	r, err := ListEC2(environment, profile)
 	if err != nil {
 		return r, err
 	}
@@ -416,13 +416,13 @@ func ListEC2ByAnsibleGroup(environment string, ansibleGroup string) ([]EC2Result
 }
 
 // ListEC2 returns a list of EC2 instances which match the environment name
-func ListEC2(environment string) ([]EC2Result, error) {
+func ListEC2(environment, profile string) ([]EC2Result, error) {
 	if r, ok := resultCache[environment]; ok {
 		return r, nil
 	}
 	resultCache[environment] = make([]EC2Result, 0)
 
-	ec2Svc := getEC2Service()
+	ec2Svc := getEC2Service(environment, profile)
 
 	var result *ec2.DescribeInstancesOutput
 	var err error

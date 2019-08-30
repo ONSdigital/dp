@@ -20,6 +20,8 @@ type Config struct {
 
 	SetupRepo string `yaml:"setupRepo"`
 
+	DefaultEnvProfile string `yaml:"default_env_profile"`
+
 	GoPath  string `yaml:"-"`
 	SSHUser string `yaml:"-"`
 }
@@ -32,7 +34,8 @@ type App struct {
 
 // Environment represents an environment
 type Environment struct {
-	Name string `yaml:"name"`
+	Name    string `yaml:"name"`
+	Profile string `yaml:"profile"`
 }
 
 // GetDPSetupPath resolves the location of the dp-setup repo
