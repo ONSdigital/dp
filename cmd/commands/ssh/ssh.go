@@ -99,7 +99,7 @@ func Command(cfg config.Config) []cli.Command {
 					)
 				}
 				if itemChosen == 0 {
-					return cli.NewExitError("use an number to select a specific instance", 2)
+					return cli.NewExitError("use a number to select a specific instance", 2)
 				}
 
 				return launch.SSH(cfg, cfg.SSHUser, r[itemChosen-1].IPAddress)
