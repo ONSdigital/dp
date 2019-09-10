@@ -60,26 +60,11 @@ func Command(cfg config.Config) []cli.Command {
 					return cli.NewExitError("DP_SSH_USER environment variable must be set", 22)
 				}
 
-				idx := c.Args().First()
-				rIndex := int(-1)
-
-				if len(idx) > 0 {
-					idxInt, err := strconv.Atoi(idx)
-					if err != nil {
-						return fmt.Errorf("invalid numeric value for index: %s", idx)
-					}
-					rIndex = idxInt
-				}
-
-				// if scp {
-				// 	fmt.Println("scp to " + grp + " in " + env.Name)
-				// } else {
 				colEnv := colAlt
 				if env.Name == "production" {
 					colEnv = colWarn
 				}
 				fmt.Println("ssh to " + colAlt + grp + colReset + " in " + colEnv + env.Name + colReset)
-				// }
 
 				r, err := aws.ListEC2ByAnsibleGroup(env.Name, profile, grp)
 				if err != nil {
@@ -88,12 +73,18 @@ func Command(cfg config.Config) []cli.Command {
 				if len(r) == 0 {
 					return errors.New("no matching instances found")
 				}
-				if rIndex >= len(r) {
-					return cli.NewExitError(fmt.Sprintf("too few hosts found (%d) for requested instance[index] %s[%d]\n", len(r), grp, rIndex), 2)
+
+				var itemChosen int
+				if argAsString := c.Args().First(); len(argAsString) > 0 {
+					var err error
+					itemChosen, err = strconv.Atoi(argAsString)
+					if err != nil || itemChosen == 0 || itemChosen > len(r) {
+						return fmt.Errorf("invalid numeric value: %q - must be 1..%d", argAsString, len(r))
+					}
 				}
 
 				for i, v := range r {
-					if rIndex >= 0 && rIndex != i {
+					if itemChosen > 0 && itemChosen != i+1 {
 						continue // args selected one, but not this one
 					}
 					colSwitch := ""
@@ -101,21 +92,17 @@ func Command(cfg config.Config) []cli.Command {
 						colSwitch = colAlt
 					}
 					fmt.Printf(colSwitch+"["+colHi+"%2d"+colReset+colSwitch+"] %*s: "+colHi+"%*s"+colReset+" "+colSwitch+"%s"+colReset+"\n",
-						i,
+						i+1,
 						widthName, v.Name,
 						widthIP, v.IPAddress,
 						v.AnsibleGroups,
 					)
 				}
-				if rIndex < 0 {
-					return cli.NewExitError("use an index to select a specific instance", 2)
+				if itemChosen == 0 {
+					return cli.NewExitError("use an number to select a specific instance", 2)
 				}
 
-				// if scp {
-				// 	return launch.SCP(cfg, cfg.SSHUser, inst.IPAddress, c.Args().Tail()...)
-				// } else {
-				return launch.SSH(cfg, cfg.SSHUser, r[rIndex].IPAddress)
-				// }
+				return launch.SSH(cfg, cfg.SSHUser, r[itemChosen-1].IPAddress)
 			}
 		}
 

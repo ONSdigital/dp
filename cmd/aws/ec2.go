@@ -3,6 +3,7 @@ package aws
 import (
 	"errors"
 	"fmt"
+	"sort"
 	"strings"
 
 	cli "gopkg.in/urfave/cli.v1"
@@ -480,6 +481,7 @@ func ListEC2(environment, profile string) ([]EC2Result, error) {
 		}
 	}
 
+	sort.Slice(resultCache[environment], func(i, j int) bool { return resultCache[environment][i].Name < resultCache[environment][j].Name })
 	return resultCache[environment], nil
 }
 
