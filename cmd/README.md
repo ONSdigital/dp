@@ -9,6 +9,10 @@ Helper command to work with Digital Publishing services
 2. `go get github.com/ONSdigital/dp/cmd/dp`
 3. `dp`
 
+### Development
+
+Remember to update the version in [the code](dp/main.go).
+
 ### Known issues
 
 * `remote` commands (`allow` and `deny`) get current IP from ipify, but this means a `deny`
