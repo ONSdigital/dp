@@ -9,7 +9,7 @@ Release process
 ## Development 'done'
 
 * Pull request from feature branch into `develop`
-* Code is peer-reviewed and checked in CI
+* Code is peer-reviewed and has passed in CI
 * Code issues identified in pull request are fixed
 * Pull request approved
 * Feature branch merged into `develop`
