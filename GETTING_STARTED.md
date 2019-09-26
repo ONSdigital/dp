@@ -3,7 +3,7 @@ Getting started
 
 #### The Basics
 
-[Websysd](https://github.com/ONSdigital/dp/tree/master/websysd) can accomplish steps 1-4 for you.
+[Websysd](https://github.com/ONSdigital/dp/tree/master/websysd) can accomplish steps 1-4 for you. Alternatively see [iTerm2 steps](#iTerm2 setup)
 
 1. Install the [prerequisites](#prerequisites)
 
@@ -18,6 +18,8 @@ _Tips & Trick_ This [iTerm2 walkthough](#iTerm2) can help you run the apps
 
 If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md)
 
+Once setup is completed see the [Contributing guidelines](https://github.com/ONSdigital/dp/blob/master/CONTRIBUTING.md
+)
 #### For CMD:
 
 __Additional app setup:__
@@ -59,8 +61,7 @@ __Florence steps:__
 
 For CMD additionally install:
 
-* Zookeeper
-
+* [Zookeeper](https://formulae.brew.sh/formula/zookeeper)
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
 * [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
 * [Kafka](https://kafka.apache.org/quickstart)
@@ -168,22 +169,11 @@ If you already have content, and you just want to run the web journey, you'll ne
 
 The majority of these apps will run with `make debug`, except the XLSX exporter which requires `./run.sh`
 
-
-#### Reaching end-user experience 
-
-### Publishing
-  - Florence will be available at `http://localhost:8081/florence/login`
-  - The website will be available at `http://localhost:8081` (only available after a successful login into Florence)
-  
-### Web
-  - The website will be available at `http://localhost:22000`
-  
 ### iTerm2 setup
   - Any terminal can be used however there are advantages of using iTerm2 such as badges, profiles, arrangements, panes ability to send commands to all panes.
   - iTerm2 can be installed here: https://www.iterm2.com/
   - Setup the pane arrangements and profiles by following this tutorial https://blog.andrewray.me/how-to-create-custom-iterm2-window-arrangments/
   - It can be advantageous to give each profile a badge, instructions to complete this can be found here: https://www.iterm2.com/documentation-badges.html
-  - It is worth grouping 
   
 #### Configure
 * In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`
@@ -209,6 +199,16 @@ Note that when the first login to a Florence account is detected a mandatory pas
   5. Stop each application running in terminal instances and reload the .bash_profile into them by repeating step 2 in each terminal.
   6. Restart each application. In the future just repeat steps 3-6 in order to configure a new service authentication token
 
+
+## Reaching end-user experience 
+
+### Publishing
+  - Florence will be available at `http://localhost:8081/florence/login`
+  - The website will be available at `http://localhost:8081` (only available after a successful login into Florence)
+  
+### Web
+  - The website will be available at `http://localhost:22000`
+  
 ### Useful resources
 * [Splash-page](https://github.com/ONSdigital/dp-setup/tree/develop/splash-page) (if you get a 404 error following this link, you need to be added to the ONSdigital organisation in GitHub), a list of digital publishing's repositories, environments, and platform-tools
 * [dp-tool](https://github.com/ONSdigital/dp/tree/master/cmd) is a useful tool to grant access to environments and SSH into them when working outside the normal network
