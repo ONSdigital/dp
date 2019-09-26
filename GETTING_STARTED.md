@@ -5,18 +5,19 @@ Getting started
 
 Note: [Websysd](https://github.com/ONSdigital/dp/tree/master/websysd) can accomplish steps 1-4 for you. Alternatively see [iTerm2 steps](#iTerm2-setup)
 
-1. [ ] Install the [prerequisites](#prerequisites)
+1. Install the [prerequisites](#prerequisites)
 
-2. [ ] Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd). To get everything running follow the [CMD](#cmd) steps
+2. Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd). To get everything running follow the [CMD](#cmd) steps
 
-3. [ ] [Setup Zebedee content](#setup-zebedee-content)
+3. [Setup Zebedee content](#setup-zebedee-content)
 
-4. [ ] Run the apps:
-  - [ ] [web](#web)
-  - [ ] [publishing](#publishing)
-  - [ ] and optionally [CMD](#cmd).
+4. Run the apps:
 
-5. [ ] [Configure the apps](#configure)
+  - [web](#web)
+  - [publishing](#publishing)
+  - and optionally [CMD](#cmd).
+
+5. [Configure the apps](#configure)
 
 If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
 
