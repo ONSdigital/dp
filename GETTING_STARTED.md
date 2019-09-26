@@ -12,14 +12,13 @@ Getting started
 3. [Setup Zebedee content](#setup-zebedee-content)
 
 4. Run the apps [web](#web), [publishing](#publishing) and/or [CMD](#cmd). 
-_Tips & Trick_ This [iTerm2 walkthough](#iTerm2) can help you run the apps
 
 5. [Configure the apps](#configure)
 
 If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/tree/cmd-develop/USAGE.md)
 
-Once setup is completed see the [Contributing guidelines](https://github.com/ONSdigital/dp/blob/master/CONTRIBUTING.md
-)
+Once setup is completed see the [Contributing guidelines](CONTRIBUTING.md)
+
 #### For CMD:
 
 __Additional app setup:__
