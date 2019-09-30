@@ -60,7 +60,6 @@ __Florence steps:__
 
 For CMD additionally install:
 
-* [Zookeeper](https://formulae.brew.sh/formula/zookeeper)
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
 * [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
 * [Kafka](https://kafka.apache.org/quickstart)
@@ -169,35 +168,16 @@ If you already have content, and you just want to run the web journey, you'll ne
 The majority of these apps will run with `make debug`, except the XLSX exporter which requires `./run.sh`
 
 ### iTerm2 setup
-  - Any terminal can be used however there are advantages of using iTerm2 such as badges, profiles, arrangements, panes ability to send commands to all panes.
+  - Any terminal can be used however there are advantages of using iTerm2 such as badges, profiles, arrangements, multiple panes, ability to send commands to all panes.
   - iTerm2 can be installed here: https://www.iterm2.com/
   - Setup the pane arrangements and profiles by following this tutorial https://blog.andrewray.me/how-to-create-custom-iterm2-window-arrangments/
   - It can be advantageous to give each profile a badge, instructions to complete this can be found here: https://www.iterm2.com/documentation-badges.html
   
 #### Configure
 * In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`
-* Service authentication token creation steps can be found here: https://github.com/ONSdigital/zebedee/#service-authentication-with-zebedee 
-Note that when the first login to a Florence account is detected a mandatory password update is required. Be aware that this token expires every so often, so it might be beneficial to do the following:
-  1. Add the following to your `.bash_profile` replacing `<password>` with the password of the account 
-        ```shell script
-            # getAT gets an auth token for apps.
-            function getAT {
-                local florenceToken=$(curl -X POST -d '{"email":"florence@magicroundabout.ons.gov.uk","password":"<password>"}' http://localhost:8082/login)
-                curl -X POST http://localhost:8082/service -H "X-Florence-Token: $florenceToken" -d '{"id":"admin"}'
-            }
-            
-            function setAT {
-                export SERVICE_AUTH_TOKEN=$(getAT | jq -r .token)
-                echo "SERVICE_AUTH_TOKEN has now been set to: $SERVICE_AUTH_TOKEN"
-            }
-        
-        ``` 
-  2. Load the updated ~/.bash_profile into your terminal again by running `$ source ~/.bash_profile` or open a new terminal window
-  3. Ensure Florence and Zebedee are running
-  4. Run `$ setAT`
-  5. Stop each application running in terminal instances and reload the .bash_profile into them by repeating step 2 in each terminal.
-  6. Restart each application. In the future just repeat steps 3-6 in order to configure a new service authentication token
+* Service authentication token creation steps can be found in the [Zebedee repository](https://github.com/ONSdigital/zebedee/#service-authentication-with-zebedee) 
 
+Note that when the first login to a Florence account is detected a mandatory password update is required.
 
 ## Reaching end-user experience 
 
