@@ -9,7 +9,7 @@ We use GPG to sign our commits.
 ### Getting started
 
 * Ask for a [keybase.io](https://keybase.io) invite if you don't already have an account
-* Get your [public GPG key added to CI](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md) (if you get a 404 error following this link, you need to be added to the ONSdigital organisation in GitHub)
+* Request that a member of the team [add your public GPG key to CI](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md) (if you get a 404 error following this link, you need to be added to the `ONSdigital` organisation in GitHub)
 * Configure Git to sign all commits
 
 ### Setting up GPG signing on Mac OS

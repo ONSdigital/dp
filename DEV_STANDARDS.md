@@ -48,6 +48,7 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 * All tests need to pass on PR
 * Involve members of the QA team where appropriate in the development and review of integration / acceptance tests
 * Any bugs found in the system should have a test created at the lowest level that exercises that error condition
+
 ##### Unit tests
 
 * Should always be in the same solution as the application code
@@ -79,6 +80,7 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 * Git-flow (see [A successful git branching model](https://nvie.com/posts/a-successful-git-branching-model/))
   * `master`/`develop` branches - must be protected
   * `feature/feature-name` branches
+  * `fix/fix-name` branches
   * `hotfix/hotfix-name` branches
   * Use GPG signed annotated release tags
 * [Pull request templates](.github/PULL_REQUEST_TEMPLATE.md)
