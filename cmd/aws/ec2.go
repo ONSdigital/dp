@@ -44,64 +44,55 @@ type EC2Result struct {
 	AnsibleGroups []string
 }
 
-func GetBastionSGForEnvironment(environment, profile string) (string, error) {
+func GetNamedSG(name, environment, profile string) (string, error) {
 	ec2Svc := getEC2Service(environment, profile)
+	filters := []*ec2.Filter{
+		{
+			Name:   aws.String("tag:Name"),
+			Values: []*string{aws.String(name)},
+		},
+	}
+	if len(environment) > 0 {
+		filters = append(filters, &ec2.Filter{
+			Name:   aws.String("tag:Environment"),
+			Values: []*string{aws.String(environment)},
+		})
+	}
 
 	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
-		Filters: []*ec2.Filter{
-			{
-				Name:   aws.String("tag:Environment"),
-				Values: []*string{aws.String(environment)},
-			},
-			{
-				Name:   aws.String("tag:Name"),
-				Values: []*string{aws.String(environment + " - bastion")},
-			},
-		},
+		Filters: filters,
 	})
 	if err != nil {
 		return "", err
 	}
 
 	if len(res.SecurityGroups) < 1 {
-		return "", fmt.Errorf("no security groups matching environment: %s", environment)
+		return "", fmt.Errorf("no security groups matching environment: %q with name %q", environment, name)
 	}
 	if len(res.SecurityGroups) > 1 {
-		return "", fmt.Errorf("too many security groups matching environment: %s", environment)
+		return "", fmt.Errorf("too many security groups matching environment: %s name: %q", environment, name)
 	}
 	if res.SecurityGroups[0].GroupId == nil {
-		return "", fmt.Errorf("no groupId found for security group: %s", environment)
+		return "", fmt.Errorf("no groupId found for security group on environment: %q name: %q", environment, name)
 	}
 
 	return *res.SecurityGroups[0].GroupId, nil
 }
 
+func GetBastionSGForEnvironment(environment, profile string) (string, error) {
+	return GetNamedSG(environment+" - bastion", environment, profile)
+}
+
+func GetELBPublishingSGForEnvironment(environment, profile string) (string, error) {
+	return GetNamedSG(environment+" - publishing elb", environment, profile)
+}
+
+func GetELBWebSGForEnvironment(environment, profile string) (string, error) {
+	return GetNamedSG(environment+" - web elb", environment, profile)
+}
+
 func GetConcourseWebSG() (string, error) {
-	ec2Svc := getEC2Service("", "")
-
-	res, err := ec2Svc.DescribeSecurityGroups(&ec2.DescribeSecurityGroupsInput{
-		Filters: []*ec2.Filter{
-			{
-				Name:   aws.String("tag:Name"),
-				Values: []*string{aws.String("concourse-ci-web")},
-			},
-		},
-	})
-	if err != nil {
-		return "", err
-	}
-
-	if len(res.SecurityGroups) < 1 {
-		return "", fmt.Errorf("no security groups for concourse")
-	}
-	if len(res.SecurityGroups) > 1 {
-		return "", fmt.Errorf("too many security groups for concourse")
-	}
-	if res.SecurityGroups[0].GroupId == nil {
-		return "", fmt.Errorf("no groupId found for security group")
-	}
-
-	return *res.SecurityGroups[0].GroupId, nil
+	return GetNamedSG("concourse-ci-web", "", "")
 }
 
 func GetManagementACLForEnvironment(environment, profile string) (string, error) {
@@ -211,97 +202,36 @@ func DenyIPForConcourse(cfg config.Config) error {
 }
 
 func DenyIPForEnvironment(cfg config.Config, environment, profile string) error {
-	ec2Svc := getEC2Service(environment, profile)
-
-	if len(cfg.SSHUser) == 0 {
-		return errors.New("please set DP_SSH_USER to allow remote access")
-	}
-	ruleBase := portHash(cfg.SSHUser)
-
-	sg, err := GetBastionSGForEnvironment(environment, profile)
-	if err != nil {
-		return err
-	}
-
-	acl, err := GetManagementACLForEnvironment(environment, profile)
-	if err != nil {
-		return err
-	}
-
-	myIP, err := config.GetMyIP()
-	if err != nil {
-		return err
-	}
-
-	var errs []error
-
-	_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
-		GroupId: aws.String(sg),
-		IpPermissions: []*ec2.IpPermission{
-			{
-				IpProtocol: aws.String("tcp"),
-				FromPort:   aws.Int64(int64(22)),
-				ToPort:     aws.Int64(int64(22)),
-				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
-			},
-			{
-				IpProtocol: aws.String("tcp"),
-				FromPort:   aws.Int64(int64(443)),
-				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
-			},
-		},
-	})
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error removing rules from sg: %s", err))
-	}
-
-	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
-		Egress:       aws.Bool(false),
-		NetworkAclId: aws.String(acl),
-		RuleNumber:   aws.Int64(ruleBase), // 1 to 32766
-	})
-
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
-	}
-
-	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
-		Egress:       aws.Bool(false),
-		NetworkAclId: aws.String(acl),
-		RuleNumber:   aws.Int64(ruleBase + 1), // 1 to 32766
-	})
-
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
-	}
-
-	_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
-		Egress:       aws.Bool(true),
-		NetworkAclId: aws.String(acl),
-		RuleNumber:   aws.Int64(ruleBase + 2), // 1 to 32766
-	})
-
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
-	}
-
-	if len(errs) > 0 {
-		return cli.NewMultiError(errs...)
-	}
-
-	return nil
+	return ChangeIPForEnvironment(false, cfg, environment, profile)
+}
+func AllowIPForEnvironment(cfg config.Config, environment, profile string) error {
+	return ChangeIPForEnvironment(true, cfg, environment, profile)
 }
 
-func AllowIPForEnvironment(cfg config.Config, environment, profile string) error {
+func ChangeIPForEnvironment(isAllow bool, cfg config.Config, environment, profile string) error {
 	ec2Svc := getEC2Service(environment, profile)
 
 	if len(cfg.SSHUser) == 0 {
-		return errors.New("please set DP_SSH_USER to allow remote access")
+		return errors.New("please set DP_SSH_USER to change remote access")
 	}
 	ruleBase := portHash(cfg.SSHUser)
 
-	sg, err := GetBastionSGForEnvironment(environment, profile)
+	bastionSG, err := GetBastionSGForEnvironment(environment, profile)
+	if err != nil {
+		return err
+	}
+
+	envIsProduction := environment == "production"
+	var pubSG string
+	if !envIsProduction {
+		var err error
+		pubSG, err = GetELBPublishingSGForEnvironment(environment, profile)
+		if err != nil {
+			return err
+		}
+	}
+
+	webSG, err := GetELBWebSGForEnvironment(environment, profile)
 	if err != nil {
 		return err
 	}
@@ -316,78 +246,166 @@ func AllowIPForEnvironment(cfg config.Config, environment, profile string) error
 		return err
 	}
 
-	var errs []error
+	var (
+		errs        []error
+		ipPermHTTPS = &ec2.IpPermission{
+			IpProtocol: aws.String("tcp"),
+			FromPort:   aws.Int64(int64(443)),
+			ToPort:     aws.Int64(int64(443)),
+			IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
+		}
+		ipPermSSH = &ec2.IpPermission{
+			IpProtocol: aws.String("tcp"),
+			FromPort:   aws.Int64(int64(22)),
+			ToPort:     aws.Int64(int64(22)),
+			IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
+		}
+		ipPermHTTP = &ec2.IpPermission{
+			IpProtocol: aws.String("tcp"),
+			FromPort:   aws.Int64(int64(80)),
+			ToPort:     aws.Int64(int64(80)),
+			IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
+		}
+		ipPermsAllHTTP = []*ec2.IpPermission{
+			ipPermHTTP,
+			ipPermHTTPS,
+		}
+		ipPermsAllSecure = []*ec2.IpPermission{
+			ipPermSSH,
+			ipPermHTTPS,
+		}
+	)
 
-	_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
-		GroupId: aws.String(sg),
-		IpPermissions: []*ec2.IpPermission{
-			{
-				IpProtocol: aws.String("tcp"),
-				FromPort:   aws.Int64(int64(22)),
-				ToPort:     aws.Int64(int64(22)),
-				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
+	if isAllow {
+
+		_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
+			GroupId:       aws.String(bastionSG),
+			IpPermissions: ipPermsAllSecure,
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error adding rules to bastionSG: %s", err))
+		}
+
+		_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
+			GroupId:       aws.String(webSG),
+			IpPermissions: ipPermsAllHTTP,
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from webSG: %s", err))
+		}
+
+		if !envIsProduction {
+			_, err = ec2Svc.AuthorizeSecurityGroupIngress(&ec2.AuthorizeSecurityGroupIngressInput{
+				GroupId:       aws.String(pubSG),
+				IpPermissions: ipPermsAllHTTP,
+			})
+			if err != nil {
+				errs = append(errs, fmt.Errorf("error removing rules from pubSG: %s", err))
+			}
+		}
+
+		_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+			Egress:       aws.Bool(false),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase), // 1 to 32766
+			CidrBlock:    aws.String(myIP + "/32"),
+			Protocol:     aws.String("6"),
+			RuleAction:   aws.String("allow"),
+			PortRange: &ec2.PortRange{
+				From: aws.Int64(int64(22)),
+				To:   aws.Int64(int64(22)),
 			},
-			{
-				IpProtocol: aws.String("tcp"),
-				FromPort:   aws.Int64(int64(443)),
-				ToPort:     aws.Int64(int64(443)),
-				IpRanges:   getIpRangesFor(myIP, cfg.SSHUser),
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+		}
+
+		_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+			Egress:       aws.Bool(false),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase + 1), // 1 to 32766
+			CidrBlock:    aws.String(myIP + "/32"),
+			Protocol:     aws.String("6"),
+			RuleAction:   aws.String("allow"),
+			PortRange: &ec2.PortRange{
+				From: aws.Int64(int64(443)),
+				To:   aws.Int64(int64(443)),
 			},
-		},
-	})
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error adding rules to sg: %s", err))
-	}
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+		}
 
-	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
-		CidrBlock:    aws.String(myIP + "/32"),
-		Egress:       aws.Bool(false),
-		Protocol:     aws.String("6"),
-		RuleAction:   aws.String("allow"),
-		NetworkAclId: aws.String(acl),
-		PortRange: &ec2.PortRange{
-			From: aws.Int64(int64(22)),
-			To:   aws.Int64(int64(22)),
-		},
-		RuleNumber: aws.Int64(int64(ruleBase)), // 1 to 32766
-	})
+		_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
+			Egress:       aws.Bool(true),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase + 2), // 1 to 32766
+			CidrBlock:    aws.String(myIP + "/32"),
+			Protocol:     aws.String("6"),
+			RuleAction:   aws.String("allow"),
+			PortRange: &ec2.PortRange{
+				From: aws.Int64(int64(32768)),
+				To:   aws.Int64(int64(61000)),
+			},
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+		}
 
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
-	}
+	} else {
 
-	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
-		CidrBlock:    aws.String(myIP + "/32"),
-		Egress:       aws.Bool(false),
-		Protocol:     aws.String("6"),
-		RuleAction:   aws.String("allow"),
-		NetworkAclId: aws.String(acl),
-		PortRange: &ec2.PortRange{
-			From: aws.Int64(int64(443)),
-			To:   aws.Int64(int64(443)),
-		},
-		RuleNumber: aws.Int64(ruleBase + 1), // 1 to 32766
-	})
+		_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
+			GroupId:       aws.String(bastionSG),
+			IpPermissions: ipPermsAllSecure,
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from bastionSG: %s", err))
+		}
 
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
-	}
+		_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
+			GroupId:       aws.String(webSG),
+			IpPermissions: ipPermsAllHTTP,
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from webSG: %s", err))
+		}
 
-	_, err = ec2Svc.CreateNetworkAclEntry(&ec2.CreateNetworkAclEntryInput{
-		CidrBlock:    aws.String(myIP + "/32"),
-		Egress:       aws.Bool(true),
-		Protocol:     aws.String("6"),
-		RuleAction:   aws.String("allow"),
-		NetworkAclId: aws.String(acl),
-		PortRange: &ec2.PortRange{
-			From: aws.Int64(int64(32768)),
-			To:   aws.Int64(int64(61000)),
-		},
-		RuleNumber: aws.Int64(ruleBase + 2), // 1 to 32766
-	})
+		if !envIsProduction {
+			_, err = ec2Svc.RevokeSecurityGroupIngress(&ec2.RevokeSecurityGroupIngressInput{
+				GroupId:       aws.String(pubSG),
+				IpPermissions: ipPermsAllHTTP,
+			})
+			if err != nil {
+				errs = append(errs, fmt.Errorf("error removing rules from pubSG: %s", err))
+			}
+		}
 
-	if err != nil {
-		errs = append(errs, fmt.Errorf("error adding rules to acl: %s", err))
+		_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+			Egress:       aws.Bool(false),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase), // 1 to 32766
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+		}
+
+		_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+			Egress:       aws.Bool(false),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase + 1), // 1 to 32766
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+		}
+
+		_, err = ec2Svc.DeleteNetworkAclEntry(&ec2.DeleteNetworkAclEntryInput{
+			Egress:       aws.Bool(true),
+			NetworkAclId: aws.String(acl),
+			RuleNumber:   aws.Int64(ruleBase + 2), // 1 to 32766
+		})
+		if err != nil {
+			errs = append(errs, fmt.Errorf("error removing rules from acl: %s", err))
+		}
 	}
 
 	if len(errs) > 0 {
