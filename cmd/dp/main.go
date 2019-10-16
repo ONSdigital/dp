@@ -20,7 +20,7 @@ func main() {
 
 	app := cli.NewApp()
 	app.Name = "dp"
-	app.Version = "0.1.2"
+	app.Version = "0.2.0"
 	app.Usage = "digital publishing helper command"
 
 	app.Commands = append(
