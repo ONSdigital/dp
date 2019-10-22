@@ -9,17 +9,23 @@ Before you begin it's worth reading the [Golang Modules guide](https://blog.gola
 ### Some title
 
 A Go modules project requires the project to live outside of your go path. 
- - If you haven't already create a new go projects directory outside of your go path - for me this is `/Users/dave/go
- -projects`
- - Git clone the repo into it. 
- - Create and swicth to a feature branch.
- 
-Go modules does support migrating from vendor but I ran into issues so I would recommend starting fresh and deleting
- the `/vendor` dir from your project. This will give you a clean slate and bring the latest verison of each
-  dependency. If your project relies on a specific version you can change this later.
-  
+ - If you haven't already create a new go projects directory outside of your go path - for me this is:
+    `/Users/dave/go-projects`
+ - Git clone your repo into this directory 
+ - Create and swicth to a feature branch for the migration.
+
 ### Creating a module
-To create a module run the go mod cmd in root dir of your project. For example
+Go modules does support migrating from vendor but I ran into issues whilst trying this. For now I would recommend
+ starting fresh and deleting the `/vendor` dir from your project. This will give you a clean slate and bring the
+  latest verison of each dependency. If your project relies on a specific version you can change this later.
+
+To create a module run the go mod cmd in root dir of your project or whereever you want the root of your modules to
+ be.
+ 
+ ```bash
+ go mod init <MODULE_NAME>
+ ```
+Example:
 
 ```bash
 go mod init github.com/ONSdigital/dp-recipe-api
@@ -40,8 +46,10 @@ require (
 ```
 It should also create `go.sum` file.
 
-If you now run `go test ./...` you should see output similar too:
+If you need specific version of dependencies you can edit this file with the specific versions you require. See the 
+[Golang Modules guide](https://blog.golang.org/using-go-modules) for details on versioning.
 
+If you run the tests for you module now you should see output similar too:
 ```
     $ go test ./...
     go: finding <SOME_DEPENDENCY> vX.X.X
@@ -49,4 +57,5 @@ If you now run `go test ./...` you should see output similar too:
     go: extracting <SOME_DEPENDENCY> vX.X.X
     ...
 ```
-
+Assuming all is well then the dependcies should resolved successfully and your unit tests should pass
+. Congratulations you are rocking Go modules! 
