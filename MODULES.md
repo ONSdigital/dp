@@ -8,11 +8,10 @@ Before you begin it's worth reading the [Golang Modules guide](https://blog.gola
 
 ### Some title
 
-A Go modules project requires the project to live outside of your go path. 
- - If you haven't already create a new go projects directory outside of your go path - for me this is:
-    `/Users/dave/go-projects`
+A Go modules project requires the project to live outside of your $GOPATH. 
+ - If you haven't already create a new go projects directory outside of your $GOPATH. For me this is: `/Users/dave/go-projects`
  - Git clone your repo into this directory 
- - Create and swicth to a feature branch for the migration.
+ - Create and switch to a feature branch for the migration.
 
 ### Creating a module
 Go modules does support migrating from vendor but I ran into issues whilst trying this. For now I would recommend
@@ -46,10 +45,10 @@ require (
 ```
 It should also create `go.sum` file.
 
-If you need specific version of dependencies you can edit this file with the specific versions you require. See the 
-[Golang Modules guide](https://blog.golang.org/using-go-modules) for details on versioning.
+If you need specific version of a dependency you can edit this file as required. See the 
+[Golang Modules guide](https://blog.golang.org/using-go-modules) for details on how versioning is handles in Go Modules.
 
-If you run the tests for you module now you should see output similar too:
+If you run the tests for your module you should see output similar too:
 ```
     $ go test ./...
     go: finding <SOME_DEPENDENCY> vX.X.X
@@ -57,5 +56,7 @@ If you run the tests for you module now you should see output similar too:
     go: extracting <SOME_DEPENDENCY> vX.X.X
     ...
 ```
-Assuming all is well then the dependcies should resolved successfully and your unit tests should pass
-. Congratulations you are rocking Go modules! 
+Assuming all is well then the dependencies should resolve successfully and your unit tests should pass. At this point I
+ would recommend runing your app and verifying everything still works as expected. If applicable you should also run any
+  integration tests to boost your confidence that the migration has not adversly affected any functionality. If 
+  everything is working as expected *Congratulations* you have successfully migrated your app to Go modules. 
