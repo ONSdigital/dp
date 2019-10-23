@@ -1,8 +1,7 @@
 Migrating to Go Modules
 =======================
 
-A developer guide for migrating an existing Go project from govendor to modules. Each example uses the `dp-recipe-api
-` as the project being migrated.
+A developer guide for migrating an existing Go project from govendor to modules and getting to build in CI.
 
 ### Prerequisites
 - Go Modules was introduced in Go `1.11`? so you will need to ensure you are running Go `1.11` or later.
@@ -21,12 +20,11 @@ Go modules does support migrating from vendor but I ran into issues whilst tryin
  starting fresh and deleting the `/vendor` dir from your project. This will give you a clean slate and bring in the
   latest verison of each dependency. If your project relies on a specific version you can fix this later.
 
-To create a module run:
- 
- ```bash
- go mod init <MODULE_NAME>
- ```
-in root dir of your project. For example to init the dp-recipe-api module:
+To create a module run: `go mod init <MODULE_NAME>` in root dir of your project. `<MODULE_NAME>` is used by external
+ packages importing your code. For existing apps we need to maintain backwards compatability so module name must be
+  `github.com/ONSdigital/<REPO_NAME>`.
+
+Example:
 ```bash
 go mod init github.com/ONSdigital/dp-recipe-api
 ``` 
