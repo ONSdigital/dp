@@ -1,7 +1,7 @@
 Migrating to Go Modules
 =======================
 
-A developer guide for migrating an existing Go project from govendor to modules and getting to build in CI.
+A developer guide for migrating an existing Go project from govendor to modules and getting it building in CI.
 
 ### Prerequisites
 - Go Modules was introduced in Go `1.11`? so you will need to ensure you are running Go `1.11` or later.
@@ -63,6 +63,8 @@ At this point its recommend you run your app and verifying everything still work
    Go modules.
    
 ### Building in CI
+The previous steps cover converting a project and getting it building/running locally. The following steps detail how
+ to get the project building successfully in the CI pipeline.
 
 - Update `Makefile` removing any references to the vendor directory. For example:
     ```yaml
