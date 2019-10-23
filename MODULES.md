@@ -62,4 +62,44 @@ Assuming all is well then the dependencies should resolve successfully and your 
 At this point its recommend you run your app and verifying everything still works as expected. If applicable you
  should also run any integration tests to boost your confidence that the migration has not adversly affected any
   functionality. If everything is working as expected *Congratulations* you have successfully migrated your app to
-   Go modules. 
+   Go modules.
+   
+### Building in CI
+
+- Update `Makefile` removing any references to the vendor directory. For example:
+    ```yaml
+    # go test -cover $(shell go list ./... | grep -v /vendor/)
+    go test -cover ./...
+    ```
+- Update `/ci/build.yml` and `ci/unit.yml` with the following changes:
+    - Ensure the the go version is 1.11 or greater.
+    - Remove `inputs.path` field.
+    - Remove the `$GOPATH` prefix from `run.path`
+   
+   Example `/ci/build.yml` after applying the changes above:
+    ```yaml
+    platform: linux
+    
+    image_resource:
+      type: docker-image
+      source:
+        repository: golang
+        tag: 1.12.0
+    
+    inputs:
+      - name: dp-recipe-api 
+
+    outputs:
+      - name: build
+    
+    run:
+      path: dp-recipe-api/ci/scripts/build.sh
+    ```
+- Remove the `$GOPATH/src/github.com/ONSdigital/` pushd path prefix from
+    - `ci/scripts/build.sh`
+    - `ci/scripts/unit.sh`
+
+Commit and push your changes and it should build successfully in CI.
+
+If you encounter and issues not covered in this guide or think something is missing please open a PR on this guide
+ adding any missing/useful information.
