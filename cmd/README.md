@@ -30,9 +30,19 @@ environment_apps:
 
 environments:
   - name: develop
-  ```
+```
 
 This can be extended to reach a number of apps across a number of environments. If an environment is not included in your config file, you will not be able to access it through the `dp` command.
+
+You can also set an AWS profile per an environment e.g:
+
+```
+environments:
+  - name: production
+    profile: production
+```
+
+To use a specific profile in your `~/.aws/credentials` without needing to update your default profile or change your local environment.
 
 ### Development
 
