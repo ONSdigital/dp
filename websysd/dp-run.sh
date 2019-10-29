@@ -55,38 +55,43 @@ clone() {
 
     mkdir -p $GOPATH/src/github.com/ONSdigital
 
-    cloneGoRepo "dp-code-list-api" "cmd-develop"
-    cloneGoRepo "dp-dataset-api" "cmd-develop"
-    cloneGoRepo "dp-dataset-exporter" "cmd-develop"
-    cloneGoRepo "dp-dimension-extractor" "cmd-develop"
-    cloneGoRepo "dp-dimension-importer" "cmd-develop"
-    cloneGoRepo "dp-filter-api" "cmd-develop"
-    cloneGoRepo "dp-frontend-dataset-controller" "cmd-develop" 
-    cloneGoRepo "dp-frontend-filter-dataset-controller" "cmd-develop"
-    cloneGoRepo "dp-frontend-geography-controller" "cmd-develop"
-    cloneGoRepo "dp-frontend-renderer" "cmd-develop"
-    cloneGoRepo "dp-frontend-router" "cmd-develop"
-    cloneGoRepo "dp-hierarchy-api" "cmd-develop"
-    cloneGoRepo "dp-import-api" "cmd-develop"
-    cloneGoRepo "dp-import-tracker" "cmd-develop"
-    cloneGoRepo "dp-observation-extractor" "cmd-develop"
-    cloneGoRepo "dp-observation-importer" "cmd-develop"
-    cloneGoRepo "dp-recipe-api" "cmd-develop"
-    cloneGoRepo "florence" "cmd-develop"
-    cloneGoRepo "dp-hierarchy-builder" "cmd-develop"
+    cloneGoRepo "dp-api-router" "develop"
+    cloneGoRepo "dp-code-list-api" "develop"
+    cloneGoRepo "dp-dataset-api" "develop"
+    cloneGoRepo "dp-dataset-exporter" "develop"
+    cloneGoRepo "dp-dimension-extractor" "develop"
+    cloneGoRepo "dp-dimension-importer" "develop"
+    cloneGoRepo "dp-download-service" "develop"
+    cloneGoRepo "dp-filter-api" "develop"
+    cloneGoRepo "dp-frontend-dataset-controller" "develop"
+    cloneGoRepo "dp-frontend-filter-dataset-controller" "develop"
+    cloneGoRepo "dp-frontend-geography-controller" "develop"
+    cloneGoRepo "dp-frontend-renderer" "develop"
+    cloneGoRepo "dp-frontend-router" "develop"
+    cloneGoRepo "dp-hierarchy-builder" "develop"
+    cloneGoRepo "dp-hierarchy-api" "develop"
+    cloneGoRepo "dp-import-api" "develop"
+    cloneGoRepo "dp-import-tracker" "develop"
+    cloneGoRepo "dp-import-reporter" "develop"
+    cloneGoRepo "dp-observation-extractor" "develop"
+    cloneGoRepo "dp-observation-importer" "develop"
+    cloneGoRepo "dp-recipe-api" "develop"
+    cloneGoRepo "dp-search-builder" "develop"
+    cloneGoRepo "dp-search-api" "develop"
+    cloneGoRepo "florence" "develop"
 
     cloneRepo "babbage" "develop"
-    cloneRepo "zebedee" "cmd-develop"
-    cloneRepo "dp-compose" "master"
-    cloneRepo "sixteens" "cmd-develop"
-    cloneRepo "dp-dataset-exporter-xlsxs"
+    cloneRepo "zebedee" "develop"
+    cloneRepo "sixteens" "develop"
+    cloneRepo "the-train" "develop"
+    cloneRepo "dp-dataset-exporter-xlsx"
 }
 
 cloneGoRepo() {
     if [ -d "$GOPATH/src/github.com/ONSdigital/$1" ]; then
         echo "$1 already cloned... skipping"
     else
-        git clone -b $2 git@github.com:ONSdigital/$1.git $GOPATH/src/github.com/ONSdigital/$1
+        go get github.com/ONSdigital/$1
     fi
 }
 
@@ -99,11 +104,13 @@ cloneRepo() {
 }
 
 pull() {
+    pullGoRepo "dp-api-router"
     pullGoRepo "dp-code-list-api" 
     pullGoRepo "dp-dataset-api" 
     pullGoRepo "dp-dataset-exporter" 
     pullGoRepo "dp-dimension-extractor" 
     pullGoRepo "dp-dimension-importer" 
+    pullGoRepo "dp-download-service"
     pullGoRepo "dp-filter-api"
     pullGoRepo "dp-frontend-dataset-controller"
     pullGoRepo "dp-frontend-filter-dataset-controller" 
@@ -111,18 +118,21 @@ pull() {
     pullGoRepo "dp-frontend-renderer" 
     pullGoRepo "dp-frontend-router" 
     pullGoRepo "dp-hierarchy-api"
+    pullGoRepo "dp-hierarchy-builder"
     pullGoRepo "dp-import-api" 
     pullGoRepo "dp-import-tracker" 
     pullGoRepo "dp-observation-extractor"
     pullGoRepo "dp-observation-importer" 
-    pullGoRepo "dp-recipe-api" 
+    pullGoRepo "dp-recipe-api"
+    pullGoRepo "dp-search-api"
+    pullGoRepo "dp-search-builder"
     pullGoRepo "florence"
-    pullGoRepo "dp-hierarchy-builder"
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
     pullRepo "dp-compose" 
     pullRepo "sixteens" 
+    pullRepo "the-train"
     pullRepo "dp-dataset-exporter-xlsx"
 }
 
