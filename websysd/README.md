@@ -1,6 +1,10 @@
 # Websyd
 
-You can use websysd to run your dp services locally.
+You can use [websysd](https://github.com/ONSdigital/dp/blob/master/websysd) to run the dp services from a centralised location:
+
+If you are running the publishing stack, then you must set "ENABLE_PRIVATE_ENDPOINTS=true" and "ENCRYPTION_DISABLED=true” if encryption is not setup.
+
+If you are running the publishing stack in terminals [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor), [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) and [florence](https://github.com/ONSdigital/florence) should have "ENCRYPTION_DISABLED=true” if encryption is not setup. For [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api), [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) and [dp-search-api](https://github.com/ONSdigital/dp-search-api) you require having "ENABLE_PRIVATE_ENDPOINTS=true".
 
 ## Installation
 
@@ -10,7 +14,7 @@ Once you have this you will be able to run:
 
 `./dp-run.sh -i` to install all dependencies and services.
 
-If you believe you already have the dependencies installed and only wish to clone 
+If you believe you already have the dependencies installed and only wish to clone
 the services run:
 
 `./dp-run.sh -c`
@@ -24,7 +28,7 @@ replacing the ACCESS/SECRET keys with your own.
 
 Run the following to pull all the repositories on the current branch
 
-`./dp-run.sh -p` 
+`./dp-run.sh -p`
 
 ## Running websysd
 

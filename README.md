@@ -5,37 +5,49 @@ The digital publishing platform is a collection of services which provide
 content management and publishing functionality for ONS content, and is
 responsible for the public ONS website.
 
-### Guides
+Guides and general info
+-----------------------
 
-* [Getting started](GETTING_STARTED.md)
-* [Release process](RELEASES.md)
-* [Contributing guidelines](CONTRIBUTING.md)
-* [GPG commit signing](GPG.md)
-* [Port numbering](PORTS.md)
-* [Technologies](TECHNOLOGIES.md)
+* [Getting started](guides/GETTING_STARTED.md)
+* [Release process](guides/RELEASES.md)
+* [Contributing guidelines](guides/CONTRIBUTING.md)
+* [GPG commit signing](guides/GPG.md)
+* [Port numbering](guides/PORTS.md)
+* [Technologies](guides/TECHNOLOGIES.md)
+* [Tagging a release](guides/TAGS.md)
 
-### Standards and specifications
+Standards and specifications
+----------------------------
 
-* [Development standards](DEV_STANDARDS.md)
-* [Definition of Ready](DEFINITION_OF_READY.md)
-* [Definition of Done](DEFINITION_OF_DONE.md)
+* [Development standards](standards/DEV_STANDARDS.md)
+* [Definition of Ready](standards/DEFINITION_OF_READY.md)
+* [Definition of Done](standards/DEFINITION_OF_DONE.md)
 * [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
-* [Logging standards](LOGGING_STANDARDS.md)
-* [Health check specification](HEALTH_CHECK_SPECIFICATION.md)
+* [API standards](standards/API_STANDARDS.md)
+* [Logging standards](standards/LOGGING_STANDARDS.md)
+* [Health check specification](standards/HEALTH_CHECK_SPECIFICATION.md)
 
-### Websysd
+Dev tooling
+-----------
 
-You can use [websysd](https://github.com/ONSdigital/dp/blob/master/websysd) to run the dp services from a centralised location:
+**[dp tool](cmd/README.md)**
 
-If you are running the publishing stack, then you must set "ENABLE_PRIVATE_ENDPOINTS=true" and "ENCRYPTION_DISABLED=true” if encryption is not setup.
+A command line utility to help make working in Digital Publishing simpler.
 
-If you are running the publishing stack in terminals [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor), [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) and [florence](https://github.com/ONSdigital/florence) should have "ENCRYPTION_DISABLED=true” if encryption is not setup. For [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api), [dp-filter-api](https://github.com/ONSdigital/dp-filter-api) and [dp-search-api](https://github.com/ONSdigital/dp-search-api) you require having "ENABLE_PRIVATE_ENDPOINTS=true".
+**[websysd](websysd/README.md)**
 
-### Zebedee
+You can use websysd to run your DP apps locally.
+
+**[paasbox](paasbox)**
+
+Paasbox is an alternative to websysd as a means of running the DP apps locally.
+
+**[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)**
 
 Zebedee requires a very specific file structure in order to run along with additional environment variables. You can use [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) to simplify the setup process.
 
-### Licence
+Licence
+-------
 
 Copyright ©‎ 2016, Office for National Statistics (https://www.ons.gov.uk)
 
