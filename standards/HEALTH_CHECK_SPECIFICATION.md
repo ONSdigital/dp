@@ -20,6 +20,10 @@ Some examples of things that can be checked are:
 * the status of the host on which the app is running
 * the status of the application logic (e.g. Kafka message processing failures, request processing failures, concurrent request thresholds, etc.)
 
+A check should test that the dependency is able to perform the required function. For example, if you are checking that Mongo is available you would also want to check that you are able to query the collection that your app depends on.  This can mean that multiple checks are required for the same dependency.
+
+Each check will return a [summary of the check status](#check) which will be returned by the health check endpoint. The details returned are intended for a human investigating an issue. Therefore, the message returned should be specific but brief.  For example, some potential messages could be `OK`, `received status code 500`, `failed to resolve DNS`, `collection 'X' does not exist`, `index 'X' does not exist`, etc.
+
 The following requirements must be met by health check implementations:
 
 * The app must perform checks in order to determine its current status.
@@ -93,7 +97,7 @@ Field          | Type     | Required | Description
 `name`         | `string` | Yes      | Name of the check
 `status`       | `string` | Yes      | The [status of the check](#check-statuses)
 `status_code`  | `int`    | No       | The status code returned by the external service (only for use with external http checks)
-`message`      | `string` | Yes      | Brief description of the status (i.e. `OK` or `received 500 from 'dp-dataset-api'`)
+`message`      | `string` | Yes      | Brief description of the status (i.e. `OK` or `received status code 500`)
 `last_checked` | `ISO8601`<sup>1</sup> | Yes | The last time the check was run
 `last_success` | `ISO8601`<sup>1</sup> | Yes | The time of the last successful check
 `last_failure` | `ISO8601`<sup>1</sup> | Yes | The time of the last failed check
