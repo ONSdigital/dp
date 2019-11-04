@@ -84,7 +84,7 @@ Field        | Type     | Description
 
 <sup>2</sup> `ISO8601` UTC date time (`2006-01-02T15:04:05.999Z`)
 
-**Check**
+#### Check
 
 The following fields make up the details provided for each check in the array of checks within the JSON body.
 
