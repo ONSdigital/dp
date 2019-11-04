@@ -1,7 +1,7 @@
 Health check specification
 ==========================
 
-All apps that run in production are required to have an http health check endpoint, even if they are event driven.  This health check must comply with [the spec](#health-check-spec). The main function of these health checks is to enable the apps to signal to the platform whether or not they are functional.  The platform will then use this information to manage routing to the app and the lifecycle of the app.
+All apps that run in production are required to have an HTTP health check endpoint, even if they are event-driven.  This health check must comply with [the spec](#health-check-spec). The main function of these health checks is to enable the apps to signal to the platform whether or not they are functional.  The platform will then use this information to manage routing to the app and the lifecycle of the app.
 
 The health check can be looked at in two parts:
 
@@ -11,14 +11,14 @@ The health check can be looked at in two parts:
 Checks
 ------
 
-The purpose of a health check is so that a monitoring tool can quickly determine the current fitness of that app to perform its function.  This means that a health check can have many different checks, and indeed many different types of checks.  These checks can be against external dependencies or against the internal functioning of the app.
+The purpose of a health check is so that a monitoring tool can quickly determine the current fitness of that app to perform its function.  This means that a health check can have many different checks, and indeed many different types of checks.  These checks can be against external dependencies or the internal functioning of the app.
 
 Some examples of things that can be checked are:
 
 * the status of the connections to the data stores and other third party dependencies
 * the status of other apps the app depends on
 * the status of the host on which the app is running
-* the status of the application logic (e.g. kafka message processing failures, request processing failures, concurrent request thresholds, etc.)
+* the status of the application logic (e.g. Kafka message processing failures, request processing failures, concurrent request thresholds, etc.)
 
 The following requirements must be met by health check implementations:
 
@@ -41,14 +41,14 @@ Status     | Description
 Health check endpoint
 ---------------------
 
-The health check data is served via the health check endpoint.  This health check data comes in two forms.  The status code provides a quick way to get the overall status of the app, while the json body provides further information that might be useful in triaging any issues.
+The health check data is served via the health check endpoint.  This health check data comes in two forms.  The status code provides a quick way to get the overall status of the app, while the JSON body provides further information that might be useful in triaging any issues.
 
 The following requirements must be met by health check implementations:
 
 * All apps must have a health check endpoint
 * The health check endpoint must be available as a `GET /healthcheck` endpoint
 * The health check must return the [appropriate status code](#health-check-status-codes)
-* The health check must return [status information as json](#health-check-body)
+* The health check must return [status information as JSON](#health-check-body)
 
 ### Health check status codes
 
@@ -60,17 +60,17 @@ Status code | Description
 `429`       | I'm warming up or I'm degraded
 `500`       | Kill me
 
-The health check should return 429 until the first checks have been run.  After that the codes returned should be based on the check status.  It is the responsibility of whatever is monitoring the health check to provide a grace period on startup.
+The health check should return 429 until the first checks have been run.  After that, the codes returned should be based on the check status.  It is the responsibility of whatever is monitoring the health check to provide a grace period on startup.
 
-If any check returns a `CRITICAL` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  After a timeout that can be set per app the `429` will be downgraded `500`.  This delay in marking the app as `500` is to allow the issue a chance to resolve on its own before moving to a `500` which will result in the app being killed.
+If any check returns a `CRITICAL` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  After a timeout that can be set per app, the `429` will be downgraded `500`.  This delay in marking the app as `500` is to allow the issue a chance to resolve on its own before moving to a `500` which will result in the app being killed.
 
-If any check returns a `WARNING` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  In this situation the timeout does not apply and the app will continue to return a `429` until the status of the checks changes.
+If any check returns a `WARNING` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  In this situation, the timeout does not apply and the app will continue to return a `429` until the status of the checks changes.
 
 Any status code ≥ 400 && != 429 will be treated as a failure.
 
 ### Health check body
 
-The json body of the health check should implement the following spec:
+The JSON body of the health check should implement the following spec:
 
 Field        | Type     | Description
 -------------|----------|---------------
@@ -80,13 +80,13 @@ Field        | Type     | Description
 `start_time` | `ISO8601`<sup>2</sup> | The time the app started in UTC
 `checks`     | [`[]Check`](#check)   | An array of the checks with details of their statuses
 
-<sup>1</sup> The start time of the app is actually approximate as we use the time at which the health check library was instantiated.
+<sup>1</sup> The start time of the app is approximate as we use the time at which the health check library was instantiated.
 
 <sup>2</sup> `ISO8601` UTC date time (`2006-01-02T15:04:05.999Z`)
 
 **Check**
 
-The following fields make up the details provided for each check in the array of checks within the json body.
+The following fields make up the details provided for each check in the array of checks within the JSON body.
 
 Field          | Type     | Required | Description
 ---------------|----------|----------|--------------
