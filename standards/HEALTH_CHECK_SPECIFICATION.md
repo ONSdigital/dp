@@ -40,7 +40,7 @@ Status     | Description
 -----------|--------------
 `OK`       | Everything is ok
 `WARNING`  | Things are degraded, but at least partially functioning
-`CRITICAL` | Failure, your app will now be unable to function
+`CRITICAL` | The checked functionality is unavailable or non-functioning
 
 Health check endpoint
 ---------------------
@@ -53,6 +53,7 @@ The following requirements must be met by health check implementations:
 * The health check endpoint must be available as a `GET /healthcheck` endpoint
 * The health check must return the [appropriate status code](#health-check-status-codes)
 * The health check must return [status information as JSON](#health-check-body)
+* The health check must return the start time and uptime (specifically the time since the health check was instantiated)
 
 ### Health check status codes
 
@@ -66,9 +67,9 @@ Status code | Description
 
 The health check should return 429 until the first checks have been run.  After that, the codes returned should be based on the check status.  It is the responsibility of whatever is monitoring the health check to provide a grace period on startup.
 
-If any check returns a `CRITICAL` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  After a timeout that can be set per app, the `429` will be downgraded `500`.  This delay in marking the app as `500` is to allow the issue a chance to resolve on its own before moving to a `500` which will result in the app being killed.
+If any check returns a `CRITICAL` status (see [check statuses above](#check-statuses) then the app should transition to a `429`.  After a timeout that can be set per app, the `429` will be downgraded `500`.  This delay in marking the app as `500` is to allow the issue a chance to resolve on its own before moving to a `500` which will result in the app being killed.
 
-If any check returns a `WARNING` status (see [check statuses below](#check-statuses) then the app should transition to a `429`.  In this situation, the timeout does not apply and the app will continue to return a `429` until the status of the checks changes.
+If any check returns a `WARNING` status (see [check statuses above](#check-statuses) then the app should transition to a `429`.  In this situation, the timeout does not apply and the app will continue to return a `429` until the status of the checks changes.
 
 Any status code ≥ 400 && != 429 will be treated as a failure.
 
@@ -78,7 +79,7 @@ The JSON body of the health check should implement the following spec:
 
 Field        | Type     | Description
 -------------|----------|---------------
-`status`     | `string` | The overall status of the health check using the values as the [check statuses](#check-statuses)
+`status`     | `string` | The overall status of the health check using the same values as the [check statuses](#check-statuses)
 `version`    | `string` | The version information of the app (e.g. commit, semver version, go version, build time, etc) as a string.
 `uptime`     | `ms`     | Milliseconds elapsed since the app started <sup>1</sup>
 `start_time` | `ISO8601`<sup>2</sup> | The time the app started in UTC
