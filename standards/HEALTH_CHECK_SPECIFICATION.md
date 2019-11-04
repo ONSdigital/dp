@@ -3,10 +3,10 @@ Health check specification
 
 All apps that run in production are required to have an HTTP health check endpoint, even if they are event-driven.  This health check must comply with [the spec](#health-check-spec). The main function of these health checks is to enable the apps to signal to the platform whether or not they are functional.  The platform will then use this information to manage routing to the app and the lifecycle of the app.
 
-The health check can be looked at in two parts:
+A health check is comprised of two components:
 
-1. [The checks](#checks)
-2. [The health check endpoint](#health-check-endpoint)
+1. [The checks](#checks): A specific test (can be external or internal) that is triggered on a fixed interval to ascertain the current health state.  A health check has many registered checks.
+2. [The health check endpoint](#health-check-endpoint): The endpoint that returns information about the current health check state.
 
 Checks
 ------
