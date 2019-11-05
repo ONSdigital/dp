@@ -18,7 +18,7 @@ A Go module project is required to live outside of your `$GOPATH`. If you haven'
 #### Vendor
 Go modules does support migrating from vendor but I ran into issues whilst trying this. For now, I would recommend
  starting fresh and deleting the `/vendor` dir from your project. This will give you a clean slate and bring in the
-  latest verison of each dependency. If your project relies on a specific version you can fix this later.
+  latest version of each dependency. If your project relies on a specific version you can fix this later.
 
 To create a module run: `go mod init <MODULE_NAME>` in root dir of your project. `<MODULE_NAME>` is used by external
  packages importing your code. For existing apps we need to maintain backwards compatability so module name must be
