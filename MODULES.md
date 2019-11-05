@@ -46,8 +46,8 @@ similar too:
 Assuming all is well:
 - The dependencies should resolve successfully
 - The unit tests should pass 
-- The `go.mod` && `go.sum` files should be updated to include the dependencies of your project. It should looking 
-something like:
+- The `go.mod` && `go.sum` files should be updated to include the dependencies of your project. It should look something
+ like:
 
     ```
     module github.com/ONSdigital/dp-recipe-api
@@ -71,15 +71,16 @@ At this point its recommend you run your app and verifying everything still work
 ### Modules in Goland IDE
 If you use the Goland IDE you need to update it's settings to enable modules integration:
  - `Goland` >> `Preferences`
+    
+  ![1](goland_mod_1.png)
  - `Go` >> `Go Modules (vgo)`
     - Check `Enable Go Modules (vgo) integration`
     - `Vgo Executable:` - `Project SDK`
     - `Proxy` - blank.
 
-![1](goland_mod_1.png)
-![2](goland_mod_2.png)
+  ![2](goland_mod_2.png)
 
-This should pacify any import compliation errors.
+This should fix any import and/or compliation errors.
 
 ### Building in CI
 The previous steps cover converting a project and getting it building/running locally. The following steps detail how
