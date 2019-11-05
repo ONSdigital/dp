@@ -16,7 +16,7 @@ A Go module project is required to live outside of your `$GOPATH`. If you haven'
 - Create and switch to a feature branch for the migration.
 
 #### Vendor
-Go modules does support migrating from vendor but I ran into issues whilst trying this. For now I would recommend
+Go modules does support migrating from vendor but I ran into issues whilst trying this. For now, I would recommend
  starting fresh and deleting the `/vendor` dir from your project. This will give you a clean slate and bring in the
   latest verison of each dependency. If your project relies on a specific version you can fix this later.
 
