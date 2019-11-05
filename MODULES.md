@@ -21,7 +21,7 @@ Go modules does support migrating from vendor but I ran into issues whilst tryin
   latest version of each dependency. If your project relies on a specific version you can fix this later.
 
 To create a module run: `go mod init <MODULE_NAME>` in root dir of your project. `<MODULE_NAME>` is used by external
- packages importing your code. For existing apps we need to maintain backwards compatability so module name must be
+ packages importing your code. For existing apps, we need to maintain backwards compatibility so module name must be
   `github.com/ONSdigital/<REPO_NAME>`.
 
 Example:
