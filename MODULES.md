@@ -28,26 +28,13 @@ Example:
 ```bash
 go mod init github.com/ONSdigital/dp-recipe-api
 ``` 
-This will create `go.mod` that should look similar to:
-```
-module github.com/ONSdigital/dp-recipe-api
 
-go 1.12
+This will create empty `go.mod` && `go.sum` files. If you need specific version of a dependency you can edit this file 
+as required. See the [Golang Modules guide](https://blog.golang.org/using-go-modules) for details on how versioning is 
+handled in Go Modules.
 
-require (
-    ...
-    github.com/ONSdigital/dp-api-clients-go v0.0.0-20190920133223-0b75bbb235dd
-    github.com/ONSdigital/dp-mocking v0.0.0-20190905163309-fee2702ad1b9 // indirect
-    github.com/ONSdigital/dp-rchttp v0.0.0-20190919143000-bb5699e6fd59
-    ... 
-)
-```
-It should also create `go.sum` file.
-
-If you need a specific version of a dependency you can edit this file as required. See the 
-[Golang Modules guide](https://blog.golang.org/using-go-modules) for details on how versioning is handled in Go Modules.
-
-If you run the tests for your module you should see output similar too:
+If you run `go test` modules will resolve any missing dependencies before running any unit tests. You should see output 
+similar too:
 ```
     $ go test ./...
     go: finding <SOME_DEPENDENCY> vX.X.X
@@ -55,13 +42,45 @@ If you run the tests for your module you should see output similar too:
     go: extracting <SOME_DEPENDENCY> vX.X.X
     ...
 ```
-Assuming all is well then the dependencies should resolve successfully and your unit tests should pass.
+
+Assuming all is well:
+- The dependencies should resolve successfully
+- The unit tests should pass 
+- The `go.mod` && `go.sum` files should be updated to include the dependencies of your project. It should looking 
+something like:
+
+    ```
+    module github.com/ONSdigital/dp-recipe-api
+    
+    go 1.12
+    
+    require (
+        ...
+        github.com/ONSdigital/dp-api-clients-go v0.0.0-20190920133223-0b75bbb235dd
+        github.com/ONSdigital/dp-mocking v0.0.0-20190905163309-fee2702ad1b9 // indirect
+        github.com/ONSdigital/dp-rchttp v0.0.0-20190919143000-bb5699e6fd59
+        ... 
+    )
+    ```
 
 At this point its recommend you run your app and verifying everything still works as expected. If applicable you
  should also run any integration tests to boost your confidence that the migration has not adversely affected any
   functionality. If everything is working as expected *Congratulations* you have successfully migrated your app to
    Go modules.
    
+### Modules in Goland IDE
+If you use the Goland IDE you need to update it's settings to enable modules integration:
+ - `Goland` >> `Preferences`
+ - `Go` >> `Go Modules (vgo)`
+    - Check `Enable Go Modules (vgo) integration`
+    - `Vgo Executable:` - `Project SDK`
+    - `Proxy` - blank.
+
+![1](goland_mod_1.png)
+![2](goland_mod_2.png)
+
+This should pacify any import compliation errors.
+
 ### Building in CI
 The previous steps cover converting a project and getting it building/running locally. The following steps detail how
  to get the project building successfully in the CI pipeline.
@@ -95,7 +114,7 @@ The previous steps cover converting a project and getting it building/running lo
     run:
       path: dp-recipe-api/ci/scripts/build.sh
     ```
-- Remove the `$GOPATH/src/github.com/ONSdigital/` pushed path prefix from
+- Remove the `$GOPATH/src/github.com/ONSdigital/` pushd path prefix from
     - `ci/scripts/build.sh`
     - `ci/scripts/unit.sh`
 
