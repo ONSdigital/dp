@@ -58,7 +58,7 @@ If you run the tests for your module you should see output similar too:
 Assuming all is well then the dependencies should resolve successfully and your unit tests should pass.
 
 At this point its recommend you run your app and verifying everything still works as expected. If applicable you
- should also run any integration tests to boost your confidence that the migration has not adversly affected any
+ should also run any integration tests to boost your confidence that the migration has not adversely affected any
   functionality. If everything is working as expected *Congratulations* you have successfully migrated your app to
    Go modules.
    
