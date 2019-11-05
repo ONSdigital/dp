@@ -95,7 +95,7 @@ The previous steps cover converting a project and getting it building/running lo
     run:
       path: dp-recipe-api/ci/scripts/build.sh
     ```
-- Remove the `$GOPATH/src/github.com/ONSdigital/` pushd path prefix from
+- Remove the `$GOPATH/src/github.com/ONSdigital/` pushed path prefix from
     - `ci/scripts/build.sh`
     - `ci/scripts/unit.sh`
 
