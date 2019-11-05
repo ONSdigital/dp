@@ -44,7 +44,7 @@ require (
 ```
 It should also create `go.sum` file.
 
-If you need specific version of a dependency you can edit this file as required. See the 
+If you need a specific version of a dependency you can edit this file as required. See the 
 [Golang Modules guide](https://blog.golang.org/using-go-modules) for details on how versioning is handled in Go Modules.
 
 If you run the tests for your module you should see output similar too:
