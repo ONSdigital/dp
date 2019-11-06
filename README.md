@@ -15,6 +15,7 @@ Guides and general info
 * [Port numbering](guides/PORTS.md)
 * [Technologies](guides/TECHNOLOGIES.md)
 * [Tagging a release](guides/TAGS.md)
+* [Migrating Go vendor projects to Go modules](guides/MODULES.md)
 
 Standards and specifications
 ----------------------------

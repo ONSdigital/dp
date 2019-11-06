@@ -71,7 +71,7 @@ If any check returns a `CRITICAL` status (see [check statuses above](#check-stat
 
 If any check returns a `WARNING` status (see [check statuses above](#check-statuses) then the app should transition to a `429`.  In this situation, the timeout does not apply and the app will continue to return a `429` until the status of the checks changes.
 
-![Health check status code logic diagram](img/health-check-status-code-logic.svg)
+![Health check status code logic diagram](../img/health-check-status-code-logic.svg)
 
 Any status code ≥ 400 && != 429 will be treated as a failure.
 
