@@ -82,6 +82,9 @@ If you use the Goland IDE you need to update it's settings to enable modules int
 
 This should fix any import and/or compliation errors.
 
+### Modules in VSCode
+If you use VSCode and you have the Go extension installed, it will prompt you to install the go language server (`gopls`) the first time it opens a project with a `go.mod` outside of your GOPATH. There is more detail around this in [the extension's README](https://github.com/microsoft/vscode-go/blob/master/README.md#go-language-server).
+
 ### Building in CI
 The previous steps cover converting a project and getting it building/running locally. The following steps detail how
  to get the project building successfully in the CI pipeline.
@@ -95,6 +98,7 @@ The previous steps cover converting a project and getting it building/running lo
     - Ensure the the go version is 1.11 or greater.
     - Remove `inputs.path` field.
     - Remove the `$GOPATH` prefix from `run.path`
+    - Add a `caches` section to preserve the resolved dependecies between builds, thus avoiding dowloading them each time.
 
    Example `/ci/build.yml` after applying the changes above:
     ```yaml
@@ -112,12 +116,29 @@ The previous steps cover converting a project and getting it building/running lo
     outputs:
       - name: build
 
+    caches:
+      - path: go/
+
     run:
       path: dp-recipe-api/ci/scripts/build.sh
     ```
 - Remove the `$GOPATH/src/github.com/ONSdigital/` pushd path prefix from
     - `ci/scripts/build.sh`
     - `ci/scripts/unit.sh`
+
+   Example `/ci/scripts/build.sh` after applying the changes above:
+   ```sh
+   #!/bin/bash -eux
+
+   cwd=$(pwd)
+
+   export GOPATH=$cwd/go
+   
+   pushd dp-recipe-api
+     make build && mv build/$(go env GOOS)-$(go env GOARCH)/* $cwd/build
+     cp Dockerfile.concourse $cwd/build
+   popd
+   ```
 
 Commit and push your changes and it should build successfully in CI.
 
