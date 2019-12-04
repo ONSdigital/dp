@@ -78,7 +78,10 @@
 			"Name": "dp-code-list-api",
 			"Command": "sh start-go-service-no-makefile.sh",
 			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"GRAPH_DRIVER_TYPE": "neo4j",
+				"GRAPH_ADDR": "bolt://localhost:7687",
+				"HUMAN_LOG": "1"
 			},
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
@@ -88,7 +91,10 @@
 			"Name": "dp-hierarchy-api",
 			"Command": "sh start-go-service-no-makefile.sh",
 			"Environment": {
-				"PATH": "/bin:/usr/bin:/usr/local/bin"
+				"PATH": "/bin:/usr/bin:/usr/local/bin",
+				"GRAPH_DRIVER_TYPE": "neo4j",
+				"GRAPH_ADDR": "bolt://localhost:7687",
+				"HUMAN_LOG": "1"
 			},
 			"Service": true,
 			"Stdout": "/tmp/$TASK-$RUN.out",
@@ -146,7 +152,7 @@
 		},
 		{
 			"Name": "florence",
-			"Command": "sh start-go-service.sh",
+			"Command": "sh start-florence-go-service.sh",
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
 			},
@@ -166,7 +172,7 @@
 		},
 		{
 			"Name": "dp-recipe-api",
-			"Command": "sh start-go-service.sh",
+			"Command": "sh start-go-mod.sh",
 			"Environment": {
 				"PATH": "/bin:/usr/bin:/usr/local/bin"
 			},

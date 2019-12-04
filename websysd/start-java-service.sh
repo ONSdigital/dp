@@ -1,3 +1,4 @@
 source ~/.bash_profile
 cd ~/$TASK
-./run.sh
+# ./run.sh
+make debug

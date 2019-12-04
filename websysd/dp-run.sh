@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./env.sh
+
 usage()  {
     echo "-i [set up dp env from scratch] || -c [just clone the dp repositories] || -p pull all repositories on the current branch || -h [prints this message]"; exit 1;
 }
@@ -70,15 +72,16 @@ clone() {
     cloneGoRepo "dp-frontend-router"
     cloneGoRepo "dp-hierarchy-builder"
     cloneGoRepo "dp-hierarchy-api"
-    cloneGoRepo "dp-import-api"
+    cloneGoRepo "dp-import-api" "develop"
     cloneGoRepo "dp-import-tracker"
     cloneGoRepo "dp-import-reporter"
     cloneGoRepo "dp-observation-extractor"
     cloneGoRepo "dp-observation-importer"
-    cloneGoRepo "dp-recipe-api"
     cloneGoRepo "dp-search-builder"
     cloneGoRepo "dp-search-api"
     cloneGoRepo "florence"
+
+    cloneGoModRepo "dp-recipe-api" "develop"
 
     cloneRepo "babbage" "develop"
     cloneRepo "zebedee" "develop"
@@ -92,6 +95,15 @@ cloneGoRepo() {
         echo "$1 already cloned... skipping"
     else
         go get github.com/ONSdigital/$1
+    fi
+}
+
+cloneGoModRepo() {
+    # mkdir -p $GO_MOD_PATH
+    if [ -d "$GO_MOD_PATH/src/github.com/ONSdigital/$1" ]; then
+        echo "$1 already cloned... skipping"
+    else
+        git clone -b $2 git@github.com:ONSdigital/$1.git $GO_MOD_PATH/src/github.com/ONSdigital/$1
     fi
 }
 
@@ -119,14 +131,15 @@ pull() {
     pullGoRepo "dp-frontend-router" 
     pullGoRepo "dp-hierarchy-api"
     pullGoRepo "dp-hierarchy-builder"
-    pullGoRepo "dp-import-api" 
+    pullGoRepo "dp-import-api"
     pullGoRepo "dp-import-tracker" 
     pullGoRepo "dp-observation-extractor"
     pullGoRepo "dp-observation-importer" 
-    pullGoRepo "dp-recipe-api"
     pullGoRepo "dp-search-api"
     pullGoRepo "dp-search-builder"
     pullGoRepo "florence"
+
+    pullGoModRepo "dp-recipe-api"  
 
     pullRepo "babbage" 
     pullRepo "zebedee" 
@@ -142,7 +155,7 @@ pullRepo() {
         cd $HOME/$1
         git pull
     else
-        echo "repo $1 missing... please clone"
+        echo "repo $1 missing (expected under $HOME)... please clone"
     fi
 }
 
@@ -152,7 +165,17 @@ pullGoRepo() {
         cd $GOPATH/src/github.com/ONSdigital/$1
         git pull
     else
-        echo "repo $1 missing... please clone"
+        echo "repo $1 missing (expected under $GOPATH/src/github.com/ONSdigital)... please clone"
+    fi
+}
+
+pullGoModRepo() {
+    if [ -d "$GO_MOD_PATH/src/github.com/ONSdigital/$1" ]; then
+        echo "pulling $1..."
+        cd $GO_MOD_PATH/src/github.com/ONSdigital/$1
+        git pull
+    else
+        echo "repo $1 missing (expected under $GO_MOD_PATH/src/github.com/ONSdigital)... please clone"
     fi
 }
 
