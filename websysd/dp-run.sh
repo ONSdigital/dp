@@ -72,7 +72,7 @@ clone() {
     cloneGoRepo "dp-frontend-router"
     cloneGoRepo "dp-hierarchy-builder"
     cloneGoRepo "dp-hierarchy-api"
-    cloneGoRepo "dp-import-api" "develop"
+    cloneGoRepo "dp-import-api"
     cloneGoRepo "dp-import-tracker"
     cloneGoRepo "dp-import-reporter"
     cloneGoRepo "dp-observation-extractor"
@@ -99,7 +99,6 @@ cloneGoRepo() {
 }
 
 cloneGoModRepo() {
-    # mkdir -p $GO_MOD_PATH
     if [ -d "$GO_MOD_PATH/src/github.com/ONSdigital/$1" ]; then
         echo "$1 already cloned... skipping"
     else
