@@ -9,6 +9,7 @@ Guides and general info
 -----------------------
 
 * [Getting started](guides/GETTING_STARTED.md)
+* [Creating a new app](guides/NEW_APP.md)
 * [Release process](guides/RELEASES.md)
 * [Contributing guidelines](guides/CONTRIBUTING.md)
 * [GPG commit signing](guides/GPG.md)
