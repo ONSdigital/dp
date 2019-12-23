@@ -50,7 +50,7 @@ The health check data is served via the health check endpoint.  This health chec
 The following requirements must be met by health check implementations:
 
 * All apps must have a health check endpoint
-* The health check endpoint must be available as a `GET /healthcheck` endpoint
+* The health check endpoint must be available as a `GET /health` endpoint
 * The health check must return the [appropriate status code](#health-check-status-codes)
 * The health check must return [status information as JSON](#health-check-body)
 * The health check must return the start time and uptime (specifically the time since the health check was instantiated)
