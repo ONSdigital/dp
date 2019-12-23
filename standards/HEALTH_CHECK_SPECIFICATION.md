@@ -82,7 +82,7 @@ The JSON body of the health check should implement the following spec:
 Field        | Type     | Description
 -------------|----------|---------------
 `status`     | `string` | The overall status of the health check using the same values as the [check statuses](#check-statuses)
-`version`    | `string` | The version information of the app (e.g. commit, semver version, go version, build time, etc) as a string.
+`version`    | [`Version`](#version) | The version information of the app (e.g. commit, semver version, go version, build time, etc) as a string.
 `uptime`     | `ms`     | Milliseconds elapsed since the app started <sup>1</sup>
 `start_time` | `ISO8601`<sup>2</sup> | The time the app started in UTC
 `checks`     | [`[]Check`](#check)   | An array of the checks with details of their statuses
@@ -90,6 +90,20 @@ Field        | Type     | Description
 <sup>1</sup> The start time of the app is approximate as we use the time at which the health check library was instantiated.
 
 <sup>2</sup> `ISO8601` UTC date time (`2006-01-02T15:04:05.999Z`)
+
+#### Version
+
+The following fields make up the version details provided within the JSON body.
+
+Field              | Type     | Description
+-------------------|----------|---------------
+`version`          | `string` | The [semver version](https://semver.org/) of the app
+`git_commit`       | `string` | The git commit SHA
+`build_time`       | `ISO8601`<sup>1</sup> | The time that the app was built
+`language`         | `string` | The language the app is written in
+`language_version` | `string` | The version of the language being used
+
+<sup>1</sup> `ISO8601` UTC date time (`2006-01-02T15:04:05.999Z`)
 
 #### Check
 
