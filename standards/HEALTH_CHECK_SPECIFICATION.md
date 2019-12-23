@@ -116,7 +116,7 @@ Field          | Type     | Required | Description
 `status_code`  | `int`    | No       | The status code returned by the external service (only for use with external http checks)
 `message`      | `string` | Yes      | Brief description of the status (i.e. `OK` or `received status code 500`)
 `last_checked` | `ISO8601`<sup>1</sup> | Yes | The last time the check was run
-`last_success` | `ISO8601`<sup>1</sup> | Yes | The time of the last successful check
-`last_failure` | `ISO8601`<sup>1</sup> | Yes | The time of the last failed check
+`last_success` | `ISO8601`<sup>1</sup> | Yes | The time of the last successful check (return `null` if the check has not passed)
+`last_failure` | `ISO8601`<sup>1</sup> | Yes | The time of the last failed check (return `null` if the check has not failed)
 
 <sup>1</sup> `ISO8601` UTC date time (`2006-01-02T15:04:05.999Z`)
