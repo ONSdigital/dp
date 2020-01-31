@@ -3,7 +3,9 @@ Version control of Repositories
 
 Following [Semantic Versioning 2.0.0](https://semver.org/).
 
-* When creating release branches or tags it is our standard to not use the patch version (`1.0.0 = Major.Minor.Patch`)
+* The first stable release for repositoires, either libraries or services is `1.0.0`
+
+* When creating release branches or tags it is digital publishing standard to not increment the patch version and hence should always be zero; (`Major.Minor.Patch = 1.0.0`)
 
 * Any new release will force the version to go up by either a minor or major version, see examples below:
 

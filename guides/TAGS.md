@@ -7,7 +7,9 @@ In order to tag a release you first need to checkout the branch you aim to tag (
 	* `<tag>` is the semver value in the release branch name (e.g. `v1.7.0`, see [version control](VERSIONING.md))
 	* `-s` ensures the tag is signed
 	* provide a message to describe the changes at a high level
-* `git push —-tags`
+* Run `git push —-follow-tags` 
+	* `--follow-tags` flag will only push tags that match your commits to the shared remote repository, this will prevent any local tags being pushed to remote that are not referencing a commit which has been pushed. This flag can be set as default by adding to `push.followTags` to your git config locally, [see documentation here](https://git-scm.com/docs/git-push#Documentation/git-push.txt---follow-tags)
+
 
 Once pushed, go to the Github **releases** page for the repository in question:
 

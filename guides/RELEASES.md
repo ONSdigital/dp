@@ -4,7 +4,6 @@ Release process
 #### Notes
 
 * Some ops work does not need to go through `PO sign off` or `Ready for release` - for example, terraform configuration which has already been applied to **develop** or **production** environments.
-* Major features which are being tested in sandpit do not join this process until they are merged to `develop`/`cmd-develop`
 
 ## Development 'done'
 
@@ -14,7 +13,7 @@ Release process
 * Pull request approved
 * Feature branch merged into `develop`
 * Developer tests feature in `develop` environment
-* Developer moves story from team board to release board `PO sign off` column
+* Developer moves story from team board to `PO sign off` column
 
 ## 'PO sign off' column
 
