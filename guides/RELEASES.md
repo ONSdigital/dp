@@ -24,7 +24,7 @@ Release process
 
 ## 'Ready for release' column
 
-* Release branch (e.g. `release/1.7.3` or `beta/1.0.0`) taken from `develop`
+* Release branch (e.g. `release/1.7.0` see [version control][VERSIONING.md]) taken from `develop`
 * Bug fixes applied to release branch
 * Release branch bug fixes regularly merged back to `develop`
 * Pull request from release branch into `master`
