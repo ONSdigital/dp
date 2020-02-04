@@ -13,7 +13,7 @@ Release process
 * Pull request approved
 * Feature branch merged into `develop`
 * Developer tests feature in `develop` environment
-* Developer moves story from team board to `PO sign off` column
+* Developer moves story to `PO sign off` column
 
 ## 'PO sign off' column
 
