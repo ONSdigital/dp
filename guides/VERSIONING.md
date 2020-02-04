@@ -2,8 +2,7 @@ Version control of Repositories
 ===============================
 
 Following [Semantic Versioning 2.0.0](https://semver.org/).
-
-* The first stable release for repositoires, either libraries or services is `1.0.0`
+* The first stable release for repositories, either libraries or services, is `1.0.0`
 
 * When creating release branches or tags it is digital publishing standard to not increment the patch version and hence should always be zero; (`Major.Minor.Patch = 1.0.0`)
 
