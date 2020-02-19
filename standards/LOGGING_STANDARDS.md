@@ -98,7 +98,7 @@ This can be used to log inbound or outbound HTTP event data.
 | `started_at`              | Yes      | `datetime`<sup>1</sup> | `"2019-01-21T16:19:12.356Z"` | ISO8601 date string of the request start time
 | `ended_at`                | No       | `datetime`<sup>1</sup> | `"2019-01-21T16:19:12.356Z"` | ISO8601 date string of the request end time
 | `duration`                | No       | `int64`                | `236578`                     | Difference between `started_at` and `ended_at` in nanoseconds
-| `response_content_length` | No       | `int32`                | `34`                         | The length of the response
+| `response_content_length` | No       | `int64`                | `34`                         | The length of the response
 
 <sup>1</sup> All dates must be UTC and in ISO8601 extended date time format with at least millisecond precision: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`).
 
