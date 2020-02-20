@@ -56,3 +56,4 @@ in development without having to configure port numbers etc.
 | 23800 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api) |
 | 23900 | [dp-search-query](https://github.com/ONSdigital/dp-search-query) |
 | 24000 | [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller) |
+| 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller) |
