@@ -41,6 +41,6 @@ These steps will create a new app that is built by CI and deployed to the develo
 
 4. [Add the new app to the environment](https://github.com/ONSdigital/dp-setup#adding-a-new-app)
 
-5. [Add the new app to CI](https://github.com/ONSdigital/dp-ci#adding-a-new-app-to-ci)
+5. [Add configurations for your new app](https://github.com/ONSdigital/dp-configs#adding-a-new-app)
 
 6. Check the Concourse UI and/or Nomad UI to ensure your new app has successfully deployed to develop
