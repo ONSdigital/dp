@@ -128,6 +128,8 @@ If you already have content, and you just want to run the web journey, you'll ne
   * use `$ make debug`
 * [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
   * use `$ make debug`
+* [dp-frontend-geography-controller](https://github.com/ONSdigital/dp-frontend-geography-controller)
+  * use `$ make debug`
 
 #### Import services:
 * [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
@@ -147,6 +149,8 @@ If you already have content, and you just want to run the web journey, you'll ne
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
   * use `$ make debug`
 * [dp-search-builder](https://github.com/ONSdigital/dp-search-builder)
+  * use `$ make debug`
+* [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
   * use `$ make debug`
 
 #### Filter journey:
