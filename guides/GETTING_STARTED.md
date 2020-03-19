@@ -48,9 +48,10 @@ __Florence steps:__
 -----
 ### Prerequisites
 
-* [Java 8 JDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
 * [Maven](https://maven.apache.org/)
 * [Docker](https://www.docker.com/get-started)
+* [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/) - installed with `brew install cypher-shell`
 * [Node.js and npm](https://nodejs.org/en/), known working versions:
   - Node.js version 10.15.3
   - npm version 6.9.0
@@ -58,16 +59,20 @@ __Florence steps:__
   - Elasticsearch 2.4.2
   - Highcharts
   - Postgres
-* [go](https://golang.org/doc/install)
+* [go v1.13](https://golang.org/doc/install)
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
 * [Govendor](https://github.com/kardianos/govendor)
+* [GhostScript](https://www.ghostscript.com/download.html) - Required for [Babbage](https://github.com/onsdigital/babbage)
+* [Vault](https://www.vaultproject.io/intro/getting-started/install.html) - This will be required for running Florence.
+
+* [jq](https://stedolan.github.io/jq/) - installed with `brew install jq`
+  - This isn't essential, but it's a useful tool for debugging website content.
 
 For CMD additionally install:
 
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
 * [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
-* [Kafka](https://kafka.apache.org/quickstart)
-* [Vault](https://www.vaultproject.io/intro/getting-started/install.html)
+* [Kafka v0.10.2.1](https://kafka.apache.org/downloads#0.10.2.1) - [Docs for version specific commands](https://kafka.apache.org/0102/documentation.html) 
 
 Elasticsearch will need to be on [version 5](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/gs-installation.html) to work with CMD.
 
@@ -80,7 +85,7 @@ The website requires the following components:
 * [zebedee](https://github.com/ONSdigital/zebedee)
   * use `$ ./run-reader.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens)
-  * vendored in and not directly run
+  * use `$ ./run.sh`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
   * use `$ make debug`
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
@@ -97,7 +102,7 @@ The publishing tool requires the following components:
 * [zebedee](https://github.com/ONSdigital/zebedee)
   * use `$ ./run.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens)
-  * vendored in and not directly run
+  * use `$ ./run.sh`
 * [The-Train](https://github.com/ONSdigital/The-Train)
   * use `$ ./run.sh`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
