@@ -170,15 +170,13 @@ If you already have content, and you just want to run the web journey, you'll ne
 * [dp-dataset-exporter](https://github.com/ONSdigital/dp-dataset-exporter)
   * use `$ make debug`
 * [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx)
-  * use `$ ./run.sh`
+  * use `$ make debug`
 * [dp-download-service](https://github.com/ONSdigital/dp-download-service)
   * use `$ make debug`
 
 [dp-api-router](https://github.com/ONSdigital/dp-api-router) locally as well.
   * use `$ make debug`
 
-
-The majority of these apps will run with `make debug`, except the XLSX exporter which requires `./run.sh`
 
 ### iTerm2 setup
   - Any terminal can be used however there are advantages of using iTerm2 such as badges, profiles, arrangements, multiple panes, ability to send commands to all panes.
