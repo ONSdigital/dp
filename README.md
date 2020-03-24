@@ -32,17 +32,20 @@ Standards and specifications
 Dev tooling
 -----------
 
-**[dp tool](cmd/README.md)**
+**[dp command line tool](https://github.com/ONSdigital/dp-cli)**
 
-A command line utility to help make working in Digital Publishing simpler.
+A command line utility to help make working in Digital Publishing simpler. Now hosted in its own repository
+([dp-cli](https://github.com/ONSdigital/dp-cli))
 
 **[websysd](websysd/README.md)**
 
-You can use websysd to run your DP apps locally.
+You can use websysd to run your DP apps locally. However, currently the configuration is invalid as it assumes that they
+are located in the GOPATH which is not the case for the majority of apps that have been migrated to go modules.
 
 **[paasbox](paasbox)**
 
-Paasbox is an alternative to websysd as a means of running the DP apps locally.
+Paasbox is an alternative to websysd as a means of running the DP apps locally. Similar to websysd, its configuration 
+will need updating to reflect the new locations of apps migrated to go modules.
 
 **[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)**
 

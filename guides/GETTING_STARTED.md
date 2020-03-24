@@ -201,4 +201,4 @@ Note that when the first login to a Florence account is detected a mandatory pas
 
 ### Useful resources
 * [Splash-page](https://github.com/ONSdigital/dp-setup/tree/develop/splash-page) (if you get a 404 error following this link, you need to be added to the ONSdigital organisation in GitHub), a list of digital publishing's repositories, environments, and platform-tools
-* [dp-tool](https://github.com/ONSdigital/dp/tree/master/cmd) is a useful tool to grant access to environments and SSH into them when working offsite
+* [dp-cli](https://github.com/ONSdigital/dp-cli) is a useful tool to grant access to environments and SSH into them when working offsite as well as other tasks
