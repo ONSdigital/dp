@@ -1,6 +1,6 @@
 # Websyd
 
-## Warning
+## :warning: Warning
 websysd assumes that many services are located in the GOPATH. Since most have migrated to Go modules, this is no longer
 the case and these scripts will need to be updated in order to work.
 

@@ -34,7 +34,7 @@ Dev tooling
 
 **[dp command line tool](https://github.com/ONSdigital/dp-cli)**
 
-A command line utility to help make working in Digital Publishing simpler. Now hosted in its own repository
+A command line utility to assist work in Digital Publishing. See its own repository
 ([dp-cli](https://github.com/ONSdigital/dp-cli))
 
 **[websysd](websysd/README.md)**
