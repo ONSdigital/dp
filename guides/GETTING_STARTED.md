@@ -48,6 +48,46 @@ __Florence steps:__
 -----
 ### Prerequisites
 
+#### Configuration
+
+The below environment variables need to be set in order to run the stack locally:
+
+If using Zsh then enter the variables in you `~/.zshenv` file
+If using Bash then enter the variables in your ~/.bash_profile file
+```bash 
+{var_name}={value}
+```
+Where `{var_name}` is to be replaced by a variable name like the ones below, and `{value}` with the value of the 
+variable - if it is a string value then surround with quotes (`"`).
+
+- `zebedee_root` should be a path to your zebedee content typically the directory the 
+[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run.
+
+- `TRANSACTION_STORE` should point to your zebedee transactions directory if using the 
+[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) then this should have the value `$zebedee_root/zebedee/transactions`.
+
+- `WEBSITE` should point to your zebedee master directory if using the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)
+ then this should have the value `$zebedee_root/zebedee/master`.
+
+- `PUBLISHING_THREAD_POOL_SIZE` should be set to a sensible number like `10` general rule of thumb two threads for each core, minus 1.
+
+- `ENABLE_PRIVATE_ENDPOINTS` should be set to `true` this enables your system to talk to private API endpoints.
+
+- `ENABLE_PERMISSIONS_AUTH` should be set to `true` this ensures that all calls to APIs are from registered services or users.
+
+- `FORMAT_LOGGING` should be set to `true` this will format logs.
+
+- `SERVICE_AUTH_TOKEN` should be set to the value obtained from following this process: 
+[Service Authentication With Zebedee](https://github.com/ONSdigital/zebedee#service-authentication-with-zebedee).
+
+- `ENCRYPTION_DISABLED` should be set to `true` this will disable encryption making data readable for any debugging purposes.
+
+- `DATASET_ROUTES_ENABLED` should be set to `true` this will enable the filterable dataset routes.
+
+- `ELASTIC_SEARCH_URL` should be set to `http://localhost:9500` this will enable two versions of Elastic Search to run in the dp-compose tool.
+
+#### Installations 
+
 * [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
 * [Maven](https://maven.apache.org/)
 * [Docker](https://www.docker.com/get-started)
