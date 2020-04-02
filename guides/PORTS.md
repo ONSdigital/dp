@@ -59,3 +59,4 @@ in development without having to configure port numbers etc.
 | 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller) |
 | 24200 | [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) |
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer) |
+| 24400 | [dp-sessions-api](https://github.com/ONSdigital/dp-sessions-api) |
