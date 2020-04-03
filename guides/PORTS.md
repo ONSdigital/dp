@@ -60,3 +60,4 @@ in development without having to configure port numbers etc.
 | 24200 | [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) |
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer) |
 | 24400 | [dp-sessions-api](https://github.com/ONSdigital/dp-sessions-api) |
+| 24500 | [dp-observation-api](https://github.com/ONSdigital/dp-observation-api) |
