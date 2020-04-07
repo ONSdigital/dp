@@ -50,7 +50,7 @@ __Florence steps:__
 
 #### Configuration
 
-The below environment variables need to be set in order to run the stack locally:
+The below environment variables need to be set to run the stack locally:
 
 If using Zsh then enter the variables in you `~/.zshenv` file
 If using Bash then enter the variables in your ~/.bash_profile file
@@ -71,11 +71,13 @@ variable - if it is a string value then surround with quotes (`"`).
 
 - `PUBLISHING_THREAD_POOL_SIZE` should be set to a sensible number like `10` general rule of thumb two threads for each core, minus 1.
 
-- `ENABLE_PRIVATE_ENDPOINTS` should be set to `true` this enables your system to talk to private API endpoints.
+- `ENABLE_PRIVATE_ENDPOINTS` should be set to `true` if wanting to run in publishing mode, alternatively either do not set or set the value to
+ `false` for web mode.
 
-- `ENABLE_PERMISSIONS_AUTH` should be set to `true` this ensures that all calls to APIs are from registered services or users.
+- `ENABLE_PERMISSIONS_AUTH` should be set to `true` this ensures that all calls to APIs are from registered services or
+users. Alternatively set this to `false` if wanting to bypass this.
 
-- `FORMAT_LOGGING` should be set to `true` this will format logs.
+- `FORMAT_LOGGING` if set to `true` this will format logs.
 
 - `SERVICE_AUTH_TOKEN` should be set to the value obtained from following this process: 
 [Service Authentication With Zebedee](https://github.com/ONSdigital/zebedee#service-authentication-with-zebedee).
