@@ -17,6 +17,7 @@ Guides and general info
 * [Technologies](guides/TECHNOLOGIES.md)
 * [Tagging a release](guides/TAGS.md)
 * [Migrating Go vendor projects to Go modules](guides/MODULES.md)
+* [AWS credentials](guides/AWS_CREDENTIALS.md)
 
 Standards and specifications
 ----------------------------
@@ -44,7 +45,7 @@ are located in the GOPATH which is not the case for the majority of apps that ha
 
 **[paasbox](paasbox)**
 
-Paasbox is an alternative to websysd as a means of running the DP apps locally. Similar to websysd, its configuration 
+Paasbox is an alternative to websysd as a means of running the DP apps locally. Similar to websysd, its configuration
 will need updating to reflect the new locations of apps migrated to go modules.
 
 **[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)**
