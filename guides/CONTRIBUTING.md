@@ -13,7 +13,7 @@ Contributing to Digital Publishing repos
 * Ensure your branch contains logical atomic commits before sending a pull request - follow the [alphagov Git styleguide](https://github.com/alphagov/styleguides/blob/master/git.md)
 * You may rebase your branch after feedback if it's to include relevant updates from the `develop` branch. We prefer a rebase here to a merge commit as we
   prefer a clean and straight history on the `develop` branch, with discrete merge commits for features
-* It is advised to squash commits before pushing to a remote repository 
+* It is advised to squash commits before pushing to a remote repository
 -----
 ### Releasing
 * For instructions on how to release work, read the [Releases guidelines](RELEASES.md)
@@ -22,6 +22,6 @@ Contributing to Digital Publishing repos
 ### Access to Environments
 #### Note: if you get a 404 error for any of the below links, then you need to be added to the `ONSdigital` organisation in GitHub
 * For direct access to the environments
-    * Setup your [AWS credentials](https://github.com/ONSdigital/dp-setup/blob/develop/AWS-CREDENTIALS.md)
+    * Setup your [AWS credentials](AWS_CREDENTIALS.md)
     * Configure your [SSH access](https://github.com/ONSdigital/dp-setup/blob/develop/SSH-ACCESS.md)
     * [Ansible](https://github.com/ONSdigital/dp-ci/tree/master/ansible#prerequisites) is required for provisioning to environments
