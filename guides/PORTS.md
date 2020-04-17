@@ -61,3 +61,4 @@ in development without having to configure port numbers etc.
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer) |
 | 24400 | [dp-sessions-api](https://github.com/ONSdigital/dp-sessions-api) |
 | 24500 | [dp-observation-api](https://github.com/ONSdigital/dp-observation-api) |
+| 24600 | [dp-legacy-redirector](https://github.com/ONSdigital/dp-legacy-redirector) |
