@@ -13,9 +13,9 @@ Note: [Websysd](https://github.com/ONSdigital/dp/tree/master/websysd) can accomp
 
 4. Run the apps:
 
-  - [web](#web)
-  - [publishing](#publishing)
-  - and optionally [CMD](#cmd).
+    - [web](#web)
+    - [publishing](#publishing)
+    - and optionally [CMD](#cmd).
 
 5. [Configure the apps](#configure)
 
@@ -52,18 +52,25 @@ __Florence steps:__
 
 The below environment variables need to be set to run the stack locally:
 
-If using Zsh then enter the variables in you `~/.zshenv` file
-If using Bash then enter the variables in your ~/.bash_profile file
-```bash 
+If using Zsh then enter the variables in you `~/.zshenv` file:
+
+```zsh
 {var_name}={value}
 ```
-Where `{var_name}` is to be replaced by a variable name like the ones below, and `{value}` with the value of the 
+
+If using Bash then enter the variables in your `~/.bash_profile` file:
+
+```bash
+export {var_name}={value}
+```
+
+Where `{var_name}` is to be replaced by a variable name like the ones below, and `{value}` with the value of the
 variable - if it is a string value then surround with quotes (`"`).
 
-- `zebedee_root` should be a path to your zebedee content typically the directory the 
+- `zebedee_root` should be a path to your zebedee content typically the directory the
 [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run.
 
-- `TRANSACTION_STORE` should point to your zebedee transactions directory if using the 
+- `TRANSACTION_STORE` should point to your zebedee transactions directory if using the
 [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) then this should have the value `$zebedee_root/zebedee/transactions`.
 
 - `WEBSITE` should point to your zebedee master directory if using the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)
@@ -79,7 +86,7 @@ users. Alternatively set this to `false` if wanting to bypass this.
 
 - `FORMAT_LOGGING` if set to `true` this will format logs.
 
-- `SERVICE_AUTH_TOKEN` should be set to the value obtained from following this process: 
+- `SERVICE_AUTH_TOKEN` should be set to the value obtained from following this process:
 [Service Authentication With Zebedee](https://github.com/ONSdigital/zebedee#service-authentication-with-zebedee).
 
 - `ENCRYPTION_DISABLED` should be set to `true` this will disable encryption making data readable for any debugging purposes.
@@ -88,7 +95,7 @@ users. Alternatively set this to `false` if wanting to bypass this.
 
 - `ELASTIC_SEARCH_URL` should be set to `http://localhost:9500` this will enable two versions of Elastic Search to run in the dp-compose tool.
 
-#### Installations 
+#### Installations
 
 * [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
 * [Maven](https://maven.apache.org/)
@@ -114,7 +121,7 @@ For CMD additionally install:
 
 * [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
 * [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
-* [Kafka v0.10.2.1](https://kafka.apache.org/downloads#0.10.2.1) - [Docs for version specific commands](https://kafka.apache.org/0102/documentation.html) 
+* [Kafka v0.10.2.1](https://kafka.apache.org/downloads#0.10.2.1) - [Docs for version specific commands](https://kafka.apache.org/0102/documentation.html)
 
 Elasticsearch will need to be on [version 5](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/gs-installation.html) to work with CMD.
 
@@ -228,7 +235,7 @@ If you already have content, and you just want to run the web journey, you'll ne
 
 #### Configure
 * In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`
-* Service authentication token creation steps can be found in the [Zebedee repository](https://github.com/ONSdigital/zebedee/#service-authentication-with-zebedee) 
+* Service authentication token creation steps can be found in the [Zebedee repository](https://github.com/ONSdigital/zebedee/#service-authentication-with-zebedee)
 
 Note that when the first login to a Florence account is detected a mandatory password update is required.
 
