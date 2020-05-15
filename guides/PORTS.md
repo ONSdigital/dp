@@ -63,3 +63,4 @@ in development without having to configure port numbers etc.
 | 24500 | [dp-observation-api](https://github.com/ONSdigital/dp-observation-api) |
 | 24600 | [dp-legacy-redirector](https://github.com/ONSdigital/dp-legacy-redirector) |
 | 24700 | [dp-image-api](https://github.com/ONSdigital/dp-image-api) |
+| 24800 | [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) |
