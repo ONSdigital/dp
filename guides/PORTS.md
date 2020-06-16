@@ -65,3 +65,4 @@ in development without having to configure port numbers etc.
 | 24700 | [dp-image-api](https://github.com/ONSdigital/dp-image-api) |
 | 24800 | [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) |
 | 24900 | [dp-static-file-publisher](https://github.com/ONSdigital/dp-static-file-publisher) |
+| 25000 | [dp-frontend-search-controller](https://github.com/ONSdigital/dp-frontend-search-controller) |
