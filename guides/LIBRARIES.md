@@ -3,7 +3,17 @@ Library choices
 
 This is a partially-complete list of libraries used for different areas by Digital Publishing.
 
-# Internal Libraries
+The aims of this document are to define standards around what libraries are being used, provide a place to center conversation about changing libraries and be a reference point to the existance of internal libraries.
+
+## Table of Contents
+1. [Internal Library Standards](#Internal-Library-Standards)
+2. [HTTP and Middleware](#HTTP-and-middleware)
+3. [Config & Logging](#config-&-logging)
+4. [Database Drivers](#database-drivers)
+5. [Testing](#testing)
+6. [Misc.](#misc.)
+
+# Internal Library Standards
 
 We create internal libraries where we want our interaction with a 3rd-party library to be
 standardized across all of our services. Often this is as simple as adding our health 
