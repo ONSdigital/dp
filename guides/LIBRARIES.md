@@ -24,14 +24,19 @@ Our internal libraries typically begin with `dp-` in the repo name, and *must* r
 `ONSdigital` Github organization. 
   * Go note: It is acceptable for files to live at the top level of these repos and take the single word name after `dp-` as the package name. e.g. `dp-kafka` uses the `package kafka` definiton
 
-These client libraries all serve that high level wrapping purpose:
-  * [dp-api-clients-go](https://github.com/ONSdigital/dp-api-clients-go) - which houses all of our API clients
+These client libraries all serve that high level wrapping purpose around 3rd party services:
   * [dp-elasticsearch](https://github.com/ONSdigital/dp-elasticsearch)
   * [dp-nomad](https://github.com/ONSdigital/dp-nomad)
   * [dp-vault](https://github.com/ONSdigital/dp-vault)
   * [dp-mongodb](https://github.com/ONSdigital/dp-mongodb)
   * [dp-s3](https://github.com/ONSdigital/dp-s3)
   * [dp-kafka](https://github.com/ONSdigital/dp-kafka)
+
+As well as libraries we use for communication between internal services:
+  * [dp-api-clients-go](https://github.com/ONSdigital/dp-api-clients-go) which houses all of our API clients
+  * [dp-dataset-api-java-client](https://github.com/ONSdigital/dp-dataset-api-java-client)
+  * [dp-reporter-client](https://github.com/ONSdigital/dp-reporter-client) which publishes kafka message throughout the data import process
+   * [dp-frontend-models](https://github.com/ONSdigital/dp-frontend-models)
 
 The underlying drivers may be highlighted in further sections of this document, but where a library exists it should be used and updated rather than importing drivers directly to services.
 
@@ -118,8 +123,8 @@ Internal libraries
 Internal libraries
   * [go-ns](https://github.com/ONSdigital/go-ns) contains many library packages that are slowly being broken out into their own libraries
   * [dp-bolt](https://github.com/ONSdigital/dp-bolt) is a high level wrapper around neo4j's bolt driver - this has been superceded by dp-graph
-  * [dp-ssqs](https://github.com/ONSdigital/dp-ssqs) provides a high level wrapper for AWS SQS message consumers, but does not currently meet DP library standards
 
 Internal forks of community libraries
-  * [dp-cryptolite-java](https://github.com/ONSdigital/dp-cryptolite-java) provides encryption for our Java publishing services.
+  * ~~[dp-cryptolite-java](https://github.com/ONSdigital/dp-cryptolite-java) provides encryption for our Java publishing services.~~ **DEPRECATED**
+  * [dp-ssqs](https://github.com/ONSdigital/dp-ssqs) provides a high level wrapper for AWS SQS message consumers, but does not currently meet DP library standards
 
