@@ -93,8 +93,6 @@ users. Alternatively set this to `false` if wanting to bypass this.
 
 - `DATASET_ROUTES_ENABLED` should be set to `true` this will enable the filterable dataset routes.
 
-- `ELASTIC_SEARCH_URL` should be set to `http://localhost:9500` this will enable two versions of Elastic Search to run in the dp-compose tool.
-
 #### Installations
 
 * [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
