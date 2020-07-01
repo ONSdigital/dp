@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"time"
@@ -27,7 +28,7 @@ var collectionData = make(map[string]*collectionJSON)
 
 // const rootDir = "/home/ec2-user/publish-log-test"
 
-const rootDir = "/publish-archive/IANKENT-analysis"
+const rootDir = "/publish-archive"
 
 func main() {
 	// 1. Get list of collections
@@ -40,19 +41,23 @@ func main() {
 		panic(err)
 	}
 
-	for _, f := range files {
+	lg := len(files)
+	log.Printf("Found %d files to process", lg)
+
+	for i, f := range files {
 		if f.IsDir() {
 			jsonFile := rootDir + "/" + f.Name() + ".json"
 			b, err := ioutil.ReadFile(jsonFile)
 			if err != nil {
-				// panic(err)
+				log.Printf("collection: [%s] cannot read file: [%s]", f.Name, jsonFile)
 				continue
 			}
 
 			var c collectionJSON
 			err = json.Unmarshal(b, &c)
 			if err != nil {
-				panic(err)
+				log.Printf("collection: [%s] invalid json: [%s]", f.Name, jsonFile)
+				continue
 			}
 
 			collectionData[c.ID] = &c
@@ -63,13 +68,18 @@ func main() {
 
 			err = filepath.Walk(rootDir+"/"+f.Name(), func(path string, info os.FileInfo, err error) error {
 				if err != nil {
-					panic(err)
+					log.Printf("walk start failure: [%s]", f.Name)
+					return err
 				}
 				c.FileCount++
 				c.FileSize += info.Size()
 
 				return nil
 			})
+		}
+
+		if i%500 == 0 {
+			log.Printf("Processed: %d/%d", i, lg)
 		}
 	}
 
@@ -78,9 +88,9 @@ func main() {
 	csvw := csv.NewWriter(os.Stdout)
 	csvw.Write(headers)
 
-	// log.Printf("Found %d collections", len(collectionData))
+	log.Printf("Found %d collections", len(collectionData))
+	count := 1
 	for _, v := range collectionData {
-		// log.Println("Collection:", v.ID)
 		sDate, eDate := "", ""
 		if v.PublishStartDate != nil {
 			sDate = v.PublishStartDate.String()
@@ -90,6 +100,11 @@ func main() {
 		}
 		row := []string{v.ID, v.Name, v.Type, v.PublishDate, sDate, eDate, fmt.Sprintf("%d", v.Duration), fmt.Sprintf("%d", v.FileCount), fmt.Sprintf("%d", v.FileSize)}
 		csvw.Write(row)
+
+		count++
+		if count%50 == 0 {
+			csvw.Flush()
+		}
 	}
 	csvw.Flush()
 }

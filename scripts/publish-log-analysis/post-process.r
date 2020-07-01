@@ -5,7 +5,7 @@ library(reshape2)
 library(scales)
 
 # Load output.csv
-output <- read_csv("/Users/iankent/dev/src/github.com/ONSdigital/dp/scripts/publish-log-analysis/output.csv")
+output <- read_csv("output.csv")
 
 # Convert date strings
 output$PublishDate <- as.POSIXct(strptime(output$PublishDate, "%Y-%m-%d %H:%M:%S"))
@@ -69,4 +69,4 @@ ggplot(data = melted_grouped_manual_releases_by_month[melted_grouped_manual_rele
 # ggplot(data = melted_grouped_scheduled_releases_by_week[melted_grouped_scheduled_releases_by_week$variable %in% c('Type_bulletin_Count', 'Type_article_Count', 'Type_compendium_Count', 'Type_static_methodology_Count', 'Type_compendium_chapter_Count'),], aes(x=`strftime(PublishStartDate, "%Y/%V")`, y=value, fill=variable)) + geom_bar(stat = 'identity') + theme(axis.text.x = element_text(angle=90)) + scale_x_continuous(breaks=10)
 ggplot(data = melted_grouped_scheduled_releases_by_week[melted_grouped_scheduled_releases_by_week$variable %in% c('Type_bulletin_Count', 'Type_article_Count', 'Type_compendium_Count', 'Type_static_methodology_Count', 'Type_compendium_chapter_Count'),], aes(x=`strftime(PublishStartDate, "%Y/%V")`, y=value, fill=variable)) + geom_bar(stat = 'identity')
 
-write_csv(grouped_scheduled_releases_by_week, "/Users/iankent/dev/src/github.com/ONSdigital/dp/scripts/publish-log-analysis/processed.csv")
+write_csv(grouped_scheduled_releases_by_week, "processed.csv")

@@ -5,7 +5,7 @@ library(ggplot2)
 library(scales)
 library(reshape2)
 
-df <- read.csv('/Users/iankent/dev/src/github.com/ONSdigital/dp/scripts/publishing-performance-analysis/publish-performance.csv')
+df <- read.csv('publish-performance.csv')
 
 #convert start date into days
 df$start_date <- substr(df$PublishStartDate,1,10)

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -38,7 +39,7 @@ var collectionData = make(map[string]*collectionJSON)
 
 // const rootDir = "/home/ec2-user/publish-log-test"
 
-const rootDir = "/home/ec2-user/publish-log"
+const rootDir = "/publish-archive"
 
 func main() {
 	// 1. Get list of collections
@@ -53,18 +54,23 @@ func main() {
 
 	var fileTypes = make(map[string]int)
 
-	for _, f := range files {
+	lg := len(files)
+	log.Printf("Found %d files to process", lg)
+
+	for i, f := range files {
 		if f.IsDir() {
 			jsonFile := rootDir + "/" + f.Name() + ".json"
 			b, err := ioutil.ReadFile(jsonFile)
 			if err != nil {
-				panic(err)
+				log.Printf("collection: [%s] cannot read file: [%s]", f.Name, jsonFile)
+				continue
 			}
 
 			var c collectionJSON
 			err = json.Unmarshal(b, &c)
 			if err != nil {
-				panic(err)
+				log.Printf("collection: [%s] invalid json: [%s]", f.Name, jsonFile)
+				continue
 			}
 
 			c.FileCountByType = make(map[string]int)
@@ -75,13 +81,15 @@ func main() {
 
 			err = filepath.Walk(rootDir+"/"+f.Name(), func(path string, info os.FileInfo, err error) error {
 				if err != nil {
-					panic(err)
+					log.Printf("walk start failure: [%s]", f.Name)
+					return err
 				}
 				if info.Name() == "data.json" {
 					// log.Println("Found data.json:", path)
 					b, err = ioutil.ReadFile(path)
 					if err != nil {
-						panic(err)
+						log.Printf("collection: [%s] cannot read data.json file: [%s]", f.Name, path)
+						return err
 					}
 
 					var d dataJSON
@@ -114,8 +122,13 @@ func main() {
 				return nil
 			})
 			if err != nil {
-				panic(err)
+				log.Printf("returned walk failure: [%s] error: [%s] ", f.Name, err.Error)
+				continue
 			}
+		}
+
+		if i%500 == 0 {
+			log.Printf("Processed: %d/%d", i, lg)
 		}
 	}
 
@@ -134,9 +147,9 @@ func main() {
 	csvw := csv.NewWriter(os.Stdout)
 	csvw.Write(headers)
 
-	// log.Printf("Found %d collections", len(collectionData))
+	log.Printf("Found %d collections", len(collectionData))
+	count := 0
 	for _, v := range collectionData {
-		// log.Println("Collection:", v.ID)
 		row := []string{v.ID, v.Name, v.ReleaseURI, v.Type, v.PublishDate, v.PublishStartDate, v.PublishEndDate}
 		for _, t := range typeNames {
 			if v2, ok := v.FileCountByType[t]; ok {
@@ -156,6 +169,11 @@ func main() {
 			}
 		}
 		csvw.Write(row)
+
+		count++
+		if count%50 == 0 {
+			csvw.Flush()
+		}
 	}
 	csvw.Flush()
 }
