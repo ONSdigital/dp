@@ -110,12 +110,12 @@ users. Alternatively set this to `false` if wanting to bypass this.
     - Elasticsearch 2.4.2
     - Highcharts
     - Postgres
+    - MathJax 
   - Services for CMD
     - MongoDB
     - Elasticsearch 5 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
     - Neo4J
-    - MathJax 
 * [go v1.13](https://golang.org/doc/install)
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
 * [Govendor](https://github.com/kardianos/govendor)
