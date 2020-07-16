@@ -103,9 +103,19 @@ users. Alternatively set this to `false` if wanting to bypass this.
   - Node.js version 10.15.3
   - npm version 6.9.0
 * [dp-compose](https://github.com/ONSdigital/dp-compose)
-  - Elasticsearch 2.4.2
-  - Highcharts
-  - Postgres
+
+  NB. See `dp-compose` README for configuration of Docker Desktop resources
+
+  - Services for Web
+    - Elasticsearch 2.4.2
+    - Highcharts
+    - Postgres
+  - Services for CMD
+    - MongoDB
+    - Elasticsearch 5 (on non-standard port)
+    - Kafka (plus required Zookeeper dependency)
+    - Neo4J
+    - MathJax 
 * [go v1.13](https://golang.org/doc/install)
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
 * [Govendor](https://github.com/kardianos/govendor)
@@ -114,14 +124,6 @@ users. Alternatively set this to `false` if wanting to bypass this.
 
 * [jq](https://stedolan.github.io/jq/) - installed with `brew install jq`
   - This isn't essential, but it's a useful tool for debugging website content.
-
-For CMD additionally install:
-
-* [MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/#install-mongodb-community-edition-with-homebrew)
-* [Neo4j](https://neo4j.com/download-center/#releases) - currently limited to 3.2.12
-* [Kafka v0.10.2.1](https://kafka.apache.org/downloads#0.10.2.1) - [Docs for version specific commands](https://kafka.apache.org/0102/documentation.html)
-
-Elasticsearch will need to be on [version 5](https://www.elastic.co/guide/en/elasticsearch/reference/5.4/gs-installation.html) to work with CMD.
 
 ### Web
 
