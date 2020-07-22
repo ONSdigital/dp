@@ -9,7 +9,7 @@ Note: [Websysd](https://github.com/ONSdigital/dp/tree/master/websysd) can accomp
 
 2. Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd). To get everything running follow the [CMD](#cmd) steps
 
-3. [Setup Zebedee content](#setup-zebedee-content)
+3. [Setup Zebedee content using `dp-zebedee-content`](https://github.com/ONSdigital/dp-zebedee-content#dp-zebedee-content)
 
 4. Run the apps:
 
@@ -33,17 +33,15 @@ __Additional app setup:__
 
 __Content:__ Your apps should startup and be functional at this point, but you'll have no CMD content.
 
-8. [Import code lists](https://github.com/ONSdigital/dp-code-list-scripts#import-to-a-new-development-environment)
-
-9. [Import hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder#getting-started)
+8. [Import code lists and hierarchies using the `dp import cmd` command](https://github.com/ONSdigital/dp-cli#dp-cli):
 
 __Florence steps:__
 
-10. [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
+9.  [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
 
-11. [Import V4 file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
+10.  [Import V4 file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
 
-12. Publish content [as normal](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
+11.  Publish content [as normal](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
 
 -----
 ### Prerequisites
@@ -158,10 +156,6 @@ The publishing tool requires the following components:
   * use `$ make debug`
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
   * use `$ make debug`
-
-#### Setup Zebedee content
-
-To setup Zebedee content, follow the guide in [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content#dp-zebedee-content)
 
 ### CMD
 
