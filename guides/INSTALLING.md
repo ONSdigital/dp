@@ -34,6 +34,8 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
 * [jq](https://stedolan.github.io/jq/) - installed with `brew install jq`
   - This isn't essential, but it's a useful tool for debugging website content.
 
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+
 ## Clone the services
 
 Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd). Unless otherwise stated, services are run using `$ make debug`
@@ -107,6 +109,7 @@ The publishing journey for CMD requires all of the services listed, including th
 * [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx)
 * [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
 ## Configuration
 
@@ -128,12 +131,6 @@ Where `{var_name}` is to be replaced by a variable name like the ones below, and
 
 - `zebedee_root` should be a path to your zebedee content typically the directory the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run.
 
-- `TRANSACTION_STORE` = `$zebedee_root/zebedee/transactions`.
-
-- `WEBSITE` = `$zebedee_root/zebedee/master`.
-
-- `PUBLISHING_THREAD_POOL_SIZE` should be set to a sensible number like `10` general rule of thumb two threads for each core, minus 1.
-
 - `ENABLE_PRIVATE_ENDPOINTS` should be set to `true` if wanting to run in publishing mode, alternatively either do not set or set the value to
  `false` for web mode.
 
@@ -144,6 +141,8 @@ Where `{var_name}` is to be replaced by a variable name like the ones below, and
 - `DATASET_ROUTES_ENABLED` should be set to `true` this will enable the filterable dataset routes (the CMD journey).
 
 - (Optional) `FORMAT_LOGGING` if set to `true` this will format logs.
+
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
 ## Running the apps
 
@@ -157,6 +156,8 @@ Most applications can be run using the `make debug` command, but deviations are 
 
 #### Web
   - The website will be available at `http://localhost:22000`
+
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
 ## Setup credentials
 * In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`

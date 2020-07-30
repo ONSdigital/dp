@@ -1,6 +1,7 @@
 The Complete Getting Started Guide
 ===============
 
+
 # Install, configure and run services
 1. [Install the prerequisites](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#prerequisites)
 2. [Clone the repositories](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#clone-the-services)
@@ -9,7 +10,7 @@ The Complete Getting Started Guide
 5. [Run the apps](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#running-the-apps)
 6. [Update configuration](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#setup-credentials) for your credentials
 
-We've made a few attempts at simlifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](https://github.com/ONSdigital/dp/tree/master/DEV_SETUP.md) guide. 
+We've made a few attempts at simlifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md) guide. 
 
 # Usage guides
 1. (Optional) [Enable feedback form](https://github.com/ONSdigital/dp-frontend-dataset-controller#feedback-service)
