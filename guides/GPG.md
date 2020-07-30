@@ -19,6 +19,9 @@ We use GPG to sign our commits.
 * Configure git:
   * `git config --global commit.gpgsign true`
   * `git config --global user.signingkey <YOUR_GPG_KEY_ID>`
+  * `git config --global user.name <YOUR_NAME>`
+  * `git config --global user.email <YOUR_EMAIL_SIGNED_IN_GITHUB>`
+  * After, you can double check the updated git config with `git config --list`
 * Add `no-tty` to the end of `~/.gnupg/gpg.conf` (for IntelliJ)
 * Commit something and push to GitHub
 * Check commit history on GitHub, should have 'Verified' badge
