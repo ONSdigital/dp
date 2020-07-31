@@ -9,15 +9,14 @@ Guides and general info
 -----------------------
 
 * [Getting started](guides/GETTING_STARTED.md)
-* [Creating a new app](guides/NEW_APP.md)
 * [Release process](guides/RELEASES.md)
 * [Contributing guidelines](guides/CONTRIBUTING.md)
-* [GPG commit signing](guides/GPG.md)
+* [Tagging a release](guides/TAGS.md)
+* [Creating a new app](guides/NEW_APP.md)
 * [Port numbering](guides/PORTS.md)
 * [Technologies](guides/TECHNOLOGIES.md)
-* [Tagging a release](guides/TAGS.md)
 * [Migrating Go vendor projects to Go modules](guides/MODULES.md)
-* [AWS credentials](guides/AWS_CREDENTIALS.md)
+
 
 Standards and specifications
 ----------------------------
@@ -37,16 +36,6 @@ Dev tooling
 
 A command line utility to assist work in Digital Publishing. See its own repository
 ([dp-cli](https://github.com/ONSdigital/dp-cli))
-
-**[websysd](websysd/README.md)**
-
-You can use websysd to run your DP apps locally. However, currently the configuration is invalid as it assumes that they
-are located in the GOPATH which is not the case for the majority of apps that have been migrated to go modules.
-
-**[paasbox](paasbox)**
-
-Paasbox is an alternative to websysd as a means of running the DP apps locally. Similar to websysd, its configuration
-will need updating to reflect the new locations of apps migrated to go modules.
 
 **[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)**
 

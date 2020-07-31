@@ -2,6 +2,8 @@ Install, configure and run services
 ===============
 As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
+--------------
+
 ## Prerequisites
 
 * [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
@@ -35,6 +37,8 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
   - This isn't essential, but it's a useful tool for debugging website content.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+
+--------------
 
 ## Clone the services
 
@@ -111,6 +115,8 @@ The publishing journey for CMD requires all of the services listed, including th
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
+--------------
+
 ## Configuration
 
 The below environment variables need to be set to run the stack locally:
@@ -144,6 +150,8 @@ Where `{var_name}` is to be replaced by a variable name like the ones below, and
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
+--------------
+
 ## Running the apps
 
 Most applications can be run using the `make debug` command, but deviations are all documented alongside each repo in the [cloning](#clone-the-services) guide.
@@ -158,6 +166,8 @@ Most applications can be run using the `make debug` command, but deviations are 
   - The website will be available at `http://localhost:22000`
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+
+--------------
 
 ## Setup credentials
 * In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`

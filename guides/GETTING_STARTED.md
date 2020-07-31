@@ -1,16 +1,30 @@
 The Complete Getting Started Guide
 ===============
+# Welcome to the team!
+Culture stuff? Open, DP principles. no stupid questions
+Expose the line management guide? No, actually do team culture principles which surface some of these things
+Architectural principles
 
+# Set up your mac for development work
+1. [Install applications](MAC_SETUP.md#install-applications)
+2. Set up your [git config](MAC_SETUP.md#git-account-and-configuration)
+3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md)* 
+4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
+5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
+6. Run `dp remote allow develop` to prove all your previous setup is correct
+7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. You'll need to ask someone for passphrases first.
+
+*If you cannot access this link, something has gone wrong in the previous step.
 
 # Install, configure and run services
-1. [Install the prerequisites](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#prerequisites)
-2. [Clone the repositories](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#clone-the-services)
+1. [Install the prerequisites](INSTALLING.md#prerequisites)
+2. [Clone the repositories](INSTALLING.md#clone-the-services)
 3. Follow this separate guide to [setup base content](https://github.com/ONSdigital/dp-zebedee-content#dp-zebedee-content)
-4. [Setup base environment configuration](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#configuration)
-5. [Run the apps](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#running-the-apps)
-6. [Update configuration](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md#setup-credentials) for your credentials
+4. [Setup base environment configuration](INSTALLING.md#configuration)
+5. [Run the apps](INSTALLING.md#running-the-apps)
+6. [Update configuration](INSTALLING.md#setup-credentials) for your credentials
 
-We've made a few attempts at simlifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](https://github.com/ONSdigital/dp/blob/master/guides/INSTALLING.md) guide. 
+We've made a few attempts at simplifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](DEV_SETUP.md) guide. 
 
 # Usage guides
 1. (Optional) [Enable feedback form](https://github.com/ONSdigital/dp-frontend-dataset-controller#feedback-service)
