@@ -1,14 +1,17 @@
 Library choices
 ==================
 
-This is a partially-complete list of libraries used for different areas by Digital Publishing.
+This is an incomplete list of libraries used for different areas by Digital Publishing.
 
-The aims of this document are to define standards around what libraries are being used, provide a place to center conversation about changing libraries and be a reference point to the existance of internal libraries.
+This document aims to:
+  * define the reference libraries we use,
+  * provide a focus for the conversation about changing libraries and
+  * keep a list of our internal libraries.
 
 ## Table of Contents
 1. [Internal Library Standards](#Internal-Library-Standards)
 2. [HTTP and Middleware](#HTTP-and-middleware)
-3. [Config & Logging](#config-&-logging)
+3. [Config & Logging](#config-and-logging)
 4. [Database Drivers](#database-drivers)
 5. [Testing](#testing)
 6. [Misc.](#misc.)
@@ -22,9 +25,9 @@ provides us the opportunity to set defaults consistently across our micro servic
 
 Our internal libraries typically begin with `dp-` in the repo name, and *must* reside in the
 `ONSdigital` Github organization. 
-  * Go note: It is acceptable for files to live at the top level of these repos and take the single word name after `dp-` as the package name. e.g. `dp-kafka` uses the `package kafka` definiton
+  * Go note: It is acceptable for files to live at the top level of these repos and take the single word name after `dp-` as the package name. e.g. `dp-kafka` uses the `package kafka` definition
 
-These client libraries all serve that high level wrapping purpose around 3rd party services:
+These client libraries all serve that high-level wrapping purpose around 3rd party services:
   * [dp-elasticsearch](https://github.com/ONSdigital/dp-elasticsearch)
   * [dp-nomad](https://github.com/ONSdigital/dp-nomad)
   * [dp-vault](https://github.com/ONSdigital/dp-vault)
@@ -59,7 +62,7 @@ Internal forks of community libraries
   * [gorilla/mux](http://github.com/gorilla/mux) for route definitions
   
   
-# Config & Logging
+# Config and Logging
 Internal libraries
   * [log.go](https://github.com/ONSdigital/log.go) for go logging
   * [dp-logging](https://github.com/ONSdigital/dp-logging) for java logging
