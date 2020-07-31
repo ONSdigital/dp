@@ -41,7 +41,12 @@ API standards
       }
   }
   ```
-
+* Resources may link to their direct parent, a child list, or any relevant
+  external resources. Resources which are many layers deep in an API do not need
+  to contain links to all higher elements e.g. the resource at
+  `/datasets/1234/editions/2345/versions/1` would contain a link to
+  `/datasets/1234/editions/2345` but not to `/datasets/1234`
+  
 ### Spec
   * Placeholder names
       * Root endpoint IDs should always be referred to as `id`, rather than
