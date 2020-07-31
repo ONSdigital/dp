@@ -1,9 +1,8 @@
 The Complete Getting Started Guide
 ===============
 # Welcome to the team!
-Culture stuff? Open, DP principles. no stupid questions
-Expose the line management guide? No, actually do team culture principles which surface some of these things
-Architectural principles
+
+We're working on some guides to outline our team culture, and some of our development principles, but the big thing to remember is there are no stupid questions! If anything in these guides is not clear, please let us know so we can improve them for future team members.
 
 # Set up your mac for development work
 1. [Install applications](MAC_SETUP.md#install-applications)
@@ -35,7 +34,7 @@ We've made a few attempts at simplifying these steps, but haven't converged on o
 
 #### CMD import steps
 
-1. Setup required [code lists](https://github.com/ONSdigital/dp-code-list-scripts#import-to-a-new-development-environment) and [hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder#getting-started) for imports 
+1. [Import code lists and hierarchies](https://github.com/ONSdigital/dp-cli#dp-cli) using the `dp import cmd` command
 2. [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
 3. [Import a file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
 4. [Publish a collection](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
