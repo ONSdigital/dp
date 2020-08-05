@@ -154,7 +154,8 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ## Running the apps
 
-Before running web or publishing, please make sure to run dp-compose using the `./run.sh` command (in the dp-compose repo) to run the supporting services
+Before running web or publishing, please make sure to run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `./run.sh` command (in the dp-compose repo) to run the supporting services
+
 Most applications can be run using the `make debug` command, but deviations are all documented alongside each repo in the [cloning](#clone-the-services) guide.
 
 #### Publishing
