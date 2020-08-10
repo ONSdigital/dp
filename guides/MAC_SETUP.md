@@ -40,6 +40,5 @@ Our code - in git repositories - is shared via [Github](https://github.com), so 
 4. Configure `git` locally by running the following commands:
     * `git config --global user.name "<YOUR_NAME>"`
     * `git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
-    * `git config --global github.user <YOUR_GITHUB_USERNAME>`
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
