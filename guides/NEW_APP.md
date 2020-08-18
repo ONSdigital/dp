@@ -37,7 +37,7 @@ These steps will create a new app that is built by CI and deployed to the develo
 
 2. Pick a local dev port for your app and add it to the [local ports list](PORTS.md)
 
-3. Use [`dp-cli` to generate the new repo with boilerplate files](https://github.com/ONSdigital/dp-cli/tree/master/project-generation/COMPLETE_PROJECT_SETUP.md)
+3. Use [`dp-cli` to generate the new repo with boilerplate files](https://github.com/ONSdigital/dp-cli/tree/master/project_generation/COMPLETE_PROJECT_SETUP.md)
 
 4. [Add the new app to the environment](https://github.com/ONSdigital/dp-setup#adding-a-new-app)
 
