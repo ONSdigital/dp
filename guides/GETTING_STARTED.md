@@ -32,7 +32,9 @@ We've made a few attempts at simplifying these steps, but haven't converged on o
 
 # Set up for infrastructure & CI work
 
-In linking to other guides, there may be mentions of tasks that have already been completed as part of [setting up your mac](#set-up-your-mac-for-development-work), such as AWS or environment key setup. You do not need to perform these tasks again.
+:warning: All steps in this section link to private repositories. If the links don't work for you, revisit the steps in [setting up your mac](#set-up-your-mac-for-development-work) to ensure you're a member of our Github organization.
+
+These guides may contain some steps which have already been completed - there is no need to do anything twice, just skip to the next step of the guide.
 
 ### Infrastructure
 All infrastructure configuration is managed in [dp-setup](https://github.com/ONSdigital/dp-setup) and includes the following pieces of set up:
