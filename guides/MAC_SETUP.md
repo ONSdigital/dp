@@ -70,6 +70,15 @@ Install Applications
        
       and close/re-open terminal.
 
+      (optional / Recommended) add `Oh My Zsh` with:
+      ```sh
+      % sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      ```
+      then to further customize, refer to Step 5 onwards, in:
+      ```
+      https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/
+      ```
+
 The MacBook is yours to configure in whatever way will help you be the most productive and comfortable. Feel free to install other software you find useful, like password managers, music players, note-taking apps.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
