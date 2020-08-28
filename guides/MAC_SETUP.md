@@ -46,6 +46,30 @@ Install Applications
       $ brew cask install visual-studio-code
       ```
 
+6. (Recommended) MAC Software Update
+
+    - In top left corner, Click `Apple Icon`, Click `About This Mac`, Click `Software Update...`
+
+7. Trello
+
+    - the primary Project Organizer within the team/department
+    - you can install it via the App Store, OR access it via your browser
+
+8. (Optional / Recommended) ZSH  ... the Z shell
+    - this is an extended version of the `bash` shell
+    - if using `brew` for apps:
+      ```sh
+      $ brew install zsh
+      $ sudo nano /etc/shells
+      ```
+      Add the following to the end of the list and save the file:
+      ```sh
+      /usr/local/bin/zsh
+      ```
+      ??? ```chsh```
+       
+      and close/re-open terminal.
+
 The MacBook is yours to configure in whatever way will help you be the most productive and comfortable. Feel free to install other software you find useful, like password managers, music players, note-taking apps.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
