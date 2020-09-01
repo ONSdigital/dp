@@ -66,7 +66,7 @@ Install Applications
       ```sh
       /usr/local/bin/zsh
       ```
-      ??? ```chsh```
+      Use ```chsh``` to change the Shell line to be: `Shell: /usr/local/bin/zsh`. Save your changes and exit.
        
       and close/re-open terminal.
 
