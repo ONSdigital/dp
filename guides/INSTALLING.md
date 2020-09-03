@@ -6,16 +6,36 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
 
 ## Prerequisites
 
+In the below, the installation of each app is typically one of:
+- use the `brew` command if provided
+- or use the link to the website for the application, from which you can download an installable image of that app
+- or, the link is to the Github repo, where you should clone the repo and follow the instructions in the `README.md` file to install/run (within the repo directory)
+
+---
 * [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) - installed with `brew cask install adoptopenjdk8`
 * [Maven](https://maven.apache.org/) - installed with `brew install maven`
 * [Docker](https://www.docker.com/get-started)
 
-  - 
+  - From the web link download `Docker Desktop`, install and RUN the Docker application to complete installation.
 
 * [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/) - installed with `brew install cypher-shell`
 * [Node.js and npm](https://nodejs.org/en/), known working versions:
   - Node.js version 10.15.3
   - npm version 6.9.0
+
+!!! update here with: node >= 13.12.X
+!!! npm >= 6.14.4
+
+!!! add instructions to download & install from:
+
+https://nodejs.org/download/release/v13.12.0/
+
+the file (for Mac):
+
+node-v13.12.0-darwin-x64.tar.gz
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 * [dp-compose](https://github.com/ONSdigital/dp-compose)
 
   NB. See `dp-compose` README for configuration of Docker Desktop resources
@@ -45,13 +65,15 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ## Clone the services
 
-Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd). Unless otherwise stated, services are run using `$ make debug`
+Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd).
 
-[Web](#web) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
+Unless otherwise stated, services are run using `$ make debug`
 
-[Publishing](#publishing) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
+- [Web](#web) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
 
-[CMD](#cmd) apps will support the filterable dataset journey, and would mean you have ever possible service running.
+- [Publishing](#publishing) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
+
+- [CMD](#cmd) apps will support the filterable dataset journey, and would mean you have ever possible service running.
 
 ### Web
 
