@@ -6,13 +6,19 @@ This document is part of the [Getting Started](https://github.com/ONSdigital/dp/
 Install Applications
 ----
 
-1. (Optional) Install [iTerm2](https://www.iterm2.com/downloads.html) (or your terminal of choice).
+1. (Strongly recommended) Install [homebrew](https://brew.sh/)
+
+    - a macOS package manager - useful for installing (and keeping up-to-date) apps and utilities on macOS
+
+2. (Optional) Install [iTerm2](https://www.iterm2.com/downloads.html) (or your terminal of choice).
 
     - used for the [command-line](https://en.wikipedia.org/wiki/Command-line_interface) (a good proportion of our work)
 
-2. (Strongly recommended) Install [homebrew](https://brew.sh/)
+    - either install from the above website, or use `brew` to install:
 
-    - a macOS package manager - useful for installing (and keeping up-to-date) apps and utilities on macOS
+      ```sh
+      $ brew cask install iterm2
+      ```
 
 3. Install your preferred browser(s)
 
