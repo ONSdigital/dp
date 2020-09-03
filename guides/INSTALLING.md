@@ -6,9 +6,12 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
 
 ## Prerequisites
 
-* [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)
-* [Maven](https://maven.apache.org/)
+* [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) - installed with `brew cask install adoptopenjdk8`
+* [Maven](https://maven.apache.org/) - installed with `brew install maven`
 * [Docker](https://www.docker.com/get-started)
+
+  - 
+
 * [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/) - installed with `brew install cypher-shell`
 * [Node.js and npm](https://nodejs.org/en/), known working versions:
   - Node.js version 10.15.3
