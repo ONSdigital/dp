@@ -19,22 +19,11 @@ In the below, the installation of each app is typically one of:
   - From the web link download `Docker Desktop`, install and RUN the Docker application to complete installation.
 
 * [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/) - installed with `brew install cypher-shell`
-* [Node.js and npm](https://nodejs.org/en/), known working versions:
-  - Node.js version 10.15.3
-  - npm version 6.9.0
+* [Node.js and npm](https://nodejs.org/en/), install the LTS version with:
 
-!!! update here with: node >= 13.12.X
-!!! npm >= 6.14.4
-
-!!! add instructions to download & install from:
-
-https://nodejs.org/download/release/v13.12.0/
-
-the file (for Mac):
-
-node-v13.12.0-darwin-x64.tar.gz
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  - `brew install node@12`
+  
+  - copy `export PATH="/usr/local/opt/node@12/bin:$PATH"` onto the end of your `.zshrc` or `.basrc` file and restart your terminal.
 
 * [dp-compose](https://github.com/ONSdigital/dp-compose)
 
