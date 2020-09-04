@@ -27,6 +27,8 @@ In the below, the installation of each app is typically one of:
 
 * [dp-compose](https://github.com/ONSdigital/dp-compose)
 
+  `git clone git@github.com:ONSdigital/dp-compose`
+
   NB. See `dp-compose` README for configuration of Docker Desktop resources
 
   - Services for Web
@@ -39,24 +41,26 @@ In the below, the installation of each app is typically one of:
     - Elasticsearch 5 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
     - Neo4J
-* [go v1.13](https://golang.org/doc/install)
+* [go v1.13](https://golang.org/doc/install) (You should already have `go1.13` installed from the Prerequisites section in the `dp-cli` `README.md`)
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
-* [Govendor](https://github.com/kardianos/govendor)
 * [GhostScript](https://www.ghostscript.com/download.html) - Required for [Babbage](https://github.com/onsdigital/babbage)
+
+  - `brew install ghostscript`
 * [Vault](https://www.vaultproject.io/intro/getting-started/install.html) - This will be required for running Florence.
 
+  - `brew install hashicorp/tap/vault`
+
 * [jq](https://stedolan.github.io/jq/) - installed with `brew install jq`
+  - `brew install jq`
   - This isn't essential, but it's a useful tool for debugging website content.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
-## Clone the services
+## Clone and run each service
 
 Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd).
-
-Unless otherwise stated, services are run using `$ make debug`
 
 - [Web](#web) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
 
@@ -64,16 +68,37 @@ Unless otherwise stated, services are run using `$ make debug`
 
 - [CMD](#cmd) apps will support the filterable dataset journey, and would mean you have ever possible service running.
 
+Unless otherwise stated, services are run using `$ make debug`
+
 ### Web
 
-* [babbage](https://github.com/ONSdigital/babbage) - use `$ ./run.sh`
+* [babbage](https://github.com/ONSdigital/babbage) - use
+
+  - `$ git clone git@github.com:ONSdigital/babbage`
+  - `$ cd babbage`
+  - `$ ./run.sh`
+
+
 * [zebedee](https://github.com/ONSdigital/zebedee) - use `$ ./run-reader.sh`
+  - `git clone git@github.com:ONSdigital/zebedee`
+
 * [sixteens](https://github.com/ONSdigital/sixteens) - use `$ ./run.sh`
+  - `git clone git@github.com:ONSdigital/sixteens`
+
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
+  - `git clone git@github.com:ONSdigital/dp-frontend-router`
+
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
+  - `git clone git@github.com:ONSdigital/dp-frontend-renderer`
+
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-homepage-controller`
+
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-cookie-controller`
+
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-dataset-controller`
 
 ### Publishing
 
@@ -83,7 +108,10 @@ Services cloned in [web](#web) that must be run with alternate commands:
 
 New services for publishing:
 * [florence](https://github.com/ONSdigital/florence) - use `$ make debug ENCRYPTION_DISABLED=true`
+  - `git clone git@github.com:ONSdigital/florence`
+
 * [The-Train](https://github.com/ONSdigital/The-Train) - use `$ ./run.sh`
+  - `git clone git@github.com:ONSdigital/The-Train`
 
 All other services listed in [web](#web) are also required for the publishing stack, as they are used for the preview functionality.
 
@@ -94,7 +122,7 @@ Services cloned in web/publishing that must be run with alternate commands:
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use `$ make debug DATASET_ROUTES_ENABLED=true`
 * [florence](https://github.com/ONSdigital/florence) - use `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
 
-All other services listed in [web](#web) AND [publishing](#publishing) should also be run with the CMD stack to get the full journey - to import data, publish it and then test the public journey.
+All other services listed in [web](#web) AND [publishing](#publishing) should also be run with this CMD stack to get the full journey - to import data, publish it and then test the public journey.
 
 If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web) services.
 
