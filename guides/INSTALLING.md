@@ -80,8 +80,6 @@ VAR_NAME | note
     - Kafka (plus required Zookeeper dependency)
     - Neo4J
 
-* [go v1.13](https://golang.org/doc/install)
-  - `$ brew install go@1.13`
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
 * [GhostScript](https://www.ghostscript.com/download.html) - Required for [Babbage](https://github.com/onsdigital/babbage)
   - `brew install ghostscript`
