@@ -83,8 +83,8 @@ VAR_NAME | note
 * [go v1.13](https://golang.org/doc/install)
   - `$ brew install go@1.13`
 * [GoConvey](https://github.com/smartystreets/goconvey#installation)
-* [Govendor](https://github.com/kardianos/govendor)
 * [GhostScript](https://www.ghostscript.com/download.html) - Required for [Babbage](https://github.com/onsdigital/babbage)
+  - `brew install ghostscript`
 * [Vault](https://learn.hashicorp.com/tutorials/vault/getting-started-install)
   - `$ brew install hashicorp/tap/vault`
 * [jq](https://stedolan.github.io/jq/) - a handy JSON tool
@@ -96,7 +96,7 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ---
 
-## Clone and run the services
+## Clone and run each service
 
 Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd).
 
@@ -108,7 +108,7 @@ Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#
 
 Once you have cloned the services, you should run them.
 
-The first services that should be started are those of [dp-compose](https://github.com/ONSdigital/dp-compose) using `$ ./run.sh` (in your dp-compose directory) to start the supporting services.
+The first services that should be started are those of [dp-compose](https://github.com/ONSdigital/dp-compose) using `$ ./run.sh` (in your `dp-compose` directory) to start the supporting services.
 
 Unless otherwise stated, other services are started by changing into the repo directory and running:
 
@@ -116,16 +116,37 @@ Unless otherwise stated, other services are started by changing into the repo di
 
 ---
 
+Unless otherwise stated, services are run using `$ make debug`
+
 ### Web
 
-* [babbage](https://github.com/ONSdigital/babbage) - use `$ ./run.sh`
+* [babbage](https://github.com/ONSdigital/babbage) - use
+
+  - `$ git clone git@github.com:ONSdigital/babbage`
+  - `$ cd babbage`
+  - `$ ./run.sh`
+
+
 * [zebedee](https://github.com/ONSdigital/zebedee) - use `$ ./run-reader.sh`
+  - `git clone git@github.com:ONSdigital/zebedee`
+
 * [sixteens](https://github.com/ONSdigital/sixteens) - use `$ ./run.sh`
+  - `git clone git@github.com:ONSdigital/sixteens`
+
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
+  - `git clone git@github.com:ONSdigital/dp-frontend-router`
+
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
+  - `git clone git@github.com:ONSdigital/dp-frontend-renderer`
+
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-homepage-controller`
+
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-cookie-controller`
+
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+  - `git clone git@github.com:ONSdigital/dp-frontend-dataset-controller`
 
 The website will be available at http://localhost:22000
 
@@ -144,11 +165,13 @@ Some repos are common to both [web](#web) and publishing, so require a different
 The following services run only in _publishing_:
 
 * [florence](https://github.com/ONSdigital/florence)
+  - `$ git clone git@github.com:ONSdigital/florence`
   - `$ make debug ENCRYPTION_DISABLED=true`
   - Florence will be available at http://localhost:8081/florence/login
   - The website will be available at http://localhost:8081 (only available after a successful login into Florence)
   - Note that when the first login to Florence, there will be a mandatory password change
 * [The-Train](https://github.com/ONSdigital/The-Train)
+  - `git clone git@github.com:ONSdigital/The-Train`
   - `$ ./run.sh`
 
 All services listed in [web](#web) are also required for the publishing stack, as they are used for preview functionality.
