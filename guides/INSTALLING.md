@@ -165,7 +165,7 @@ Most applications can be run using the `make debug` command, but deviations are 
   If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
 
 #### Web
-  - The website will be available at `http://localhost:22000`
+  - The website will be available at `http://localhost:20000`
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
