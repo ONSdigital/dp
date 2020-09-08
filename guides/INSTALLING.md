@@ -72,7 +72,7 @@ Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#
 
 - [Publishing](#publishing) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
 
-- [CMD](#cmd) apps will support the filterable dataset journey, and would mean you have ever possible service running.
+- [CMD](#cmd) apps will support the filterable dataset journey, and would mean you have every possible service running.
 
 Unless otherwise stated, within a services directory it is run using `$ make debug`
 
