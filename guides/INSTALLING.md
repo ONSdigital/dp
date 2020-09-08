@@ -121,16 +121,6 @@ All other services listed in [web](#web) are also required for the publishing st
 
 ### CMD
 
-Services cloned in web/publishing that must be run with alternate commands:
-* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use `$ make debug DATASET_ROUTES_ENABLED=true`
-* [florence](https://github.com/ONSdigital/florence) - use `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
-
-All other services listed in [web](#web) AND [publishing](#publishing) should also be run with this CMD stack to get the full journey - to import data, publish it and then test the public journey.
-
-If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web) services.
-
-The publishing journey for CMD requires all of the services listed, including the [import](#import-services) and [publishing](#publishing) services. To configure [dataset](#dataset-journey) and [filter](#filter-journey) services for use in publishing, export `ENABLE_PRIVATE_ENDPOINTS=true` for every service.
-
 #### Dataset journey:
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
   - `$ git clone git@github.com:ONSdigital/dp-api-router`
@@ -234,6 +224,18 @@ Most applications can be run using the `make debug` command, but deviations are 
 
 #### Web
   - The website will be available at `http://localhost:22000`
+
+#### CMD
+
+Services cloned in web/publishing that must be run with alternate commands:
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use `$ make debug DATASET_ROUTES_ENABLED=true`
+* [florence](https://github.com/ONSdigital/florence) - use `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
+
+All other services listed in [web](#web) AND [publishing](#publishing) should also be run with this CMD stack to get the full journey - to import data, publish it and then test the public journey.
+
+If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web) services.
+
+The publishing journey for CMD requires all of the services listed, including the [import](#import-services) and [publishing](#publishing) services. To configure [dataset](#dataset-journey) and [filter](#filter-journey) services for use in publishing, export `ENABLE_PRIVATE_ENDPOINTS=true` for every service.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
