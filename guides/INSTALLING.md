@@ -20,7 +20,7 @@ In the below, the installation of each app is typically one of:
   - `$ brew install maven`
 * [Docker](https://www.docker.com/get-started)
 
-  - on the website, download **Docker Desktop**, install and RUN the Docker application to complete installation.
+  - `$ brew cask install docker`
 
 * [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)
   - `$ brew install cypher-shell`
