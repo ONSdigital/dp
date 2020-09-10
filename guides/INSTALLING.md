@@ -18,9 +18,10 @@ In the below, the installation of each app is typically one of:
   - `$ brew cask install adoptopenjdk8`
 * [Maven](https://maven.apache.org/)
   - `$ brew install maven`
-* [Docker](https://www.docker.com/get-started)
+* [Docker](https://www.docker.com/get-started) and **Docker Compose**
 
   - `$ brew cask install docker`
+  - `$ brew install docker-compose`
 
 * [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)
   - `$ brew install cypher-shell`
