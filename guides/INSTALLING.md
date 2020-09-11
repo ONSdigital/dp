@@ -67,60 +67,48 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ## Clone the services
 
-Clone the GitHub repos for [web](#web), [publishing](#publishing) and/or [CMD](#cmd).
+Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey) and/or [CMD](#cmd-journeys).
 
-- [Web](#web) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
+- [Web](#web-journey) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
 
-- [Publishing](#publishing) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
+- [Publishing](#publishing-journey) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
 
-- [CMD](#cmd) apps will support the filterable dataset journey, and would mean you have every possible service running.
+- [CMD](#cmd-journeys) apps will support the filterable dataset journey, and would mean you have every possible service running.
 
-Unless otherwise stated, within a services directory it is run using `$ make debug`
+### Web Journey
 
-### Web
-
-* [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run.sh`
-
+* [babbage](https://github.com/ONSdigital/babbage)
   - `$ git clone git@github.com:ONSdigital/babbage`
-
-* [zebedee](https://github.com/ONSdigital/zebedee) - use: `./run-reader.sh`
+* [zebedee](https://github.com/ONSdigital/zebedee)
   - `$ git clone git@github.com:ONSdigital/zebedee`
-
-* [sixteens](https://github.com/ONSdigital/sixteens) - use: `./run.sh`
+* [sixteens](https://github.com/ONSdigital/sixteens)
   - `$ git clone git@github.com:ONSdigital/sixteens`
-
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
   - `$ git clone git@github.com:ONSdigital/dp-frontend-router`
-
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
   - `$ git clone git@github.com:ONSdigital/dp-frontend-renderer`
-
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
   - `$ git clone git@github.com:ONSdigital/dp-frontend-homepage-controller`
-
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
   - `$ git clone git@github.com:ONSdigital/dp-frontend-cookie-controller`
-
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
   - `$ git clone git@github.com:ONSdigital/dp-frontend-dataset-controller`
 
-### Publishing
+### Publishing Journey
 
-Services cloned in [web](#web) that must be run with alternate commands:
-* [babbage](https://github.com/ONSdigital/babbage) - use `$ ./run-publishing.sh`
-* [zebedee](https://github.com/ONSdigital/zebedee) - use `$ ./run.sh`
+All services listed in [web](#web-journey) are required for the publishing journey. They are used for the preview functionality.
 
-New services for publishing:
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [florence](https://github.com/ONSdigital/florence)
   - `$ git clone git@github.com:ONSdigital/florence`
-
-* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
+* [The-Train](https://github.com/ONSdigital/The-Train)
   - `$ git clone git@github.com:ONSdigital/The-Train`
 
-All other services listed in [web](#web) are also required for the publishing stack, as they are used for the preview functionality.
+NOTE: The below services were cloned in [web](#web-journey), but have a separate additional instance when run in publishing:
 
+* [babbage](https://github.com/ONSdigital/babbage)
+* [zebedee](https://github.com/ONSdigital/zebedee)
 
-### CMD
+### CMD Journeys
 
 #### Dataset journey:
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
@@ -139,12 +127,11 @@ All other services listed in [web](#web) are also required for the publishing st
   - `$ git clone git@github.com:ONSdigital/dp-import-api`
 * [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)
   - `$ git clone git@github.com:ONSdigital/dp-import-tracker`
-* [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor)
   - `$ git clone git@github.com:ONSdigital/dp-dimension-extractor`
-
 * [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer)
   - `$ git clone git@github.com:ONSdigital/dp-dimension-importer`
-* [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor)
   - `$ git clone git@github.com:ONSdigital/dp-observation-extractor`
 * [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer)
   - `$ git clone git@github.com:ONSdigital/dp-observation-importer`
@@ -213,30 +200,58 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ## Running the apps
 
-Before running web or publishing, please make sure to run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `./run.sh` command (in the dp-compose repo) to run the supporting services
+Before running web or publishing, please make sure to run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `./run.sh` command (in the dp-compose repo) to run the supporting services.
 
-Most applications can be run using the `make debug` command, but deviations are all documented alongside each repo in the [cloning](#clone-the-services) guide.
-
-#### Publishing
-  - Florence will be available at `http://localhost:8081/florence/login`
-  - The website will be available at `http://localhost:8081` (only available after a successful login into Florence)
-
-  If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
+Most applications can be run using the `$ make debug` command, but deviations are all documented below:
 
 #### Web
-  - The website will be available at `http://localhost:22000`
+  - The website will be available at http://localhost:22000 or **20000 ???**
+
+    after you run up all of the following:
+* [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run.sh`
+* [zebedee](https://github.com/ONSdigital/zebedee) - use: `./run-reader.sh`
+* [sixteens](https://github.com/ONSdigital/sixteens) - use: `./run.sh`
+* [dp-api-router](https://github.com/ONSdigital/dp-api-router) **!!! not mentioned in Web, under Clone the services**
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
+* [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
+* [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
+* [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
+* [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+
+#### Publishing
+
+Run all of the services in Web and also the following:
+
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
+
+
+The below services (that you have just run in [web](#web-journey)) have separate additional instances in publishing:
+
+* [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run-publishing.sh`
+* [zebedee](https://github.com/ONSdigital/zebedee) - use: `$ ./run.sh`
+
+Florence will be available at http://localhost:8081/florence/login
+
+The website will be available at http://localhost:8081 (only available after a successful login into Florence)
+
+  If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
 
 #### CMD
 
 Services cloned in web/publishing that must be run with alternate commands:
-* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use `$ make debug DATASET_ROUTES_ENABLED=true`
-* [florence](https://github.com/ONSdigital/florence) - use `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug DATASET_ROUTES_ENABLED=true`
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
 
-All other services listed in [web](#web) AND [publishing](#publishing) should also be run with this CMD stack to get the full journey - to import data, publish it and then test the public journey.
+Other commands to be run with alternative commands:
+* [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) - use `$ make debug ENCRYPTION_DISABLED=true`
 
-If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web) services.
+All other services listed in [web](#web-journey) AND [publishing](#publishing-journey) should also be run with this CMD stack to get the full journey - to import data, publish it and then test the public journey.
 
-The publishing journey for CMD requires all of the services listed, including the [import](#import-services) and [publishing](#publishing) services. To configure [dataset](#dataset-journey) and [filter](#filter-journey) services for use in publishing, export `ENABLE_PRIVATE_ENDPOINTS=true` for every service.
+If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web-journey) services.
+
+The publishing journey for CMD requires all of the services listed, including the [import](#import-services) and [publishing](#publishing-journey) services. To configure [dataset](#dataset-journey) and [filter](#filter-journey) services for use in publishing, export `ENABLE_PRIVATE_ENDPOINTS=true` for every service.
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
