@@ -193,6 +193,34 @@ VAR_NAME | note
 `ENCRYPTION_DISABLED` | set `true` to disable encryption, making data readable for any debugging purposes
 `DATASET_ROUTES_ENABLED` | `true` will enable the filterable dataset routes (the CMD journey) in some services
 `FORMAT_LOGGING` | if `true` then `zebedee` will format its logs
+`SERVICE_AUTH_TOKEN` | a value for `zebedee` to work
+`NEW_HOMEPAGE_ENABLED` | set `true` to get new ONS homepage
+
+After all the various steps, here's an example set of exports and their values that you might now have in your [startup file](#startup-file):
+
+**# ONS services**
+
+**export zebedee_root=~/Documents/website/zebedee-content/generated**
+
+**export TRANSACTION_STORE=$zebedee_root/zebedee/transactions**
+
+**export WEBSITE=$zebedee_root/zebedee/master**
+
+**export PUBLISHING_THREAD_POOL_SIZE=10**
+
+**export ENABLE_PRIVATE_ENDPOINTS=true**
+
+**export ENABLE_PERMISSIONS_AUTH=true**
+
+**export ENCRYPTION_DISABLED=true**
+
+**export DATASET_ROUTES_ENABLED=true**
+
+**export FORMAT_LOGGING=true**
+
+**export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"**
+
+**export NEW_HOMEPAGE_ENABLED=true**
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
@@ -205,13 +233,13 @@ Before running web or publishing, please make sure to run [dp-compose](https://g
 Most applications can be run using the `$ make debug` command, but deviations are all documented below:
 
 #### Web
-  - The website will be available at http://localhost:22000 or **20000 ???**
+
+  - The website will be available at http://localhost:20000
 
     after you run up all of the following:
 * [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run.sh`
 * [zebedee](https://github.com/ONSdigital/zebedee) - use: `./run-reader.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens) - use: `./run.sh`
-* [dp-api-router](https://github.com/ONSdigital/dp-api-router) **!!! not mentioned in Web, under Clone the services**
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
 * [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
@@ -224,7 +252,7 @@ Run all of the services in Web and also the following:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
 * [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
-
+* [dp-api-router](https://github.com/ONSdigital/dp-api-router) **!!! not mentioned in Publishing, under Clone the services**
 
 The below services (that you have just run in [web](#web-journey)) have separate additional instances in publishing:
 
@@ -258,7 +286,11 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 --------------
 
 ## Setup credentials
-* In Zebedee `run.sh` remove the following line: export `SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"`
+
+To run florence, you will need to update the environment variable `SERVICE_AUTH_TOKEN` in your [startup file](#startup-file) by following:
+
 * Service authentication token creation steps can be found in the [Zebedee repository](https://github.com/ONSdigital/zebedee/#service-authentication-with-zebedee)
+
+You will need to restart your terminal for the environment variable change to take effect.
 
 Note that when the first login to a Florence account is detected a mandatory password update is required.
