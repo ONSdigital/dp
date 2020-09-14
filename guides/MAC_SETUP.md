@@ -19,6 +19,7 @@ Install Applications
       ```sh
       $ brew cask install iterm2
       ```
+    - the `$` in the above commands represent your shell prompt (`$` is for `bash`, but you might see `%` if using `zsh`) and is not typed
 
 3. Install your preferred browser(s)
 
@@ -33,7 +34,6 @@ Install Applications
       ```sh
       $ brew cask install firefox
       ```
-    - the `$` in the above commands represent your shell prompt (`$` is for `bash`, but you might see `%` if using `zsh`) and is not typed
     
 4. Install [Slack](https://slack.com/intl/en-gb/downloads/mac?geocode=en-gb)
 
@@ -109,12 +109,12 @@ Our code - in git repositories - is shared via [Github](https://github.com), so 
 3. Ensure you have [enabled Multi-Factor Authentication](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication) on your Github account.
 
 4. Configure `git` locally by running the following commands:
-    * `git config --global user.name "<YOUR_NAME>"`
-    * `git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
+    * `$ git config --global user.name "<YOUR_NAME>"`
+    * `$ git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
 
 5. Making `git` work over `ssh`. In your home directory, run these commands:
-    * `ssh-keygen` and write down the passphrase you enter (somewhere _very_ safe)
-    * `cat ~/.ssh/id_rsa.pub`
+    * `$ ssh-keygen` and write down the passphrase you enter (somewhere _very_ safe)
+    * `$ cat ~/.ssh/id_rsa.pub`
 
   - Copy the displayed public key to your clipboard.
 
