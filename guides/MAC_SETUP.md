@@ -19,7 +19,7 @@ Install Applications
       ```sh
       $ brew cask install iterm2
       ```
-    - the `$` in the above commands represent your shell prompt (`$` is for `bash`, but you might see `%` if using `zsh`) and is not typed
+    - the `$` in the example commands represents your shell prompt (`$` is for `bash`, but you might see `%` if using `zsh`) and is not typed
 
 3. Install your preferred browser(s)
 
