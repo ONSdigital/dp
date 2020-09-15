@@ -69,11 +69,11 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey) and/or [CMD](#cmd-journeys).
 
-- [Web](#web-journey) will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
+- [Web](#web-journey) - These apps make up the public facing website providing read only access to published content, and will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets). 
 
-- [Publishing](#publishing-journey) gives you the ability to update, preview and publish content - required for changes to any part of the publishing system. 
+- [Publishing](#publishing-journey) - The "publishing journey" gives you all the features of web together with an internal interface to update, preview and publish content. All content is encrypted and requires authentication.
 
-- [CMD](#cmd-journeys) apps will support the filterable dataset journey, and would mean you have every possible service running.
+- [CMD](#cmd-journeys) - apps will support the filterable dataset journey, and would mean you have every possible service running.
 
 ### Web Journey
 
