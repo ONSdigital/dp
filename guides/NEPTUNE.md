@@ -22,10 +22,12 @@ First you need the address of the cluster you want to connect to. You can get th
 1. Go to the Neptune section of the AWS console https://eu-west-1.console.aws.amazon.com/neptune
 1. Select Databases from the side menu (it may already be selected)
 1. Click on the link for the cluster you want to connect to
-![1](../img/neptune_db_select.png)
+
+    ![1](../img/neptune_db_select.png)
 
 1. The cluster address can now be copied from the 'Connectivity & security' section at the bottom
-![1](../img/neptune_cluster_address.png)
+    
+    ![1](../img/neptune_cluster_address.png)
 
 1. In the terminal, CD into the ansible directory of the dp-setup project:
 ```
@@ -80,7 +82,13 @@ Once connected you run another command to tell the console to send the commands 
 
 For further details on writing Gremlin queries, refer to the [Gremlin reference](https://tinkerpop.apache.org/docs/current/reference/)
 
+### CMD Data Import
 
+The CMD import process requires specific data to be in place before a dataset can be imported. The list below contains each of the types required, along with a link to the repository where more information about importing the data can be found.
+    
+- [recipes](https://github.com/ONSdigital/dp-recipe-api)
+- [code lists](https://github.com/ONSdigital/dp-code-list-scripts)
+- [hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder)
 
 
 
