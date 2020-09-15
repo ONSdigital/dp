@@ -100,6 +100,8 @@ All services listed in [web](#web-journey) are required for the publishing journ
 
 * [florence](https://github.com/ONSdigital/florence)
   - `$ git clone git@github.com:ONSdigital/florence`
+
+  Then work through the README.md in the florence directory.
 * [The-Train](https://github.com/ONSdigital/The-Train)
   - `$ git clone git@github.com:ONSdigital/The-Train`
 
@@ -248,20 +250,20 @@ Most applications can be run using the `$ make debug` command, but deviations ar
 
 #### Publishing
 
-Run all of the services in Web and also the following:
-
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
-* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
-* [dp-api-router](https://github.com/ONSdigital/dp-api-router) **!!! not mentioned in Publishing, under Clone the services**
-
-The below services (that you have just run in [web](#web-journey)) have separate additional instances in publishing:
+Run all of the services in Web, BUT change the commands used to run babbage and zebedee to:
 
 * [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run-publishing.sh`
 * [zebedee](https://github.com/ONSdigital/zebedee) - use: `$ ./run.sh`
 
+and also run the following:
+
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
+* [dp-api-router](https://github.com/ONSdigital/dp-api-router)
+
 Florence will be available at http://localhost:8081/florence/login
 
-The website will be available at http://localhost:8081 (only available after a successful login into Florence)
+The website will be available at http://localhost:8081 (only available after a successful login into Florence - see the README.md in the florence directory)
 
   If you need to edit content in Florence, [try this guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
 
