@@ -29,7 +29,7 @@ Our tooling, including dp cli, Terraform and Ansible, will select the correct pr
 
 The following is the recommended approach that is safe to use with our tooling:
 
-* Set `AWS_DEFAULT_PROFILE=development` in your environment variables (e.g. `~/.bash_profile` or `~/.zshenv`)
+* Set `export AWS_DEFAULT_PROFILE=development` in your environment variables (e.g. `~/.bash_profile` or `~/.zshenv`)
 * When using the aws CLI to work with production pass the `--profile=production` command line option.
 * When using other tools you can set the profile using:
 
