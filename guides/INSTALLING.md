@@ -105,11 +105,6 @@ All services listed in [web](#web-journey) are required for the publishing journ
 * [The-Train](https://github.com/ONSdigital/The-Train)
   - `$ git clone git@github.com:ONSdigital/The-Train`
 
-NOTE: The below services were cloned in [web](#web-journey), but have a separate additional instance when run in publishing:
-
-* [babbage](https://github.com/ONSdigital/babbage)
-* [zebedee](https://github.com/ONSdigital/zebedee)
-
 ### CMD Journeys
 
 #### Dataset journey:
