@@ -16,15 +16,13 @@ To follow this guide you will need:
 
 * Git:
 
-  ```
-  brew install git
-  ```
+  `$ brew install git`
 
-* Terraform >= 0.12:
+* Terraform, in document `dp-setup/terraform/README.md` install the version specified in the Prerequisites section : [dp-setup](https://github.com/ONSdigital/dp-setup/blob/develop/terraform/README.md#prerequisites) 
 
-  ```
-  brew install terraform
-  ```
+  If for example that specifies version 0.13, then do:
+  
+  `$ brew install terraform@0.13`
 
 * Fly CLI (can be downloaded from the links in the corner of the concourse UI)
 
