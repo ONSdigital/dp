@@ -34,6 +34,13 @@ First you need the address of the cluster you want to connect to. You can get th
 cd dp-setup/ansible
 ```
 1. Run the command to port forward to the Neptune cluster:
+
+Using the DP CLI:
+```
+dp ssh develop publishing 1 -p 8182:{cluster address}:8182
+```
+
+Not using the DP CLI:
 ```
 ssh -F ssh.cfg -L 8182:{cluster address}:8182 {user name}@{publishing asg node IP}
 ```
