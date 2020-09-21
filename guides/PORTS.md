@@ -68,3 +68,4 @@ in development without having to configure port numbers etc.
 | 25000 | [dp-frontend-search-controller](https://github.com/ONSdigital/dp-frontend-search-controller) |
 | 25100 | [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) |
 | 25200 | [dp-frontend-feedback-controller](https://github.com/ONSdigital/dp-frontend-feedback-controller) |
+| 25300 | [dp-topic-api](https://github.com/ONSdigital/dp-topic-api) |
