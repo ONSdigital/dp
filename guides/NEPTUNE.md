@@ -13,7 +13,7 @@ A developer guide for moving the CMD services from using Neo4j to AWS Neptune.
 
 ### Local development - How do I run the CMD services against Neptune?
 
-Neo4j runs within a docker container as part of the [dp-compose](https://github.com/ONSdigital/dp-compose) project. Running a local instance of Neptune is not possible, so we must use a test instance hosted in AWS.
+Neo4j runs within a docker container as part of the [dp-compose](https://github.com/ONSdigital/dp-compose) project. Running a local instance of Neptune is not possible, so we must use a test instance hosted in AWS. AWS Neptune instances are private to the VPC, so an SSH tunnel must be used for access.
 
 #### Use SSH port forwarding to connect to a Neptune cluster
 
@@ -47,9 +47,15 @@ ssh -F ssh.cfg -L 8182:{cluster address}:8182 {user name}@{publishing asg node I
 
 #### Configure the required CMD services to use Neptune
 
-Each service using the graph database does do via the [dp-graph](https://github.com/ONSdigital/dp-graph/) library. This library provides an abstraction over the graph database, and handles the configuration for which graph database provider to use. The default values when running locally will be updated to use Neptune, however if you do need to configure them yourself, the details are below.
-  
-The following services use the graph database and need to be configured to use Neptune:
+Each service using the graph database does do via the [dp-graph](https://github.com/ONSdigital/dp-graph/) library. This library provides an abstraction over the graph database, and handles the configuration for which graph database provider to use. The default values when running locally are set to use Neo4j. 
+
+To use Neptune, ensure you have the following environment variables set:
+```
+export GRAPH_DRIVER_TYPE?=neptune
+export GRAPH_ADDR?=ws://localhost:8182/gremlin
+```
+
+Most likely you will set the environment variables globally in your profile, however if you do want to configure each service individually you will need the environment variables available to the following services:
 - dp-dataset-api
 - dp-filter-api
 - dp-code-list-api
@@ -60,12 +66,6 @@ The following services use the graph database and need to be configured to use N
 - dp-import-tracker
 - dp-observation-importer
 - dp-observation-api
-
-Each service needs two environment variables set for dp-graph to connect to Neptune:
-```
-export GRAPH_DRIVER_TYPE?=neptune
-export GRAPH_ADDR?=ws://localhost:8182/gremlin
-```
 
 ### Gremlin Console
 
@@ -93,9 +93,9 @@ For further details on writing Gremlin queries, refer to the [Gremlin reference]
 
 The CMD import process requires specific data to be in place before a dataset can be imported. The list below contains each of the types required, along with a link to the repository where more information about importing the data can be found.
     
-- [recipes](https://github.com/ONSdigital/dp-recipe-api)
-- [code lists](https://github.com/ONSdigital/dp-code-list-scripts)
-- [hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder)
+- [recipes](https://github.com/ONSdigital/dp-recipe-api) - stored in your local mongo DB instance, so will need to be loaded if you haven't already
+- [code lists](https://github.com/ONSdigital/dp-code-list-scripts) - these are stored in the graph DB, so most likely they will already be loaded
+- [hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder) - these are stored in the graph DB, so most likely they will already be loaded
 
 
 
