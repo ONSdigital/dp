@@ -25,9 +25,11 @@ region=eu-west-1
 Working with multiple profiles
 ------------------------------
 
-Our tooling, including dp cli, Terraform and Ansible, will select the correct profile automatically. If you are running other commands however you will need to specify which profile to use.
+Our tooling, including dp cli, Terraform and Ansible, will select the correct profile automatically, provided your credentials are set as described above.
 
-The following is the recommended approach that is safe to use with our tooling:
+You **must not** set environment variables for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, as this will prevent our tooling accessing your credentials properly.
+
+If you are running other commands however you will need to specify which profile to use. The following is the recommended approach that is safe to use with our tooling:
 
 * Set `export AWS_DEFAULT_PROFILE=development` in your environment variables (e.g. `~/.bash_profile` or `~/.zshenv`)
 * When using the aws CLI to work with production pass the `--profile=production` command line option.

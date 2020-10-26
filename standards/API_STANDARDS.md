@@ -10,7 +10,24 @@ API standards
   * Use the `GET` method for search endpoints
   * Search/list endpoints should contain consistent fields:
     * Response: `count`, `limit`, `offset`, `total_count`
+
+	  When pagination is required, the fields work as:
+
+	  `limit` - max number of items we're returning in this response (e.g. 20, or 50, rather than all we use atm)
+
+	  `count` - how many items are actually present in the response
+
+	  `total_count` - how many total items there may be (so the full list size, maybe thousands)
+
+	  `offset` - the number of documents into the full list that this
+	              particular response is starting at.
+
+	  For example, in a list that has a totalCount of 511, we might set a limit of 100, an offset of 500, and get a response whose count is 11, because it's the last 11 documents in the list.
+
     * Request: `limit`, `offset`
+
+      The `offset` and `limit` fields are for future use.
+
     * `items` array containing results
     * Internally, set a maximum allowed `limit` to prevent requests above
         the limit. Should return an error explaining the limit and providing the
