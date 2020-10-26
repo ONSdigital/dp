@@ -34,7 +34,7 @@ We've made a few attempts at simplifying these steps, but haven't converged on o
 
 #### CMD import steps
 
-1. [Import code lists and hierarchies](https://github.com/ONSdigital/dp-cli#dp-cli) using the `dp import cmd` command
+1. [Import recipes](https://github.com/ONSdigital/dp-recipe-api) using the `import-recipes` script
 2. [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
 3. [Import a file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
 4. [Publish a collection](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
