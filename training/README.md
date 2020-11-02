@@ -11,38 +11,45 @@ If you come across a resource that really helped you understand some technology 
 
 Modules
 ----------------------------
-* Team culture & process
-    * [Culture and Inclusion]()
-    * [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
-    * [Developer Processes]()
-* Architectural principles & approach
-    * [12 Factor App principles]()
-    * [Security]()
-    * [Data modeling, what databases we use and when]()
-* Our services
-    * [Core Services]()
-    * [Microservices & Customise my Data]()
-    * [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
-    * [Platform Services]()
-* Technologies we use
-    * [How we choose technologies]()
-    * Go
-        * [Intro to Go]()
-        * [Concurrency]()
-    * AWS
-        * [Intro to AWS]()
-* Testing
-    * [Our testing approach]()
-    * [Unit testing in Go]()
-    * [Unit testing in Java]()
-* Support
-    * [Support 101](support/SUPPORT101.md)
-    * [Support 201]()
+#### Team culture & process
+* [Culture and Inclusion]()
+* [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
+* [Developer Processes]()
+
+#### Architectural principles & approach
+* [12 Factor App principles]()
+* [Security]()
+* [Data modeling, what databases we use and when]()
+
+#### Our services
+* [Core Services]()
+* [Microservices & Customise my Data]()
+* [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
+* [Platform Services]()
+
+#### Technologies we use
+* [How we choose technologies]()
+* Go
+    * [Intro to Go]()
+    * [Concurrency]()
+* AWS
+    * [Intro to AWS]()
+
+#### Testing
+* [Our testing approach]()
+* [Unit testing in Go]()
+* [Unit testing in Java]()
+
+#### Support
+* [Support 101](support/SUPPORT101.md)
+* [Support 201]()
 
 Key
 -------
 :open_book: - self directed learning, probably reading based
+
 :speaking_head: - guided workshop or presentation
+
 :runner: - things you don't need to worry about early on, not part of onboarding
 
 Licence
