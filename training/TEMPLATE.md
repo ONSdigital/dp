@@ -5,7 +5,7 @@ Module description - why its relevant in our context
 
 ### Pre reading
 
-None if not needed.
+Are there relevant standards to be aware of before undergoing this module? None if not needed.
 
 ### Pre requisites
 
@@ -13,7 +13,7 @@ Need to do before doing this course. None if not needed.
 
 ### Materials
 
-Link to materials
+Module content or link to it. For self-learning this may be a text explanation of an area with links to a few relevant guides. For guided learning this may be an agenda of topics covered in a workshop/training session and links to those resources.
 
 ### Next steps
 
