@@ -50,7 +50,7 @@ Key
 
 :speaking_head: - guided workshop or presentation
 
-:runner: - things you don't need to worry about early on, not part of onboarding
+:rocket: - things you don't need to worry about early on, not part of onboarding
 
 Licence
 -------
