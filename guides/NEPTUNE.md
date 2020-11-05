@@ -21,7 +21,7 @@ First you need the address of the cluster you want to connect to. You can get th
 
 1. Go to the Neptune section of the AWS console https://eu-west-1.console.aws.amazon.com/neptune
 1. Select Databases from the side menu (it may already be selected)
-1. Click on the link for the cluster you want to connect to
+1. Click on the link for the cluster you want to connect to. For local development, the `develop-neptune-dev-test-cluster` should be used.
 
     ![1](../img/neptune_db_select.png)
 
@@ -29,18 +29,20 @@ First you need the address of the cluster you want to connect to. You can get th
     
     ![1](../img/neptune_cluster_address.png)
 
-1. In the terminal, CD into the ansible directory of the dp-setup project:
+1. Run the command to port forward to the Neptune cluster, where `{cluster address}` is replaced with the `develop-neptune-dev-test-cluster` cluster endpoint address.
+
+Using the DP CLI:
+ ```
+ dp ssh develop publishing 1 -p 8182:{cluster address}:8182
+ ```
+
+If not using the DP CLI:
+
+In the terminal, CD into the ansible directory of the dp-setup project:
 ```
 cd dp-setup/ansible
 ```
-1. Run the command to port forward to the Neptune cluster:
-
-Using the DP CLI:
-```
-dp ssh develop publishing 1 -p 8182:{cluster address}:8182
-```
-
-Not using the DP CLI:
+Run the SSH command with port forwarding:
 ```
 ssh -F ssh.cfg -L 8182:{cluster address}:8182 {user name}@{publishing asg node IP}
 ```
