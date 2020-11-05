@@ -51,8 +51,8 @@ Each service using the graph database does do via the [dp-graph](https://github.
 
 To use Neptune, ensure you have the following environment variables set:
 ```
-export GRAPH_DRIVER_TYPE?=neptune
-export GRAPH_ADDR?=ws://localhost:8182/gremlin
+export GRAPH_DRIVER_TYPE=neptune
+export GRAPH_ADDR=ws://localhost:8182/gremlin
 ```
 
 Most likely you will set the environment variables globally in your profile, however if you do want to configure each service individually you will need the environment variables available to the following services:
@@ -97,6 +97,7 @@ The CMD import process requires specific data to be in place before a dataset ca
 - [code lists](https://github.com/ONSdigital/dp-code-list-scripts) - these are stored in the graph DB, so most likely they will already be loaded
 - [hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder) - these are stored in the graph DB, so most likely they will already be loaded
 
+For further details on the CMD import process, see the [CMD import guide](GETTING_STARTED.md#cmd-import-steps)
 
 
 
