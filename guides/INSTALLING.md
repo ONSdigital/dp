@@ -1,5 +1,6 @@
 Install, configure and run services
 ===============
+
 As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
 --------------
@@ -7,6 +8,7 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
 ## Prerequisites
 
 In the below, the installation of each app is typically one of:
+
 - use the `brew` command where provided, or
 - use the link to the website to follow the installation instructions, or
 - follow the link to the Github repo, where you should clone the repo and follow the instructions in the `README.md` file to install/run (within the repo directory)
@@ -53,7 +55,7 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
 
 - [Publishing](#publishing-journey) - The "publishing journey" gives you all the features of web together with an internal interface to update, preview and publish content. All content is encrypted and requires authentication.
 
-- [CMD](#cmd-journeys) - apps will support the filterable dataset journey, and would mean you have every possible service running. 
+- [CMD](#cmd-journeys) - apps will support the filterable dataset journey, and would mean you have every possible service running.
 
 ### Web Journey
 
@@ -91,12 +93,14 @@ All services listed in the [web journey](#web-journey) are required for the publ
   git clone git@github.com:ONSdigital/florence
   git clone git@github.com:ONSdigital/The-Train
   git clone git@github.com:ONSdigital/dp-api-router
-    ```
+  ```
 
 ### CMD Journeys
+
 All the services in the [web] and [publishing] journeys, as well as:
 
 #### Dataset journey:
+
 * [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
 * [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 * [dp-frontend-geography-controller](https://github.com/ONSdigital/dp-frontend-geography-controller)
@@ -104,10 +108,11 @@ All the services in the [web] and [publishing] journeys, as well as:
   ```bash
   git clone git@github.com:ONSdigital/dp-dataset-api
   git clone git@github.com:ONSdigital/dp-frontend-filter-dataset-controller
-  git clone git@github.com:ONSdigital/dp-frontend-geography-controller`
+  git clone git@github.com:ONSdigital/dp-frontend-geography-controller
   ```
 
 #### Import services:
+
 * [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
 * [dp-import-api](https://github.com/ONSdigital/dp-import-api)
 * [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)
@@ -120,16 +125,16 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
 
   ```bash
-  git clone git@github.com:ONSdigital/dp-recipe-api`
-  git clone git@github.com:ONSdigital/dp-import-api`
-  git clone git@github.com:ONSdigital/dp-import-tracker`
-  git clone git@github.com:ONSdigital/dp-dimension-extractor`
-  git clone git@github.com:ONSdigital/dp-dimension-importer`
-  git clone git@github.com:ONSdigital/dp-observation-extractor`
-  git clone git@github.com:ONSdigital/dp-observation-importer`
-  git clone git@github.com:ONSdigital/dp-hierarchy-builder`
-  git clone git@github.com:ONSdigital/dp-search-builder`
-  git clone git@github.com:ONSdigital/dp-publishing-dataset-controller`
+  git clone git@github.com:ONSdigital/dp-recipe-api
+  git clone git@github.com:ONSdigital/dp-import-api
+  git clone git@github.com:ONSdigital/dp-import-tracker
+  git clone git@github.com:ONSdigital/dp-dimension-extractor
+  git clone git@github.com:ONSdigital/dp-dimension-importer
+  git clone git@github.com:ONSdigital/dp-observation-extractor
+  git clone git@github.com:ONSdigital/dp-observation-importer
+  git clone git@github.com:ONSdigital/dp-hierarchy-builder
+  git clone git@github.com:ONSdigital/dp-search-builder
+  git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
 
 #### Filter journey:
@@ -142,13 +147,13 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
-  git clone git@github.com:ONSdigital/dp-search-api`
-  git clone git@github.com:ONSdigital/dp-code-list-api`
-  git clone git@github.com:ONSdigital/dp-hierarchy-api`
-  git clone git@github.com:ONSdigital/dp-filter-api`
-  git clone git@github.com:ONSdigital/dp-dataset-exporter`
-  git clone git@github.com:ONSdigital/dp-dataset-exporter-xlsx`
-  git clone git@github.com:ONSdigital/dp-download-service`
+  git clone git@github.com:ONSdigital/dp-search-api
+  git clone git@github.com:ONSdigital/dp-code-list-api
+  git clone git@github.com:ONSdigital/dp-hierarchy-api
+  git clone git@github.com:ONSdigital/dp-filter-api
+  git clone git@github.com:ONSdigital/dp-dataset-exporter
+  git clone git@github.com:ONSdigital/dp-dataset-exporter-xlsx
+  git clone git@github.com:ONSdigital/dp-download-service
   ```
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
