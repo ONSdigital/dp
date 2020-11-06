@@ -178,7 +178,7 @@ When the startup files are updated, to load the new changes into your shell, eit
 
 You should put the below _env vars_ in your [startup file](#startup-file).
 
-Varialbe name | note
+Variable name | note
 --- | ---
 `zebedee_root` | path to your zebedee content, typically the directory the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run
 `ENABLE_PRIVATE_ENDPOINTS` | set `true` when running services in publishing, unset for web mode
