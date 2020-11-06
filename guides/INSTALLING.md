@@ -21,12 +21,12 @@ Software | Install | Notes
 [Maven](https://maven.apache.org/)                        | `$ brew install maven`
 [Docker](https://www.docker.com/get-started)              | `$ brew cask install docker`
  Docker Compose                                           | `$ brew install docker-compose`
-[Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell`
-[Node.js and npm](https://nodejs.org/en/)                 | Install the LTS version with: `$ brew install node@12`  | Append `export PATH="/usr/local/opt/node@12/bin:$PATH"` to the your `.zshrc` or `.basrc` file and restart your terminal.
+[Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell` | deprecated (not needed if using Neptune over Neo4j)
+[Node.js and npm](https://nodejs.org/en/)                 | `$ brew install node@12` (LTS version) | Append `export PATH="/usr/local/opt/node@12/bin:$PATH"` to your startup files and restart your terminal.
 [GoConvey](https://github.com/smartystreets/goconvey#installation)  |
 [GhostScript](https://www.ghostscript.com/download.html)  |   `$ brew install ghostscript`                          | Required for [Babbage](https://github.com/onsdigital/babbage)
 [Vault](https://www.vaultproject.io/intro/getting-started/install.html) | `$ brew install hashicorp/tap/vault`      | Required for running Florence.
-[jq](https://stedolan.github.io/jq/)                      | `$ brew install jq`                                     | A handy JSON tool (for debugging website content)
+[jq](https://stedolan.github.io/jq/)                      | `$ brew install jq`                                     | A handy JSON tool (for debugging website content and much more)
 [yq](https://github.com/mikefarah/yq)                     |  `$ brew install yq`                                    | A handy YAML tool
 [dp-compose](https://github.com/ONSdigital/dp-compose)    | `$ git clone git@github.com:ONSdigital/dp-compose`      | See [`dp-compose` README](https://github.com/ONSdigital/dp-compose#dp-compose) for configuration of Docker Desktop resources
 
@@ -49,7 +49,7 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey) and/or [CMD](#cmd-journeys) (Customise My Data).
 
-- [Web](#web-journey) - These apps make up the public facing website providing **read only access** to published content, and will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets).
+- [Web](#web-journey) - These apps make up the public-facing website providing **read-only access** to published content, and will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets).
 
 - [Publishing](#publishing-journey) - The "publishing journey" gives you all the features of web together with an internal interface to update, preview and publish content. All content is encrypted and requires authentication.
 
@@ -215,7 +215,7 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ## Running the apps
 
-Run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `./run.sh` command (in the dp-compose repo) to run the supporting services. As well as `Vault`, e.g. `$ vault server -dev`.
+Run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `$ ./run.sh` command (in the dp-compose repo) to run the supporting services. As well as Vault, e.g. `$ vault server -dev`.
 
 Most applications can be run using the `$ make debug` command, but deviations are all documented below:
 
@@ -248,7 +248,7 @@ and also run the following:
 
 Florence will be available at http://localhost:8081/florence/login
 
-The website will be available at http://localhost:8081 after a successful login into florence. Login details are in the [florence repository](https://github.com/ONSdigital/florence/blob/develop/USAGE.md).
+The website will be available at [http://localhost:8081](http://localhost:8081) after a successful login into florence. Login details are in the [florence repository](https://github.com/ONSdigital/florence/blob/develop/USAGE.md).
 
 
 ### CMD
