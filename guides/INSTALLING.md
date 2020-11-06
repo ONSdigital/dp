@@ -225,6 +225,7 @@ Run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `$ ./run.sh
 Most applications can be run using the `$ make debug` command, but deviations are all documented below:
 
 ### Web
+
 Run all the services in the [web journey](#web-journey)
 
 * [babbage](https://github.com/ONSdigital/babbage) - use: `$ ./run.sh`
