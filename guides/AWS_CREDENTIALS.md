@@ -3,6 +3,8 @@ AWS credentials
 
 Our tooling uses AWS credential profiles to manage working with different AWS accounts. These AWS credentials are set in the `~/.aws/credentials` file as shown below.  **You must not have the AWS env vars set as this will break our tooling including dp cli, Terraform and Ansible.**
 
+Ask a Tech Lead for access to AWS if your account is not yet setup.
+
 Credentials file example
 ------------------------
 
@@ -27,7 +29,7 @@ Working with multiple profiles
 
 Our tooling, including dp cli, Terraform and Ansible, will select the correct profile automatically, provided your credentials are set as described above.
 
-You **must not** set environment variables for AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, as this will prevent our tooling accessing your credentials properly.
+You **must not** set environment variables for `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, as this will prevent our tooling accessing your credentials properly.
 
 If you are running other commands however you will need to specify which profile to use. The following is the recommended approach that is safe to use with our tooling:
 

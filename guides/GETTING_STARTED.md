@@ -10,7 +10,7 @@ We're working on some guides to outline our team culture, and some of our develo
 3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md)* 
 4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
 5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
-6. Run `dp remote allow develop` to prove all your previous setup is correct
+6. Run `dp remote allow develop` to prove all your previous setup is correct. The output should include `[dp] allowing access to develop`. Ask for help if you encounter errors or warnings.
 7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. You'll need to ask someone for passphrases first.
 
 *If you cannot access this link, something has gone wrong in the previous step.
@@ -18,7 +18,7 @@ We're working on some guides to outline our team culture, and some of our develo
 # Install, configure and run services
 1. [Install the prerequisites](INSTALLING.md#prerequisites)
 2. [Clone the repositories](INSTALLING.md#clone-the-services)
-3. Follow this separate guide to [setup base content](https://github.com/ONSdigital/dp-zebedee-content#dp-zebedee-content)
+3. [Setup base content](https://github.com/ONSdigital/dp-zebedee-content#dp-zebedee-content)
 4. [Setup base environment configuration](INSTALLING.md#configuration)
 5. [Run the apps](INSTALLING.md#running-the-apps)
 6. [Update configuration](INSTALLING.md#setup-credentials) for your credentials

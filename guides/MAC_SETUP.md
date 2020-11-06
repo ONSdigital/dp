@@ -112,23 +112,25 @@ Our code - in git repositories - is shared via [Github](https://github.com), so 
     * `$ git config --global user.name "<YOUR_NAME>"`
     * `$ git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
 
-5. Making `git` work over `ssh`. In your home directory, run these commands:
-    * `$ ssh-keygen` and write down the passphrase you enter (somewhere _very_ safe)
-    * `$ cat ~/.ssh/id_rsa.pub`
+---
 
-  - Copy the displayed public key to your clipboard.
 
-Then follow instructions to add the SSH key in the clip board to your github account:
-	https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+Making `git` work over `SSH`
+---
+
+In your home directory, run these commands:
+
+  * `$ ssh-keygen` and write down the passphrase you enter (somewhere _very_ safe)
+
+  * `$ cat ~/.ssh/id_rsa.pub`
+
+Copy the displayed public key to your clipboard.
+
+Then follow [instructions to add the SSH key in the clipboard to your github account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
-----------
-
-Setting up SSH
----
-
-# Background
+### Background
 
 SSH (secure shell) is an encryption system for network communications (usually between client-server).
 
@@ -153,8 +155,3 @@ In all cases, the receiver of the data must already have your **public key**. So
 
 In DP, we use `ssh` to login to remote machines (including our servers in the cloud), and also to secure
 our communication with Github.
-
-Making `git` work over `ssh`. In your home directory, run these commands:
-    * `ssh-keygen` and write down the passphrase you enter (somewhere _very_ safe)
-
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
