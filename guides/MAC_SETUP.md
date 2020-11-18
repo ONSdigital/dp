@@ -109,8 +109,8 @@ Our code - in git repositories - is shared via [Github](https://github.com), so 
 3. Ensure you have [enabled Multi-Factor Authentication](https://docs.github.com/en/github/authenticating-to-github/configuring-two-factor-authentication) on your Github account.
 
 4. Configure `git` locally by running the following commands:
-    * `$ git config --global user.name "<YOUR_NAME>"`
-    * `$ git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
+  * `$ git config --global user.name "<YOUR_NAME>"`
+  * `$ git config --global user.email <YOUR_EMAIL_IN_GITHUB>`
 
 ---
 
