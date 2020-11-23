@@ -22,8 +22,8 @@ Modules
 * [Data modeling, what databases we use and when]()
 
 #### Our services
-* [Core Services]()
-* [Microservices & Customise my Data]()
+* [Web & Publishing Journeys]()
+* [Microservices & Customise my Data Journey]()
 * [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
 * [Platform Services]()
 
@@ -39,6 +39,7 @@ Modules
 * [Our testing approach]()
 * [Unit testing in Go]()
 * [Unit testing in Java]()
+* [Unit testing in JavaScript]()
 
 #### Support
 * [Support 101](support/SUPPORT101.md)
