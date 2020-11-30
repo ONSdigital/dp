@@ -138,7 +138,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   ```
 
 #### Filter journey:
-* [dp-search-api](https://github.com/ONSdigital/dp-search-api)
+* [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api)
 * [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api)
 * [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api)
 * [dp-filter-api](https://github.com/ONSdigital/dp-filter-api)
@@ -147,7 +147,7 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
-  git clone git@github.com:ONSdigital/dp-search-api
+  git clone git@github.com:ONSdigital/dp-dimension-search-api
   git clone git@github.com:ONSdigital/dp-code-list-api
   git clone git@github.com:ONSdigital/dp-hierarchy-api
   git clone git@github.com:ONSdigital/dp-filter-api
