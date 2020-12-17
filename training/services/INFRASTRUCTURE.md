@@ -39,4 +39,6 @@ None
 Further resources
 ----------------------------
 
-To understand AWS concepts such as VPC, Subnets and Security Groups in more detail, some members of our team have found [this pluralsight course](https://www.pluralsight.com/courses/aws-networking-deep-dive-vpc) very useful.
+- To understand AWS concepts such as VPC, Subnets and Security Groups in more detail, some members of our team have found [this pluralsight course](https://www.pluralsight.com/courses/aws-networking-deep-dive-vpc) very useful.
+
+- Learn about Infrastructure as Code (IaC) to understand how we provision and manage our infrastructure.
