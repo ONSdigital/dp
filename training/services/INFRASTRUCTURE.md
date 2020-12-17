@@ -16,12 +16,12 @@ This means we can:
 
 Other cloud platforms include Google Cloud Platform and Azure, and are used by teams in the ONS. In theory, we should be able to move our infrastructure to any of the cloud platforms; in practice, this is non-trivial!
 
-#### Cloud computing models
-- Some buzzwords (buzz-acronyms?) to get familiar with: IaaS, PaaS, SaaS. They're explained [explained well on stackoverflow](https://stackoverflow.com/a/16824454) (do scroll through the answers if the first one makes no sense to you - I particularly enjoyed the [Pizza as a Service](https://stackoverflow.com/a/50355536) analogy). 
+#### Fundamentals
+- Cloud computing models: IaaS, PaaS, SaaS. They're explained [explained well on stackoverflow](https://stackoverflow.com/a/16824454) (do scroll through the answers if the first one makes no sense to you - I particularly enjoyed the [Pizza as a Service](https://stackoverflow.com/a/50355536) analogy). 
 
 - Make sure you're familiar with basic AWS terms: 
     -  [Availability Zones and Regions](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) 
-    - VPCs and Subnets are also good to understand at a basic level
+    - [Virtual Private Clouds (VPCs) and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html#how-it-works-subnet)  are also good to understand at a basic level
 
 ### Pre requisite
 
