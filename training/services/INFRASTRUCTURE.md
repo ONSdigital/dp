@@ -33,7 +33,18 @@ The workshop will walk through the [Digital Publishing 101: Basic Infrastructure
 
 ### Next steps
 
-None
+####Exploring the AWS console
+Once your account has been set up, [sign in to the AWS console](https://eu-west-1.console.aws.amazon.com) for `ons-web-development` and have a look around.
+
+Click on VPC (in the very long list of services!) --> [Your VPCs](https://eu-west-1.console.aws.amazon.com/vpc/home?region=eu-west-1#vpcs:) and explore the `develop` VPC. 
+- Can you see the range of IPs that has been assigned to this network?
+
+Go to [Subnets](https://eu-west-1.console.aws.amazon.com/vpc/home?region=eu-west-1#subnets:) and use the filter to look at the subnets in the `develop` environment. 
+- Can you see the web and publishing subnets?
+- Are the IP addresses what you'd expect?
+
+
+
 
 
 Further resources
