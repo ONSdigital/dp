@@ -42,6 +42,7 @@ Click on VPC (in the very long list of services!) --> [Your VPCs](https://eu-wes
 Go to [Subnets](https://eu-west-1.console.aws.amazon.com/vpc/home?region=eu-west-1#subnets:) and use the filter to look at the subnets in the `develop` environment. 
 - Can you see the web and publishing subnets?
 - Are the IP addresses what you'd expect?
+- Can you see what is part of the different availability zones?
 
 
 
