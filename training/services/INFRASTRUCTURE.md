@@ -29,7 +29,7 @@ You should be given relevant AWS accounts by your manager or a Tech Lead - speak
 
 ### Materials
 
-The workshop will walk through the [Digital Publishing 101: Basic Infrastructure slides (WIP)](https://docs.google.com/presentation/d/1bXZw2rJTBa7spXVQNuA0lVQSN-2jZiz9khn6hJsvWwc/edit#slide=id.g950e206bef_0_474) over roughly 1 hour, with time for questions.
+The workshop will walk through the [Digital Publishing 101: Basic Infrastructure slides (WIP)](https://docs.google.com/presentation/d/1VQjYd6R6xDRluA_fTF4teu97umJam2y--XlewZjeBrU/edit?usp=sharing) over roughly 1 hour, with time for questions.
 
 ### Next steps
 
