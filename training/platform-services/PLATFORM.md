@@ -43,7 +43,7 @@ More information about Ansible can be found on their website - https://www.ansib
 ## Concourse
 Visit https://concourse.onsdigital.co.uk to access Concourse
 
-[<img src="images/concourse-home.png" title="Concourse Homepage" style="width: 49.7%; height: 49.7%"/>][concourse-ons] [<img src="images/concourse-pipeline.png" title="Concourse Pipeline" style="width: 49.7%; height: 49.7%"/>][concourse-ons]
+[<img src="images/concourse-home.png" title="Concourse Homepage" width=49.7% height=49.7%/>][concourse-ons] [<img src="images/concourse-pipeline.png" title="Concourse Pipeline" width=49.7% height=49.7%/>][concourse-ons]
 
 Concourse lists all of the applications where each application has its own [pipeline][concourse-pipeline]. 
 When a [PR][git-pr] of a application is said to be merged into `develop` or `master`, Concourse runs the pipeline of the application which does unit testing, checks if a [docker image][docker-image] can be build for it, bundles it for release and ships it to that release whilst ensuring that it has deployed everything completely.
@@ -54,7 +54,7 @@ Please note that when deploying changes to the `production` environment (the liv
 1. Go to [Concourse][concourse-ons]
 2. Navigate to the application
 3. Click on `production-ship-it`
-4. <div>Click on the <img src="images/concourse-build.png" title="Concourse Build" style="width: 4%; height: 4%; vertical-align: middle"/></div>
+4. <div>Click on the <img src="images/concourse-build.png" title="Concourse Build" width=4% height=4%></div>
 5. Login to concourse as `dp` user (if you do not have the login, please ask anyone in the team)
 
 More information about Concourse can be found on their website - https://concourse-ci.org/docs.html 
@@ -64,7 +64,7 @@ Visit the following to access Consul
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://consul.develop.onsdigital.co.uk
 - PRODUCTION:&nbsp;&nbsp;&nbsp;https://consul.production.onsdigital.co.uk
 
-[<img src="images/consul-dev-services.png" title="Consul Develop Home" style="width: 49.7%; height: 49.7%"/>][consul-dev-services] [<img src="images/consul-dev-nodes.png" title="Consul Develop Nodes" style="width: 49.7%; height: 49.7%"/>][consul-dev-nodes]
+[<img src="images/consul-dev-services.png" title="Consul Develop Home" width=49.7% height=49.7%/>][consul-dev-services] [<img src="images/consul-dev-nodes.png" title="Consul Develop Nodes" width=49.7% height=49.7%/>][consul-dev-nodes]
 
 > Consul is a service mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality. Each of these features can be used individually as needed, or they can be used together to build a full service mesh
 
@@ -77,7 +77,7 @@ Visit the following to access Nomad
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://nomad.develop.onsdigital.co.uk
 - PRODUCTION:&nbsp;&nbsp;&nbsp;https://nomad.production.onsdigital.co.uk
 
-[<img src="images/nomad-dev-home.png" title="Nomad Develop Home" style="width: 49.7%; height: 49.7%"/>][nomad-dev-home] [<img src="images/nomad-dev-job.png" title="Nomad Develop Job Page" style="width: 49.7%; height: 49.7%"/>][nomad-dev-home]
+[<img src="images/nomad-dev-home.png" title="Nomad Develop Home" width=49.7% height=49.7%/>][nomad-dev-home] [<img src="images/nomad-dev-job.png" title="Nomad Develop Job Page" width=49.7% height=49.7%/>][nomad-dev-home]
 
 > Nomad is a simple and flexible workload orchestrator to deploy and manage containers and non-containerized applications across on-prem and clouds at scale
 
@@ -92,7 +92,7 @@ Visit the following to access Kibana
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://kibana.develop.onsdigital.co.uk
 - PRODUCTION:&nbsp;&nbsp;&nbsp;https://kibana.production.onsdigital.co.uk
 
-[<img src="images/kibana-dev-home.png" title="Kibana Develop Home" style="width: 49.7%; height: 49.7%"/>][kibana-dev-home] [<img src="images/kibana-dev-discover.png" title="Kibana Develop Discover" style="width: 49.7%; height: 49.7%"/>][kibana-dev-home]
+[<img src="images/kibana-dev-home.png" title="Kibana Develop Home" width=49.7% height=49.7%/>][kibana-dev-home] [<img src="images/kibana-dev-discover.png" title="Kibana Develop Discover" width=49.7% height=49.7%/>][kibana-dev-home]
 
 Kibana provides log aggeration where all logs are pushed to Kibana, allowing us to check the logs of all applications. With the use of logs in Kibana, this assists in debugging. We can filter the namespace to check logs of a specific application and filter with other properties to find information more quickly 
 
@@ -105,7 +105,7 @@ Visit the following to access Vault
 
 **To sign into Vault, you require a `token` which can be retrieved from the [helper script in dp-setup][helper-script-dp-setup]**
 
-[<img src="images/vault-dev-login.png" title="Vault Develop Login" style="width: 49.7%; height: 49.7%"/>][vault-develop] [<img src="images/vault-dev-home.png" title="Vault Develop Home" style="width: 49.7%; height: 49.7%"/>][vault-develop]
+[<img src="images/vault-dev-login.png" title="Vault Develop Login" width=49.7% height=49.7%/>][vault-develop] [<img src="images/vault-dev-home.png" title="Vault Develop Home" width=49.7% height=49.7%/>][vault-develop]
 
 > Vault secures, stores and tightly controls access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data
 
@@ -122,7 +122,7 @@ Visit the following to access Grafana
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://grafana.develop.onsdigital.co.uk
 - PRODUCTION:&nbsp;&nbsp;&nbsp;https://grafana.production.onsdigital.co.uk
 
-[<img src="images/grafana-dev-home.png" title="Grafana Develop Home" style="width: 49.7%; height: 49.7%"/>][grafana-dev-home] [<img src="images/grafana-dev-nomad-task.png" title="Grafana Develop Nomad Task" style="width: 49.7%; height: 49.7%"/>][grafana-dev-nomad-tasks]
+[<img src="images/grafana-dev-home.png" title="Grafana Develop Home" width=49.7% height=49.7%/>][grafana-dev-home] [<img src="images/grafana-dev-nomad-task.png" title="Grafana Develop Nomad Task" width=49.7% height=49.7%/>][grafana-dev-nomad-tasks]
 
 Grafana informs how a process is behaving on the machine (its use of CPU, memory, use of IO operations, etc). In Grafana, the [Nomad Task][grafana-dev-nomad-tasks] dashboard is commonly used, which gives a list of tasks (each related to a specific application). From there, you can see the behaviours of specific applications to the machine such as memory usage (e.g. to identify a potential memory leak by changing the range of time to 7 days and analysing the graph). Grafana assists in debugging and we can look at [Kibana](#kibana) to see logs at a particular time based on any anomalies discovered from graphs in Grafana. Furthermore, the [Node Stats 2][grafana-dev-node-stats-2] dashboard is used as well which is specific to EC2 instances performance.
 
@@ -135,7 +135,7 @@ Visit the following to access Prometheus
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://prometheus.develop.onsdigital.co.uk
 - PRODUCTION:&nbsp;&nbsp;&nbsp;https://prometheus.production.onsdigital.co.uk
 
-[<img src="images/prometheus-dev-home.png" title="Prometheus Develop Home" style="width: 49.7%; height: 49.7%"/>][prometheus-dev-home] [<img src="images/prometheus-dev-alerts.png" title="Prometheus Develop Alerts" style="width: 49.7%; height: 49.7%"/>][prometheus-dev-alerts]
+[<img src="images/prometheus-dev-home.png" title="Prometheus Develop Home" width=49.7% height=49.7%/>][prometheus-dev-home] [<img src="images/prometheus-dev-alerts.png" title="Prometheus Develop Alerts" width=49.7% height=49.7%/>][prometheus-dev-alerts]
 
 Prometheus provides alerts and alarms to notify us on technical issues. These alerts set in Prometheus is alarmed in Slack. Prometheus stores all data as time series in which a time series graph can be viewed to report information. Therefore, more details about the alert can be retrieved from Prometheus. Prometheus uses the flexible query language [PromQL][prometheus-querying] to let us select and aggregate time series data in real time, speeding up the process of debugging
 
