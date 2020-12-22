@@ -25,7 +25,7 @@ Modules
 * [Web & Publishing Journeys]()
 * [Microservices & Customise my Data Journey]()
 * [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
-* [Platform Services]()
+* [Platform Services](platform-services/PLATFORM.md)
 
 #### Technologies we use
 * [How we choose technologies]()
