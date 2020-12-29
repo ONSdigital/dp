@@ -19,9 +19,9 @@ In the below, the installation of each app is typically one of:
 
 Software | Install | Notes
 -------- | ------- | ----- |
-[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew cask install adoptopenjdk8`
+[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install --cask adoptopenjdk8`
 [Maven](https://maven.apache.org/)                        | `$ brew install maven`
-[Docker](https://www.docker.com/get-started)              | `$ brew cask install docker`
+[Docker](https://www.docker.com/get-started)              | `$ brew install --cask docker`
  Docker Compose                                           | `$ brew install docker-compose`
 [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell` | deprecated (not needed if using Neptune over Neo4j)
 [Node.js and npm](https://nodejs.org/en/)                 | `$ brew install node@12` (LTS version) | Append `export PATH="/usr/local/opt/node@12/bin:$PATH"` to your startup files and restart your terminal.
