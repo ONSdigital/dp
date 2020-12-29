@@ -25,11 +25,11 @@ Other cloud platforms include Google Cloud Platform and Azure, and are used by t
 
 ### Pre requisite
 
-You should be given relevant AWS accounts by your manager or a Tech Lead - speak to your manager if this does not happen soon upon starting with the team. 
+You should be given relevant AWS accounts by your manager, or a Tech Lead - speak to your manager if this does not happen soon upon starting with the team.
 
 ### Materials
-
-The workshop will walk through the [Digital Publishing 101: Basic Infrastructure slides (WIP)](https://docs.google.com/presentation/d/1VQjYd6R6xDRluA_fTF4teu97umJam2y--XlewZjeBrU/edit?usp=sharing) over roughly 1 hour, with time for questions.
+- [AWS Overview](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/introduction.html)
+- The workshop will walk through the [Digital Publishing 101: Basic Infrastructure slides (WIP)](https://docs.google.com/presentation/d/1VQjYd6R6xDRluA_fTF4teu97umJam2y--XlewZjeBrU/edit?usp=sharing) over roughly 1 hour, with time for questions.
 
 ### Next steps
 
