@@ -50,7 +50,12 @@ Go to [Subnets](https://eu-west-1.console.aws.amazon.com/vpc/home?region=eu-west
 
 Further resources
 ----------------------------
-
+[Pluralsight](https://app.pluralsight.com/library/) provides access to course and hands-on labs:
+- [AWS Developer: Getting Started](https://app.pluralsight.com/library/courses/aws-developer-getting-started/table-of-contents)
+- [Create and manage users with AWS IAM](https://app.pluralsight.com/labs/detail/08ba0ff7-3064-467b-87a8-df2838f3208e)
 - To understand AWS concepts such as VPC, Subnets and Security Groups in more detail, some members of our team have found [this pluralsight course](https://www.pluralsight.com/courses/aws-networking-deep-dive-vpc) very useful.
 
-- Learn about Infrastructure as Code (IaC) to understand how we provision and manage our infrastructure.
+
+
+Learn about Infrastructure as Code (IaC) to understand how we provision and manage our infrastructure.
+- [IaC with Terraform](https://learn.hashicorp.com/collections/terraform/aws-get-started)
