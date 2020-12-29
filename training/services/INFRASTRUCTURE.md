@@ -14,7 +14,7 @@ This means we can:
 - experiment with new ideas quickly
 - easily scale our infrastructure (up or down) to match the demands
 
-Other cloud platforms include Google Cloud Platform and Azure, and are used by teams in the ONS. In theory, we should be able to move our infrastructure to any of the cloud platforms; in practice, this is non-trivial!
+Other cloud platforms include Google Cloud Platform and Azure, and are used by teams in the ONS. In theory, we should be able to move our infrastructure to any of the cloud platforms; in practice, this is non-trivial. Migrating can be harder when using Managed Services (services that the Cloud Provider manages for us), e.g. we use Amazon Neptune (a graph database) which is fully managed by AWS. If we were to change cloud providers, we might need to consider a completely different solution.
 
 #### Fundamentals
 - Cloud computing models: IaaS, PaaS, SaaS. They're [explained well on stackoverflow](https://stackoverflow.com/a/16824454) (do scroll through the answers if the first one makes no sense to you - I particularly enjoyed the [Pizza as a Service](https://stackoverflow.com/a/50355536) analogy). 
