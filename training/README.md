@@ -15,6 +15,7 @@ Modules
 * [Culture and Inclusion]()
 * [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
 * [Developer Processes]()
+    * [Pull Request Guidance](culture-and-process/PULL_REQUEST_GUIDANCE.md)
 
 #### Architectural principles & approach
 * [12 Factor App principles]()
