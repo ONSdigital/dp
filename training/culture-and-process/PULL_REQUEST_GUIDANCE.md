@@ -30,7 +30,7 @@ When creating a pull request the following structure is used to provide informat
 
 Once a pull request has been created put a link to the pull request in the `dev-code-review` channel on slack. At the top of the channel are the reactions used to communicate when the pull request is being reviewed, if there are any comments and when it has been approved. Adter any comments on the pull requests have been addressed, this channel can be used to re request a review.
 
-Once the pull request has been approved it can be merged. To merge branches the command line has to be used rather than the GitHub UI. This is because the commits have to signed.
+Once the pull request has been approved it can be merged. To merge branches the command line has to be used rather than the GitHub UI. This is because the commits have to be GPG signed/verified which is not possible via the Github UI.
 
 There is also an option to create a draft pull request, these can be created to have a discussion about a feature before it is ready for a code review.
 
