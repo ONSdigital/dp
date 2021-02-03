@@ -5,13 +5,13 @@ General guidance on creating a pull request
 
 ### Pre-reading
 
-- It is useful to have an understanding of GIT (https://git-scm.com/about) and branches as a way of working
+- It is useful to have [an understanding of GIT](https://git-scm.com/about) and branches as a way of working
 - Have a look at pull requests in the `dev-code-review` channel on slack
-- There is also this documentation on our contributing guidelines (https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md#development-work) which covers some aspects of creating pull requests. 
+- There is also this documentation on our [contributing guidelines](https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md#development-work) which covers some aspects of creating pull requests. 
 
 ### Prerequisites
 
-- In order to contribute you need to first step up a GPG key and configure git to sign all commits (https://github.com/ONSdigital/dp/blob/master/guides/GPG.md).
+- In order to contribute you need to first [step up a GPG key](https://github.com/ONSdigital/dp/blob/master/guides/GPG.md) and configure git to sign all commits.
 
 ### Steps
 
@@ -21,7 +21,7 @@ As recommended best practice before creating a pull request it can be a good ide
 
 A pull request can be created in a couple of ways, once the changes on a local feature branch have been commited and pushed. 
 - After pushing a branch locally a `compare and pull request` button pops up in the GitHub remote repository. A link to navigate to this page to create a pull request is in the terminal. Follow this url, to create a pull request, but just check the branch (either develop or master/main) that the pull request is being created for.
-- Using the GitHub UI, navigate to the repository and the pull requests tab and use the `new pull request` button on the top right of the screen. This GitHub documentation provide more detail on creating a pull request (https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request). 
+- Using the GitHub UI, navigate to the repository and the pull requests tab and use the `new pull request` button on the top right of the screen. [This GitHub documentation](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) provide more detail on creating a pull request. 
 
 When creating a pull request the following structure is used to provide information to the reviewer:
 - What: A description of the changes and why
@@ -36,7 +36,7 @@ There is also an option to create a draft pull request, these can be created to 
 
 ### Next steps
 
-- Understand the release process ../../guides/RELEASES.md
+- [Understand the release process](../../guides/RELEASES.md)
 
 
 
