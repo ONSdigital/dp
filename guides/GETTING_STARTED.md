@@ -25,10 +25,28 @@ We're working on some guides to outline our team culture, and some of our develo
 
 We've made a few attempts at simplifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](DEV_SETUP.md) guide. 
 
-# Usage guides
+### Usage guides
 1. (Optional) [Enable feedback form](https://github.com/ONSdigital/dp-frontend-dataset-controller#feedback-service)
 2.  [Publishing system guide](https://github.com/ONSdigital/florence/blob/develop/USAGE.md)
 3. [CMD import guide](#cmd-import-steps)
+
+# Set up for infrastructure & CI work
+
+:warning: All steps in this section link to private repositories. If the links don't work for you, revisit the steps in [setting up your mac](#set-up-your-mac-for-development-work) to ensure you're a member of our Github organization.
+
+For all work in this area you will first need to:
+1. [Install ansible](https://github.com/ONSdigital/dp-setup/tree/master/ANSIBLE.md#install-ansible)
+2. [Configure access to servers](https://github.com/ONSdigital/dp-setup/tree/master/ANSIBLE.md#configure-access-to-servers)
+
+### Infrastructure
+All infrastructure configuration is managed in [dp-setup](https://github.com/ONSdigital/dp-setup) and includes the following pieces of set up:
+1. Install the [prerequisites for terraform](https://github.com/ONSdigital/dp-setup/blob/develop/terraform/README.md#prerequisites)
+2. Install any additional [dependencies for ansible](https://github.com/ONSdigital/dp-setup/blob/develop/ansible/README.md#prerequisites)
+
+### Continuous Integration (CI)
+All CI configuration is managed in [dp-ci](https://github.com/ONSdigital/dp-ci) and includes the following pieces of set up:
+1. Install any additional [dependencies for ansible](https://github.com/ONSdigital/dp-ci/tree/master/ansible#prerequisites)
+2. Install the `fly` command by going to the Concourse UI and selecting the Apple from the CLI list in the bottom right of the screen.
 
 -----
 
