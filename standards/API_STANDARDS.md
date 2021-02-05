@@ -13,26 +13,30 @@ API standards
 
 	  When pagination is required, the fields work as:
 
-	  `limit` - max number of items we're returning in this response (e.g. 20, or 50, rather than all we use atm)
+	  `limit` - max number of items we're returning in this response.
+	  * If value is not set a configurable default limit should be used (e.g. 20, or 50, rather than returning all items).
+	  * The limit value can be set to `0` to return `0` items, so an API user can obtain the metadata for the list endpoint.
 
-	  `count` - how many items are actually present in the response
+	  `count` - how many items are actually present in the response.
 
-	  `total_count` - how many total items there may be (so the full list size, maybe thousands)
+	  `total_count` - how many total items there may be (so the full list size, maybe thousands).
 
-	  `offset` - the number of documents into the full list that this
-	              particular response is starting at.
+	  `offset` - the number of documents into the full list that this particular response is starting at, this should default to `0` if not set. 
 
 	  For example, in a list that has a totalCount of 511, we might set a limit of 100, an offset of 500, and get a response whose count is 11, because it's the last 11 documents in the list.
+	  
+	  `items` - array containing results. 
+	    * Should only return items which match the offset and limit criteria, e.g. using the example above, you would expect the items array to only contain 11 documents.
 
-    * Request: `limit`, `offset`
+    * Maximum Defaults to help protect the service from performance problems due to large limit and offset query values being set: `DEFAULT_MAXIMUM_LIMIT`, `DEFAULT_MAXIMUM_OFFSET`
 
-      The `offset` and `limit` fields are for future use.
+	  `DEFAULT_MAXIMUM_LIMIT` - Environment variable to cap the number of items to be returned.
+	  * Should be set in the region of 500 to 1000 items.
+	  * Should return 400 (bad request) status code and an error explaining the maximum limit on limit value and providing the maximum value.
 
-    * `items` array containing results
-    * Internally, set a maximum allowed `limit` to prevent requests above
-        the limit. Should return an error explaining the limit and providing the
-        maximum values.
-
+	  `DEFAULT_MAXIMUM_OFFSET` - **Optional** environment variable to cap how far one can access a list of items.
+	  * This is optional and is dependent on the underlying database. *Example an API relying on Elasticsearch will need a maximum offset value.*
+	  * Should return 400 (bad request) status code and an error explaining the maximum limit on offset value and providing the maximum value.
 
 ### Links
 * Resources should avoid a nested list by having a links to list endpoints
