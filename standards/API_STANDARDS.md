@@ -11,10 +11,10 @@ API standards
   * Search/list endpoints should contain consistent fields:
     * Response: `count`, `limit`, `offset`, `total_count`
 
-	  When pagination is required, the fields work as:
+	  When pagination is required, it is also required the data be in a sorted order before it can be paginated. The fields work as:
 
 	  `limit` - max number of items we're returning in this response.
-	  * If value is not set a configurable default limit should be used (e.g. 20, or 50, rather than returning all items).
+	  * If value is not set, a configurable default limit should be used (e.g. 20, or 50, rather than returning all items).
 	  * The limit value can be set to `0` to return `0` items, so an API user can obtain the metadata for the list endpoint.
 
 	  `count` - how many items are actually present in the response.
@@ -28,15 +28,22 @@ API standards
 	  `items` - array containing results. 
 	    * Should only return items which match the offset and limit criteria, e.g. using the example above, you would expect the items array to only contain 11 documents.
 
-    * Maximum Defaults to help protect the service from performance problems due to large limit and offset query values being set: `DEFAULT_MAXIMUM_LIMIT`, `DEFAULT_MAXIMUM_OFFSET`
+    * Maximum Defaults to help protect the service from performance problems due to allowing large limit and offset query values being set: `DEFAULT_MAXIMUM_LIMIT`, `DEFAULT_MAXIMUM_OFFSET`
 
 	  `DEFAULT_MAXIMUM_LIMIT` - Environment variable to cap the number of items to be returned.
-	  * Should be set in the region of 500 to 1000 items.
+	  * Should be set in the region of 500 to 1000 items. It is good practice to return a few results at a time, so requests don’t tie up resources for too long by trying to get all the requested data at once.
 	  * Should return 400 (bad request) status code and an error explaining the maximum limit on limit value and providing the maximum value.
 
 	  `DEFAULT_MAXIMUM_OFFSET` - **Optional** environment variable to cap how far one can access a list of items.
-	  * This is optional and is dependent on the underlying database. *Example an API relying on Elasticsearch will need a maximum offset value.*
+	  * This is optional and is dependent on the underlying database. *Example an API relying on Elasticsearch will need a maximum offset value see why in the [example below](#elasticsearch-example-of-performance-issues-using-large-offsets).*
 	  * Should return 400 (bad request) status code and an error explaining the maximum limit on offset value and providing the maximum value.
+
+
+#### Elasticsearch example of performance issues using large offsets
+
+An API accepting large offset values to paginate data returned from elasticsearch will result in slow responses. This is due to data being spread across multiple shards in an Elasticsearch cluster.
+
+The processing in Elasticsearch requires it to sort the data on each shard based on the request (search query) and store the requested hits and hits for previous pages into memory; then accumulate all the information from each shard to work out the actual hits (search document) to return. This gets more resource intensive as one pages deeper and can result in slower responses between the requesing service (API) to Elasticsearch, [to read more on Elasticsearch pagination here](https://www.elastic.co/guide/en/elasticsearch/reference/current/paginate-search-results.html#paginate-search-results).
 
 ### Links
 * Resources should avoid a nested list by having a links to list endpoints
