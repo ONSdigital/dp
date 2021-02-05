@@ -14,7 +14,7 @@ API standards
 	  When pagination is required, it is also required the data be in a sorted order before it can be paginated. The fields work as:
 
 	  `limit` - max number of items we're returning in this response.
-	  * If value is not set, a configurable default limit should be used (e.g. 20, or 50, rather than returning all items).
+	  * If value is not set, a configurable default limit should be used, unless otherwise stated this should be set to a value of `20`.
 	  * The limit value can be set to `0` to return `0` items, so an API user can obtain the metadata for the list endpoint.
 
 	  `count` - how many items are actually present in the response.
