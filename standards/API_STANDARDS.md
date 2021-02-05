@@ -23,7 +23,7 @@ API standards
 
 	  `offset` - the number of documents into the full list that this particular response is starting at, this should default to `0` if not set. 
 
-	  For example, in a list that has a totalCount of 511, we might set a limit of 100, an offset of 500, and get a response whose count is 11, because it's the last 11 documents in the list.
+	  *For example, in a list that has a total_count of 511, we might set a limit of 100, an offset of 500, and get a response whose count is 11, because it's the last 11 documents in the list.*
 	  
 	  `items` - array containing results. 
 	    * Should only return items which match the offset and limit criteria, e.g. using the example above, you would expect the items array to only contain 11 documents.
