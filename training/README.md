@@ -18,7 +18,7 @@ Modules
     * [Pull Request Guidance](culture-and-process/PULL_REQUEST_GUIDANCE.md)
 
 #### Architectural principles & approach
-* [12 Factor App principles]()
+* [12 Factor App principles](architecture/12_FACTOR_APP_PRINCIPLES.md)
 * [Security]()
 * [Data modeling, what databases we use and when]()
 
