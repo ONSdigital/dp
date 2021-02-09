@@ -35,11 +35,19 @@ Head to [concourse.onsdigital.co.uk/](https://concourse.onsdigital.co.uk/) to se
 ### 6. Processes
 
 ### 7. Port binding
+We export HTTP as a service by binding to a port (generally the `BIND_ADDR` environment variable). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md).
+
 ### 8. Concurrency
 ### 9. Disposability
+- We use [Nomad](https://www.nomadproject.io/) to manage our running services. We can easily stop, move and restart apps. If needed, we can also re-deploy apps in Concourse.
+- Gracefully shutting down services. [Example code](https://github.com/ONSdigital/dp-bulletin-api/blob/142a6adf7a2897221f648af2a9854c26d5830622/service/service.go#L71).
+
 ### 10. Dev/prod parity
+
 ### 11. Logs
 ### 12. Admin processes
+
+### Where we could improve
 
 ## Next steps
 
@@ -50,3 +58,4 @@ Further resources
 - [Pull Request guidance](https://github.com/ONSdigital/dp/blob/master/training/culture-and-process/PULL_REQUEST_GUIDANCE.md)
 - [envconfig](https://github.com/kelseyhightower/envconfig) package
 - [Concourse](https://concourse-ci.org/docs.html#docs) and [Concourse tutorial](https://concoursetutorial.com/)
+- [Nomad - Getting started](https://learn.hashicorp.com/collections/nomad/get-started)
