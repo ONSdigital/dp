@@ -8,6 +8,8 @@ Note: The examples refer primarily to Go apps because that's what I know about. 
 ## Pre reading
 
 - [About version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
+- [What is Continuous Integration (CI) and Continuous Delivery (CD)?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
+
 
 ## Pre requisites
 
@@ -26,8 +28,12 @@ Find out more about how we [collaborate on Digital Publishing repos](https://git
 We use the [envconfig package](https://github.com/kelseyhightower/envconfig) to use environment variables for configuration settings. In [this example](https://github.com/ONSdigital/dp-bulletin-api/blob/develop/config/config.go), the `config/config.go` contains a default value for `BindAddr` of `":24200"`; to overwrite it, you can set the environment variable `BIND_ADDR` to a different value.
 
 ### 4. Backing services
+
 ### 5. Build, release, run
+Head to [concourse.onsdigital.co.uk/](https://concourse.onsdigital.co.uk/) to see our pipelines.
+
 ### 6. Processes
+
 ### 7. Port binding
 ### 8. Concurrency
 ### 9. Disposability
@@ -43,3 +49,4 @@ Further resources
 - Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/master/project_generation/COMPLETE_PROJECT_SETUP.md)
 - [Pull Request guidance](https://github.com/ONSdigital/dp/blob/master/training/culture-and-process/PULL_REQUEST_GUIDANCE.md)
 - [envconfig](https://github.com/kelseyhightower/envconfig) package
+- [Concourse](https://concourse-ci.org/docs.html#docs) and [Concourse tutorial](https://concoursetutorial.com/)
