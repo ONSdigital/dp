@@ -12,9 +12,20 @@ In Digital Publishing we build, deploy and manage applications which run as serv
 
 ## Materials
 
-### 1. **Codebase**
+### 1. Codebase
 We create one GitHub repository per application, for example the [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) repository contains our codebase for that app. 
 Whenever we _deploy_ the dp-bulletin-api, we use a version of the code in the dp-bulletin-api repository. The `production` environment will contain a version deployed from the `master` or `main` branch of the repository, which may be different from the `develop` branch.
+### 2. Dependencies
+### 3. Config
+### 4. Backing services
+### 5. Build, release, run
+### 6. Processes
+### 7. Port binding
+### 8. Concurrency
+### 9. Disposability
+### 10. Dev/prod parity
+### 11. Logs
+### 12. Admin processes
 
 ## Next steps
 
