@@ -46,11 +46,14 @@ We export HTTP as a service by binding to a port (generally the `BIND_ADDR` envi
 
 ### 10. Dev/prod parity
 
-- We can deploy within hours
+- We _can_ deploy within hours
 - We write code, deploy it and monitor it i.e. no personnel gap
 - Our `develop` and `production` environments are similar. However, we limit the resources in `develop` to minimise costs.
 
 ### 11. Logs
+- We have logging libraries that follow our [logging standards](https://github.com/ONSdigital/dp/blob/master/standards/LOGGING_STANDARDS.md).
+- The logs are streamed, centralised and aggregated in [Kibana](https://www.elastic.co/kibana)
+
 ### 12. Admin processes
 
 ### Where we could improve
