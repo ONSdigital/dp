@@ -12,9 +12,12 @@ Note: The examples refer primarily to Go apps because that's what I know about. 
 
 
 ## Pre requisites
-
+None.
 
 ## Materials
+Familiarise yourself [The Twelve-Factor App Principles](https://12factor.net/).
+
+In this section you can find out how we apply each principle in Digital Publishing:
 
 ### 1. Codebase
 We create one GitHub repository per application, for example the [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) repository contains our codebase for that app. 
