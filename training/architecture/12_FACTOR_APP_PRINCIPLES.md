@@ -110,10 +110,9 @@ To be able to achieve this, the app must share-nothing (following the process mo
 In Digital Publishing nearly all of our apps are compliant with this. A notable exception is [Zebedee](https://github.com/ONSdigital/zebedee) (CMS), as the data processed and served by it exists as files on disk.
 
 ### 9. Disposability
+Pre-requisite: [Disposability](https://12factor.net/disposability)
 
 > Maximize robustness with fast startup and graceful shutdown
-
-Pre-requisite: [Disposability](https://12factor.net/disposability)
 
 A 12 factor app should maximise robustness with fast start up and gracefully shutting down:
 
@@ -161,6 +160,8 @@ Further resources
 ----------------------------
 - Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/master/project_generation/COMPLETE_PROJECT_SETUP.md)
 - [Pull Request guidance](https://github.com/ONSdigital/dp/blob/master/training/culture-and-process/PULL_REQUEST_GUIDANCE.md)
+- How we [collaborate on Digital Publishing repos](https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md).
+- [Semantic Versioning](https://semver.org/)
 - [envconfig](https://github.com/kelseyhightower/envconfig) package
 - [Concourse](https://concourse-ci.org/docs.html#docs) and [Concourse tutorial](https://concoursetutorial.com/)
 - [Nomad - Getting started](https://learn.hashicorp.com/collections/nomad/get-started)
