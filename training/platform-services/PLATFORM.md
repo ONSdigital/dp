@@ -3,7 +3,7 @@ Platform Services
 
 Platform services allow us to develop, run, and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. This documentation gives information on the platform services that we use to assist in deploying and monitoring applications.
 
-## Pre requisites
+## Prerequisites
 
 You need to complete the [set up your Mac for development work][setup-ons-mac]. If this has not been completed, please click on the link and follow the instructions. Afterwards, return back to this page.
 

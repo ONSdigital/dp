@@ -3,23 +3,23 @@
 
 In Digital Publishing we build, deploy and manage applications which run as services. The twelve-factor methodology helps us follow best practices and build applications which are portable and resilient. This module will introduce you to the Twelve-factor principles and provide you with examples of how we use them in our team. 
 
-Note: The examples refer primarily to Go apps because that's what I know about. Please add more details or alternative examples which might be useful.
+Note: The examples refer primarily to Go apps. Please add more details or alternative examples which might be useful.
 
-## Pre reading
+## Pre-reading
 - Introduction and Background to [the twelve-factor app](https://12factor.net/)
 - [About version control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [What is Continuous Integration (CI) and Continuous Delivery (CD)?](https://www.redhat.com/en/topics/devops/what-is-ci-cd)
 
 
-## Pre requisites
-See pre-requisites in each section.
+## Prerequisites
+See Prerequisites in each section.
 
 ## Materials
 
 In this section you can find out how we apply each principle in Digital Publishing:
 
 ### 1. Codebase
-Pre-requisite: [Codebase](https://12factor.net/codebase)
+Prerequisite: [Codebase](https://12factor.net/codebase)
 
 > One codebase tracked in revision control, many deploys
 
@@ -31,7 +31,7 @@ Find out more:
 - [Semantic Versioning](https://semver.org/)
 
 ### 2. Dependencies
-Pre-requisite: [Dependencies](https://12factor.net/dependencies)
+Prerequisite: [Dependencies](https://12factor.net/dependencies)
 
 > Explicitly declare and isolate dependencies
 
@@ -40,7 +40,7 @@ A 12-factor app will need to have ownership of its dependencies by defining the 
 We use dependency managers to be able to maintain them all: [Maven](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) for Java apps and [modules](https://blog.golang.org/using-go-modules) for Go apps.
 
 ### 3. Config
-Pre-requisite: [Config](https://12factor.net/config)
+Prerequisite: [Config](https://12factor.net/config)
 
 > Store config in the environment
 
@@ -54,7 +54,7 @@ In our Go apps we use the [envconfig package](https://github.com/kelseyhightower
 
 
 ### 4. Backing services
-Pre-requisite: [Backing services](https://12factor.net/backing-services)
+Prerequisite: [Backing services](https://12factor.net/backing-services)
 
 > Treat backing services as attached resources
 
@@ -62,7 +62,7 @@ Our apps rely on the use of external services, such as databases (e.g. MongoDB).
 A 12-factor app should be able to switch out these external services by modifying the configuration, e.g. with no code changes.
 
 ### 5. Build, release, run
-Pre-requisite: [Build, release, run](https://12factor.net/build-release-run)
+Prerequisite: [Build, release, run](https://12factor.net/build-release-run)
 
 > Strictly separate build and run stages
 
@@ -81,7 +81,7 @@ Find out more:
 
 
 ### 6. Processes
-Pre-requisite: [Processes](https://12factor.net/processes)
+Prerequisite: [Processes](https://12factor.net/processes)
 
 > Execute the app as one or more stateless processes
  
@@ -90,7 +90,7 @@ A 12-factor app is stateless, i.e. it does not save client data from a session t
 In DP, the data that persist is stored in stateful backing service (database... or static file?)
 
 ### 7. Port binding
-Pre-requisite: [Port binding](https://12factor.net/port-binding)
+Prerequisite: [Port binding](https://12factor.net/port-binding)
 
 > Export services via port binding
 
@@ -99,7 +99,7 @@ A 12-factor app is self-contained and services are exported by port binding. In 
 Often, apps in DP become backing services for each other by providing their URL in the configuration. You can see examples of this by decrypting some secrets in [dp-configs](https://github.com/ONSdigital/dp-configs/tree/master/secrets). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md).
 
 ### 8. Concurrency
-Pre-requisite: [Concurrency](https://12factor.net/concurrency)
+Prerequisite: [Concurrency](https://12factor.net/concurrency)
 
 > Scale out via the process model
 
@@ -110,7 +110,7 @@ To be able to achieve this, the app must share-nothing (following the process mo
 In Digital Publishing nearly all of our apps are compliant with this. A notable exception is [Zebedee](https://github.com/ONSdigital/zebedee) (CMS), as the data processed and served by it exists as files on disk.
 
 ### 9. Disposability
-Pre-requisite: [Disposability](https://12factor.net/disposability)
+Prerequisite: [Disposability](https://12factor.net/disposability)
 
 > Maximize robustness with fast startup and graceful shutdown
 
@@ -124,7 +124,7 @@ Find out more:
 - [Example code for graceful shutdown](https://github.com/ONSdigital/dp-bulletin-api/blob/142a6adf7a2897221f648af2a9854c26d5830622/service/service.go#L71).
 
 ### 10. Dev/prod parity
-Pre-requisite: [Dev/prod parity](https://12factor.net/dev-prod-parity)
+Prerequisite: [Dev/prod parity](https://12factor.net/dev-prod-parity)
 
 > Keep development, staging, and production as similar as possible
 
@@ -135,7 +135,7 @@ A 12-factor app is continuously-deployed, keeping differences between the `devel
 - Tools gap: `develop` and `production` environments are similar. However, we limit the resources in `develop` to minimise costs.
 
 ### 11. Logs
-Pre-requisite: [Logs](https://12factor.net/logs)
+Prerequisite: [Logs](https://12factor.net/logs)
 
 > Treat logs as event streams
 
@@ -145,7 +145,7 @@ Logs should be written to `STDOUT` and the environment will decide how to stream
 - The logs are streamed, centralised and aggregated in [Kibana](https://www.elastic.co/kibana)
 
 ### 12. Admin processes
-Pre-requisite: [Admin processes](https://12factor.net/admin-processes)
+Prerequisite: [Admin processes](https://12factor.net/admin-processes)
 
 > Run admin/management tasks as one-off processes
 
