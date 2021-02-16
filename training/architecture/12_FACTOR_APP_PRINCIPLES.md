@@ -35,7 +35,7 @@ Prerequisite: [Dependencies](https://12factor.net/dependencies)
 
 > Explicitly declare and isolate dependencies
 
-A 12-factor app will need to have ownership of its dependencies by defining the version/release of a library ([what's the difference between and app and a library?](https://stackoverflow.com/questions/1270729/difference-between-library-and-application-code)). This allows for better control of how the application functions instead of always inheriting the latest version of a library which might not be backward compatible.
+A 12-factor app will need to have ownership of its dependencies by defining the version/release of a library ([what's the difference between an app and a library?](https://stackoverflow.com/questions/1270729/difference-between-library-and-application-code)). This allows for better control of how the application functions instead of always inheriting the latest version of a library which might not be backward compatible.
 
 We use dependency managers to be able to maintain them all: [Maven](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html) for Java apps and [modules](https://blog.golang.org/using-go-modules) for Go apps.
 
@@ -151,7 +151,7 @@ Prerequisite: [Admin processes](https://12factor.net/admin-processes)
 
 One-off administrative tasks should be one-off processes shipped with application code. Then the process (admin task) should be run remotely, for example by SSHing to the environment.
 
-In DP, sometimes write these scripts in a separate git repo [dp-data-tools](https://github.com/ONSdigital/dp-data-tools) and hence it is not deployable; instead, we use flags to allow us to inject the correct configuration for each environment.
+In DP, we sometimes write these scripts in a separate git repo [dp-data-tools](https://github.com/ONSdigital/dp-data-tools) and hence it is not deployable; instead, we use flags to allow us to inject the correct configuration for each environment.
 
 ## Next steps
 
