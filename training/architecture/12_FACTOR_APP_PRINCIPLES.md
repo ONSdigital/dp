@@ -76,7 +76,7 @@ Strict separation means that any change has to go through the stages, rather tha
 We use [Semantic Versioning](https://semver.org/) to give each release a unique id. This allows us to easily rollback to earlier releases.
 
 Find out more:
-- [DP Concourse documentation](https://github.com/ONSdigital/dp/blob/master/training/platform-services/PLATFORM.md#concourse)
+- [DP Concourse documentation](../platform-services/PLATFORM.md#concourse)
 - Head to [concourse.onsdigital.co.uk/](https://concourse.onsdigital.co.uk/) to see our pipelines.
 
 
