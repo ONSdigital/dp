@@ -27,7 +27,7 @@ The app should be tracked using version control. In DP, We create one GitHub rep
 Each _deploy_ of the `dp-bulletin-api` will use a version of the codebase. The version is defined by an annotated tag which references a specific commit in the `dp-bulletin-api` repository. The `production` environment will contain a version deployed from the `master`/`main` branch of the repository, which may be different from the `develop` branch.
 
 Find out more:
-- How we [collaborate on Digital Publishing repos](https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md).
+- How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
 - [Semantic Versioning](https://semver.org/)
 
 ### 2. Dependencies
@@ -141,7 +141,7 @@ Prerequisite: [Logs](https://12factor.net/logs)
 
 Logs should be written to `STDOUT` and the environment will decide how to stream these events using other services like [fluentd](https://github.com/fluent/fluentd).
 
-- We have logging libraries that follow our [logging standards](https://github.com/ONSdigital/dp/blob/master/standards/LOGGING_STANDARDS.md). Using structured logs means we can aggregate the log events.
+- We have logging libraries that follow our [logging standards](../../standards/LOGGING_STANDARDS.md). Using structured logs means we can aggregate the log events.
 - The logs are streamed, centralised and aggregated in [Kibana](https://www.elastic.co/kibana)
 
 ### 12. Admin processes
@@ -159,8 +159,8 @@ In DP, we sometimes write these scripts in a separate git repo [dp-data-tools](h
 Further resources
 ----------------------------
 - Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/master/project_generation/COMPLETE_PROJECT_SETUP.md)
-- [Pull Request guidance](https://github.com/ONSdigital/dp/blob/master/training/culture-and-process/PULL_REQUEST_GUIDANCE.md)
-- How we [collaborate on Digital Publishing repos](https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md).
+- [Pull Request guidance](../culture-and-process/PULL_REQUEST_GUIDANCE.md)
+- How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
 - [Semantic Versioning](https://semver.org/)
 - [envconfig](https://github.com/kelseyhightower/envconfig) package
 - [Concourse](https://concourse-ci.org/docs.html#docs) and [Concourse tutorial](https://concoursetutorial.com/)
