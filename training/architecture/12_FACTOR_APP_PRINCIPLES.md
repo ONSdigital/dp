@@ -59,7 +59,7 @@ Prerequisite: [Backing services](https://12factor.net/backing-services)
 > Treat backing services as attached resources
 
 Our apps rely on the use of other resources, such as APIs (e.g. other apps of ours; and third-party resources, like vault) and databases (e.g. MongoDB).
-A 12-factor app should be able to switch out these external services by modifying the configuration, e.g. with no code changes.
+A 12-factor app should be able to switch out any of its resources by modifying the configuration, e.g. with no code changes.
 
 ### 5. Build, release, run
 Prerequisite: [Build, release, run](https://12factor.net/build-release-run)
