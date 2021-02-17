@@ -87,7 +87,7 @@ Prerequisite: [Processes](https://12factor.net/processes)
  
 A 12-factor app is stateless, i.e. it does not save client data from a session to be used in the next session with that client. This means that restarting the app does not result in different outcomes when processing information or requests.
 
-In DP, the data that persist is stored in stateful backing service (database... or static file?)
+In DP, data that should persist is stored in a stateful backing service (typically a database like Neptune or MongoDB, but also a message queue, such as kafka).
 
 ### 7. Port binding
 Prerequisite: [Port binding](https://12factor.net/port-binding)
