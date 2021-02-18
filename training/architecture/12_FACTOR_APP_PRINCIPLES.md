@@ -23,8 +23,8 @@ Prerequisite: [Codebase](https://12factor.net/codebase)
 
 > One codebase tracked in revision control, many deploys
 
-The app should be tracked using version control. In DP, We create one GitHub repository per application, for example the [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) repository contains our codebase for that app.
-Each _deploy_ of the `dp-bulletin-api` will use a version of the codebase. The version is defined by an annotated tag which references a specific commit in the `dp-bulletin-api` repository. The `production` environment will contain a version deployed from the `master`/`main` branch of the repository, which may be different from the `develop` branch.
+The app should be tracked using version control. In DP, We create one GitHub repository per application, for example the [dp-image-api](https://github.com/ONSdigital/dp-image-api) repository contains our codebase for that app.
+Each _deploy_ of the `dp-image-api` will use a version of the codebase. The version is defined by an annotated tag which references a specific commit in the `dp-image-api` repository. The `production` environment will contain a version deployed from the `master`/`main` branch of the repository, which may be different from the `develop` branch.
 
 Find out more:
 - How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
@@ -121,7 +121,7 @@ Fast start up is important to enable rapid deployment of new code or config and 
 A Graceful Shutdown is important to enable an app to finish processing data before shutting down, to protect data integrity as well as responding to the requesting service or user. To achieve this the application must be able to stop handling new requests when receiving a SIGTERM and finish existing processes before shutting down.
 
 Find out more:
-- [Example code for graceful shutdown](https://github.com/ONSdigital/dp-bulletin-api/blob/142a6adf7a2897221f648af2a9854c26d5830622/service/service.go#L71).
+- [Example code for graceful shutdown](https://github.com/ONSdigital/dp-image-api/blob/1059237022da1caa8dea37816e37508067b1d156/service/service.go#L124).
 
 ### 10. Dev/prod parity
 Prerequisite: [Dev/prod parity](https://12factor.net/dev-prod-parity)
