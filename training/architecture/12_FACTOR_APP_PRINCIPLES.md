@@ -44,7 +44,7 @@ Prerequisite: [Config](https://12factor.net/config)
 
 > Store config in the environment
 
-The configuration we want for a given app may vary for each environment (develop and production) and local setup. In order to change the configuration without modifying code, we set it using environment variables which overwrite default values. In [this example](https://github.com/ONSdigital/dp-bulletin-api/blob/develop/config/config.go), the `config/config.go` contains a default value for `BindAddr` of `":24700"`; to overwrite it, you can set the environment variable `BIND_ADDR` to a different value.
+The configuration we want for a given app may vary for each environment (develop and production) and local setup. In order to change the configuration without modifying code, we set it using environment variables which overwrite default values. In [this example](https://github.com/ONSdigital/dp-image-api/blob/develop/config/config.go), the `config/config.go` contains a default value for `BindAddr` of `":24700"`; to overwrite it, you can set the environment variable `BIND_ADDR` to a different value.
 
 We aim to provide open source software; if we were to hard code our configuration in the service, we might disclose information which could raise security issues. In order to protect information, it is good practice to make sure any secrets, passwords are set using config and never hard coded into an app.
 
