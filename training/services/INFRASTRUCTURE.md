@@ -3,7 +3,7 @@ Cloud Services and Infrastructure in Digital Publishing
 
 We use Amazon Web Services (AWS) in Digital Publishing to host all of our services, as well as our Continuous Integration (CI).
 
-### Pre reading
+### Pre-reading
 
 #### Why cloud computing?
 >  Cloud computing is the on-demand delivery of IT resources over the Internet with pay-as-you-go pricing. Instead of buying, owning, and maintaining physical data centers and servers, you can access technology services, such as computing power, storage, and databases, on an as-needed basis from a cloud provider like Amazon Web Services (AWS). 
@@ -23,7 +23,7 @@ Other cloud platforms include Google Cloud Platform and Azure, and are used by t
     -  [Availability Zones and Regions](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) 
     - [Virtual Private Clouds (VPCs) and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html#how-it-works-subnet)  are also good to understand at a basic level
 
-### Pre requisite
+### Prerequisite
 
 You should be given relevant AWS accounts by your manager, or a Tech Lead - speak to your manager if this does not happen soon upon starting with the team.
 
