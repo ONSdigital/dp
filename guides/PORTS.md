@@ -72,3 +72,5 @@ in development without having to configure port numbers etc.
 | 25400 | [dp-permissions-api](https://github.com/ONSdigital/dp-permissions-api) |
 | 25500 | [dp-areas-api](https://github.com/ONSdigital/dp-areas-api) |
 | 25600 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api) |
+| 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api) |
+
