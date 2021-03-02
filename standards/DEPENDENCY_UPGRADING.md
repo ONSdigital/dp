@@ -6,6 +6,10 @@ Dependency Upgrading Standard
 When working on a repository, developers should check that the dependencies of that repository are sufficiently up to
 date. The approach to updating the dependencies depends on the type of app and the underlying technology.
 
+There is no formal decision process for upgrading language dependencies. As soon as a newer minor version of a language
+is released (providing it is covered by the policy for that language), then you may upgrade it straight away. For 
+example, when go@1.x.1 is released then you should use it in your next pull request.
+
 If you notice any upgrades that are not covered by this policy (including major versions of DBs becoming available)
 raise them on the 20% board for triage.
 
@@ -57,8 +61,8 @@ This will not update sub-dependencies of dependencies (unless a new version of a
 sub-dependency). So if after updating there are still vulnerabilities in any of these transitive dependencies there are
 two possibilities for resolution.
 
-1. (Preferred) If the vulnerale dependency is being brought in by one of our libraries, then fix the vulnerability in the
-   library first and release a new version. This dependency can then be in turn updated in the app using it.
+1. (Preferred) If the vulnerable dependency is being brought in by one of our libraries, then fix the vulnerability in
+   the library first and release a new version. This dependency can then be in turn updated in the app using it.
 2. If it is not possible to update the direct dependency (say it is an external library which itself has no newer
    version) then you can directly update the vulnerable dependency using `go get path.to/some/library@v1.2.3`
 
