@@ -1,7 +1,7 @@
 Install, configure and run services
 ===============
 
-As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
+As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
 --------------
 
@@ -41,9 +41,9 @@ Software | Install | Notes
     - MongoDB
     - Elasticsearch 5 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
-    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/master/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
+    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 ---
 
@@ -156,7 +156,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-download-service
   ```
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
@@ -214,7 +214,7 @@ export PUBLISHING_THREAD_POOL_SIZE=10
 
 ```
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
@@ -279,7 +279,7 @@ If you already have content, and you just want to run the web journey, you'll ne
 
 
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
