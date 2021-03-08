@@ -158,7 +158,7 @@ In DP, we sometimes write these scripts in a separate git repo [dp-data-tools](h
 
 Further resources
 ----------------------------
-- Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/master/project_generation/COMPLETE_PROJECT_SETUP.md)
+- Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/main/project_generation/COMPLETE_PROJECT_SETUP.md)
 - [Pull Request guidance](../culture-and-process/PULL_REQUEST_GUIDANCE.md)
 - How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
 - [Semantic Versioning](https://semver.org/)
