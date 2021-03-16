@@ -24,7 +24,7 @@ We encourage as many conversations and calls as possible to happen in open slack
 Whichever platform we use to communicate we always try use open and inclusive language, but we know mishaps and slips occur. If they do happen, we encourage open and respectful discussions around what sort of language is preferable, with the intent to learn from our mistakes.
 
 #### Self care
-We believe in everyone being happy and well and we know that everyone has different personal needs, circumstances and responsibilities. This means healthy and flexible working patterns and being mindful of others availability when scheduling events and communicating.
+We believe in everyone being happy and well and we know that everyone has different personal needs, circumstances and responsibilities. This means healthy and flexible working patterns and being mindful of others' availability when scheduling events and communicating.
 
 We encourage a healthy work life balance and as a team discuss our work load openly, especially when it feels too much.
 
