@@ -35,7 +35,7 @@ These are the Digital Publishing development standards.
 * Use meaningful commit messages
 * Design patterns and best practices
 * Follow existing code style
-* [Clean the campsite](https://learning.oreilly.com/library/view/97-things-every/9780596809515/ch08.html): "Always leave the campground cleaner than you found it"
+* [Clean the campsite](https://learning.oreilly.com/library/view/97-things-every/9780596809515/ch08.html) "Always leave the campground cleaner than you found it"
 * Cross-browser support/testing
 * Accessibility - meets [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)
 
@@ -62,8 +62,8 @@ See also [Logging standards](LOGGING_STANDARDS.md).
     * Isolated, not sharing data across tests
     * Coded as unit tests
     * Must be able to run unit tests and integration tests separately (e.g. passing a flag to test runner to run integration tests)
-* Any other case for integration tests should be discussed with the team. The tests should provide sufficient ROI if they cannot be covered appropriately by unit or acceptance tests
-* If you want to test the interface of a service, do so as a unit test at the highest level possible in code. If testing a HTTP API, call the router in a unit test rather than making HTTP requests to a running instance of the service. 
+* Any other case for integration tests should be discussed with the team. The tests should provide sufficient ROI (Return on Investment) if they cannot be covered appropriately by unit or acceptance tests
+* If you want to test the interface of a service, do so as a unit test at the highest level possible in code. If testing an HTTP API, call the router in a unit test rather than making HTTP requests to a running instance of the service.
 * Do not create integration tests that test the configuration of the environment. This is covered in the acceptance tests
 * Do not create integration tests that test the integration between micro services. This is covered in the acceptance tests
 
