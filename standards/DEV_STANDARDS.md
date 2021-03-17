@@ -9,8 +9,8 @@ These are the Digital Publishing development standards.
 * README
   * App overview and 'Getting started' guide
   * Configuration info
-  * Link to [LICENSE](LICENSE.md) file
-  * Link to [contribution guidelines](CONTRIBUTING.md)
+  * Link to [LICENSE](../LICENSE.md) file
+  * Link to [contribution guidelines](../guides/CONTRIBUTING.md)
 * Change log
   * Don't list every commit
   * Include high-level features/bug fixes
@@ -30,12 +30,12 @@ These are the Digital Publishing development standards.
   * Include a Swagger spec file which documents any HTTP APIs
 * Pull requests / code review
 * 12-factor
-  * All code must be 12-factor compliant - see [https://12factor.net](https://12factor.net)
-* [Sign commits using GPG](GPG.md)
+  * All code must be 12-factor compliant - see [https://12factor.net](https://12factor.net) and [our training module](../training/architecture/12_FACTOR_APP_PRINCIPLES.md)
+* [Sign commits using GPG](../guides/GPG.md)
 * Use meaningful commit messages
 * Design patterns and best practices
 * Follow existing code style
-* [Clean the campsite](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)
+* [Clean the campsite](https://learning.oreilly.com/library/view/97-things-every/9780596809515/ch08.html): "Always leave the campground cleaner than you found it"
 * Cross-browser support/testing
 * Accessibility - meets [WCAG 2.0 AA](https://www.w3.org/TR/WCAG20/)
 
@@ -53,7 +53,7 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 
 * Should always be in the same solution as the application code
 * Should test only the application code, and not depend on any external services
-* Should follow [FIRST principles](https://pragprog.com/magazines/2012-01/unit-tests-are-first)
+* Should follow [FIRST principles](https://web.archive.org/web/20140227191934/http://pragprog.com/magazines/2012-01/unit-tests-are-first)
 
 ##### Integration tests
 
@@ -83,4 +83,4 @@ See also [Logging standards](LOGGING_STANDARDS.md).
   * `fix/fix-name` branches
   * `hotfix/hotfix-name` branches
   * Use GPG signed annotated release tags
-* [Pull request templates](.github/PULL_REQUEST_TEMPLATE.md)
+* [Pull request templates](../.github/PULL_REQUEST_TEMPLATE.md)
