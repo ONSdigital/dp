@@ -192,7 +192,6 @@ Variable name | note
 `DATASET_ROUTES_ENABLED` | `true` will enable the filterable dataset routes (the CMD journey) in some services
 `FORMAT_LOGGING` | if `true` then `zebedee` will format its logs
 `SERVICE_AUTH_TOKEN` | a value for `zebedee` to work
-`NEW_HOMEPAGE_ENABLED` | set `true` to get new ONS homepage
 
 After all the various steps, here's an example set of exports and their values that you might now have in your [startup file](#startup-file):
 
@@ -205,8 +204,6 @@ export ENCRYPTION_DISABLED=true
 export DATASET_ROUTES_ENABLED=true
 export FORMAT_LOGGING=true
 export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"
-export NEW_HOMEPAGE_ENABLED=true
-
 
 export TRANSACTION_STORE=$zebedee_root/zebedee/transactions
 export WEBSITE=$zebedee_root/zebedee/master
