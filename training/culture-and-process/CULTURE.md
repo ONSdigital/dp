@@ -33,16 +33,3 @@ No one knows everything and we don't expect you to. It's fine to say you don't k
 
 #### No blame
 We know mistakes and errors happen but instead of placing blame we encourage the reporting of them and take an active approach to learning from them when they happen. Our aim is to learn and prevent the same or similar mistakes in future, not to punish or judge anyone involved. 
-
-
-### Next steps
-
-Links to areas this is a pre-req for, other elements in a series, or other topics.
-
-
-
-Further resources
-----------------------------
-
-Links to other resources, and what they're useful for explaining.
-May or may not be materials that extend directly from the course
