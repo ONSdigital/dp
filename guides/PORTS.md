@@ -45,7 +45,7 @@ in development without having to configure port numbers etc.
 | 22600 | [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api) |
 | 22700 | [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder) |
 | 22800 | [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx) |
-| 22900 | [dp-search-builder](https://github.com/ONSdigital/dp-search-builder) |
+| 22900 | [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder) |
 | 23100 | [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api) |
 | 23200 | [dp-api-router](https://github.com/ONSdigital/dp-api-router) |
 | 23300 | [dp-table-renderer](https://github.com/ONSdigital/dp-table-renderer) |

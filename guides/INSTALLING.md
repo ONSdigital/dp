@@ -121,7 +121,7 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor)
 * [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer)
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
-* [dp-search-builder](https://github.com/ONSdigital/dp-search-builder)
+* [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder)
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
 
   ```bash
@@ -133,7 +133,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-observation-extractor
   git clone git@github.com:ONSdigital/dp-observation-importer
   git clone git@github.com:ONSdigital/dp-hierarchy-builder
-  git clone git@github.com:ONSdigital/dp-search-builder
+  git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
 
