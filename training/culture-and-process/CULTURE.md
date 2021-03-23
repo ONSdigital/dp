@@ -18,7 +18,7 @@ We follow [GDS design principles](https://www.gov.uk/guidance/government-design-
 #### Open communication and collaboration
 We code in the open. This means most of our code is publicly available on Github and it hosts a lot of our coding discussions. When reviewing code we should we keep our comments constructive, helpful and kind.
 
-We encourage as many conversations and calls as possible to happen in open slack channels so that they are inclusive to all and can act as a source of information in the future. To let others know your concentrating on a task or that you'd like to minimise distractions use the headphones emoji 🎧 .
+We encourage as many conversations and calls as possible to happen in open slack channels so that they are inclusive to all and can act as a source of information in the future. To let others know you're concentrating on a task or that you'd like to minimise distractions use the headphones emoji 🎧 .
 
 
 Whichever platform we use to communicate we always try use open and inclusive language, but we know mishaps and slips occur. If they do happen, we encourage open and respectful discussions around what sort of language is preferable, with the intent to learn from our mistakes.
