@@ -262,6 +262,11 @@ and also run the following:
 * [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 
+If you also want to run Florence with the ability to edit images on the homepage (for the Featured Content section), you will need to additionally run:
+
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
+* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer)
+
 Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
 The website will be available at [http://localhost:8081](http://localhost:8081) after a successful login into florence. Login details are in the [florence repository](https://github.com/ONSdigital/florence/blob/develop/USAGE.md).
@@ -269,6 +274,8 @@ The website will be available at [http://localhost:8081](http://localhost:8081) 
 ### CMD
 
 All of the services in the [web](#web-journey), [publishing](#publishing-journey) and [CMD](#cmd-journeys) journeys need to be run for the full CMD journey to work. This journey includes importing data, publishing it and testing the public journey.
+
+> You will want to make sure you have access to the Neptune test instance as well, if you want the entire CMD journey to be accessible. Details on how to set this up can be found [here](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md).
 
 Use the following alternative commands:
 
