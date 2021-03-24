@@ -5,7 +5,7 @@ websysd assumes that many services are located in the GOPATH. Since most have mi
 the case and these scripts will need to be updated in order to work.
 
 ## Original documentation…
-You can use [websysd](https://github.com/ONSdigital/dp/blob/master/websysd) to run the dp services from a centralised location:
+You can use [websysd](https://github.com/ONSdigital/dp/blob/main/websysd) to run the dp services from a centralised location:
 
 If you are running the publishing stack, then you must set "ENABLE_PRIVATE_ENDPOINTS=true" and "ENCRYPTION_DISABLED=true” if encryption is not setup.
 

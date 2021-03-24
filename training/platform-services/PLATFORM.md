@@ -3,7 +3,7 @@ Platform Services
 
 Platform services allow us to develop, run, and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. This documentation gives information on the platform services that we use to assist in deploying and monitoring applications.
 
-## Pre requisites
+## Prerequisites
 
 You need to complete the [set up your Mac for development work][setup-ons-mac]. If this has not been completed, please click on the link and follow the instructions. Afterwards, return back to this page.
 
@@ -171,7 +171,7 @@ Further resources
    [grafana-dev-nomad-tasks]: <https://grafana.develop.onsdigital.co.uk/d/000000014/nomad-task?refresh=10s&orgId=1>
    [grafana-dev-node-stats-2]: <https://grafana.develop.onsdigital.co.uk/d/000000004/node-stats-2?refresh=10s&orgId=1>
    [hashicorp-home]: <https://www.hashicorp.com>
-   [health-check-spec]: <https://github.com/ONSdigital/dp/blob/master/standards/HEALTH_CHECK_SPECIFICATION.md>
+   [health-check-spec]: <https://github.com/ONSdigital/dp/blob/main/standards/HEALTH_CHECK_SPECIFICATION.md>
    [helper-script-dp-setup]: <https://github.com/ONSdigital/dp-setup/tree/develop/scripts>
    [kibana-dev-home]: <https://kibana.develop.onsdigital.co.uk>
    [nomad-dev-home]: <https://nomad.develop.onsdigital.co.uk>
@@ -181,7 +181,7 @@ Further resources
    [prometheus-dev-alerts]: <https://prometheus.develop.onsdigital.co.uk/alerts>
    [prometheus-dev-home]: <https://prometheus.develop.onsdigital.co.uk>
    [prometheus-querying]: <https://prometheus.io/docs/prometheus/latest/querying/basics>
-   [setup-ons-mac]: <https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md#set-up-your-mac-for-development-work>
-   [support-101]: <https://github.com/ONSdigital/dp/blob/master/training/support/SUPPORT101.md>
+   [setup-ons-mac]: <https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md#set-up-your-mac-for-development-work>
+   [support-101]: <https://github.com/ONSdigital/dp/blob/main/training/support/SUPPORT101.md>
    [vault-develop]: <https://vault.develop.onsdigital.co.uk>
    [vault-policy]: <https://www.vaultproject.io/docs/concepts/policies>

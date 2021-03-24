@@ -3,11 +3,11 @@ Module name
 
 Module description - why its relevant in our context
 
-### Pre reading
+### Pre-reading
 
 Are there relevant standards to be aware of before undergoing this module? None if not needed.
 
-### Pre requisites
+### Prerequisites
 
 Need to do before doing this course. None if not needed.
 

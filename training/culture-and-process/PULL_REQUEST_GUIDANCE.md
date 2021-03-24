@@ -7,11 +7,11 @@ General guidance on creating a pull request
 
 - It is useful to have [an understanding of GIT](https://git-scm.com/about) and branches as a way of working
 - Have a look at pull requests in the `dev-code-review` channel on slack
-- There is also this documentation on our [contributing guidelines](https://github.com/ONSdigital/dp/blob/master/guides/CONTRIBUTING.md#development-work) which covers some aspects of creating pull requests. 
+- There is also this documentation on our [contributing guidelines](https://github.com/ONSdigital/dp/blob/main/guides/CONTRIBUTING.md#development-work) which covers some aspects of creating pull requests.
 
 ### Prerequisites
 
-- In order to contribute you need to first [step up a GPG key](https://github.com/ONSdigital/dp/blob/master/guides/GPG.md) and configure git to sign all commits.
+- In order to contribute you need to first [step up a GPG key](https://github.com/ONSdigital/dp/blob/main/guides/GPG.md) and configure git to sign all commits.
 
 ### Steps
 

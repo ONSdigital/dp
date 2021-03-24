@@ -47,6 +47,19 @@ Run the SSH command with port forwarding:
 ssh -F ssh.cfg -L 8182:{cluster address}:8182 {user name}@{publishing asg node IP}
 ```
 
+#### Configure a custom hostname to connect to Neptune
+
+Neptune requires a secure connection. The SSL certificate provided by Neptune requires hosts to match it's configured wildcards. This does not include localhost, so a custom hostname has to be used.
+ 
+Add a host to the 127.0.0.1 entry in `/etc/hosts`, using the suffix of the Neptune host.
+
+For example, a custom host using a prefix of `localhost` and a suffix of the `dev-test` Neptune cluster host:
+```
+127.0.0.1	localhost localhost.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com
+```
+
+More information can be found here: https://docs.aws.amazon.com/neptune/latest/userguide/security-ssl.html
+
 #### Configure the required CMD services to use Neptune
 
 Each service using the graph database does do via the [dp-graph](https://github.com/ONSdigital/dp-graph/) library. This library provides an abstraction over the graph database, and handles the configuration for which graph database provider to use. The default values when running locally are set to use Neo4j. 
@@ -54,7 +67,12 @@ Each service using the graph database does do via the [dp-graph](https://github.
 To use Neptune, ensure you have the following environment variables set:
 ```
 export GRAPH_DRIVER_TYPE=neptune
-export GRAPH_ADDR=ws://localhost:8182/gremlin
+export GRAPH_ADDR=wss://{{host}}:8182/gremlin
+```
+where host is the same as the custom host used in the previous section. An example using the example host:
+```
+export GRAPH_DRIVER_TYPE=neptune
+export GRAPH_ADDR=wss://localhost.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com:8182/gremlin
 ```
 
 Most likely you will set the environment variables globally in your profile, however if you do want to configure each service individually you will need the environment variables available to the following services:
