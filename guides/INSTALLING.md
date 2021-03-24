@@ -67,6 +67,7 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+* [dp-frontend-feedback-controller](https://github.com/ONSdigital-dp-frontend-feedback-controller)
 
   ```bash
   git clone git@github.com:ONSdigital/babbage
@@ -79,6 +80,8 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
   git clone git@github.com:ONSdigital/dp-frontend-homepage-controller
   git clone git@github.com:ONSdigital/dp-frontend-cookie-controller
   git clone git@github.com:ONSdigital/dp-frontend-dataset-controller
+
+  git clone git@github.com:ONSdigital/dp-frontend-feedback-controller
   ```
 
 ### Publishing Journey
@@ -88,11 +91,15 @@ All services listed in the [web journey](#web-journey) are required for the publ
 * [florence](https://github.com/ONSdigital/florence)
 * [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
+* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer)
 
   ```bash
   git clone git@github.com:ONSdigital/florence
   git clone git@github.com:ONSdigital/The-Train
   git clone git@github.com:ONSdigital/dp-api-router
+  git clone git@github.com:ONSdigital/dp-image-api
+  git clone git@github.com:ONSdigital/dp-image-importer
   ```
 
 ### CMD Journeys
@@ -123,6 +130,7 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
 * [dp-search-builder](https://github.com/ONSdigital/dp-search-builder)
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
 
   ```bash
   git clone git@github.com:ONSdigital/dp-recipe-api
@@ -135,6 +143,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-hierarchy-builder
   git clone git@github.com:ONSdigital/dp-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
+  git clone git@github.com:ONSdigital/dp-upload-service
   ```
 
 #### Filter journey:
@@ -236,6 +245,7 @@ Run all the services in the [web journey](#web-journey)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+* [dp-frontend-feedback-controller](https://github.com/ONSdigital-dp-frontend-feedback-controller)
 
 The website will be available at http://localhost:20000
 
@@ -249,13 +259,12 @@ Run all of the services in the [web journey](#web-journey), **but** change the c
 and also run the following:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
-* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
+* [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 
-Florence will be available at http://localhost:8081/florence/login
+Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
 The website will be available at [http://localhost:8081](http://localhost:8081) after a successful login into florence. Login details are in the [florence repository](https://github.com/ONSdigital/florence/blob/develop/USAGE.md).
-
 
 ### CMD
 
@@ -276,8 +285,6 @@ If you already have content, and you just want to run the web journey, you'll ne
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug `
 * unset `ENABLE_PRIVATE_ENDPOINTS`
-
-
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
