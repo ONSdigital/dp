@@ -3,9 +3,9 @@ Unit Testing in Go
 
 ## INCOMPLETE DOCUMENTATION
 
-Portions of this page with * are incomplete, and may just link to github.com
+Portions of this page with (*) are incomplete, and may just link to github.com
 
-## *More Visual Version of this training
+## More Visual Version of this training (*)
 
 (Link To Miro/Presentation)
 
@@ -34,7 +34,7 @@ To get started quickly if you've already got Go installed, and you use a bash/li
 - `go get github.com/stretchr/testify` # Contains Mockify, which is used below.  We wont be using Testify, which is an alternative to GoConvey
 - `git@github.com:ONSdigital/dp.git` # Contains this repo, and other training material
 
-## *Materials
+## Materials (*)
 
 #### Quick Start
 - ['Hello World' Unit tests in Go and GoConvey](1.helloWorld/README.md)
@@ -56,7 +56,7 @@ To get started quickly if you've already got Go installed, and you use a bash/li
 #### Mocking
 - [Mocking dependencies / portions of system you don't need to test](https://github.com/ONSdigital/dp/tree/master/training/unitTesting/goLang/helloWorld)
 
-#### *Code Coverage
+#### Code Coverage (*)
 - Code Coverage
 - Tips On Increasing Code Coverage
 
@@ -66,7 +66,7 @@ To get started quickly if you've already got Go installed, and you use a bash/li
 #### *Writing Easier Code To Test
 - Test Driven Development
 
-## *Quick Reference (External Links)
+## Quick Reference (External Links) (*)
 The following are useful links:-
 - [Goconvey documentation](https://godoc.org/github.com/smartystreets/goconvey/convey)
 - [Assertion examples](https://smartystreets.com/blog/2015/05/go-testing-part-3-convey-behavior)

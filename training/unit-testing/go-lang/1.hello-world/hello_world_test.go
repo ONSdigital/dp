@@ -7,20 +7,20 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-//Test files must end in _test
-//Tests in the test test file must start with exactly "Test"
-//"Convey" is defining what you're about to test, or the situation
-//"So" is the actual test
-//"ShouldBeGreaterThan" is the assertion, or check which is being done on the value(s)
+// Test files must end in _test
+// Tests in the test test file must start with exactly "Test"
+// "Convey" is defining what you're about to test, or the situation
+// "So" is the actual test
+// "ShouldBeGreaterThan" is the assertion, or check which is being done on the value(s)
 //
-//To run all tests fron the command line type (ommit -v if you just want the overall result):-
-//go test helloWorld_test.go -v
+// To run all tests fron the command line type (ommit -v if you just want the overall result):-
+// go test hello_world_test.go -v
 //
-//To only run this test from command line type:-
-//go test helloWorld_test.go -run TestHelloWorld1
+// To only run this test from command line type:-
+// go test hello_world_test.go -run TestHelloWorld1
 //
-//To only run this test with verbose tracing add a -v
-//go test helloWorld_test.go -run TestHelloWorld -v
+// To only run this test with verbose tracing add a -v
+// go test hello_world_test.go -run TestHelloWorld -v
 //
 // This should run all tests in current directory and all of its subdirectories:
 // $ go test ./...

@@ -11,7 +11,7 @@ import (
 	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/service"
 )
 
-//This is a training application made by Office to demonstrate testing in Go
+// This is a training application made by Office to demonstrate testing in Go
 func main() {
 	// Define connection string for MongoDB
 	conStr := "dbname=corporatePostgres sslmode=enabled"

@@ -8,15 +8,15 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-//TestOrderOfExe shows the order of execution of Convey
-// Convey A
-//     So 1
-//     Convey B
-//         So 2
-//         Convey Q
-//         	So 9
-//     Convey C
-//         So 3
+// TestOrderOfExe shows the order of execution of Convey
+//  Convey A
+//      So 1
+//      Convey B
+//          So 2
+//          Convey Q
+//          	So 9
+//      Convey C
+//          So 3
 //
 // Result would be A1,B2,Q9,A1,B2,C3
 func TestOrderOfExe(t *testing.T) {
@@ -36,7 +36,7 @@ func TestOrderOfExe(t *testing.T) {
 
 var S = 0
 
-func hmmm(msg string) {
+func display(msg string) {
 	fmt.Printf("S=%d msg=%s\n", S, msg)
 	Println("hello")
 	S++
@@ -44,9 +44,9 @@ func hmmm(msg string) {
 func Test_Output(t *testing.T) {
 	Convey("Given a loop", t, func() {
 		for i := 0; i < 3; i++ {
-			hmmm("Looping")
+			display("Looping")
 			Convey(fmt.Sprintf("Inner Convey %d", i), func() {
-				hmmm("More looping")
+				display("More looping")
 			})
 		}
 

@@ -9,7 +9,7 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-//TestServiceSuccessWithConvey tests...
+// TestServiceSuccessWithConvey tests...
 func TestServiceSuccessWithConvey(t *testing.T) {
 	Convey("Given an ID of 2", t, func() {
 		// Create a new instance of the mock store
