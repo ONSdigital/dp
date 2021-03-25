@@ -93,6 +93,8 @@ All services listed in the [web journey](#web-journey) are required for the publ
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 * [dp-image-api](https://github.com/ONSdigital/dp-image-api)
 * [dp-image-importer](https://github.com/ONSdigital/dp-image-importer)
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
   git clone git@github.com:ONSdigital/florence
@@ -100,6 +102,8 @@ All services listed in the [web journey](#web-journey) are required for the publ
   git clone git@github.com:ONSdigital/dp-api-router
   git clone git@github.com:ONSdigital/dp-image-api
   git clone git@github.com:ONSdigital/dp-image-importer
+  git clone git@github.com:ONSdigital/dp-upload-service
+  git clone git@github.com:ONSdigital/dp-download-service
   ```
 
 ### CMD Journeys
@@ -130,7 +134,6 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
 * [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder)
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
-* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
 
   ```bash
   git clone git@github.com:ONSdigital/dp-recipe-api
@@ -143,7 +146,6 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-hierarchy-builder
   git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
-  git clone git@github.com:ONSdigital/dp-upload-service
   ```
 
 #### Filter journey:
@@ -153,7 +155,6 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-filter-api](https://github.com/ONSdigital/dp-filter-api)
 * [dp-dataset-exporter](https://github.com/ONSdigital/dp-dataset-exporter)
 * [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx)
-* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
   git clone git@github.com:ONSdigital/dp-dimension-search-api
@@ -162,7 +163,6 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-filter-api
   git clone git@github.com:ONSdigital/dp-dataset-exporter
   git clone git@github.com:ONSdigital/dp-dataset-exporter-xlsx
-  git clone git@github.com:ONSdigital/dp-download-service
   ```
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
@@ -255,14 +255,16 @@ Run all of the services in the [web journey](#web-journey), **but** change the c
 
 and also run the following:
 
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true ENABLE_HOMEPAGE_PUBLISHING=true`
 * [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 
 If you also want to run Florence with the ability to edit images on the homepage (for the Featured Content section), you will need to additionally run:
 
-* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
-* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer)
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api) - use: `make debug ENCRYPTION_DISABLED=true`
+* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) - use: `make debug ENCRYPTION_DISABLED=true`
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) - use `make debug ENCRYPTION_DISABLED=true`
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
 Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
@@ -287,7 +289,7 @@ Use the following alternative commands:
 If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web-journey) services. Again, use the commands:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
-* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug `
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug`
 * unset `ENABLE_PRIVATE_ENDPOINTS`
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
