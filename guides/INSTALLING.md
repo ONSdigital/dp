@@ -261,10 +261,10 @@ and also run the following:
 
 If you also want to run Florence with the ability to edit images on the homepage (for the Featured Content section), you will need to additionally run:
 
-* [dp-image-api](https://github.com/ONSdigital/dp-image-api) - use: `make debug ENCRYPTION_DISABLED=true`
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
 * [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) - use: `make debug ENCRYPTION_DISABLED=true`
 * [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) - use `make debug ENCRYPTION_DISABLED=true`
-* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)  - use: `make debug ENCRYPTION_DISABLED=true`
 
 Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
