@@ -31,7 +31,7 @@ Modules
 #### Technologies we use
 * [How we choose technologies]()
 * Go
-    * [Intro to Go](GOLANG.md)
+    * [Intro to Go](languages/GOLANG.md)
     * [Concurrency]()
 * AWS
     * [Intro to AWS]()
