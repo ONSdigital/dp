@@ -44,6 +44,6 @@ Zebedee requires a very specific file structure in order to run along with addit
 Licence
 -------
 
-Copyright ©‎ 2016, Office for National Statistics (https://www.ons.gov.uk)
+Copyright ©‎ 2021, Office for National Statistics (https://www.ons.gov.uk)
 
 Released under MIT license, see [LICENSE](LICENSE.md) for details.
