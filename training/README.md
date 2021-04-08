@@ -16,6 +16,10 @@ Modules
 * [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
 * [Developer Processes]()
     * [Pull Request Guidance](culture-and-process/PULL_REQUEST_GUIDANCE.md)
+    * [Trello Board - Flow of Stories](culture-and-process/TRELLO_BOARD_FLOW.md)
+    * [Gitflow](culture-and-process/GITFLOW.md)
+    * [CI/CD Process](culture-and-process/CICD.md)
+
 
 #### Architectural principles & approach
 * [12 Factor App principles](architecture/12_FACTOR_APP_PRINCIPLES.md)
