@@ -28,6 +28,7 @@ Standards and specifications
 * [API standards](standards/API_STANDARDS.md)
 * [Logging standards](standards/LOGGING_STANDARDS.md)
 * [Health check specification](standards/HEALTH_CHECK_SPECIFICATION.md)
+* [Dependency upgrades](standards/DEPENDENCY_UPGRADING.md)
 
 Dev tooling
 -----------
