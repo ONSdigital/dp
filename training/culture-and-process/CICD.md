@@ -49,7 +49,7 @@ A more comprehensive look at how CI/CD works at ONS Digital Publishing can be fo
 
 ## Deploying your apps
 
-This section is a continuation of the steps outlined in the "Ready for Release" section [here](culture-and-process/TRELLO_BOARD_FLOW.md). 
+This section is a continuation of the steps outlined in the "Ready for Release" section [here](TRELLO_BOARD_FLOW.md). 
 
 1. To deploy an app, you will need to have logged into ONS Digital Councourse via the link above. You can log in via your personal Github account, or email addresss
 2. Once logged into Concourse, you should see the all of the pipelines that are currently running 

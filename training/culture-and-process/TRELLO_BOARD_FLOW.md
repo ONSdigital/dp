@@ -35,11 +35,11 @@ After selecting a card to work on, it can then be moved to the "In Progress" col
 
 Whilst you are working on a card, it will remain in this column. Once you are at the stage that a Pull Request has been created, you can then move the card over to the "PR" column.
 
-Please see [here](culture-and-process/PULL_REQUEST_GUIDANCE.md) for guidance on Pull Requests. 
+Please see [here](PULL_REQUEST_GUIDANCE.md) for guidance on Pull Requests. 
 
 ### PR
 
-At this stage, code is peer-reviewed and should have passed in CI (more info on the CI/CD process can be found [here](culture-and-process/CICD.md)). Additional work may be requested by the person reviewing your code, in which case you should ensure that this has been completed. 
+At this stage, code is peer-reviewed and should have passed in CI (more info on the CI/CD process can be found [here](CICD.md)). Additional work may be requested by the person reviewing your code, in which case you should ensure that this has been completed. 
 
 Once the PR has been approved, the feature branch can be merged into `develop`, and the relevant features tested in the `develop` environment. Provided this has been completed, you can then move your card to the "PO Sign-Off" column
 
@@ -62,6 +62,6 @@ Provided that all of the above criteria have been met, you can now begin the rel
 5. Post release PR and wait for a review
 6. Once approved, merge the release into `master` and push the changes
 7. Create a new release version on github (see version control and release tagging above)
-8. Refer to [this](culture-and-process/CICD.md) document for the next steps to deploy your app into an environment  
+8. Refer to [this](CICD.md) document for the next steps to deploy your app into an environment  
 
 
