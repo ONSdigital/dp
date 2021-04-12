@@ -70,6 +70,58 @@ two possibilities for resolution.
 
 latest LTS and wait for a patch (update installing to go from https://adoptopenjdk.net/)
 
+### Module dependencies
+
+The Java apps use the build tool Maven, where dependencies are defined in a `pom.xml` file. Normally there is a single pom.xml file at the root of the project, though there may be multiple if there are sub modules (e.g. Zebedee)
+
+Each dependency in the pom.xml file has a block of XML under the `dependencies` section:
+
+```
+    <dependencies>  
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.4</version>
+        </dependency>
+    </dependencies>
+```
+
+To run an audit of the dependencies, run the `make audit` command. This is a wrapper for the underlying Maven command `mvn ossindex:audit`
+
+Exclusions for the dependency audit are defined in the pom.xml file, under the configuration section of the `ossindex-maven-plugin`. Below is an example exclusion defined for the elasticsearch dependency. The surrounding XML will most likely exist already, and only the `exlude` block will need adding.
+
+```
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.ossindex.maven</groupId>
+                <artifactId>ossindex-maven-plugin</artifactId>
+                
+                ....
+                                
+                <configuration>
+                   <excludeCoordinates>
+                       <exlude>
+                           <groupId>org.elasticsearch</groupId>
+                           <artifactId>elasticsearch</artifactId>
+                           <version>2.1.1</version>
+                       </exlude>
+                   </excludeCoordinates>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+```
+
+If the vulnerable dependency is not listed in the pom.xml file, it will be a transitive dependency, meaning it is a dependency of a dependency. In these cases it is useful to use the `mvn dependency:tree` command. This command is run from the directory of the pom.xml file, and will print a tree like representation of dependencies. The output can be searched for the vulnerable dependency, and then the parent of that dependency can be seen. In these cases consider whether updating the parent dependency would be more appropriate. Sometimes updating the parent dependency still does not use a fixed version of the vulnerable dependency. If the vulnerable dependency needs a specific version, create a new dependency entry in the pom.xml which will override the existing version used. It is recommended to only upgrade the minor version if possible, as a major version may include breaking changes.
+
+To see the available versions of a dependency, go to https://mvnrepository.com/ and search the dependency name. When a version is selected, an XML snippet for the dependency will be given under the Maven tab.
+
+Once a dependency has been updated, first ensure the code builds (`make build`), and the tests pass (`make test`). Ideally then the code where the dependency is used will be tested. To determine where a dependency is used, search the codebase for the import statement of that dependency. If it is a transitive dependency, the parent dependency will need to be used in the search.
+
+If there is no exclusion defined in the pom.xml file, it may have been flagged by Github's dependabot tool. The dependabot vulnerabilities can be seen by going to the `/security/dependabot` path of the repository. For example with Zebedee: https://github.com/ONSdigital/zebedee/security/dependabot
+
+Dependabot may have already created a PR with the updated dependency, though it will be that dependency specifically (not considering parent dependencies). It may also not be the latest version, as there may have been a newer version released since the PR was created. A dependabot PR will be automatically closed if the vulnerability gets fixed by another PR.
 
 ## Other technologies
 
