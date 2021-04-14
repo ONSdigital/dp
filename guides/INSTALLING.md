@@ -126,6 +126,7 @@ All the services in the [web] and [publishing] journeys, as well as:
 
 * [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
 * [dp-import-api](https://github.com/ONSdigital/dp-import-api)
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
 * [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)
 * [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor)
 * [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer)
