@@ -53,8 +53,8 @@ All CI configuration is managed in [dp-ci](https://github.com/ONSdigital/dp-ci) 
 #### CMD import steps
 
 1. [Import recipes](https://github.com/ONSdigital/dp-recipe-api) using the `import-recipes` script
-1. [Import code lists](https://github.com/ONSdigital/dp-code-list-scripts) for the recipes you'll be using
-1. [Import hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder) if needed by the recipes you'll be using
+    - If you're running a local graph database like Neo4j you'll also need to [import code lists](https://github.com/ONSdigital/dp-code-list-scripts) for the recipes you'll be using and may need to [import hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder).
+    - In most cases this is not currently needed, as we use a shared instance of Neptune running in the Development AWS account.
 2. [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
 3. [Import a file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
 4. [Publish a collection](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
