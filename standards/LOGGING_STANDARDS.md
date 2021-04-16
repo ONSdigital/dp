@@ -201,6 +201,10 @@ There are two arbitrary `data` fields in the logging spec.  One at the top level
 
 The `data` fields are a means of adding event specific details that help in understanding the event, but are not common enough to justify a field in the spec. These fields are an important part of the event data and it is important that the data be useful and well structured.
 
+### v2
+
+Following creation of the v2 library in [log.go](https://github.com/ONSdigital/log.go), `severity` is now a mandatory field when creating log events. In addition to this, it is not possible to pass `severity` as an optional field, therefore removing the possibility of duplicate `severity` logs.
+
 ##### Kafka
 
 TODO: Add kafka log data to the logging spec
