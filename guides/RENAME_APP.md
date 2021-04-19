@@ -8,43 +8,43 @@ they would be with APIs.
 
 ## Move OLD_SERVICE_NAME to NEW_SERVICE_NAME (DEVELOP)
 
-- PR to dp-setup:
+- Issue PR to dp-setup:
 
-    - Add a new policy to vault-policies and dp-deployer policy
+  - Add a new policy to vault-policies and dp-deployer policy
 
-    - If applicable, add routing templates to dp-setup, adding new stanzas for the new name. Leave the old ones in place
-      for now (backwards compatible). The port number should be a new one (+1 from the previous).
+  - If applicable, add routing templates to dp-setup, adding new stanzas for the new name. Leave the old ones in place
+    for now (backwards compatible). The port number should be a new one (+1 from the previous).
 
-      (The files which need changes can be found in https://github.com/ONSdigital/dp-setup#adding-a-new-app)
+    (The files which need changes can be found in https://github.com/ONSdigital/dp-setup#adding-a-new-app)
 
-    - If applicable, add the new port it to PORTS.md.
+  - If applicable, add the new port it to PORTS.md.
 
-- PR to dp:
+- Issue PR to dp:
 
-    - Update the OLD_SERVICE_NAME to NEW_SERVICE_NAME associated with the port in the PORTS.md in dp
+  - Update the OLD_SERVICE_NAME to NEW_SERVICE_NAME associated with the port in the PORTS.md in dp
 
 - Change branch protection in GitHub for develop branch so that the checks for the OLD_SERVICE_NAME are not required (
   this is achieved by going to settings of the repo in GitHub)
 
-- PR to service being renamed:
+- Issue PR to service being renamed:
 
-    - Update the log.Namespace in the service
+  - Update the log.Namespace in the service
 
-    - Update any other occurrences.
+  - Update any other occurrences.
 
 - Rename the repository in GitHub - be sure to `@developers` in `#development-general` to let them know when this is
   happening, and remind them they can ensure their local clones are pointing to the right repo by using
   `git remote set-url origin <new_url>`
 
-- PR to dp-configs:
-  
-    - Create a copy of the old secrets files in dp-configs for develop and name them with the NEW_SERVICE_NAME.
+- Issue PR to dp-configs:
 
-    - Update URL route of service in the secrets.
+  - Create a copy of the old secrets files in dp-configs for develop and name them with the NEW_SERVICE_NAME.
 
-    - Update the copied manifest file to reflect the name change and repo move.
+  - Update URL route of service in the secrets.
 
-      Manifest files found in https://github.com/ONSdigital/dp-configs/tree/master/manifests
+  - Update the copied manifest file to reflect the name change and repo move.
+
+    Manifest files found in https://github.com/ONSdigital/dp-configs/tree/master/manifests
 
 - Ensure all changes have been merged into develop before continuing.
 
@@ -57,13 +57,17 @@ they would be with APIs.
 
   MAKE A NOTE OF THE PRs (CHANGES) AS THESE NEED TO BE RELEASED LATER
 
-- PR to dp-configs:
+- Issue PR to dp-configs:
 
-    - Update develop secrets of services which use OLD_SERVICE_NAME with the new port numbering
+  - Update develop secrets of services which use OLD_SERVICE_NAME with the new port numbering
 
 - If applicable, run terraform apply (https://github.com/ONSdigital/dp-ci/tree/master/terraform)
 
-- Ship the service through concourse
+- Create a new pipeline in concourse for the newly named service.
+
+  STEP 4 - https://github.com/ONSdigital/dp-ci/tree/master/pipelines/pipeline-generator#manually-generating-the-pipelines
+
+- Ship the service in develop through concourse
 
 - Update api-router config to point to new port (if the service is a backend one, e.g. API)
 
@@ -115,7 +119,7 @@ they would be with APIs.
 
 - Check if develop environment is still working as expected
 
-- PR to dp-configs develop secrets: remove OLD_SERVICE_NAME secrets
+- Issue PR to dp-configs develop secrets: remove OLD_SERVICE_NAME secrets
 
 - Delete secrets from vault web interface develop itself (Go to the secrets and click on delete)
 
@@ -165,7 +169,8 @@ done in a specific order so that messages aren't lost. To do this, release the p
 
 - Rename the [kafka topic in dp-setup](https://github.com/ONSdigital/dp-setup/blob/develop/ansible/group_vars/kafka)
   and apply it to develop (with then without the `--check`)
-  ```
+
+  ```shell
   ansible-playbook --check -i inventories/develop --vault-id=develop@.develop.pass -t kafka-topics kafka.yml
   ```
 
@@ -187,7 +192,7 @@ done in a specific order so that messages aren't lost. To do this, release the p
 
 - Repeat the dp-setup process above in production (with then without the `--check`)
 
-  ```
+  ```shell
   ansible-playbook --check -i inventories/production --vault-id=production@.production.pass -t kafka-topics kafka.yml
   ```
 
