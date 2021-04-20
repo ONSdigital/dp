@@ -15,9 +15,10 @@ they would be with APIs.
   - If applicable, add routing templates to dp-setup, adding new stanzas for the new name. Leave the old ones in place
     for now (backwards compatible). The port number should be a new one (+1 from the previous).
 
-    (The files which need changes can be found in https://github.com/ONSdigital/dp-setup#adding-a-new-app)
+    (The files which need changes can be found in the guide for
+    [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app) )
 
-  - If applicable, add the new port it to PORTS.md.
+  - If applicable, add the new port to PORTS.md.
 
 - Issue PR to dp:
 
@@ -42,30 +43,27 @@ they would be with APIs.
 
   - Update URL route of service in the secrets.
 
-  - Update the copied manifest file to reflect the name change and repo move.
+  - Update the copied [manifest file](https://github.com/ONSdigital/dp-configs/tree/master/manifests) to reflect the
+    name change and repo move.
 
-    Manifest files found in https://github.com/ONSdigital/dp-configs/tree/master/manifests
+  ⚠️ Ensure all changes have been merged into develop before continuing.
 
-- Ensure all changes have been merged into develop before continuing.
-
-- Apply the dp-setup ansible for DEVELOP for the vault policies ONLY
-
-  STEP 4 - https://github.com/ONSdigital/dp-setup#adding-a-new-app
+- Apply the dp-setup ansible for DEVELOP for the vault policies ONLY (step 4 in 
+  [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - If the service has a port (eg. api), search for the service URL (e.g. "SEARCH_URL") in the organization in GitHub to
   see where the service is being used and update those accordingly with NEW_SERVICE_NAME.
 
-  MAKE A NOTE OF THE PRs (CHANGES) AS THESE NEED TO BE RELEASED LATER
+  ⚠️ Make a note of the PRs (changes) as these need to be released later.
 
 - Issue PR to dp-configs:
 
   - Update develop secrets of services which use OLD_SERVICE_NAME with the new port numbering
 
-- If applicable, run terraform apply (https://github.com/ONSdigital/dp-ci/tree/master/terraform)
+- If applicable, run terraform apply in [dp-ci](https://github.com/ONSdigital/dp-ci/tree/master/terraform)
 
-- Create a new pipeline in concourse for the newly named service.
-
-  STEP 4 - https://github.com/ONSdigital/dp-ci/tree/master/pipelines/pipeline-generator#manually-generating-the-pipelines
+- Create a new pipeline in concourse for the newly named service (step 4 in [Manually Generating the Pipelines
+  ](https://github.com/ONSdigital/dp-ci/tree/master/pipelines/pipeline-generator#manually-generating-the-pipelines))
 
 - Ship the service in develop through concourse
 
@@ -73,9 +71,8 @@ they would be with APIs.
 
 - Update frontend-router config to point to new port (if the service is a frontend one, e.g. controller)
 
-- Apply the dp-setup ansible for DEVELOP for the consul-template
-
-  STEP 4 - https://github.com/ONSdigital/dp-setup#adding-a-new-app
+- Apply the dp-setup ansible for DEVELOP for the consul-template (step 4 in 
+  [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - Check if develop environment is still working as expected. Then PO-sign off this with Tech Lead
 
@@ -92,15 +89,13 @@ they would be with APIs.
 
 - Release the changes made in dp-api-router or dp-frontend-router
 
-- Apply the dp-setup ansible for PROD for the vault policies ONLY
-
-  STEP 4 - https://github.com/ONSdigital/dp-setup#adding-a-new-app
+- Apply the dp-setup ansible for PROD for the vault policies ONLY (step 4 in 
+  [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - Ship the service in production through concourse
 
-- Apply the dp-setup ansible for PROD for the consul-template
-
-  STEP 4 - https://github.com/ONSdigital/dp-setup#adding-a-new-app
+- Apply the dp-setup ansible for PROD for the consul-template (step 4 in 
+  [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 ## Tidy up - DEVELOP
 
@@ -138,9 +133,9 @@ they would be with APIs.
   the next few days)
 
 - Update concourse to not include OLD_SERVICE_NAME (do pipeline changes
-  - https://github.com/ONSdigital/dp-ci/tree/master/pipelines/branch-manager)
+  https://github.com/ONSdigital/dp-ci/tree/master/pipelines/branch-manager)
 
-- Update references to OLD_SERVICE_NAME to NEW_SERVICE_NAME in dp (https://github.com/ONSdigital/dp)
+- Update references to OLD_SERVICE_NAME to NEW_SERVICE_NAME in [the dp repo](https://github.com/ONSdigital/dp)
 
 - Remove AWS ECR repository of the OLD_SERVICE_NAME (ask Tech Lead to remove as they should have the permission to do
   so)
