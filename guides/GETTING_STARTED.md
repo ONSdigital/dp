@@ -35,8 +35,8 @@ We've made a few attempts at simplifying these steps, but haven't converged on o
 :warning: All steps in this section link to private repositories. If the links don't work for you, revisit the steps in [setting up your mac](#set-up-your-mac-for-development-work) to ensure you're a member of our Github organization.
 
 For all work in this area you will first need to:
-1. [Install ansible](https://github.com/ONSdigital/dp-setup/tree/develop/ANSIBLE.md#install-ansible)
-2. [Configure access to servers](https://github.com/ONSdigital/dp-setup/tree/develop/ANSIBLE.md#configure-access-to-servers)
+1. [Install ansible](https://github.com/ONSdigital/dp-operations/blob/main/guides/ansible.md#install-ansible)
+2. [Configure access to servers](https://github.com/ONSdigital/dp-operations/blob/main/guides/ansible.md#configure-access-to-servers)
 
 ### Infrastructure
 All infrastructure configuration is managed in [dp-setup](https://github.com/ONSdigital/dp-setup) and includes the following pieces of set up:
