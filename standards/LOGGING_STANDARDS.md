@@ -209,7 +209,11 @@ Four additional functions have been added to the log library: `Info`, `Warn`, `E
 
 As we already had a public `Error` function that is used in our apps to display error messages as an option in the logs, the original `Error` function has now been renamed to `FormatError`, which also ensures that the wrapper function names (`Info`, `Warn`, `Error` & `Fatal`) are consistent with their error level. The functionality of `FormatError` remains unchanged.
 
-The `Error` and `Fatal` functions also require that a an error is passed as an argument. An example of this for the `Fatal` function would be: `log.Fatal(ctx, "failed to shutdown http server", errors.New("testfatal"))`. 
+The `Error` and `Fatal` functions also require that an error is passed as an argument. An example of this for the `Fatal` function would be: 
+
+```go
+log.Fatal(ctx, "failed to shutdown http server", errors.New("testfatal"))
+``` 
 
 `FormatError` is called within the `Error` and `Fatal` functions, which ensures that the `StackTrace` information is also shown in the log.
 
