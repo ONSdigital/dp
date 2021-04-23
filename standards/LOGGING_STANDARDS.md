@@ -78,6 +78,7 @@ The following are the only top level fields. If you have app specific details yo
 | `errors`     | No             | [`[]error`](#error-event-data) |                              | [Error event data](#error-event-data)                                   |
 | `raw`        | No             | `string`                       |                              | [Log message captured from a third party library](#third-party-logs)    |
 | `data`       | No             | `object`<sup>3</sup>           |                              | [Arbitrary key-value pairs](#arbitrary-data-fields)                     |
+| `v2`         | Yes            |                                |                              | [v2 library](#v2)
 
 <sup>1</sup> All dates must be UTC and in ISO8601 extended date time format with at least millisecond precision: `yyyy-MM-dd'T'HH:mm:ss.SSSZZ` (e.g. `2019-01-21T16:19:12.356Z`).
 
