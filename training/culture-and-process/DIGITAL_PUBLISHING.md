@@ -1,10 +1,10 @@
-### What is Digital Publishing?
+# What is Digital Publishing?
 
 This is guide that aims to give an overview of the Digital Publishing department - what it is, and what it does.
 
 To understand what Digital Publishing is, it is important to understand how it sits within the wider organisational framework. 
 
-### UKSA
+## UKSA
 
 Digital Publishing is part of the Office for National Statistics, which is part of the UK Statistics Authority (UKSA).
 
@@ -24,14 +24,13 @@ The UKSA consists of three principal areas:
 
 A visualisation of these departments in the form of an organisational chart can be found [here](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2020/09/UK-Statistics-Authority-organisation-chart-008-JH.pdf), and the statistical system flowchart can be found [here](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2020/07/1349_UKSA-statisical-system-flowchart.gif)
 
-### Digital Publishing
+## Digital Publishing
 
 Digital Publishing is the arm of the ONS whose primary focus is on providing content through digital means. The main areas of operation involve the ONS website, API, developer site, content management system, social media, digital and print design, data visualisation, content and editorial work, and various other “digital” and “publishing” things.
 
 The main aims of Digital Publishing can be summarised as the following:
 
 - Continuously improve the user experience of our website, including how we publish open data
-- Improve the ONS Website
 - Future proof the organisation’s digital publishing capability
 - Develop new digital products that extend the impact of our data and analysis
 - Support publishing operations and policy
@@ -40,13 +39,13 @@ The main aims of Digital Publishing can be summarised as the following:
 
 Digital Publishing is made up of a number of different departments and sub-departments. The three main areas that these departments cover are: Publishing and Content, Development, and Insight.
 
-## Publishing and Content
+### Publishing and Content
 
 The Publishing and Content area covers content design and publishing operations. This includes a team of publishing officers and content editors, who are responsible for the timely and accurate dissemination of official statistics, and helping to develop and maintain digital and content standards.
 
 Content design is a multi-disciplinary team of data journalists, data visualisation specialists, design and social media experts whose primary goal is to produce content for the ONS.
 
-## Development
+### Development
 
 The Development area focuses mainly on the software development aspect of Digital Publishing, with software teams working on a range of projects, from improving and advancing existing products, through to creating new systems and tools that will transform how the organisation works. 
 
@@ -55,7 +54,7 @@ Work within this department generally involves the ONS website, content manageme
 Development areas also include Dev Ops, Interaction Design, and Data Delivery. 
 
 
-## Insight
+### Insight
 
 Insight covers the user research, analytics, and business analyst aspects of Digital Publishing. 
 
