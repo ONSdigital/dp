@@ -5,34 +5,26 @@ General guidance on reviewing a pull request and responding
 
 ### Prerequisites, Philosophy and Offering feedback
 
-EGO - The EGO says I'm clever, therefore I MUST be right ...
+When you are making an observation or giving helpful feedback for a specific piece of code (or a general overall comment), if what you are writing is over ~50 words - it may be better to have a direct call or discuss via Slack and then maybe a comment can be placed in the code as to why something is done a particular way.
 
-Hmmm... Contemplate that statement for a long time ... days, months, (years).
+**Teamwork** - Reviewing other peoples work is an act of teamwork and teamwork can be challenging as it requires compromise.
 
-When you are making an observation / giving 'helpfull' feedback (and hopefully not a lecture) for a specific piece of code (or a general overall comment) ... if what you are writing is over ~50 words ... did you forget to leave your 'ego' at the door ?
+**Reviews** - Are an opportunity for learning - so don't just say 'do this' - consider explaining why, especially when its a best practice. Try and explain the value (maybe with links to articles), but be careful that the links you reference are balanced.
 
-TEAMWORK - Remember ... Reviewing other peoples work is an act of Teamwork and Teamwork is not easy because we all have our own Opinions. Teamwork requires compromise. Teamwork can be a bit of a strain, so we all need to watch our Tone. If something is winding you up, take a break ... go for a walk ... chill.
+**Kiss** - Keep It Simple and Straightforward. Does the body of work being reviewed lend itself to Maintenance ? Where applicable, are there sufficient comments explaining why and how something is being done.
 
-REVIEWS - Are an opportunity for learning - so don't just say 'do this' ... consider explaining why, especially when its a best practice ... try and explain the value (maybe with links to articles) ... but be carefull that you are not just echo chamber'ing your opinion with those links.
-
-KISS - Keep It Simple and Straightforward ... Does the body of work being reviewed lend itself to Maintenance ? Where applicable, are there sufficient comments explaining why and how something is being done.
-
-PLAN A, B, C ... There may be many possible solutions to a piece of work ... Don't get to attached to any one idea or position as it may turn out to be flawed. Sometimes plan A don't work, nor plan B, C, D or E and then finally plan F Finaly Flipping works. So don't let your ego hold on to any one idea ... be prepared to let go and try another idea. What that means when reviewing a piece of code that works and passes all tests, but is implemented differently to how you would like it to be done ... is - is that your ego getting the better of you ?
-
-Try not to turn a review into a knife fight !
+**Plan** A, B, C - There may be many possible solutions to a piece of work. Don't get to attached to any one idea or position as it may turn out to be flawed. The writer of the code should be willing to let go and try another idea. What that means when reviewing a piece of code that works and passes all tests, but is implemented differently to how you would like it to be done, unless there is a security or performance problem.
 
 ---
 And last but not least, **`RED Flags - Test Code Removed`**:
 
-https://www.youtube.com/watch?v=rR4n-0KYeKQ
-
-I'm sure no one is doing that !
+If you see test code removed - thoroughly check into the reasons why - they may be valid but often indicate some problem.
 
 ## General things to consider
 
-### Before diving into the Review ...
+### Before diving into the Review
 
-Sometimes a PR will pass all checks on a local machine and then fail in CI for some reason and the author of the PR put it into slack before waiting to see that all tests in CI had passed ...
+Sometimes a PR will pass all checks on a local machine and then fail in CI for some reason and the author of the PR put it into slack before waiting to see that all tests in CI had passed.
 
 If the PR on Github has not passed all tests then report this back to the author of the PR and stop until the author reports back to you that the problem has been fixed.
 
@@ -51,7 +43,7 @@ This is most beneficial when the reviewer is not familiar with the area that the
 ---
 The points presented here are not exhaustive.
 
-Think of it as a checklist and a reminder of things to consider where relevant ...
+Think of it as a checklist and a reminder of things to consider where relevant.
 
 ### The Review
 
@@ -112,7 +104,7 @@ Use `httptest.NewRequest()` in test code and not `http.NewRequest()`
 
 #### checklist:
 
->>>fill in details here ...
+**>>> fill in details here <<<**
 
 ### TODO Any other languages ?
 
@@ -120,10 +112,10 @@ Use `httptest.NewRequest()` in test code and not `http.NewRequest()`
 
 Thank the reviewer.
 
-Suggestions received in a review are JUST suggestions, they are not an instruction.
+Suggestions received in a review are just suggestions, they are not an instruction.
 
 Its OK to push back if for example the effort outweighs the value, or the value has not been clearly explained.
 
-Ask for OR Offer clarification, in a call if needs be.
+Ask for or Offer clarification, in a call if needs be.
 
 Try to respond to each comment.
