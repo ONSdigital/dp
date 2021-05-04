@@ -1,5 +1,4 @@
-Technology Upgrading Policy
-=======================
+# Technology Upgrading Policy
 
 ## Overview
 
@@ -8,12 +7,21 @@ Our approach to version upgrades is contingent on the technology in question. De
 If you notice any upgrades that are not covered by this policy (including major versions of DBs becoming available), please
 raise them on the 20% board for triage.
 
-We don’t update dependencies in legacy apps unless there is a high or severe security vulnerability present (babbage, zebedee, train, brian,
-legacy florence).
+### Legacy apps
+
+We **do not** update dependencies in our legacy apps unless there is a **high or severe security vulnerability** present.
+
+Current legacy apps:
+
+- [babbage](https://github.com/ONSdigital/babbage)
+- [zebedee](https://github.com/ONSdigital/zebedee)
+- [the train](https://github.com/ONSdigital/the-train)
+- [brian](https://github.com/ONSdigital/project-brian)
+- [florence legacy app](https://github.com/ONSdigital/florence) - this can be found in florence's `src/legacy` directory
 
 ### Go
 
-- When a new Go version is released, wait for a patch release (i.e., `0.X.1`) before upgrading. For instance, if it's a choice between Go `1.15.11` and `1.16.0`, go with `1.15.11`.
+- When a new Go version is released, wait for a patch release (i.e., `0.X.1`) before upgrading. For instance, if it's a choice between Go `1.15.11` and `1.16.0`, choose `1.15.11`.
 - Ensure the `go.mod` version is also bumped within applications.
 - We specifically should check that the [Go Docker image](https://hub.docker.com/_/golang) for that version is also available.
 
@@ -35,11 +43,11 @@ legacy florence).
 
 ### Frameworks and libraries
 
-- Go with the latest minor version with a patch. It is also down to senior developers to determine when major version upgrades are worth doing.
+- Choose the latest minor version with a patch. It is also down to senior developers to determine when major version upgrades are worth doing.
 
 ### Platform Technologies
 
-- Upgrade to the latest version once a patch version is available.
+- Upgrade to the latest version once a patch version is available - [technologies listed here](/guides/TECHNOLOGIES.md#platform).
 
 ### Databases
 
