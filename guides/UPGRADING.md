@@ -49,6 +49,8 @@ Current legacy apps:
 
 - Upgrade to the latest version once a patch version is available - [technologies listed here](/guides/TECHNOLOGIES.md#platform).
 
+**note**: there are some platform technologies where versions may be pinned (Terraform, for instance). Any updates in these circumstances will need discussion and planning with Tech Leads.
+
 ### Databases
 
-- Stay up-to-date on patches, but all minor and major updates will need discussion and planning duee to dependency and clients.
+- Stay up-to-date on patches, but all minor and major updates will need discussion and planning due to dependency and clients.
