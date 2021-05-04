@@ -13,7 +13,7 @@ When you are making an observation or giving helpful feedback for a specific pie
 
 **Kiss** - Keep It Simple and Straightforward. Does the body of work being reviewed lend itself to Maintenance ? Where applicable, are there sufficient comments explaining why and how something is being done.
 
-**Plan** A, B, C - There may be many possible solutions to a piece of work. Don't get to attached to any one idea or position as it may turn out to be flawed. The writer of the code should be willing to let go and try another idea. What that means when reviewing a piece of code that works and passes all tests, but is implemented differently to how you would like it to be done, unless there is a security or performance problem.
+**Plan** A, B, C - There may be many possible solutions to a piece of work. Don't get too attached to any one idea or position as it may turn out to be flawed. The writer (and reviewer) of the code should be willing to let go and try another idea. What that means when reviewing a piece of code that works and passes all tests, but is implemented differently to how you would like it to be done then be accepting of the solution, unless there is a security or performance problem.
 
 ---
 And last but not least, **`RED Flags - Test Code Removed`**:
