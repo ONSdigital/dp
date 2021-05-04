@@ -11,7 +11,7 @@ When you are making an observation or giving helpful feedback for a specific pie
 
 **Reviews** - Are an opportunity for learning - so don't just say 'do this' - consider explaining why, especially when its a best practice. Try and explain the value (maybe with links to articles), but be careful that the links you reference are balanced.
 
-**Kiss** - Keep It Simple and Straightforward. Does the body of work being reviewed lend itself to Maintenance ? Where applicable, are there sufficient comments explaining why and how something is being done.
+**Kiss** - Keep It Simple and Straightforward. Does the body of work being reviewed lend itself to maintenance ? Where applicable, are there sufficient comments explaining why and how something is being done.
 
 **Plan** A, B, C - There may be many possible solutions to a piece of work. Don't get too attached to any one idea or position as it may turn out to be flawed. The writer (and reviewer) of the code should be willing to let go and try another idea. What that means when reviewing a piece of code that works and passes all tests, but is implemented differently to how you would like it to be done then be accepting of the solution, unless there is a security or performance problem.
 
@@ -24,7 +24,7 @@ If you see test code removed - thoroughly check into the reasons why - they may 
 
 ### Before diving into the Review
 
-Sometimes a PR will pass all checks on a local machine and then fail in CI for some reason and the author of the PR put it into slack before waiting to see that all tests in CI had passed.
+Sometimes a PR will pass all checks on a local machine and then fail in CI for some reason and the author of the PR puts it into slack before waiting to see that all tests in CI had passed.
 
 If the PR on Github has not passed all tests then report this back to the author of the PR and stop until the author reports back to you that the problem has been fixed.
 
@@ -55,7 +55,7 @@ Think of it as a checklist and a reminder of things to consider where relevant.
 - Does the code work - tests pass ?
 - Are functions and variables named well ?
 - Are there suffucient tests ?
-- Are tests meaningfull ?
+- Are tests meaningful ?
 - Is test code coverage adequate ?
 - Can you understand the code ?
 - Any sensitive data being revealed ?
@@ -65,7 +65,7 @@ Think of it as a checklist and a reminder of things to consider where relevant.
 - Is input data validated ?
 - Might the code suffer speed issues (benefit from, for example: pagination) ?
 - Is the code modular, where applicable ?
-- Does code and test code address ALL sunny and rainy day paths (capture / process all errors) ?
+- Does code and test code address all sunny and rainy day paths (capture / process all errors) ?
 - Are there simpler solutions ?
 - Are logs produced in the code sensible ?
 - Has a suitable linter been run and where possible, the issues raised by the linter cleaned up ?
@@ -116,6 +116,6 @@ Suggestions received in a review are just suggestions, they are not an instructi
 
 Its OK to push back if for example the effort outweighs the value, or the value has not been clearly explained.
 
-Ask for or Offer clarification, in a call if needs be.
+Ask for or offer clarification, in a call if needs be.
 
 Try to respond to each comment.
