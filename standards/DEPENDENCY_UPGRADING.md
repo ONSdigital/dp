@@ -101,11 +101,11 @@ Exclusions for the dependency audit are defined in the pom.xml file, under the c
                                 
                 <configuration>
                    <excludeCoordinates>
-                       <exlude>
+                       <exclude>
                            <groupId>org.elasticsearch</groupId>
                            <artifactId>elasticsearch</artifactId>
                            <version>2.1.1</version>
-                       </exlude>
+                       </exclude>
                    </excludeCoordinates>
                 </configuration>
             </plugin>
@@ -122,6 +122,44 @@ Once a dependency has been updated, first ensure the code builds (`make build`),
 If there is no exclusion defined in the pom.xml file, it may have been flagged by Github's dependabot tool. The dependabot vulnerabilities can be seen by going to the `/security/dependabot` path of the repository. For example with Zebedee: https://github.com/ONSdigital/zebedee/security/dependabot
 
 Dependabot may have already created a PR with the updated dependency, though it will be that dependency specifically (not considering parent dependencies). It may also not be the latest version, as there may have been a newer version released since the PR was created. A dependabot PR will be automatically closed if the vulnerability gets fixed by another PR.
+
+## Javascript based apps and libraries
+
+### Application dependencies
+
+The Javascript apps use the build tool NPM, where dependencies are defined in a `package.json` file. Normally there is a single `package.json` file at the root of the project, though there may be multiple if there are sub projects (e.g. Florence)
+
+Each dependency in the `package.json` file has an entry under the `dependencies` section:
+
+```
+  "dependencies": {
+    "react": "^15.6.2",
+    ...
+  }  
+```
+
+To run an audit of the dependencies, run the `make audit` command. This is a wrapper for the underlying command `npx auditjs ossi`
+
+Exclusions for the dependency audit are defined in the `audit-allowlist.json` file. When fixing a vulnerability, make sure any exclusions for that dependency are removed. Below is an example exclusion file with a single exclusion for the moment dependency.
+
+```
+{
+    "ignore": [
+        { "id": "58fdd459-8d4a-4bf6-b106-ef7cff98268c", "package": "moment" }
+    ]
+}
+```
+
+If the vulnerable dependency is not listed in the `package.json` file, it will be a transitive dependency, meaning it is a dependency of a dependency. In these cases it is useful to use the `npm ls` command. This command is run from the directory of the `package.json` file, and will print a tree like representation of dependencies. The output can be searched for the vulnerable dependency, and then the parent of that dependency can be seen. In these cases consider whether updating the parent dependency would be more appropriate. Sometimes updating the parent dependency still does not use a fixed version of the vulnerable dependency. If a transitive dependency needs a specific version, create a new entry under the `resolutions` section of the `package.json`. This will override the existing version used by the parent. It is recommended to only upgrade the minor version if possible, as a major version may include breaking changes.
+
+To see the available versions of a dependency, go to https://www.npmjs.com/ and search the dependency name. For a specific version, select the version tab and then select the version required. Under the install section there will be an example `npm` command to install the dependency at that specific version.
+
+Once a dependency has been updated, first ensure the code builds (`make build`), and the tests pass (`make test`). Ideally then the code where the dependency is used will be tested. To determine where a dependency is used, search the codebase for the import statement of that dependency. If it is a transitive dependency, the parent dependency will need to be used in the search.
+
+If there is no exclusion defined in the pom.xml file, it may have been flagged by Github's dependabot tool. The dependabot vulnerabilities can be seen by going to the `/security/dependabot` path of the repository. For example with Florence: https://github.com/ONSdigital/florence/security/dependabot
+
+Dependabot may have already created a PR with the updated dependency, though it will be that dependency specifically (not considering parent dependencies). It may also not be the latest version, as there may have been a newer version released since the PR was created. A dependabot PR will be automatically closed if the vulnerability gets fixed by another PR.
+
 
 ## Other technologies
 
