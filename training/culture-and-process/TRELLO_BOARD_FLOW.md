@@ -67,4 +67,4 @@ Provided that all of the above criteria have been met, you can now begin the rel
 
 ### Next steps
 
-- Understanding of [70, 20 and 10 percent time](./70_20_10_SPLIT.md)
+- Understanding of [70%, 20% and 10% time](./70_20_10_TIME.md)
