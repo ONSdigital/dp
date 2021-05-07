@@ -25,7 +25,7 @@ Please remember that when a 20% story is triaged and looked at by others that th
 
 One should use the relevant templates available on the trello board, these can be found in the column at the end of the board by scrolling right.
 
-Important things to consider when writing up the story:
+**Important things to consider when writing up the story:**
 
 - The story should have a clear succinct title
 - Adding the relevant labels on the story (Spike, Bug etc.)
