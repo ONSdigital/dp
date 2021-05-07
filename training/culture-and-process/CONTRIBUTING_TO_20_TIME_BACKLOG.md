@@ -8,7 +8,7 @@ Below is how you can help to get your ideas and resolving bugbears you may have 
 ### Pre-reading
 
 - It is useful to have an understanding of the [Trello board and flow of stories](./TRELLO_BOARD_FLOW.md) and how we use it to organise development workflow as it is mentioned in this documentation
-- It is useful to have an understanding of [70, 20 and 10 percent time](./70_20_10_SPLIT.md)
+- It is useful to have an understanding of [70%, 20% and 10% time](./70_20_10_TIME.md)
 
 ### How to get ideas onto the 20% Trello Board?
 
