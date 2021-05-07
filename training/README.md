@@ -12,9 +12,9 @@ If you come across a resource that really helped you understand some technology 
 Modules
 ----------------------------
 #### Team culture & process
-* [Culture and Inclusion]()
+* [Culture and Inclusion](culture-and-process/CULTURE.md)
 * [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
-* [Developer Processes]()
+* Developer Processes
     * [Pull Request Guidance](culture-and-process/PULL_REQUEST_GUIDANCE.md)
     * [Trello Board - Flow of Stories](culture-and-process/TRELLO_BOARD_FLOW.md)
     * [Gitflow](culture-and-process/GITFLOW.md)
@@ -22,33 +22,34 @@ Modules
 
 
 #### Architectural principles & approach
+* [Architectural principles](architecture/ARCHITECTURE_PRINCIPLES.md)
 * [12 Factor App principles](architecture/12_FACTOR_APP_PRINCIPLES.md)
-* [Security]()
-* [Data modeling, what databases we use and when]()
+* Security
+* Data modeling, what databases we use and when
 
 #### Our services
-* [Web & Publishing Journeys]()
-* [Microservices & Customise my Data Journey]()
+* Web & Publishing Journeys
+* Microservices & Customise my Data Journey
 * [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
 * [Platform Services](platform-services/PLATFORM.md)
 
 #### Technologies we use
-* [How we choose technologies]()
+* How we choose technologies
 * Go
     * [Intro to Go](languages/GOLANG.md)
-    * [Concurrency]()
+    * Concurrency
 * AWS
-    * [Intro to AWS]()
+    * Intro to AWS
 
 #### Testing
-* [Our testing approach]()
-* [Unit testing in Go]()
-* [Unit testing in Java]()
-* [Unit testing in JavaScript]()
+* Our testing approach
+* Unit testing in Go
+* Unit testing in Java
+* Unit testing in JavaScript
 
 #### Support
 * [Support 101](support/SUPPORT101.md)
-* [Support 201]()
+* Support 201
 
 Key
 -------
