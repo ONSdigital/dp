@@ -70,10 +70,10 @@ func TestHelloWorld2(t *testing.T) {
 	})
 }
 
-//TestHelloWorld3 is a half finished test where we want Convey to only test the tests that are finished.
-//Focus Convey - all sub Convey's need to be FocusConvey's otherwise they are ignored.
-//SkipConvey - all Convey's and tests underneath will be skipped
-//SkipSo - this test is skipped
+// TestHelloWorld3 is a half finished test where we want Convey to only test the tests that are finished.
+// Focus Convey - all sub Convey's need to be FocusConvey's otherwise they are ignored.
+// SkipConvey - all Convey's and tests underneath will be skipped
+// SkipSo - this test is skipped
 func TestHelloWorld3(t *testing.T) {
 	const MaxDifference = 3
 	FocusConvey("Given two numbers check x is greater than y", t, func() { //ONLY TESTS WITH FOCUS ARE RUN.

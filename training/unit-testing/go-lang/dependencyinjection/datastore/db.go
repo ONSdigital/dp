@@ -5,11 +5,11 @@ import (
 )
 
 type store struct {
-	d *sql.DB
+	db *sql.DB
 }
 
-func NewDatastore(d *sql.DB) Store {
-	return &store{d}
+func NewDatastore(db *sql.DB) Store {
+	return &store{db}
 }
 
 type Store interface {
