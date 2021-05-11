@@ -1,4 +1,4 @@
-package d_order_of_execution
+package orderexecution
 
 import (
 	"fmt"

@@ -1,22 +1,21 @@
-package dependencyinjection
+package main
 
 import (
 	"bufio"
 	"database/sql"
 	"fmt"
-	"github.com/ONSdigital/dp/training/unit-testing/go-lang/c-dependency-injection/datastore"
-	service "github.com/ONSdigital/dp/training/unit-testing/go-lang/c-dependency-injection/service"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/dependencyinjection/datastore"
+	service "github.com/ONSdigital/dp/training/unit-testing/go-lang/dependencyinjection/service"
 	"os"
 	"strconv"
 )
 
-// This is a training application made by Office to demonstrate testing in Go
 func main() {
 	// Define connection string for MongoDB
-	conStr := "dbname=corporatePostgres sslmode=enabled"
-	db, _ := sql.Open("postgres", conStr)
-	// Create a data store dependency with the db connection
-	store := datastore.NewDatastore(db)
+	conStr := "dbname=aDatabase"
+	d, _ := sql.Open("postgres", conStr)
+	// Create a data store dependency with the d connection
+	store := datastore.NewDatastore(d)
 	// Create the service by injecting the store as a dependency
 	service := &service.Service{Store: store}
 	// The following code implements a simple command line app to read the ID as input

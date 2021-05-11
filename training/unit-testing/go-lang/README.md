@@ -43,7 +43,7 @@ To get started quickly if you've already got Go installed, and you use a bash/li
 - [Order of execution](4.orderOfExecution/README.md)
 - [More complex test using Depedency Injection](4.orderOfExecution/README.md)
 - *Assertion Examples
-- [Benchmarking Examples](6.benchmarking/README.md)
+- [Benchmarking Examples](benchmarking/README.md)
 - Further GoConvey Information (external links)
     - [Converting natural language to GoConvey test stubs](moreGoConvey.md#testStubs)
     - [Setup and Teardown]
@@ -54,7 +54,7 @@ To get started quickly if you've already got Go installed, and you use a bash/li
     - [Other things to look out for](moreGoConvey.md#gotchas)
 
 #### Mocking
-- [Mocking dependencies / portions of system you don't need to test](https://github.com/ONSdigital/dp/tree/master/training/unitTesting/goLang/helloWorld)
+- [Mocking dependencies / portions of system you don't need to test](https://github.com/ONSdigital/dp/tree/master/training/unit-testing/go-lang/helloWorld)
 
 #### Code Coverage (*)
 - Code Coverage

@@ -2,14 +2,14 @@ package service
 
 import (
 	"errors"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/dependencyinjection/datastore"
 	"testing"
 
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/datastore"
 	ass "github.com/smartystreets/assertions"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
-//TestServiceSuccessWithConvey tests...
+// TestServiceSuccessWithConvey tests...
 func TestServiceSuccessWithConvey(t *testing.T) {
 	Convey("Given an ID of 2", t, func() {
 		// Create a new instance of the mock store
@@ -30,7 +30,6 @@ func TestServiceSuccessWithConvey(t *testing.T) {
 		if err != nil {
 			t.Errorf("error should be nil, got: %v", err)
 		}
-
 	})
 }
 

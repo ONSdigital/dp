@@ -3,15 +3,15 @@ package service
 import (
 	"fmt"
 
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/datastore"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/dependencyinjection/datastore"
 )
 
-//Service contains the datastore store
+// Service contains the datastore store
 type Service struct {
 	Store datastore.Store
 }
 
-//GetNumber gets the ID
+// GetNumber gets the ID
 func (s *Service) GetNumber(ID int) error {
 	// Use the `Get` method of the dependency to retreive the value of the database entry
 	result, err := s.Store.Get(ID)
@@ -26,7 +26,7 @@ func (s *Service) GetNumber(ID int) error {
 	return nil
 }
 
-//NewGetNumber gets the
+// NewGetNumber gets the
 func NewGetNumber(store datastore.Store) func(int) error {
 	return func(ID int) error {
 		// Use the `Get` method of the dependency to retreive the value of the database entry

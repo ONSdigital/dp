@@ -1,4 +1,4 @@
-module github.com/ONSdigital/dp/training/unit-testing/go-lang/1.hello-world
+module github.com/ONSdigital/dp/training/unit-testing/go-lang/helloworld
 
 go 1.16
 
