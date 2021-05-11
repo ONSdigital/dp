@@ -1,14 +1,13 @@
-package main
+package dependencyinjection
 
 import (
 	"bufio"
 	"database/sql"
 	"fmt"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/c-dependency-injection/datastore"
+	service "github.com/ONSdigital/dp/training/unit-testing/go-lang/c-dependency-injection/service"
 	"os"
 	"strconv"
-
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/datastore"
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/service"
 )
 
 // This is a training application made by Office to demonstrate testing in Go

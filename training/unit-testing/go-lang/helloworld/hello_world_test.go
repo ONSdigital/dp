@@ -6,7 +6,9 @@ import (
 	ass "github.com/smartystreets/assertions"
 	. "github.com/smartystreets/goconvey/convey"
 )
-
+// If you are new to GoLang check out these useful links on reddit:
+// https://www.reddit.com/r/golang/comments/n5ppx5/some_resources_that_have_helped_me_learn_golang/?utm_source=share&utm_medium=web2x&context=3
+//
 // Test files must end in _test
 // Tests in the test test file must start with exactly "Test"
 // "Convey" is defining what you're about to test, or the situation

@@ -2,9 +2,10 @@ package service
 
 import (
 	"errors"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/c-dependency-injection/datastore"
 	"testing"
 
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/datastore"
+	//"github.com/ONSdigital/dp/training/unit-testing/go-lang/3.dependencyInjection/datastore"
 	ass "github.com/smartystreets/assertions"
 	. "github.com/smartystreets/goconvey/convey"
 )

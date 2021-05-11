@@ -1,4 +1,4 @@
-package threadcontrol
+package choicetests
 
 import (
 	"os"

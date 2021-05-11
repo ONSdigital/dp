@@ -3,7 +3,7 @@ package service
 import (
 	"fmt"
 
-	"github.com/ONSdigital/dp/training/unitTesting/goLang/3.dependencyInjection/datastore"
+	"github.com/ONSdigital/dp/training/unit-testing/go-lang/3-dependency-injection/datastore"
 )
 
 // Service contains the datastore store
