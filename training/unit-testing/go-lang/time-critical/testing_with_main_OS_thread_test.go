@@ -4,7 +4,6 @@ import (
 	"os"
 	"runtime"
 	"testing"
-	// . "github.com/smartystreets/goconvey/convey"
 )
 
 // init is used here to ensure current goroutine exclusively tied to current OS thread
