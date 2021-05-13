@@ -35,8 +35,8 @@ We've made a few attempts at simplifying these steps, but haven't converged on o
 :warning: All steps in this section link to private repositories. If the links don't work for you, revisit the steps in [setting up your mac](#set-up-your-mac-for-development-work) to ensure you're a member of our Github organization.
 
 For all work in this area you will first need to:
-1. [Install ansible](https://github.com/ONSdigital/dp-setup/tree/develop/ANSIBLE.md#install-ansible)
-2. [Configure access to servers](https://github.com/ONSdigital/dp-setup/tree/develop/ANSIBLE.md#configure-access-to-servers)
+1. [Install ansible](https://github.com/ONSdigital/dp-operations/blob/main/guides/ansible.md#install-ansible)
+2. [Configure access to servers](https://github.com/ONSdigital/dp-operations/blob/main/guides/ansible.md#configure-access-to-servers)
 
 ### Infrastructure
 All infrastructure configuration is managed in [dp-setup](https://github.com/ONSdigital/dp-setup) and includes the following pieces of set up:
@@ -53,6 +53,8 @@ All CI configuration is managed in [dp-ci](https://github.com/ONSdigital/dp-ci) 
 #### CMD import steps
 
 1. [Import recipes](https://github.com/ONSdigital/dp-recipe-api) using the `import-recipes` script
+    - If you're running a local graph database like Neo4j you'll also need to [import code lists](https://github.com/ONSdigital/dp-code-list-scripts) for the recipes you'll be using and may need to [import hierarchies](https://github.com/ONSdigital/dp-hierarchy-builder).
+    - In most cases this is not currently needed, as we use a shared instance of Neptune running in the Development AWS account.
 2. [Create datasets](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#create-a-cmd-dataset-page)
 3. [Import a file](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#import-a-v4-file)
 4. [Publish a collection](https://github.com/ONSdigital/florence/tree/develop/USAGE.md#publish-a-collection)
