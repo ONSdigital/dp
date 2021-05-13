@@ -2,7 +2,7 @@ Unit Testing in Go
 ==================
 
 ### Pre reading & Pre requisites
-It's advised that you are comfortable with GoLang or another programming or scripting language.  The setup is focussed on linux based operating systems..
+It's advised that you are comfortable with Go or another programming or scripting language.  The setup is focussed on linux based operating systems..
 
 ## Contents
 - [Less wordy material](#Less wordy material)
@@ -71,7 +71,7 @@ Code that is easy to test is often code which follows the [SOLID](https://github
 #### Dependency Injection
 This allows objects to be more independent of their main dependencies, for example we could create a website templating module which could implement all the functionality required to template the website, minus the rendering.  This rendering functionality could be injected, for example for devices such as mobile, tablet, laptop.  The rendering on the different browsers could then be injected into the rendering routines for the different devices... and so the design unfolds.
 
-The following [walk-through in GoLang is useful](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection)
+The following [walk-through in Go is useful](https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/dependency-injection)
 
 Another occasion when Dependency Injection is useful is when making mockups.  The following downloadable example walks through this technique:
 - [Dependency Injection within Mockups](https://github.com/sohamkamani/go-dependency-injection-example)
@@ -118,7 +118,7 @@ Unit testing is the process of testing a portion of an application or service to
 Ideally we should only test the portion of the application we are focused on, and shouldn't connect with other areas of a system.  This can be difficult, and so sometimes different portions of the system are 'mocked'.
 
 ### Is Unit Testing Ever Pointless?
-Very occasionally Unit Testing can be pointless, as the mockup's required are so complex to write and maintain, that testing these portions another way is more suitable, such as through integration tests, or end-to-end tests, or simply through manual code reviews.
+Very occasionally Unit Testing can be pointless, as the mockup's required are so complex to write and maintain, that testing these portions another way is more suitable, such as through integration tests, or end-to-end tests  , or simply through manual code reviews.
 
 Also, when creating throw away code, such as for a demo, then Unit Testing may be pointless, as long ask you're sure the code will not see Production.
 

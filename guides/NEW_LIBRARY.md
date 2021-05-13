@@ -20,7 +20,7 @@ To follow this guide you will need:
 
   `$ brew install git`
 
-* Fly CLI (can be downloaded from the links in the corner of the concourse UI)
+* Fly CLI (can be downloaded from the links in the corner of the [Concourse UI](https://concourse.onsdigital.co.uk/) UI)
 
 Getting started
 ---------------

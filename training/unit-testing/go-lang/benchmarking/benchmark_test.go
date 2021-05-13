@@ -15,7 +15,7 @@ func init() {
 }
 
 // TestMain demonstrates the use of TestMain and also attaching the tests to the main OS thread.
-// Can be run with th following command `go test -run=XXX -bench=.`This may be usedful for some Go functionality that needs to have the test thread attached to the OS thread.
+// Can be run with the following command `go test -run=XXX -bench=.`This may be usedful for some Go functionality that needs to have the test thread attached to the OS thread.
 // XXX is a regular expression which is to match any functions that need to be also run as part of the Benchmarking
 // The dot after `bench=` is a regular expression to match which Benchmark tests to run.
 //
