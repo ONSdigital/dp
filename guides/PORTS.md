@@ -73,4 +73,5 @@ in development without having to configure port numbers etc.
 | 25600 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api) |
 | 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api) |
 | 25800 | [dp-search-data-extractor](https://github.com/ONSdigital/dp-search-data-extractor) |
+| 25900 | [dp-search-data-importer](https://github.com/ONSdigital/dp-search-data-importer) |
 
