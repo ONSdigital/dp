@@ -132,13 +132,13 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/gui
 
 ### Testing SSH Connection
 
-To check that you've setup your Git SSH on your terminal open your favoured terminal and enter:
+To check that you've set up your Git SSH on your terminal, open your favoured terminal and enter:
   * `ssh -T git@github.com`
   
-You will then be asked to type *yes* if you're ready to connect.  You should then be then be prompted with:
+You will then be asked to type *yes* if you're ready to connect. You should then be prompted with:
   * `Hi [YOUR GIT USERNAME]! You've successfully authenticated, but GitHub does not provide shell access.`
 
-You can then close your terminal.  If its unsuccessful check you've used the correct email address (email used for Github account) when creating and saving your key.
+You can then close your terminal. If it's unsuccessful check you've used the correct email address (email used for Github account) when creating and saving your key.
 
 ### Background
 
