@@ -49,9 +49,9 @@ Content design is a multi-disciplinary team of data journalists, data visualisat
 
 The Development area focuses mainly on the software development aspect of Digital Publishing, with software teams working on a range of projects, from improving and advancing existing products, through to creating new systems and tools that will transform how the organisation works. 
 
-Work within this department generally involves the ONS website, content management systems, and publishing platforms. More specific focus can be on the API and backend, which is responsible for our public-facing APIs, our developer site, and our backend publishing systems. Additional focus is on our data import and export pipelines, and working with statistical teams to migrate their data, and also exploring ideas we may take through to production in the future.
+Work within this department generally involves the ONS website, content management systems, and publishing platforms. More specific focus can be on the API and backend, which is responsible for our public-facing APIs, our developer site, and our backend publishing systems. Additional focus is on our data import and export pipelines, and working with content design teams to make the website better meet user needs, and also exploring ideas we may take through to production in the future.
 
-Development areas also include Dev Ops, Interaction Design, and Data Delivery. 
+Development areas also include Dev Ops (where it is important to note that all of our developers are equally responsbile for all of our platform work and the maintenance of our applications), Interaction Design, and Data Delivery. 
 
 
 ### Insight
