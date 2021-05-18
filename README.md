@@ -5,13 +5,18 @@ The digital publishing platform is a collection of services which provide
 content management and publishing functionality for ONS content, and is
 responsible for the public ONS website.
 
+Joining the team
+-----------------------
+
+* [Getting your local environment set up](guides/GETTING_STARTED.md)
+* [Learn about our team and how we work](training/README.md)
+
 Guides and general info
 -----------------------
 
-* [Getting started](guides/GETTING_STARTED.md)
 * [Release process](guides/RELEASES.md)
-* [Contributing guidelines](guides/CONTRIBUTING.md)
 * [Tagging a release](guides/TAGS.md)
+* [Contributing guidelines](guides/CONTRIBUTING.md)
 * [Creating a new app](guides/NEW_APP.md)
 * [Port numbering](guides/PORTS.md)
 * [Technologies](guides/TECHNOLOGIES.md)
@@ -21,9 +26,8 @@ Guides and general info
 Standards and specifications
 ----------------------------
 
+* [Architectural standards](standards/ARCHITECTURE_STANDARDS.md)
 * [Development standards](standards/DEV_STANDARDS.md)
-* [Definition of Ready](standards/DEFINITION_OF_READY.md)
-* [Definition of Done](standards/DEFINITION_OF_DONE.md)
 * [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
 * [API standards](standards/API_STANDARDS.md)
 * [Logging standards](standards/LOGGING_STANDARDS.md)
