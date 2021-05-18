@@ -24,6 +24,7 @@ Modules
 #### Architectural principles & approach
 * [Architectural principles](architecture/ARCHITECTURE_PRINCIPLES.md)
 * [12 Factor App principles](architecture/12_FACTOR_APP_PRINCIPLES.md)
+* [Common data terms](architecture/DATA_TERMS.md)
 * Security
 * Data modeling, what databases we use and when
 

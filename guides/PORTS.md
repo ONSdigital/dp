@@ -3,8 +3,8 @@ Port allocations
 
 These are the port numbers used by DP services.
 
-Using distinct port numbers for each services keeps it simple to start everything
-in development without having to configure port numbers etc.
+Using distinct port numbers for each service means we can run everything
+in development without having to configure them individually.
 
 ### Default port numbers
 
@@ -74,4 +74,4 @@ in development without having to configure port numbers etc.
 | 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api) |
 | 25800 | [dp-search-data-extractor](https://github.com/ONSdigital/dp-search-data-extractor) |
 | 25900 | [dp-search-data-importer](https://github.com/ONSdigital/dp-search-data-importer) |
-
+| 26000 | [dp-collection-api](https://github.com/ONSdigital/dp-collection-api) |
