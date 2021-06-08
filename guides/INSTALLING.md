@@ -1,7 +1,7 @@
 Install, configure and run services
 ===============
 
-As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
+As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
 --------------
 
@@ -19,9 +19,9 @@ In the below, the installation of each app is typically one of:
 
 Software | Install | Notes
 -------- | ------- | ----- |
-[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew cask install adoptopenjdk8`
+[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install --cask adoptopenjdk8`
 [Maven](https://maven.apache.org/)                        | `$ brew install maven`
-[Docker](https://www.docker.com/get-started)              | `$ brew cask install docker`
+[Docker](https://www.docker.com/get-started)              | `$ brew install --cask docker`
  Docker Compose                                           | `$ brew install docker-compose`
 [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell` | deprecated (not needed if using Neptune over Neo4j)
 [Node.js and npm](https://nodejs.org/en/)                 | `$ brew install node@12` (LTS version) | Append `export PATH="/usr/local/opt/node@12/bin:$PATH"` to your startup files and restart your terminal.
@@ -41,9 +41,9 @@ Software | Install | Notes
     - MongoDB
     - Elasticsearch 5 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
-    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/master/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
+    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 ---
 
@@ -67,6 +67,7 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+* [dp-frontend-feedback-controller](https://github.com/ONSdigital-dp-frontend-feedback-controller)
 
   ```bash
   git clone git@github.com:ONSdigital/babbage
@@ -79,6 +80,8 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
   git clone git@github.com:ONSdigital/dp-frontend-homepage-controller
   git clone git@github.com:ONSdigital/dp-frontend-cookie-controller
   git clone git@github.com:ONSdigital/dp-frontend-dataset-controller
+
+  git clone git@github.com:ONSdigital/dp-frontend-feedback-controller
   ```
 
 ### Publishing Journey
@@ -88,11 +91,19 @@ All services listed in the [web journey](#web-journey) are required for the publ
 * [florence](https://github.com/ONSdigital/florence)
 * [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
+* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer)
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
   git clone git@github.com:ONSdigital/florence
   git clone git@github.com:ONSdigital/The-Train
   git clone git@github.com:ONSdigital/dp-api-router
+  git clone git@github.com:ONSdigital/dp-image-api
+  git clone git@github.com:ONSdigital/dp-image-importer
+  git clone git@github.com:ONSdigital/dp-upload-service
+  git clone git@github.com:ONSdigital/dp-download-service
   ```
 
 ### CMD Journeys
@@ -115,13 +126,14 @@ All the services in the [web] and [publishing] journeys, as well as:
 
 * [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
 * [dp-import-api](https://github.com/ONSdigital/dp-import-api)
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)
 * [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)
 * [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor)
 * [dp-dimension-importer](https://github.com/ONSdigital/dp-dimension-importer)
 * [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor)
 * [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer)
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
-* [dp-search-builder](https://github.com/ONSdigital/dp-search-builder)
+* [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder)
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
 
   ```bash
@@ -133,30 +145,28 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-observation-extractor
   git clone git@github.com:ONSdigital/dp-observation-importer
   git clone git@github.com:ONSdigital/dp-hierarchy-builder
-  git clone git@github.com:ONSdigital/dp-search-builder
+  git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
 
 #### Filter journey:
-* [dp-search-api](https://github.com/ONSdigital/dp-search-api)
+* [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api)
 * [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api)
 * [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api)
 * [dp-filter-api](https://github.com/ONSdigital/dp-filter-api)
 * [dp-dataset-exporter](https://github.com/ONSdigital/dp-dataset-exporter)
 * [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx)
-* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
 
   ```bash
-  git clone git@github.com:ONSdigital/dp-search-api
+  git clone git@github.com:ONSdigital/dp-dimension-search-api
   git clone git@github.com:ONSdigital/dp-code-list-api
   git clone git@github.com:ONSdigital/dp-hierarchy-api
   git clone git@github.com:ONSdigital/dp-filter-api
   git clone git@github.com:ONSdigital/dp-dataset-exporter
   git clone git@github.com:ONSdigital/dp-dataset-exporter-xlsx
-  git clone git@github.com:ONSdigital/dp-download-service
   ```
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
@@ -192,7 +202,6 @@ Variable name | note
 `DATASET_ROUTES_ENABLED` | `true` will enable the filterable dataset routes (the CMD journey) in some services
 `FORMAT_LOGGING` | if `true` then `zebedee` will format its logs
 `SERVICE_AUTH_TOKEN` | a value for `zebedee` to work
-`NEW_HOMEPAGE_ENABLED` | set `true` to get new ONS homepage
 
 After all the various steps, here's an example set of exports and their values that you might now have in your [startup file](#startup-file):
 
@@ -205,8 +214,6 @@ export ENCRYPTION_DISABLED=true
 export DATASET_ROUTES_ENABLED=true
 export FORMAT_LOGGING=true
 export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"
-export NEW_HOMEPAGE_ENABLED=true
-
 
 export TRANSACTION_STORE=$zebedee_root/zebedee/transactions
 export WEBSITE=$zebedee_root/zebedee/master
@@ -214,7 +221,7 @@ export PUBLISHING_THREAD_POOL_SIZE=10
 
 ```
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
@@ -236,6 +243,7 @@ Run all the services in the [web journey](#web-journey)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+* [dp-frontend-feedback-controller](https://github.com/ONSdigital-dp-frontend-feedback-controller)
 
 The website will be available at http://localhost:20000
 
@@ -248,18 +256,26 @@ Run all of the services in the [web journey](#web-journey), **but** change the c
 
 and also run the following:
 
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
-* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true ENABLE_HOMEPAGE_PUBLISHING=true`
+* [The-Train](https://github.com/ONSdigital/The-Train)
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 
-Florence will be available at http://localhost:8081/florence/login
+If you also want to run Florence with the ability to edit images on the homepage (for the Featured Content section), you will need to additionally run:
+
+* [dp-image-api](https://github.com/ONSdigital/dp-image-api)
+* [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) - use: `make debug ENCRYPTION_DISABLED=true`
+* [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) - use `make debug ENCRYPTION_DISABLED=true`
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)  - use: `make debug ENCRYPTION_DISABLED=true`
+
+Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
 The website will be available at [http://localhost:8081](http://localhost:8081) after a successful login into florence. Login details are in the [florence repository](https://github.com/ONSdigital/florence/blob/develop/USAGE.md).
-
 
 ### CMD
 
 All of the services in the [web](#web-journey), [publishing](#publishing-journey) and [CMD](#cmd-journeys) journeys need to be run for the full CMD journey to work. This journey includes importing data, publishing it and testing the public journey.
+
+> You will want to make sure you have access to the Neptune test instance as well, if you want the entire CMD journey to be accessible. Details on how to set this up can be found [here](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md).
 
 Use the following alternative commands:
 
@@ -274,10 +290,8 @@ Use the following alternative commands:
 If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web-journey) services. Again, use the commands:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
-* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug `
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug`
 * unset `ENABLE_PRIVATE_ENDPOINTS`
-
-
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 

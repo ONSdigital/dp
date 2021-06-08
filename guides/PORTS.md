@@ -3,8 +3,8 @@ Port allocations
 
 These are the port numbers used by DP services.
 
-Using distinct port numbers for each services keeps it simple to start everything
-in development without having to configure port numbers etc.
+Using distinct port numbers for each service means we can run everything
+in development without having to configure them individually.
 
 ### Default port numbers
 
@@ -45,16 +45,15 @@ in development without having to configure port numbers etc.
 | 22600 | [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api) |
 | 22700 | [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder) |
 | 22800 | [dp-dataset-exporter-xlsx](https://github.com/ONSdigital/dp-dataset-exporter-xlsx) |
-| 22900 | [dp-search-builder](https://github.com/ONSdigital/dp-search-builder) |
-| 23100 | [dp-search-api](https://github.com/ONSdigital/dp-search-api) |
+| 22900 | [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder) |
+| 23100 | [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api) |
 | 23200 | [dp-api-router](https://github.com/ONSdigital/dp-api-router) |
 | 23300 | [dp-table-renderer](https://github.com/ONSdigital/dp-table-renderer) |
 | 23400 | [dp-file-downloader](https://github.com/ONSdigital/dp-file-downloader) |
 | 23500 | [dp-map-renderer](https://github.com/ONSdigital/dp-map-renderer) |
 | 23600 | [dp-developer-site](http://github.com/ONSdigital/dp-developer-site) |
 | 23700 | [dp-frontend-geography-controller](https://github.com/ONSdigital/dp-frontend-geography-controller) |
-| 23800 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api) |
-| 23900 | [dp-search-query](https://github.com/ONSdigital/dp-search-query) |
+| 23900 | [dp-search-api](https://github.com/ONSdigital/dp-search-api) |
 | 24000 | [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller) |
 | 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller) |
 | 24200 | [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) |
@@ -69,3 +68,11 @@ in development without having to configure port numbers etc.
 | 25100 | [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) |
 | 25200 | [dp-frontend-feedback-controller](https://github.com/ONSdigital/dp-frontend-feedback-controller) |
 | 25300 | [dp-topic-api](https://github.com/ONSdigital/dp-topic-api) |
+| 25400 | [dp-permissions-api](https://github.com/ONSdigital/dp-permissions-api) |
+| 25500 | [dp-areas-api](https://github.com/ONSdigital/dp-areas-api) |
+| 25600 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api) |
+| 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api) |
+| 25800 | [dp-search-data-extractor](https://github.com/ONSdigital/dp-search-data-extractor) |
+| 25900 | [dp-search-data-importer](https://github.com/ONSdigital/dp-search-data-importer) |
+| 26000 | [dp-collection-api](https://github.com/ONSdigital/dp-collection-api) |
+| 26100 | [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset) |

@@ -1,7 +1,7 @@
 Set up MacBook for development work
 ====
 
-This document is part of the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide.
+This document is part of the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide.
 
 Install Applications
 ----
@@ -17,7 +17,7 @@ Install Applications
     - either install from the above website, or use `brew` to install:
 
       ```sh
-      $ brew cask install iterm2
+      $ brew install --cask iterm2
       ```
     - the `$` in the example commands represents your shell prompt (`$` is for `bash`, but you might see `%` if using `zsh`) and is not typed
 
@@ -28,11 +28,11 @@ Install Applications
     - either install from the above websites, or use `brew` to install:
 
       ```sh
-      $ brew cask install google-chrome
+      $ brew install --cask google-chrome
       ```
 
       ```sh
-      $ brew cask install firefox
+      $ brew install --cask firefox
       ```
     
 4. Install [Slack](https://slack.com/intl/en-gb/downloads/mac?geocode=en-gb)
@@ -40,7 +40,7 @@ Install Applications
     - the primary communication app (text, voice, video, screen-sharing) within the team/department (and beyond)
     - as usual, choose the above download link, or use `brew`:
       ```sh
-      $ brew cask install slack
+      $ brew install --cask slack
       ```
 
 5. (Recommended) Install [Visual Studio Code](https://code.visualstudio.com/docs/setup/mac)
@@ -49,7 +49,7 @@ Install Applications
     - has many extensions for most file types and can do `go` debugging
     - if using `brew` for apps:
       ```sh
-      $ brew cask install visual-studio-code
+      $ brew install --cask visual-studio-code
       ```
 
 6. (Recommended) MAC Software Update
@@ -87,7 +87,7 @@ Install Applications
 
 The MacBook is yours to configure in whatever way will help you be the most productive and comfortable. Feel free to install other software you find useful, like password managers, music players, note-taking apps.
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 --------------
 
@@ -128,7 +128,7 @@ Copy the displayed public key to your clipboard.
 
 Then follow [instructions to add the SSH key in the clipboard to your github account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
 
-Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
 ### Testing SSH Connection
 

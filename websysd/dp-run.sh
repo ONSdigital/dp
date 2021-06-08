@@ -76,8 +76,9 @@ clone() {
     cloneGoRepo "dp-observation-extractor"
     cloneGoRepo "dp-observation-importer"
     cloneGoRepo "dp-recipe-api"
-    cloneGoRepo "dp-search-builder"
+    cloneGoRepo "dp-dimension-search-builder"
     cloneGoRepo "dp-search-api"
+    cloneGoRepo "dp-dimension-search-api"
     cloneGoRepo "florence"
 
     cloneRepo "babbage" "develop"
@@ -125,7 +126,8 @@ pull() {
     pullGoRepo "dp-observation-importer" 
     pullGoRepo "dp-recipe-api"
     pullGoRepo "dp-search-api"
-    pullGoRepo "dp-search-builder"
+    pullGoRepo "dp-dimension-search-api"
+    pullGoRepo "dp-dimension-search-builder"
     pullGoRepo "florence"
 
     pullRepo "babbage" 
