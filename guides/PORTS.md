@@ -77,3 +77,4 @@ in development without having to configure them individually.
 | 26000 | [dp-collection-api](https://github.com/ONSdigital/dp-collection-api) |
 | 26100 | [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset) |
 | 26200 | [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options) |
+| 26300 | [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter) |
