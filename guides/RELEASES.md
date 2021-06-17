@@ -25,8 +25,8 @@ Once work/coding is complete:
   * do **not** merge using Github :warning:
 * **Ship it** - the updated `develop` branch should be auto-deployed to the *develop* environment
   * ensure that shipping was successful:
-    * in CI (`develop-ship-it` job was successful)
-    * in _consul_ (for the expected version and health)
+    * in CI (`develop-ship-it` job was successful for the right commit)
+    * in _consul_ (for the expected commit/version and health)
 * Developer **tests** the feature in the *develop* environment
   * similar to approval, above: any fixes go into your branch for re-approval, re-merge, etc
 * Developer moves the story to `PO sign off` column
@@ -50,7 +50,10 @@ Once work/coding is complete:
 ## Deployment
 
 * the `main` branch requires **manual deployment** to the *production* environment - this can be done in CI
-  * to access CI for shipping, ask a member of the dev team
+  * to access `production-ship-it`, in CI, ask a member of the dev team
+  * ensure the app has been shipped as expected
+    * in CI (`production-ship-it` job was successful for the expected release)
+    * in _consul_ (for the expected version and health)
 * any issues arising:
   * major issues should prompt you to rollback to the previous version and re-work the original (or a new) feature branch
   * minor issues are fixed in `hotfix/my_fix` branches (which are PR'd back into the `main` branch)
