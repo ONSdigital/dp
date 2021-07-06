@@ -139,6 +139,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   ```bash
   git clone git@github.com:ONSdigital/dp-recipe-api
   git clone git@github.com:ONSdigital/dp-import-api
+  git clone git@github.com:ONSdigital/dp-upload-service
   git clone git@github.com:ONSdigital/dp-import-tracker
   git clone git@github.com:ONSdigital/dp-dimension-extractor
   git clone git@github.com:ONSdigital/dp-dimension-importer
@@ -148,6 +149,28 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
+
+#### Cantabular import services:
+
+* [dp-cantabular-server](https://github.com/ONSdigital/dp-cantabular-server)
+* [dp-cantabular-api-ext](https://github.com/ONSdigital/dp-cantabular-api-ext)
+* [zebedee](https://github.com/ONSdigital/zebedee)
+* [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
+* [dp-import-api](https://github.com/ONSdigital/dp-import-api)
+* [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
+* [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset)
+* [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options)
+
+  ```bash
+  git clone git@github.com:ONSdigital/zebedee
+  git clone git@github.com:ONSdigital/dp-recipe-api
+  git clone git@github.com:ONSdigital/dp-import-api
+  git clone git@github.com:ONSdigital/dp-dataset-api
+  git clone git@github.com:ONSdigital/dp-import-cantabular-dataset
+  git clone git@github.com:ONSdigital/dp-import-cantabular-dimension-options
+  ```
+
+[See more information and diagrams](https://docs.google.com/document/d/13U5kM3ZwmfNXdy7dq-RX0nZ0hQe5wzgSlDSOvZRP8eU)
 
 #### Filter journey:
 * [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api)
