@@ -23,7 +23,11 @@ Once you are confident in your idea/suggestion, you may add your story to [triag
 
 Please remember that when a 20% story is triaged and looked at by others that they will need to be able to understand the story so they can clearly make a decision on the value of this story and prioritise it according to the existing backlog of 20% work.
 
-One should use the relevant templates available on the trello board, these can be found in the column at the end of the board by scrolling right.
+One should use the relevant templates available on the trello board, these can be found in the column at the end of the board by scrolling right and are labelled with `This card is a template`.
+
+To generate a new trello card from a predefined template, click on the template card. In the top right corner of the pop up is a blue button `Create card from template`, click this to generate a new card with this template structure.
+
+New template cards can be created if there is a need to do so. To do this create a new trello card and style it accordingly. At the bottom right of the trello card is a list of `ACTIONS` and below this will be a `Template` button, click this to convert the card to a template one.
 
 **Important things to consider when writing up the story:**
 
@@ -39,11 +43,13 @@ One should use the relevant templates available on the trello board, these can b
     - What needs have to be met?
 
 If possible:
-- Attach to available epics if possible (first column in trello board), including epic tag
+- Attach to available epics (first column in trello board), including epic tag
 - Attach relevant links to docs/pocs that may already exist
 - Contain the services/libraries (repos) that are affected 
 
-### How will Technical Leads prioritise which stories get picked up first?
+### When and how will Technical Leads prioritize which stories get picked up first?
+
+Tech leads have a regular 20% time triage and prioritization meeting, so new stories should be getting checked every 2-4 weeks and prioritized against existing stories.
 
 Prioritising stories should be based on the value of getting something done for the benefit of the development team. The proposed values are the amount of effort required to complete a story and the impact it has on the development team.
 
