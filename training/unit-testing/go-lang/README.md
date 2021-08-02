@@ -44,7 +44,11 @@ GoConvey's execution path is a little quirky so have a look at the example below
 - [GoConvey explanation](https://github.com/smartystreets/goconvey/wiki/Execution-order)
 
 #### Assertions
-When comparing objects in your tests you can use [GoConvey's Assertions](/assertions/README.md), however when comparing complex `structs` such as `errors` can be troublesome.
+When comparing objects in your tests you can use [GoConvey's Assertions](/assertions/README.md).  Often we need to compare the built-in `error` type, or `structs`, however `error`s are a built-in type, but under the hood represent an interface to allow users to create their own errors - this can make it harder to test as you may want to check the 'stringified' error value, or if you have made a custom error which contains other functions or values, you would need to type cast the error to your custom error.  
+
+Note
+- Casting may not be that accurate in certain situations, and Go will not notify you of this. Also be aware of casting from a larger to a smaller data type, or from a signed to unsigned. 
+- Also, be cautious of casting large objects, as Go actually takes a copy of the object(s).
 
 By default, to compare `structs` GoConvey uses [DeepEqual](https://golang.org/pkg/reflect/#DeepEqual), however this isn't always that accurate, and it can be resource intensive.
 
@@ -78,7 +82,7 @@ Here are two useful links to read:
 - [Excellent Golang code coverage walk-through](https://blog.golang.org/cover)
 - [Useful time saving suggestion on stackoverflow](https://stackoverflow.com/a/27284510)
 
-[dp-identify-api]() is a great ONS example of a nicely designed, loosely coupled repo.  Its design also limits the code which is re-run as part of the tests, therefore saving resources.
+[dp-identify-api](https://github.com/ONSdigital/dp-identity-api) is a great ONS example of a nicely designed, loosely coupled repo.  Its design also limits the code which is re-run as part of the tests, therefore saving resources.
 
 The Token Handler uses [ValidateCredentials](https://github.com/ONSdigital/dp-identity-api/blob/765370a9bf0320be5ea823a8070ba2d4c895b62c/api/tokens.go#L27).  The [unit tests](https://github.com/ONSdigital/dp-identity-api/blob/765370a9bf0320be5ea823a8070ba2d4c895b62c/api/tokens_test.go#L23) for the handler carefully test the individuals paths of execution, depending on the email and password inputs.
 
