@@ -11,7 +11,7 @@ General guidance on creating a pull request
 
 ## Prerequisites
 
-- In order to contribute you need to first [sep up a GPG key](https://github.com/ONSdigital/dp/blob/main/guides/GPG.md) and configure git to sign all commits.
+- In order to contribute you need to first [set up a GPG key](https://github.com/ONSdigital/dp/blob/main/guides/GPG.md) and configure git to sign all commits.
 
 ## Steps
 
