@@ -56,10 +56,6 @@ Note
 - Casting may not be that accurate in certain situations, and Go will not notify you of this. Also be aware of casting from a larger to a smaller data type, or from a signed to unsigned. 
 - Also, be cautious of casting large objects, as Go actually takes a copy of the object(s).
 
-Note
-- Casting may not be that accurate in certain situations, and Go will not notify you of this. Also be aware of casting from a larger to a smaller data type, or from a signed to unsigned.
-- Also, be cautious of casting large objects, as Go actually takes a copy of the object(s).
-
 ## Creating Easy To Test Code
 
 #### Writing SOLID Go
