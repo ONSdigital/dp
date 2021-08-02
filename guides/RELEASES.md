@@ -2,7 +2,7 @@
 
 ## Notes
 
-* **PR** refers to a Github Pull Request
+* **PR** refers to a [Github Pull Request](../training/culture-and-process/PULL_REQUEST_GUIDANCE.md)
 * **Story** refers to the Trello ticket for the work. **Columns** are where stories move within Trello.
 * In some repos, the `main` branch may still have the **deprecated branch name**: `master` (replace in the below, as necessary)
 * Some **ops work** does not need to go through `PO sign off` (though a tech lead may sign it off) or `Ready for release`

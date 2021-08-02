@@ -24,13 +24,15 @@ Modules
 #### Architectural principles & approach
 * [Architectural principles](architecture/ARCHITECTURE_PRINCIPLES.md)
 * [12 Factor App principles](architecture/12_FACTOR_APP_PRINCIPLES.md)
+* [Microservices](architecture/MICROSERVICES.md)
+* [APIs](architecture/API.md)
 * [Common data terms](architecture/DATA_TERMS.md)
 * Security
 * Data modeling, what databases we use and when
 
 #### Our services
-* Web & Publishing Journeys
-* Microservices & Customise my Data Journey
+* [Web & Publishing Journeys](services/CORE_APPS.md)
+* :warning: WIP [Customise my Data Journey](services/CMD.md)
 * [Cloud technologies and Infrastructure (should this move to architecture?)](services/INFRASTRUCTURE.md)
 * [Platform Services](platform-services/PLATFORM.md)
 
@@ -41,6 +43,7 @@ Modules
     * Concurrency
 * AWS
     * Intro to AWS
+* Packer, Ansible and Terraform
 
 #### Testing
 * Our testing approach

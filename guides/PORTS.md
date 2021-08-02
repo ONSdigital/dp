@@ -58,7 +58,6 @@ in development without having to configure them individually.
 | 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller) |
 | 24200 | [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api) |
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer) |
-| 24400 | [dp-sessions-api](https://github.com/ONSdigital/dp-sessions-api) |
 | 24500 | [dp-observation-api](https://github.com/ONSdigital/dp-observation-api) |
 | 24600 | [dp-legacy-redirector](https://github.com/ONSdigital/dp-legacy-redirector) |
 | 24700 | [dp-image-api](https://github.com/ONSdigital/dp-image-api) |
@@ -78,3 +77,4 @@ in development without having to configure them individually.
 | 26100 | [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset) |
 | 26200 | [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options) |
 | 26300 | [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter) |
+| 26400 | [dp-content-api](https://github.com/ONSdigital/dp-content-api) |
