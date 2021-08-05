@@ -32,12 +32,18 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
   * [Python](https://www.python.org/)
 * Data
-  * [ElasticSearch](https://www.elastic.co/)
+  * Distributed open search and analytics engine
+    * Local - [ElasticSearch](https://www.elastic.co/)
+    * Hosted environments - [AWS Elasticsearch](https://aws.amazon.com/elasticsearch-service/)
   * [PostgreSQL](https://www.postgresql.org/)
-  * [MongoDB](https://www.mongodb.com/)
-  * [Neo4j](https://neo4j.com/)
-  * [Neptune](https://aws.amazon.com/neptune/)
-  * [Kafka](https://kafka.apache.org/)
+  * NoSQL Database
+    * Local - [MongoDB](https://www.mongodb.com/)
+    * Hosted environments - [AWS Document DB](https://aws.amazon.com/documentdb/)
+  *  Graph NoSQL Database
+     * Local & hosted environments - [AWS Neptune](https://aws.amazon.com/neptune/)
+  * Distributed event streaming platform
+    * Local - [Kafka](https://kafka.apache.org/)
+    * Hosted environments - [AWS MSK](https://aws.amazon.com/msk/)
 * Documentation Tools
   * [DapperDox](http://dapperdox.io/)
 * Build tools
@@ -53,8 +59,9 @@ This is a partially-complete list of technologies used by Digital Publishing.
 * [Pingdom](https://www.pingdom.com/)
 * [CloudFlare](https://www.cloudflare.com/)
 * [Hashicorp](https://www.hashicorp.com/)
-  * [Nomad](https://www.nomadproject.io/)
   * [Consul](https://www.consul.io/)
+  * [Nomad](https://www.nomadproject.io/)
+  * [Packer](https://www.packer.io/)
   * [Vault](https://www.vaultproject.io/)
 * [AWS](https://aws.amazon.com/)
   * [EC2](https://aws.amazon.com/ec2/)
@@ -68,6 +75,10 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [SQS](https://aws.amazon.com/sqs/)
   * [IAM](https://aws.amazon.com/iam/)
   * [RDS](https://aws.amazon.com/rds/)
+  * [Elasticsearch](https://aws.amazon.com/elasticsearch-service/)
+  * [Document DB](https://aws.amazon.com/documentdb/)
+  * [MSK](https://aws.amazon.com/msk/)
+  * [AWS Neptune](https://aws.amazon.com/neptune/)
 * [ELK Stack](https://www.elastic.co/elk-stack)
   * [Kibana](https://www.elastic.co/products/kibana)
   * [Elasticsearch](https://www.elastic.co/products/elasticsearch)
