@@ -23,6 +23,10 @@ in development without having to configure them individually.
 | 9200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9999  | [dp-compose](https://github.com/ONSdigital/dp-compose) : highcharts |
+| 10200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
+| 10300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
+| 11200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
+| 11300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) |
 | 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 20010 | [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer) |
