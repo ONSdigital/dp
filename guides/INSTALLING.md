@@ -35,13 +35,14 @@ Software | Install | Notes
 [dp-compose](https://github.com/ONSdigital/dp-compose) runs the following services:
   - Services for Web
     - Elasticsearch 2.4.2
+    - Elasticsearch 7 (on non-standard port)
     - Highcharts
     - Postgres
   - Services for CMD
     - MongoDB
-    - Elasticsearch 5 (on non-standard port)
+    - Elasticsearch 6 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
-    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
+    - [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
@@ -149,6 +150,10 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
+
+[Documentation of the import process](https://github.com/ONSdigital/dp-import#dp-import)
+
+[Sequence diagram of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
 
 #### Cantabular import services:
 
