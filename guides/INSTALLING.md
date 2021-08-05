@@ -19,7 +19,7 @@ In the below, the installation of each app is typically one of:
 
 Software | Install | Notes
 -------- | ------- | ----- |
-[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install --cask adoptopenjdk8`
+[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install openjdk@8 ` | `$ export PATH="/usr/local/opt/openjdk@8/bin:$PATH"` and `$ export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-8.jdk/Contents/Home/"`
 [Maven](https://maven.apache.org/)                        | `$ brew install maven`
 [Docker](https://www.docker.com/get-started)              | `$ brew install --cask docker`
  Docker Compose                                           | `$ brew install docker-compose`
