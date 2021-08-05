@@ -78,7 +78,7 @@ This is a partially-complete list of technologies used by Digital Publishing.
   * [Elasticsearch](https://aws.amazon.com/elasticsearch-service/)
   * [Document DB](https://aws.amazon.com/documentdb/)
   * [MSK](https://aws.amazon.com/msk/)
-  * [AWS Neptune](https://aws.amazon.com/neptune/)
+  * [Neptune](https://aws.amazon.com/neptune/)
 * [ELK Stack](https://www.elastic.co/elk-stack)
   * [Kibana](https://www.elastic.co/products/kibana)
   * [Elasticsearch](https://www.elastic.co/products/elasticsearch)

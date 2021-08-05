@@ -42,7 +42,7 @@ Software | Install | Notes
     - MongoDB
     - Elasticsearch 6 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
-    - Neo4J (currently being replaced by [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
+    - [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
@@ -151,8 +151,9 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
 
-[See more documentation of the import process](https://github.com/ONSdigital/dp-import#dp-import)
-[See sequence diagram of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
+[Documentation of the import process](https://github.com/ONSdigital/dp-import#dp-import)
+
+[Sequence diagram of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
 
 #### Cantabular import services:
 
