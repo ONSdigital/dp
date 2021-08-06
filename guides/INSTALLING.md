@@ -167,6 +167,8 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options)
 
   ```bash
+  git clone git@github.com:ONSdigital/dp-cantabular-server
+  git clone git@github.com:ONSdigital/dp-cantabular-api-ext
   git clone git@github.com:ONSdigital/zebedee
   git clone git@github.com:ONSdigital/dp-recipe-api
   git clone git@github.com:ONSdigital/dp-import-api
