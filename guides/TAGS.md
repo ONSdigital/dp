@@ -1,12 +1,12 @@
 # Tagging a release
 
-### Pre-reading
+## Pre-reading
 
-- [Understanding semantic versioning](../guides/VERSIONING.md) and how digital publishing implement this on our git repositories.
+- [Understanding semantic versioning](../guides/VERSIONING.md) and how Digital Publishing implement this on our git repositories.
 
-### How to tag a release/commit in git
+## How to tag a release/commit in git
 
-In order to tag a release you first need to checkout the branch you aim to tag (usually `master`)
+In order to tag a release you first need to checkout the branch you aim to tag (usually `main` or `master`)
 
 * Run `git tag -s <tag> -m <message>`
 	* `<tag>` is the semver value in the release branch name (e.g. `v1.7.0`, see [version control](VERSIONING.md))
