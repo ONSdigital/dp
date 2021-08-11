@@ -1,5 +1,10 @@
-Tagging a release
-===========================
+# Tagging a release
+
+### Pre-reading
+
+- [Understanding semantic versioning](../guides/VERSIONING.md) and how digital publishing implement this on our git repositories.
+
+### How to tag a release/commit in git
 
 In order to tag a release you first need to checkout the branch you aim to tag (usually `master`)
 
