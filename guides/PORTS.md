@@ -10,6 +10,7 @@ in development without having to configure them individually.
 
 | Port  | Service | Notes
 | ----- | ------- | -----
+| 2181  | [dp-compose](https://github.com/ONSdigital/dp-compose) : zookeeper |
 | 2222  | [Dylan](https://github.com/ONSdigital/Dylan) : ssh |
 | 5432  | [dp-compose](https://github.com/ONSdigital/dp-compose) : postgres |
 | 8080  | [babbage](https://github.com/ONSdigital/babbage) |
@@ -19,7 +20,9 @@ in development without having to configure them individually.
 | 8084  | [The-Train](https://github.com/ONSdigital/The-Train) |
 | 8085  | [Dylan](https://github.com/ONSdigital/Dylan) : http |
 | 8086  | [ermintrude](https://github.com/ONSdigital/ermintrude) |
+| 8888  | [dp-compose](https://github.com/ONSdigital/dp-compose) : mathjax-api |
 | 9000  | [sixteens](https://github.com/ONSdigital/sixteens) |
+| 9092  | [dp-compose](https://github.com/ONSdigital/dp-compose) : kafka |
 | 9200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9999  | [dp-compose](https://github.com/ONSdigital/dp-compose) : highcharts |
@@ -82,3 +85,4 @@ in development without having to configure them individually.
 | 26200 | [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options) |
 | 26300 | [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter) |
 | 26400 | [dp-content-api](https://github.com/ONSdigital/dp-content-api) |
+| 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
