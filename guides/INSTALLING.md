@@ -287,7 +287,7 @@ Run all of the services in the [web journey](#web-journey), **but** change the c
 and also run the following:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true ENABLE_HOMEPAGE_PUBLISHING=true`
-* [The-Train](https://github.com/ONSdigital/The-Train)
+* [The-Train](https://github.com/ONSdigital/The-Train) - use: `$ ./run.sh`
 * [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 
 If you also want to run Florence with the ability to edit images on the homepage (for the Featured Content section), you will need to additionally run:
