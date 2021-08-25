@@ -11,7 +11,7 @@ We're working on some guides to outline our team culture, and some of our develo
 4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
 5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
 6. Run `dp remote allow develop` to prove all your previous setup is correct. The output should include `[dp] allowing access to develop`. Ask for help if you encounter errors or warnings.
-7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. You'll need to ask someone for passphrases first.
+7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. First, you'll need to ask one of the *senior developers* for the `develop` passphrase or ask your *Tech Lead* for the `production` passphrase.
 
 *If you cannot access this link, something has gone wrong in the previous step.
 
