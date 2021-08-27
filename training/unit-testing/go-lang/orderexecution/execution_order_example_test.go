@@ -18,18 +18,18 @@ import (
 //      Convey C
 //          So 3
 //
-// Result would be A1,B2,Q9,A1,B2,C3
+// Result would be A1,B2,Q9,A1,C3
 func TestOrderOfExe(t *testing.T) {
 	Convey("A", t, func() {
 		So(1, ShouldEqual, 1)
 		Convey("B", func() {
 			So(2, ShouldEqual, 2)
-			Convey("C", func() {
-				So(3, ShouldEqual, 3)
+			Convey("Q", func() {
+				So(9, ShouldEqual, 9)
 			})
-			Convey("D", func() {
-				So(4, ShouldEqual, 4)
-			})
+		})
+		Convey("C", func() {
+			So(3, ShouldEqual, 3)
 		})
 	})
 }
