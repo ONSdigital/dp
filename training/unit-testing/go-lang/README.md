@@ -9,7 +9,7 @@ It's advised that you are comfortable with Go or another programming or scriptin
 If your system is ready, and you're ready to code then have a look at this example, which self documents the basics in testing:
 - [Downloadable 'Hello World' Unit Tests Using GoConvey](helloworld/hello_world_test.go)
 
-Before you go. Take a look at some of the [Potential Pitfalls](#Potential Pitfalls) below.
+Before you go. Take a look at some of the [Potential Pitfalls](#potential-pitfalls) below.
 
 ## Background To Unit Testing
 
@@ -45,12 +45,12 @@ The following are useful links:-
 #### Order of Execution
 
 GoConvey's execution path is a little quirky so have a look at the example below and the linked resources.
-- [Downloadable order of execution example](#orderexecution/execution_order_example_test.go)
+- [Downloadable order of execution example](orderexecution/execution_order_example_test.go)
 - [GoConvey explanation](https://github.com/smartystreets/goconvey/wiki/Execution-order)
 
 #### Assertions
 
-When comparing objects in your tests you can use [GoConvey's Assertions](/assertions/README.md).  Often we need to compare the built-in `error` type, or `structs`, however `error`s are a built-in type, but under the hood represent an interface to allow users to create their own errors - this can make it harder to test as you may want to check the 'stringified' error value, or if you have made a custom error which contains other functions or values, you would need to type cast the error to your custom error.  
+When comparing objects in your tests you can use [GoConvey's Assertions](assertions/README.md).  Often we need to compare the built-in `error` type, or `structs`, however `error`s are a built-in type, but under the hood represent an interface to allow users to create their own errors - this can make it harder to test as you may want to check the 'stringified' error value, or if you have made a custom error which contains other functions or values, you would need to type cast the error to your custom error.  
 
 Note
 - Casting may not be that accurate in certain situations, and Go will not notify you of this. Also be aware of casting from a larger to a smaller data type, or from a signed to unsigned. 
