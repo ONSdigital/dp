@@ -1,7 +1,7 @@
 Platform Services
 ===========================
 
-Platform services allow us to develop, run, and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. This documentation gives information on the platform services that we use to assist in deploying and monitoring applications.
+Platform services allow us to develop, run and manage applications without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app. This documentation gives information on the platform services that we use to assist in deploying and monitoring applications.
 
 ## Prerequisites
 
@@ -10,7 +10,7 @@ You need to complete the [set up your Mac for development work][setup-ons-mac]. 
 Run `dp remote allow develop` and `dp remote allow concourse` to ensure you can access concourse and the develop environment.
 Please note that if you have production access, you can run `dp remote allow production` to access production environment.
 
-[Cloud Technologies and Infrastructure](../services/INFRASTRUCTURE.md) - You should have an understanding of AWS and the infrastructure as the platform services are very closely related to this
+[Cloud Technologies and Infrastructure](../services/INFRASTRUCTURE.md) - You should have an understanding of AWS and the infrastructure as the platform services are very closely related to this.
 
 ## Structure
 ![](images/platform-structure.png)
@@ -40,7 +40,7 @@ Visit https://concourse.onsdigital.co.uk to access Concourse
 [<img src="images/concourse-home.png" title="Concourse Homepage" width=49.7% height=49.7%/>][concourse-ons] [<img src="images/concourse-pipeline.png" title="Concourse Pipeline" width=49.7% height=49.7%/>][concourse-ons]
 
 Concourse lists all of the applications where each application has its own [pipeline][concourse-pipeline]. 
-When a [PR][git-pr] of a application is said to be merged into `develop` or `master`, Concourse runs the pipeline of the application which does unit testing, checks if a [docker image][docker-image] can be build for it, bundles it for release and ships it to that release whilst ensuring that it has deployed everything completely.
+When a [PR][git-pr] of an application is said to be merged into `develop` or `master`/`main`, Concourse runs the pipeline of the application which does unit testing, checks if a [docker image][docker-image] can be built for it, bundles it for release and ships it to that release whilst ensuring that it has deployed everything completely.
 
 Furthermore, Concourse helps us to identify if an application has been fully deployed with any new changes implemented and can provide information on the version of the application which is currently running in the `develop` and `production` environments. 
 
@@ -99,7 +99,7 @@ Visit the following to access Vault
 
 > Vault secures, stores and tightly controls access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data
 
-Vault manages secrets and stores the secrets in [dp-configs][dp-configs-secrets] in a secure way and makes available to the service. The secrets can include information such as how to communicate with other services and database, or feature flags controlling what behaviour is active. In general, Vault is used for the following two functionalities:
+Vault manages secrets and stores the secrets in [dp-configs][dp-configs-secrets] in a secure way and makes them available to the service. The secrets can include information such as how to communicate with other services and database, or feature flags controlling what behaviour is active. In general, Vault is used for the following two functionalities:
 1. Storing application configs (secrets) from [dp-configs][dp-configs-secrets]
 2. Storing per-file encryption keys for CMD uploads, image uploads, etc. 
    
@@ -114,7 +114,7 @@ Visit the following to access Kibana
 
 [<img src="images/kibana-dev-home.png" title="Kibana Develop Home" width=49.7% height=49.7%/>][kibana-dev-home] [<img src="images/kibana-dev-discover.png" title="Kibana Develop Discover" width=49.7% height=49.7%/>][kibana-dev-home]
 
-Kibana provides the ability to query and filter aggregated messages from all apps, which is possible through the mechanisms set in place to capture all app logs and other indexes/responsibilities such as networking and system processes, and forwarding them to a shared elasticsearch instance. With the use of logs in Kibana, this assists in debugging. We can filter the namespace to check logs of a specific application and filter with other properties to find information more quickly 
+Kibana provides the ability to query and filter aggregated messages from all apps, which is possible through the mechanisms set in place to capture all app logs and other indexes/responsibilities such as networking and system processes, and forwarding them to a shared elasticsearch instance. The use of logs in Kibana assists in debugging. We can filter the namespace to check logs of a specific application and filter with other properties to find information more quickly.
 
 More information about Kibana can be found on their website - https://www.elastic.co/kibana
 
@@ -139,7 +139,7 @@ Visit the following to access Prometheus
 [<img src="images/prometheus-dev-home.png" title="Prometheus Develop Home" width=49.7% height=49.7%/>][prometheus-dev-home] [<img src="images/prometheus-dev-alerts.png" title="Prometheus Develop Alerts" width=49.7% height=49.7%/>][prometheus-dev-alerts]
 
 Prometheus provides alerts and alarms to notify us on technical issues. These alerts set in Prometheus trigger alarm messages in Slack. 
-Prometheus stores all data as a time series, and monitors for changes over time. The information can be viewed in Prometheus as a chart, and these charts are linked to the alerts so more detail is available to investigate on the alert. Prometheus uses the flexible query language [PromQL][prometheus-querying] to let us select and aggregate time series data in real time, speeding up the process of debugging
+Prometheus stores all data as a time series, and monitors for changes over time. The information can be viewed in Prometheus as a chart, and these charts are linked to the alerts so more detail is available to investigate on the alert. Prometheus uses the flexible query language [PromQL][prometheus-querying] to let us select and aggregate time series data in real time, speeding up the process of debugging.
 
 More information about Prometheus can be found on their website - https://prometheus.io/docs/introduction/overview/
 
