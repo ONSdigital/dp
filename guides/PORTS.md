@@ -86,4 +86,5 @@ in development without having to configure them individually.
 | 26200 | [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options) |
 | 26300 | [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter) |
 | 26400 | [dp-content-api](https://github.com/ONSdigital/dp-content-api) |
+| 26500 | [dp-frontend-articles-controller](https://github.com/ONSdigital/dp-frontend-articles-controller) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
