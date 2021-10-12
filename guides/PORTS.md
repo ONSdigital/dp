@@ -88,5 +88,6 @@ in development without having to configure them individually.
 | 26400 | [dp-content-api](https://github.com/ONSdigital/dp-content-api) |
 | 26500 | [dp-frontend-articles-controller](https://github.com/ONSdigital/dp-frontend-articles-controller) |
 | 26600 | [dp-frontend-area-profiles-controller](https://github.com/ONSdigital/dp-frontend-area-profiles-controller) |
+| 26700 | [dp-cantabular-metadata-exporter](https://github.com/ONSdigital/dp-cantabular-metadata-exporter) |
 | 26800 | [dp-cantabular-xlsx-exporter](https://github.com/ONSdigital/dp-cantabular-xlsx-exporter) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
