@@ -30,7 +30,6 @@ in development without having to configure them individually.
 | 10300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
 | 11200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
 | 11300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
-| 12550 | [dp-find-insights-poc-api](https://github.com/ONSdigital/dp-find-insights-poc-api) |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) |
 | 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 20010 | [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer) |
@@ -75,6 +74,7 @@ in development without having to configure them individually.
 | 25000 | [dp-frontend-search-controller](https://github.com/ONSdigital/dp-frontend-search-controller) |
 | 25100 | [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) |
 | 25200 | [dp-frontend-feedback-controller](https://github.com/ONSdigital/dp-frontend-feedback-controller) |
+| 25252 | [dp-find-insights-poc-api](https://github.com/ONSdigital/dp-find-insights-poc-api) |
 | 25300 | [dp-topic-api](https://github.com/ONSdigital/dp-topic-api) |
 | 25400 | [dp-permissions-api](https://github.com/ONSdigital/dp-permissions-api) |
 | 25500 | [dp-areas-api](https://github.com/ONSdigital/dp-areas-api) |
