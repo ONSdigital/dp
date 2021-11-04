@@ -22,6 +22,8 @@ in development without having to configure them individually.
 | 8086  | [ermintrude](https://github.com/ONSdigital/ermintrude) |
 | 8888  | [dp-compose](https://github.com/ONSdigital/dp-compose) : mathjax-api |
 | 9000  | [sixteens](https://github.com/ONSdigital/sixteens) |
+| 9001  | [dp-compose](https://github.com/ONSdigital/dp-compose) : minio |
+| 9002  | [dp-design-system](https://github.com/ONSdigital/dp-design-system) |
 | 9092  | [dp-compose](https://github.com/ONSdigital/dp-compose) : kafka |
 | 9200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
