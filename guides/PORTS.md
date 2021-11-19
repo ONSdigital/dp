@@ -92,4 +92,5 @@ in development without having to configure them individually.
 | 26500 | [dp-frontend-articles-controller](https://github.com/ONSdigital/dp-frontend-articles-controller) |
 | 26600 | [dp-frontend-area-profiles-controller](https://github.com/ONSdigital/dp-frontend-area-profiles-controller) |
 | 26800 | [dp-cantabular-xlsx-exporter](https://github.com/ONSdigital/dp-cantabular-xlsx-exporter) |
+| 26900 | [dp-files-api](https://github.com/ONSdigital/dp-files-api) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
