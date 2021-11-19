@@ -93,4 +93,5 @@ in development without having to configure them individually.
 | 26600 | [dp-frontend-area-profiles-controller](https://github.com/ONSdigital/dp-frontend-area-profiles-controller) |
 | 26800 | [dp-cantabular-xlsx-exporter](https://github.com/ONSdigital/dp-cantabular-xlsx-exporter) |
 | 26900 | [dp-files-api](https://github.com/ONSdigital/dp-files-api) |
+| 27000 | [dp-articles-api](https://github.com/ONSdigital/dp-articles-api) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
