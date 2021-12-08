@@ -25,6 +25,7 @@ Software | Install | Notes
  Docker Compose                                           | `$ brew install docker-compose`
 [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell` | deprecated (not needed if using Neptune over Neo4j)
 [Node.js and npm](https://nodejs.org/en/)                 | `$ brew install node@12` (LTS version) | Append `export PATH="/usr/local/opt/node@12/bin:$PATH"` to your startup files and restart your terminal.
+[Go](https://go.dev/dl/) | `$ brew install go` |  Note that the Go installation is is processor architecture specific.  For the newer Apple M1 processor the arm installation will be used.  this is managed by Homebrew for you. however, if installing manually you will need to be aware of this. [Go direct Download](https://go.dev/dl/) |
 [GoConvey](https://github.com/smartystreets/goconvey#installation)  |
 [GhostScript](https://www.ghostscript.com/download.html)  |   `$ brew install ghostscript`                          | Required for [Babbage](https://github.com/onsdigital/babbage)
 [Vault](https://www.vaultproject.io/intro/getting-started/install.html) | `$ brew install hashicorp/tap/vault`      | Required for running Florence.
