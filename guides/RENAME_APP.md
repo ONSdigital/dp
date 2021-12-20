@@ -48,7 +48,7 @@ they would be with APIs.
 
   ⚠️ Ensure all changes have been merged into develop before continuing.
 
-- Apply the dp-setup ansible for DEVELOP for the vault policies ONLY (step 4 in 
+- Apply the dp-setup ansible for DEVELOP for the vault policies ONLY (step 4 in
   [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - If the service has a port (eg. api), search for the service URL (e.g. "SEARCH_URL") in the organization in GitHub to
@@ -71,7 +71,7 @@ they would be with APIs.
 
 - Update frontend-router config to point to new port (if the service is a frontend one, e.g. controller)
 
-- Apply the dp-setup ansible for DEVELOP for the consul-template (step 4 in 
+- Apply the dp-setup ansible for DEVELOP for the consul-template (step 4 in
   [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - Check if develop environment is still working as expected. Then PO-sign off this with Tech Lead
@@ -89,12 +89,12 @@ they would be with APIs.
 
 - Release the changes made in dp-api-router or dp-frontend-router
 
-- Apply the dp-setup ansible for PROD for the vault policies ONLY (step 4 in 
+- Apply the dp-setup ansible for PROD for the vault policies ONLY (step 4 in
   [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 - Ship the service in production through concourse
 
-- Apply the dp-setup ansible for PROD for the consul-template (step 4 in 
+- Apply the dp-setup ansible for PROD for the consul-template (step 4 in
   [Adding a New App](https://github.com/ONSdigital/dp-setup#adding-a-new-app))
 
 ## Tidy up - DEVELOP
@@ -144,9 +144,21 @@ they would be with APIs.
 
 After the service itself is renamed, there may be additional steps required depending on the app type.
 
-### Rename the kafka consumer group
+### Kafka
 
-For event driven apps, the convention is for the kafka consumer group to be the same as the app name so this will need
+Once the manifest file has been renamed, an event-driven (kafka-using) app will require:
+
+- a new [client certificate](https://github.com/ONSdigital/dp-setup/tree/develop/csr/private#creating-a-client-certificate)
+  (for the new name)
+- kafka will need to
+  [be updated using the topic-manager](https://github.com/ONSdigital/dp-setup/tree/develop/scripts/kafka#topic-manager)
+  to allow the new certificate access to its (possibly changed) topics
+- if a consumer, the name of the consumer group will need to be changed (see below)
+- if a producer, the topic name may need to be renamed (this is less likely, but see below)
+
+#### Rename the kafka consumer group
+
+The convention is for the kafka consumer group to be the same as the app name so this will need
 changing. It is important to note that this may cause messages to be replayed so this step can only be done if the
 handler is idempotent.
 
@@ -155,19 +167,15 @@ handler is idempotent.
 - Release to develop and watch for any spike in traffic or any problems due to lack of idempotency.
 - If develop was successful, release the app to production.
 
-### Rename the kafka producer topic
+#### Rename the kafka producer topic
 
 Depending on the nature of the name change, one or more kafka topics may need to be renamed. Renaming these needs to be
 done in a specific order so that messages aren't lost. To do this, release the producers before releasing the consumers.
 
-#### In develop
+##### In develop
 
-- Rename the [kafka topic in dp-setup](https://github.com/ONSdigital/dp-setup/blob/develop/ansible/group_vars/kafka)
-  and apply it to develop (with then without the `--check`)
-
-  ```shell
-  ansible-playbook --check -i inventories/develop --vault-id=develop@.develop.pass -t kafka-topics kafka.yml
-  ```
+- Rename the kafka topic in the manifest and apply it to develop
+  [using the topic-manager](https://github.com/ONSdigital/dp-setup/tree/develop/scripts/kafka#topic-manager)
 
   This creates a new topic in kafka with the new name, but it does not delete the old topic.
 
@@ -175,7 +183,7 @@ done in a specific order so that messages aren't lost. To do this, release the p
 
 - Rename the default config (eg. in `config.go`) in the **producer** app and merge the PR.
 
-  ⚠️ Ensure that the ansible step is complete and secrets have been synced first or this step will fail.
+  ⚠️ Ensure that the topic-manager step is complete and secrets have been synced first or this step will fail.
 
 - Rename the default config (eg. in `config.go`) in all **consumer** apps and merge the PRs.
 
@@ -183,19 +191,15 @@ done in a specific order so that messages aren't lost. To do this, release the p
 
 - Check that messages are processing correctly on develop.
 
-#### In production
+##### In production
 
-- Repeat the dp-setup process above in production (with then without the `--check`)
-
-  ```shell
-  ansible-playbook --check -i inventories/production --vault-id=production@.production.pass -t kafka-topics kafka.yml
-  ```
+- Repeat the dp-setup process above in production
 
 - Rename the secrets in dp-configs for production for both the producer app and any consumers.
 
 - Release the **producer** app to production
 
-  ⚠️ Ensure that the ansible step is complete and secrets have been synced first or this step will fail.
+  ⚠️ Ensure that the topic-manager step is complete and secrets have been synced first or this step will fail.
 
 - Release all **consumer** apps to production.
 
