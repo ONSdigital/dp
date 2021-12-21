@@ -1,9 +1,8 @@
-Development standards
-=====================
+# Development standards
 
 These are the Digital Publishing development standards.
 
-### App standards
+## App standards
 
 * Use the [dp-repo-template](https://github.com/ONSdigital/dp-repo-template)
 * README
@@ -20,7 +19,7 @@ These are the Digital Publishing development standards.
   * e.g. `dp-frontend-renderer`
 * Makefile - `make` target for development
 
-### Coding standards
+## Coding standards
 
 * Documentation
   * Prefer concise and readable code
@@ -31,7 +30,7 @@ These are the Digital Publishing development standards.
 * Pull requests / code review
 * 12-factor
   * All code must be 12-factor compliant - see [https://12factor.net](https://12factor.net) and [our training module](../training/architecture/12_FACTOR_APP_PRINCIPLES.md)
-* [Sign commits using GPG](../guides/GPG.md)
+* [Sign commits using GPG](https://github.com/ONSdigital/dp-operations/blob/main/guides/gpg.md)
 * Use meaningful commit messages
 * Design patterns and best practices
 * Follow existing code style
@@ -41,7 +40,7 @@ These are the Digital Publishing development standards.
 
 See also [Logging standards](LOGGING_STANDARDS.md).
 
-### Testing standards
+## Testing standards
 
 * Test code should be subject to the same code quality checks and reviews as application code
 * Test coverage should be considered by the developer and reviewer, though we should strive to keep it as high as reasonably possible
@@ -49,13 +48,13 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 * Involve members of the QA team where appropriate in the development and review of integration / acceptance tests
 * Any bugs found in the system should have a test created at the lowest level that exercises that error condition
 
-##### Unit tests
+### Unit tests
 
 * Should always be in the same solution as the application code
 * Should test only the application code, and not depend on any external services
 * Should follow [FIRST principles](https://web.archive.org/web/20140227191934/http://pragprog.com/magazines/2012-01/unit-tests-are-first)
 
-##### Integration tests
+### Integration tests
 
 * Generally you should avoid creating integration tests
 * The only potential case for integration tests is testing database access code against a test database instance
@@ -67,14 +66,14 @@ See also [Logging standards](LOGGING_STANDARDS.md).
 * Do not create integration tests that test the configuration of the environment. This is covered in the acceptance tests
 * Do not create integration tests that test the integration between micro services. This is covered in the acceptance tests
 
-##### Acceptance tests
+### Acceptance tests
 
 * Test via the public interface of the application (user interface or API)
 * Acceptance tests should be cover public and private API interfaces
 * Generally live in a separate dedicated repository
 * Defined by application use cases
 
-### Other requirements
+## Other requirements
 
 * [Setup CI integration](https://github.com/ONSdigital/dp-ci)
 * Git-flow (see [A successful git branching model](https://nvie.com/posts/a-successful-git-branching-model/))

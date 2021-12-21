@@ -34,7 +34,7 @@ Install Applications
       ```sh
       $ brew install --cask firefox
       ```
-    
+
 4. Install [Slack](https://slack.com/intl/en-gb/downloads/mac?geocode=en-gb)
 
     - the primary communication app (text, voice, video, screen-sharing) within the team/department (and beyond)
@@ -73,7 +73,7 @@ Install Applications
       /usr/local/bin/zsh
       ```
       Use ```chsh``` to change the Shell line to be: `Shell: /usr/local/bin/zsh`. Save your changes and exit.
-       
+
       and close/re-open terminal.
 
       (optional / Recommended) add `Oh My Zsh` with:
@@ -134,7 +134,7 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guide
 
 To check that you've set up your Git SSH on your terminal, open your favoured terminal and enter:
   * `ssh -T git@github.com`
-  
+
 You will be asked to type *yes* if you're ready to connect. You should be prompted with:
   * `Hi [YOUR GIT USERNAME]! You've successfully authenticated, but GitHub does not provide shell access.`
 

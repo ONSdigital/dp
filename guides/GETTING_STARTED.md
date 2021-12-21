@@ -7,13 +7,13 @@ We're working on some guides to outline our team culture, and some of our develo
 # Set up your mac for development work
 1. [Install applications](MAC_SETUP.md#install-applications)
 2. Set up your [git config](MAC_SETUP.md#git-account-and-configuration)
-3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md)* 
+3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md) [see note below]
 4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
 5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
 6. Run `dp remote allow develop` to prove all your previous setup is correct. The output should include `[dp] allowing access to develop`. Ask for help if you encounter errors or warnings.
 7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. First, you'll need to ask one of the *senior developers* for the `develop` passphrase or ask your *Tech Lead* for the `production` passphrase.
 
-*If you cannot access this link, something has gone wrong in the previous step.
+Note: If you cannot access this link, something has gone wrong in the previous step.
 
 # Install, configure and run services
 1. [Install the prerequisites](INSTALLING.md#prerequisites)
@@ -23,7 +23,7 @@ We're working on some guides to outline our team culture, and some of our develo
 5. [Run the apps](INSTALLING.md#running-the-apps)
 6. [Update configuration](INSTALLING.md#setup-credentials) for your credentials
 
-We've made a few attempts at simplifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](DEV_SETUP.md) guide. 
+We've made a few attempts at simplifying these steps, but haven't converged on one way of doing things yet. The alternatives are detailed in our [developer setup](DEV_SETUP.md) guide.
 
 ### Usage guides
 1. (Optional) [Enable feedback form](https://github.com/ONSdigital/dp-frontend-dataset-controller#feedback-service)
