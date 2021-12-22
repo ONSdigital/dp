@@ -96,3 +96,4 @@ in development without having to configure them individually.
 | 26900 | [dp-files-api](https://github.com/ONSdigital/dp-files-api) |
 | 27000 | [dp-articles-api](https://github.com/ONSdigital/dp-articles-api) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
+| 27100 | [dp-cantabular-filter-flex-api](https://github.com/ONSdigital/dp-cantabular-filter-flex-api) |
