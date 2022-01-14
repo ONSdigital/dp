@@ -13,7 +13,7 @@ Trello boards are generally comprised of lists (shown as columns on the board) a
 - In Progress
 - PR
 - PO Sign-off
-- Testing (Optional)
+- Testing 
 - Ready for Release
 - Done
 
@@ -44,6 +44,12 @@ At this stage, code is peer-reviewed and should have passed in CI (more info on 
 
 Once the PR has been approved, the feature branch can be merged into `develop`, and the relevant features tested in the `develop` environment. Provided this has been completed, you can then move your card to the "PO Sign-Off" column
 
+### Testing 
+
+At this stage, the code should be in `develop` and testable either by yourself or another member of your team.  Manual tests should be carried out in the `develop` environment on the functionality that the card relates to, and any related features should be tested to ensure nothing existing has broken as a result of the change.  
+
+Once you are satisfied that the code is working as expected in `develop`, then the card can be moved to the "PO Sign-Off" column if required.  If it is a smaller technical task then the card can be moved straight to the "Ready for Release" column.
+
 ### PO Sign-Off
 
 At this stage, the card should be ready to be reviewed by a tech-lead. The tech-lead will either confirm that the work is ready to be released, or they may request additional work to be done. 
@@ -51,6 +57,7 @@ At this stage, the card should be ready to be reviewed by a tech-lead. The tech-
 This is usually communicated via comments within the card itself, which you will be notified of on the Trello board.
 
 Once a tech-lead has confirmed that the work is ready to be released, the card can be moved to the "Ready for Release" column.
+
 
 ### Ready for Release
 

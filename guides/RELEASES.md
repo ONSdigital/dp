@@ -27,9 +27,12 @@ Once work/coding is complete:
   * ensure that shipping was successful:
     * in CI (`develop-ship-it` job was successful for the right commit)
     * in _consul_ (for the expected commit/version and health)
+* Developer moves the story to `Testing` column
+
+## 'Testing' column
 * Developer **tests** the feature in the *develop* environment
   * similar to approval, above: any fixes go into your branch for re-approval, re-merge, etc
-* Developer moves the story to `PO sign off` column
+* Developer moves the story to `PO sign off` (if required) or `Ready for release` column
 
 ## 'PO sign off' column
 
