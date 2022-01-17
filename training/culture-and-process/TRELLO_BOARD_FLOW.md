@@ -58,7 +58,6 @@ This is usually communicated via comments within the card itself, which you will
 
 Once a tech-lead has confirmed that the work is ready to be released, the card can be moved to the "Ready for Release" column.
 
-
 ### Ready for Release
 
 Provided that all of the above criteria have been met, you can now begin the release process. It is important that you familiarise yourself with both [version control](https://github.com/ONSdigital/dp/blob/main/guides/VERSIONING.md) and [release tagging](https://github.com/ONSdigital/dp/blob/main/guides/TAGS.md) before beginning this stage. The release process is as follows - 
