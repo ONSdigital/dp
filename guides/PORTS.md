@@ -98,3 +98,6 @@ in development without having to configure them individually.
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
 | 27100 | [dp-cantabular-filter-flex-api](https://github.com/ONSdigital/dp-cantabular-filter-flex-api) |
 | 27200 | [dp-cantabular-dimension-api](https://github.com/ONSdigital/dp-cantabular-dimension-api) |
+| 27300 | [dp-frontend-interactives-controller](https://github.com/ONSdigital/dp-frontend-interactives-controller) |
+| 27400 | [dp-interactives-importer](https://github.com/ONSdigital/dp-interactives-importer) |
+| 27500 | [dp-interactives-api](https://github.com/ONSdigital/dp-interactives-api) |
