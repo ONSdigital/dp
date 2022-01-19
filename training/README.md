@@ -7,6 +7,8 @@ When joining Digital Publishing, there can be a lot to learn! We want to give yo
 
 We have collected resources that give you an idea of [all the modules](#modules) some of which you'll be undertaking over your first few weeks. These may also contain links to resources the team have found useful over the years to get more insight on the topics.
 
+We also have a number of [standards](../standards)  documented that are worth being aware of. Many of them will be linked to through training modules, but its important to be aware of all standards regardless.
+
 If you come across a resource that really helped you understand some technology we use, or how we work, please do add a link to it in the relevant document or start a new doc if the topic is not yet covered.
 
 Modules
@@ -15,7 +17,8 @@ Modules
 * [Culture and Inclusion](culture-and-process/CULTURE.md)
 * [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
 * Developer Processes
-    * [Pull Request Guidance](culture-and-process/PULL_REQUEST_GUIDANCE.md)
+    * [Opening a Pull Request](culture-and-process/PULL_REQUEST_GUIDANCE.md)
+    * [Reviewing a Pull Request](culture-and-process/PR_REVIEW_AND_RESPONSE_GUIDANCE.md)
     * [Trello Board - Flow of Stories](culture-and-process/TRELLO_BOARD_FLOW.md)
     * [Gitflow](culture-and-process/GITFLOW.md)
     * [CI/CD Process](culture-and-process/CICD.md)
