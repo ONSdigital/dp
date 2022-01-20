@@ -8,7 +8,7 @@ The following steps will guide you through adding a new API to our platform.
 Prerequisites
 -------------
 
-If any of the following Github links 404, likely you need to be added to the ONSdigital organisation.
+If any of the following Github links 404, you will likely need to be added to the ONSdigital organisation.
 
 To follow this guide you will need:
 
@@ -25,9 +25,9 @@ Getting started
 
 1. Identify the top level route your API will be responsible for. This likely can be taken from the repository name e.g. dp-dataset-api has the top level route **/datasets**. Make sure it doesn't clash with any existing routes [in the router](https://github.com/ONSdigital/dp-api-router/blob/develop/service/service.go#L126)
 
-2. Add a new API URL variable to the dp-api-router [config.go](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L19) and set a [default value](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L71) using the localhost:port combination the app will default to when running locally
+2. Add a new API URL variable to the dp-api-router [config.go](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L19) and set a [default value](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L71) using the localhost:port combination the app will default to when running locally. The default ports [should be documented](https://github.com/ONSdigital/dp/blob/main/guides/PORTS.md) if not already.
 
-3. Update the dp-api-router secrets for relevant environments to contain your new API URL environment variable, listing the ['magic port'](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md) instead of the default value.
+3. Update the dp-api-router [secrets for relevant environments](https://github.com/ONSdigital/dp-configs/tree/master/secrets) to contain your new API URL environment variable, listing the ['magic port'](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md) instead of the default value.
 
 3. Set up a new API Proxy in [service.go](https://github.com/ONSdigital/dp-api-router/blob/develop/service/service.go#L138), referencing the variable you added to config.go above.
 
@@ -38,7 +38,7 @@ Getting started
 
 5. If some features of your API should only be available internally, update your new service to include a feature flag for 'privateEndpoints' and only attach those routes to your service when enabled [as shown here](https://github.com/ONSdigital/dp-dimension-search-api/blob/develop/api/api.go#L120)
 
-6. Update the secrets for the dp-api-router and your new application to reflect all feature flags your may have added an enable them only in develop while you get your new API ready for production use.
+6. Update the [secrets](https://github.com/ONSdigital/dp-configs/tree/master/secrets) for the dp-api-router and your new application to reflect all feature flags your may have added an enable them only in develop while you get your new API ready for production use.
 
 7. Merge your changes to both applications and deploy to develop!
 
