@@ -99,3 +99,5 @@ in development without having to configure them individually.
 | 27100 | [dp-cantabular-filter-flex-api](https://github.com/ONSdigital/dp-cantabular-filter-flex-api) |
 | 27200 | [dp-cantabular-dimension-api](https://github.com/ONSdigital/dp-cantabular-dimension-api) |
 | 27300 | [dp-population-types-api](https://github.com/ONSdigital/dp-population-types-api) |
+| 27400 | [dp-frontend-release-calendar-controller](https://github.com/ONSdigital/dp-frontend-release-calendar-controller) |
+| 27500 | [dp-release-calendar-api](https://github.com/ONSdigital/dp-release-calendar-api) |
