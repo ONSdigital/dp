@@ -272,6 +272,10 @@ Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guide
 
 ## Running the apps
 
+Depending on which journey(s) you are setting up for you will need to do one of the following. For the Cantabular Import journey go directly to the instructions here: [cantabular-import]. 
+
+For all other journeys continue below.
+
 Run [dp-compose](https://github.com/ONSdigital/dp-compose) using the `$ ./run.sh` command (in the dp-compose repo) to run the supporting services. As well as Vault, e.g. `$ vault server -dev`.
 
 Most applications can be run using the `$ make debug` command, but deviations are all documented below:
@@ -339,6 +343,10 @@ If you already have content, and you just want to run the web journey, you'll ne
 * unset `ENABLE_PRIVATE_ENDPOINTS`
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
+
+#### Cantabular Import
+
+Unlike the other journeys the Cantabular Import services all run in a self-contained docker-compose journey. The root directory of the journey is in the `cantabular-import` directory of (https://github.com/ONSdigital/dp-compose). You will need to follow the `Setup credentials` section below, clone the `dp-compose` repository and `cd` into the `cantabular-import` directory. From there follow the full instructions in README.md. (https://github.com/ONSdigital/dp-compose/blob/main/cantabular-import/README.md).
 
 --------------
 
