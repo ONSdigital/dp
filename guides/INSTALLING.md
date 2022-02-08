@@ -154,18 +154,32 @@ All the services in the [web] and [publishing] journeys, as well as:
 
 [Documentation of the import process](https://github.com/ONSdigital/dp-import#dp-import)
 
-[Sequence diagram of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
+[Sequence diagram * [dp-cantabular-api-ext](https://github.com/ONSdigital/dp-cantabular-api-ext)of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
 
 #### Cantabular import services:
 
-* [dp-cantabular-server](https://github.com/ONSdigital/dp-cantabular-server)
+* [babbage](https://github.com/ONSdigital/babbage)
+* [dp-api-router](https://github.com/ONSdigital/dp-api-router)
 * [dp-cantabular-api-ext](https://github.com/ONSdigital/dp-cantabular-api-ext)
-* [zebedee](https://github.com/ONSdigital/zebedee)
-* [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
-* [dp-import-api](https://github.com/ONSdigital/dp-import-api)
+* [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter)
+* [dp-cantabular-dimension-api](https://github.com/ONSdigital/dp-cantabular-dimension-api)
+* [dp-cantabular-filter-flex-api](https://github.com/ONSdigital/dp-filter-flex-api)
+* [dp-cantabular-metadata-exporter](https://github.com/ONSdigital/dp-metadata-exporter)
+* [dp-cantabular-server](https://github.com/ONSdigital/dp-cantabular-server)
+* [dp-cantabular-xlsx-exporter](https://github.com/ONSdigital/dp-cantabular-xlsx-exporter)
 * [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
+* [dp-download-service](https://github.com/ONSdigital/dp-download-service)
+* [dp-filter-api](https://github.com/ONSdigital/dp-filter-api)
+* [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+* [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
+* [dp-import-api](https://github.com/ONSdigital/dp-import-api)
 * [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset)
 * [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options)
+* [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
+* [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
+* [florence](https://github.com/ONSdigital/florence)
+* [the-train](https://github.com/ONSdigital/the-train)
+* [zebedee](https://github.com/ONSdigital/zebedee)
 
   ```bash
   git clone git@github.com:ONSdigital/dp-cantabular-server
