@@ -38,5 +38,5 @@ These steps will create a new app that is built by CI and deployed to the develo
 1. Use [`dp-cli` to generate the new repo with boilerplate files](https://github.com/ONSdigital/dp-cli/tree/main/project_generation/COMPLETE_PROJECT_SETUP.md)
 1. [Add the new app to the environment](https://github.com/ONSdigital/dp-setup#adding-a-new-app)
 1. [Add configurations for your new app](https://github.com/ONSdigital/dp-configs#adding-a-new-app)
-1. [Get your pipeline boostrapped](https://github.com/ONSdigital/dp-ci/blob/670acd663353ae6b641e2ae39b879d46f4d60e64/pipelines/README.md#bootstrapping-the-pipelines) note: this will need to be done by someone with permissions to concourse gpg key  
+1. [Get your pipeline boostrapped](https://github.com/ONSdigital/dp-ci/blob/master/pipelines/README.md#bootstrapping-the-pipelines) note: this will need to be done by someone with permissions to concourse gpg key  
 1. Check the [Concourse UI](https://github.com/ONSdigital/dp/blob/main/training/platform-services/PLATFORM.md#concourse) and/or [Nomad UI](https://github.com/ONSdigital/dp/blob/main/training/platform-services/PLATFORM.md#nomad) to ensure your new app has successfully deployed to develop. See [here](https://github.com/ONSdigital/dp-setup/tree/develop/scripts#ansible-vault-helpers) for info on getting any acl tokens.
