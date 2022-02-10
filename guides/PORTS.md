@@ -104,3 +104,4 @@ in development without having to configure them individually.
 | 27600 | [dp-frontend-interactives-controller](https://github.com/ONSdigital/dp-frontend-interactives-controller) |
 | 27700 | [dp-frontend-release-calendar](https://github.com/ONSdigital/dp-frontend-release-calendar) |
 | 27800 | [dp-release-calendar-api](https://github.com/ONSdigital/dp-release-calendar-api) |
+| 27900 | [dp-maps-api](https://github.com/ONSdigital/dp-maps-api) |
