@@ -310,7 +310,7 @@ All of the services in the [web](#web-journey), [publishing](#publishing-journey
 
 Use the following alternative commands:
 
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true ENABLE_HOMEPAGE_PUBLISHING=true`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug DATASET_ROUTES_ENABLED=true`
 * For every service in [dataset](#dataset-journey) and [filter](#filter-journey)- use: `make debug ENABLE_PRIVATE_ENDPOINTS=true`
 * [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) - use: `$ make debug ENCRYPTION_DISABLED=true`
@@ -320,7 +320,7 @@ Use the following alternative commands:
 
 If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web-journey) services. Again, use the commands:
 
-* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENABLE_DATASET_IMPORT=true ENCRYPTION_DISABLED=true`
+* [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true ENABLE_HOMEPAGE_PUBLISHING=true`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) - use: `$ make debug`
 * unset `ENABLE_PRIVATE_ENDPOINTS`
 
