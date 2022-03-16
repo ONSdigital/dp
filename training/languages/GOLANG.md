@@ -20,6 +20,11 @@ If you are looking for Go best practices and wanted to discover some tips and tr
 ### 3. Gotchas in Golang
  If you took the time to learn the language reading the official spec, wiki, mailing list discussions, source code, etc this information may seem obvious but a quick glance at [50 Shades of Go](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/index.html) will save you hours debugging your code.
 
+ See this article for how to avoid the issues that come with using time.After() (and similarly for time.Tick()) :
+
+ [A story of a memory leak in GO: How to properly use time.After()](https://www.arangodb.com/2020/09/a-story-of-a-memory-leak-in-go-how-to-properly-use-time-after/)
+
+
 ## Other useful resources to learn basic Go
 ### Websites
 [hackr.io](https://hackr.io/tutorials/learn-golang?sort=upvotes&type_tags%5B%5D=1), [stackify](https://stackify.com/learn-go-tutorials/#post-22307-_xuryksanhg1w) and [Coursesity.com](https://coursesity.com/free-tutorials-learn/golang) provides a list of free online courses which will help you in exploring the Go language in every step of the process.
