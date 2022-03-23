@@ -44,7 +44,7 @@ Modules
 * How we choose technologies
 * Go
     * [Intro to Go](languages/GOLANG.md)
-    * Concurrency
+    * [Concurrency](languages/CONCURRENCY_AND_CONTEXT.md)
 * AWS
     * Intro to AWS
 * Packer, Ansible and Terraform
