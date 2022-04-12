@@ -59,7 +59,7 @@ The next following 3 services: [Consul](#consul), [Nomad](#nomad) and [Vault](#v
 ## Consul
 Visit the following to access Consul
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://consul.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://consul.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://consul.dp-prod.aws.onsdigital.uk
 
 [<img src="images/consul-dev-services.png" title="Consul Develop Home"/>][consul-dev-services]
 
@@ -74,7 +74,7 @@ More information about Consul can be found on their website - https://www.consul
 ## Nomad
 Visit the following to access Nomad
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://nomad.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://nomad.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://nomad.dp-prod.aws.onsdigital.uk
 
 [<img src="images/nomad-dev-home.png" title="Nomad Develop Home" width=49.7% height=49.7%/>][nomad-dev-home] [<img src="images/nomad-dev-job.png" title="Nomad Develop Job Page" width=49.7% height=49.7%/>][nomad-dev-home]
 
@@ -91,7 +91,7 @@ More information about Nomad can be found on their website - https://www.nomadpr
 ## Vault
 Visit the following to access Vault
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://vault.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://vault.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://vault.dp-prod.aws.onsdigital.uk
 
 **To sign into Vault, you require a `token` which can be retrieved from the [helper script in dp-setup][helper-script-dp-setup]**
 
@@ -110,7 +110,7 @@ More information about Vault can be found on their website - https://www.vaultpr
 ## Kibana
 Visit the following to access Kibana
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://kibana.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://kibana.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://kibana.dp-prod.aws.onsdigital.uk
 
 [<img src="images/kibana-dev-home.png" title="Kibana Develop Home" width=49.7% height=49.7%/>][kibana-dev-home] [<img src="images/kibana-dev-discover.png" title="Kibana Develop Discover" width=49.7% height=49.7%/>][kibana-dev-home]
 
@@ -121,7 +121,7 @@ More information about Kibana can be found on their website - https://www.elasti
 ## Grafana
 Visit the following to access Grafana
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://grafana.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://grafana.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://grafana.dp-prod.aws.onsdigital.uk
 
 [<img src="images/grafana-dev-home.png" title="Grafana Develop Home" width=49.7% height=49.7%/>][grafana-dev-home] [<img src="images/grafana-dev-nomad-task.png" title="Grafana Develop Nomad Task" width=49.7% height=49.7%/>][grafana-dev-nomad-tasks]
 
@@ -134,7 +134,7 @@ More information about Grafana can be found on their website - https://grafana.c
 ## Prometheus
 Visit the following to access Prometheus
 - DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://prometheus.develop.onsdigital.co.uk
-- PRODUCTION:&nbsp;&nbsp;&nbsp;https://prometheus.production.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;https://prometheus.dp-prod.aws.onsdigital.uk
 
 [<img src="images/prometheus-dev-home.png" title="Prometheus Develop Home" width=49.7% height=49.7%/>][prometheus-dev-home] [<img src="images/prometheus-dev-alerts.png" title="Prometheus Develop Alerts" width=49.7% height=49.7%/>][prometheus-dev-alerts]
 
