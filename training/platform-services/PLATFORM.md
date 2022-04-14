@@ -58,8 +58,8 @@ The next following 3 services: [Consul](#consul), [Nomad](#nomad) and [Vault](#v
 
 ## Consul
 Visit the following to access Consul
-- DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://consul.develop.onsdigital.co.uk
-- PROD:&nbsp;&nbsp;&nbsp;https://consul.dp-prod.aws.onsdigital.uk
+- DEVELOP:&nbsp;&nbsp;https://consul.develop.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://consul.dp-prod.aws.onsdigital.uk
 
 [<img src="images/consul-dev-services.png" title="Consul Develop Home"/>][consul-dev-services]
 
@@ -73,8 +73,8 @@ More information about Consul can be found on their website - https://www.consul
 
 ## Nomad
 Visit the following to access Nomad
-- DEVELOP:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://nomad.develop.onsdigital.co.uk
-- PROD:&nbsp;&nbsp;&nbsp;https://nomad.dp-prod.aws.onsdigital.uk
+- DEVELOP:&nbsp;&nbsp;https://nomad.develop.onsdigital.co.uk
+- PROD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;https://nomad.dp-prod.aws.onsdigital.uk
 
 [<img src="images/nomad-dev-home.png" title="Nomad Develop Home" width=49.7% height=49.7%/>][nomad-dev-home] [<img src="images/nomad-dev-job.png" title="Nomad Develop Job Page" width=49.7% height=49.7%/>][nomad-dev-home]
 
