@@ -26,13 +26,7 @@ Guides and general info
 Standards and specifications
 ----------------------------
 
-* [Architectural standards](standards/ARCHITECTURE_STANDARDS.md)
-* [Development standards](standards/DEV_STANDARDS.md)
-* [Digital Publishing principles](https://github.com/ONSdigital/dp-principles)
-* [API standards](standards/API_STANDARDS.md)
-* [Logging standards](standards/LOGGING_STANDARDS.md)
-* [Health check specification](standards/HEALTH_CHECK_SPECIFICATION.md)
-* [Dependency upgrades](standards/DEPENDENCY_UPGRADING.md)
+* [See standards repository](https://github.com/ONSdigital/dp-standards#standards)
 
 Dev tooling
 -----------
