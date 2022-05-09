@@ -12,7 +12,8 @@ The only code we keep private relates to our infrastructure, which is also why t
 * Our [new API](https://api.beta.ons.gov.uk) and [developer site](https://developer.beta.ons.gov.uk)
 
 ### Useful documents
-* [DP](https://github.com/ONSdigital/dp) contains our standards, a getting started guide, and some of our hiring documents. Any documentation that doesn't live with code is likely in this repository.
+* [DP](https://github.com/ONSdigital/dp) contains a getting started guide, and some of our hiring documents. Any documentation that doesn't live with code is likely in this repository.
+* [Our development standards](https://github.com/ONSdigital/dp-standards) contains documentation on development standards and specifications
 * [Our principles](https://github.com/ONSdigital/dp-principles) are core to the way we work, and apply across all of Digital Publishing, not just the engineering team.
 
 ### Key Repositories

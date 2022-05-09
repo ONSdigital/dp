@@ -4,7 +4,7 @@ Architecture Principles
 This training document breaks down our architectural standards and explains them in a bit more detail - providing context for how and why we focus on certain approaches.
 
 ## Pre-reading
-Read our [Architecture Principles](../../standards/ARCHITECTURE_STANDARDS.md) and some of the referred resources to understand our high level approach
+Read our [Architecture Principles](https://github.com/ONSdigital/dp-standards/blob/main/ARCHITECTURE_STANDARDS.md#architecture-principles) and some of the referred resources to understand our high level approach
 
 ## Materials
 

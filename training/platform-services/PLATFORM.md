@@ -171,7 +171,7 @@ Further resources
    [grafana-dev-nomad-tasks]: <https://grafana.develop.onsdigital.co.uk/d/000000014/nomad-task?refresh=10s&orgId=1>
    [grafana-dev-node-stats-2]: <https://grafana.develop.onsdigital.co.uk/d/000000004/node-stats-2?refresh=10s&orgId=1>
    [hashicorp-home]: <https://www.hashicorp.com>
-   [health-check-spec]: <https://github.com/ONSdigital/dp/blob/main/standards/HEALTH_CHECK_SPECIFICATION.md>
+   [health-check-spec]: <https://github.com/ONSdigital/dp-standards/blob/main/HEALTH_CHECK_SPECIFICATION.md#health-check-specification>
    [helper-script-dp-setup]: <https://github.com/ONSdigital/dp-setup/tree/develop/scripts>
    [kibana-dev-home]: <https://kibana.develop.onsdigital.co.uk>
    [nomad-dev-home]: <https://nomad.develop.onsdigital.co.uk>
