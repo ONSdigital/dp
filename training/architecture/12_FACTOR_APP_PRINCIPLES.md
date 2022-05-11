@@ -141,7 +141,7 @@ Prerequisite: [Logs](https://12factor.net/logs)
 
 Logs should be written to `STDOUT` and the environment will decide how to stream these events using other services like [fluentd](https://github.com/fluent/fluentd).
 
-- We have logging libraries that follow our [logging standards](../../standards/LOGGING_STANDARDS.md). Using structured logs means we can aggregate the log events.
+- We have logging libraries that follow our [logging standards](https://github.com/ONSdigital/dp-standards/blob/main/LOGGING_STANDARDS.md#logging-standards). Using structured logs means we can aggregate the log events.
 - The logs are streamed, centralised and aggregated in [Kibana](https://www.elastic.co/kibana)
 
 ### 12. Admin processes

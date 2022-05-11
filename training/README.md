@@ -7,7 +7,7 @@ When joining Digital Publishing, there can be a lot to learn! We want to give yo
 
 We have collected resources that give you an idea of [all the modules](#modules) some of which you'll be undertaking over your first few weeks. These may also contain links to resources the team have found useful over the years to get more insight on the topics.
 
-We also have a number of [standards](../standards)  documented that are worth being aware of. Many of them will be linked to through training modules, but its important to be aware of all standards regardless.
+We also have a number of [standards](https://github.com/ONSdigital/dp-standards) documented that are worth being aware of. Many of them will be linked to through training modules, but its important to be aware of all standards regardless.
 
 If you come across a resource that really helped you understand some technology we use, or how we work, please do add a link to it in the relevant document or start a new doc if the topic is not yet covered.
 
