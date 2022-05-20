@@ -109,3 +109,4 @@ in development without having to configure them individually.
 | 28100 | [dp-census-atlas](https://github.com/onSdigital/dp-census-atlas) |
 | 28200 | [dp-geodata-api](https://github.com/ONSdigital/dp-geodata-api) |
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api) |
+| 28400 | [dp-datawrapper-adapter](https://github.com/ONSdigital/dp-datawrapper-adapter) |
