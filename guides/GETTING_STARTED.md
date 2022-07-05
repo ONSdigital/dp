@@ -7,11 +7,11 @@ We're working on some guides to outline our team culture, and some of our develo
 # Set up your mac for development work
 1. [Install applications](MAC_SETUP.md#install-applications)
 2. Set up your [git config](MAC_SETUP.md#git-account-and-configuration)
-3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/master/gpg-keys/developers/README.md) [see note below]
+3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/main/gpg-keys/developers/README.md) [see note below]
 4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
 5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
-6. Run `dp remote allow develop` to prove all your previous setup is correct. The output should include `[dp] allowing access to develop`. Ask for help if you encounter errors or warnings.
-7. Add [environment keys](https://github.com/ONSdigital/dp-ci/tree/master/gpg-keys#adding-a-gpg-key-to-your-keyring) to keychain. First, you'll need to ask one of the *senior developers* for the `develop` passphrase or ask your *Tech Lead* for the `production` passphrase.
+6. Run `dp remote allow sandbox` to prove all your previous setup is correct. The output should include `[dp] allowing access to sandbox`. Ask for help if you encounter errors or warnings.
+7. Add [environment keys](https://github.com/ONSdigital/dp-operations/blob/main/guides/gpg.md#adding-a-gpg-key-to-your-keyring) to keychain. First, you'll need to ask one of the *senior developers* for the `sandbox` passphrase or ask your *Tech Lead* for the `prod` passphrase.
 
 Note: If you cannot access this link, something has gone wrong in the previous step.
 
@@ -45,7 +45,7 @@ All infrastructure configuration is managed in [dp-setup](https://github.com/ONS
 
 ### Continuous Integration (CI)
 All CI configuration is managed in [dp-ci](https://github.com/ONSdigital/dp-ci) and includes the following pieces of set up:
-1. Install any additional [dependencies for ansible](https://github.com/ONSdigital/dp-ci/tree/master/ansible#prerequisites)
+1. Install any additional [dependencies for ansible](https://github.com/ONSdigital/dp-ci/tree/main/ansible#prerequisites)
 2. Install the `fly` command by going to the Concourse UI and selecting the Apple from the CLI list in the bottom right of the screen.
 
 -----
