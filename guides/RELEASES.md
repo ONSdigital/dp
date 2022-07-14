@@ -45,10 +45,10 @@ Once work/coding is complete:
 
 * **Create Release branch** (e.g. `release/1.7.0` see [version control](VERSIONING.md) ) taken from `develop` branch
 * **Create a PR** - to merge the release branch into the `main` branch
-  * the release PR must include the release notes e.g. the features, bugs that have been made
+  * the release PR must include the release notes - a list of the features and bug fixes added since the last release
   * any issues (e.g. in CI) are applied to release branch
   * release branch fixes regularly merged back to `develop`
-* **Merge** into `main` branch
+* **Merge** into `main` branch but don't push it to Github (origin) yet, wait until the tag has been created in the next step and push both at the same time.
 * [Create Release tag](TAGS.md) from `main` branch
   * tag must be published as a release, with bullet point list of changes in the release notes. These should be obtained from the release pull request description
   * release branch can be deleted
