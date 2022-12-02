@@ -85,7 +85,6 @@ in development without having to configure them individually.
 | 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api) |
 | 25800 | [dp-search-data-extractor](https://github.com/ONSdigital/dp-search-data-extractor) |
 | 25900 | [dp-search-data-importer](https://github.com/ONSdigital/dp-search-data-importer) |
-| 26000 | [dp-collection-api](https://github.com/ONSdigital/dp-collection-api) |
 | 26100 | [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset) |
 | 26200 | [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options) |
 | 26300 | [dp-cantabular-csv-exporter](https://github.com/ONSdigital/dp-cantabular-csv-exporter) |
@@ -110,6 +109,4 @@ in development without having to configure them individually.
 | 28100 | [dp-census-atlas](https://github.com/onSdigital/dp-census-atlas) |
 | 28200 | [dp-geodata-api](https://github.com/ONSdigital/dp-geodata-api) |
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api) |
-| 28400 | [dp-datawrapper-adapter](https://github.com/ONSdigital/dp-datawrapper-adapter) |
 | 28500 | [dp-search-reindex-tracker](https://github.com/ONSdigital/dp-search-reindex-tracker) |
-| 28600 | [dp-charts-api](https://github.com/ONSdigital/dp-charts-api) |
