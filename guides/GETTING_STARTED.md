@@ -8,7 +8,7 @@ We're working on some guides to outline our team culture, and some of our develo
 1. [Install applications](MAC_SETUP.md#install-applications)
 2. Set up your [git config](MAC_SETUP.md#git-account-and-configuration)
 3. Set up your [GPG keys](https://github.com/ONSdigital/dp-ci/blob/main/gpg-keys/developers/README.md) [see note below]
-4. Set up your [AWS credentials](AWS_CREDENTIALS.md)
+4. Set up your [AWS account access](AWS_ACCOUNT_ACCESS.md)
 5. Install the [dp-cli](https://github.com/ONSdigital/dp-cli) tool
 6. Run `dp remote allow sandbox` to prove all your previous setup is correct. The output should include `[dp] allowing access to sandbox`. Ask for help if you encounter errors or warnings.
 7. Add [environment keys](https://github.com/ONSdigital/dp-operations/blob/main/guides/gpg.md#adding-a-gpg-key-to-your-keyring) to keychain. First, you'll need to ask one of the *senior developers* for the `sandbox` passphrase or ask your *Tech Lead* for the `prod` passphrase.
