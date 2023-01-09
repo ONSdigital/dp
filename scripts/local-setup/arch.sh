@@ -2,11 +2,19 @@
 
 set -eu
 
+printf "Please write your SSH key name.\nThis is usually FirstnameLastname\n\n"
+read SSHUSER
+
 yay -S jre8-openjdk docker docker-compose maven cypher-shell go nodejs-lts-fermium go-yq ghostscript vault aws-session-manager-plugin
+
 go install github.com/smartystreets/goconvey@latest
 
 arr=(
-    git@github.com:ONSdigital/dp-cli.git
+    git@github.com:ONSdigital/dp-cli
+    git@github.com:ONSdigital/dp-setup
+    git@github.com:ONSdigital/dp-ci
+    git@github.com:ONSdigital/dp-code-list-scripts
+    git@github.com:ONSdigital/dp-hierarchy-builder
 
     git@github.com:ONSdigital/dp-compose
     git@github.com:ONSdigital/florence
@@ -67,5 +75,60 @@ do
   )
 done 
 
-(cd ../../../dp-cli/cmd/dp; go install  )
+(cd ../../../dp-cli/cmd/dp; go install)
 (cd ../../../dp-compose; docker compose up --wait)
+(cd ../../../dp-zebedee-content; make install)
+(cd ../../../dp-cli; cp -a config/example_config.yml ~/.dp-cli-config.yml)
+(cd ../../../dp-cli; cp -a config/example_config.yml ~/.dp-cli-config.yml)
+(cd ../../../dp-ci; git checkout main; git pull)
+(cd ../../../dp-setup; git checkout main; git pull)
+
+working_dir=$(cd ../../..; pwd)
+
+VAR=$(cat <<EOF
+dp-setup-path: "$working_dir/dp-setup" # The path to the dp-setup repo on your machine.
+dp-ci-path: "$working_dir/dp-ci" # The path to the dp-ci repo on your machine.
+dp-hierarchy-builder-path: "$working_dir/dp-hierarchy-builder" # The path to the dp-hierarchy-builder repo on your machine.
+dp-code-list-scripts-path: "$working_dir/dp-code-list-scripts" # The path to the dp-code-list-scripts repo on your machine.
+EOF
+)
+
+echo "$VAR 
+$(tail +8 ~/.dp-cli-config.yml)" > ~/.dp-cli-config.yml
+sed -i "s/ssh-user: JamesHetfield/ssh-user: ${SSHUSER}/" ~/.dp-cli-config.yml
+
+dp remote allow sandbox
+
+STARTUP_FILE=$(cat <<'EOF'
+# Digital Publishing services
+export zebedee_root=~/Documents/website/zebedee-content/generated
+export ENABLE_PRIVATE_ENDPOINTS=true
+export ENABLE_PERMISSIONS_AUTH=true
+export ENCRYPTION_DISABLED=true
+export DATASET_ROUTES_ENABLED=true
+export FORMAT_LOGGING=true
+export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"
+
+export TRANSACTION_STORE=$zebedee_root/zebedee/transactions
+export WEBSITE=$zebedee_root/zebedee/master
+export PUBLISHING_THREAD_POOL_SIZE=10
+EOF
+)
+
+if [[ -f ~/.ons_startup_file.lock ]]; then
+   echo ""
+else
+    cat "$STARTUP_FILE" > ~/.ons_startup_file
+    if [[ -f ~/.bashrc ]]; then
+        echo "source ~/.ons_startup_file" >> ~/.bashrc
+        touch .ons_startup_file.lock
+    fi
+    if [[ -f ~/.zshrc ]]; then
+        echo "source ~/.ons_startup_file" >> ~/.bashrc
+        touch .ons_startup_file.lock
+    fi
+fi
+source ~/.ons_startup_file
+
+dp-zebedee-content generate -c=~/tmp/content.zip
+
