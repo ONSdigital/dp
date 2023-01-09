@@ -110,3 +110,4 @@ in development without having to configure them individually.
 | 28200 | [dp-geodata-api](https://github.com/ONSdigital/dp-geodata-api) |
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api) |
 | 28500 | [dp-search-reindex-tracker](https://github.com/ONSdigital/dp-search-reindex-tracker) |
+| 28600 | [dp-feedback-api](https://github.com/ONSdigital/dp-feedback-api) |
