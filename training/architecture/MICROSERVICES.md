@@ -14,7 +14,7 @@ Understand a [basic definition of microservices](https://smartbear.com/solutions
 
 ### Materials
 
-[This presentation](https://docs.google.com/presentation/d/1bXZw2rJTBa7spXVQNuA0lVQSN-2jZiz9khn6hJsvWwc/edit#slide=id.ge2b2dc2785_0_359) walks through our different service types and where they are commonly deployed. It also highlights some considerations and standards that are common across all of our service types, such as healthchecking.
+[This presentation](https://docs.google.com/presentation/d/1gL9lzOAN4JycdGqYsNslykuYedviQnc_/edit#slide=id.p1) walks through our different service types and where they are commonly deployed. It also highlights some considerations and standards that are common across all of our service types, such as healthchecking.
 
 As microservices mean we often have to create new repositories, we have created a [project generation](https://github.com/ONSdigital/dp-cli/tree/main/project_generation) tool that allows us to start from a boilerplated version of the relevant kind of repository. We also have a [hello world](https://github.com/ONSdigital/dp-hello-world) repo where we document our baseline application structure for reference, review, and as a place to center conversations about standards.
 

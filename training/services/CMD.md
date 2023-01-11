@@ -14,7 +14,7 @@ Need to do before doing this course. None if not needed.
 ### Materials
 
 TODO:
-* :warning: [These slides](https://docs.google.com/presentation/d/1bXZw2rJTBa7spXVQNuA0lVQSN-2jZiz9khn6hJsvWwc/edit#slide=id.ge3df80403a_0_0) need updating
+* :warning: [These slides](https://docs.google.com/presentation/d/1gL9lzOAN4JycdGqYsNslykuYedviQnc_/edit#slide=id.p9) need updating
 * provide links to explore the journey
 
 Module content or link to it. For self-learning this may be a text explanation of an area with links to a few relevant guides. For guided learning this may be an agenda of topics covered in a workshop/training session and links to those resources.

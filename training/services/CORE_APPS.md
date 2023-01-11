@@ -13,7 +13,7 @@ Explore [ONS.gov.uk](ONS.gov.uk) a bit to get a sense of the kind of information
 
 ### Materials
 
-[This presentation](https://docs.google.com/presentation/d/1EVacZxrSDmfmwsVSHc9rPBspohRh_MP_eD65Qcpbtm8/edit#slide=id.p) introduces the principles underpinning the way the website was originally constructed, highlighting some core service names and areas we're looking to move beyond. It will explain terms like 'zebedee', 'florence', 'the train', 'babbage' and 'files on disk'. 
+[This presentation](https://docs.google.com/presentation/d/1tYEmddv2icKKmFkrSTMbiMPUE53pbbRA/edit#slide=id.p1) introduces the principles underpinning the way the website was originally constructed, highlighting some core service names and areas we're looking to move beyond. It will explain terms like 'zebedee', 'florence', 'the train', 'babbage' and 'files on disk'.
 
 ### Next steps
 

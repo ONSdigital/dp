@@ -65,5 +65,5 @@ None.
 
 Further resources
 ----------------------------
-- The CSV file format used in the Customise my Data systems is known as a **V4** file, and is [further defined here](https://docs.google.com/document/d/1szyhfZZYO3c5-jeMVrXOJha5JCltCDYZC2ySNcruNOc/edit)
+- The CSV file format used in the Customise my Data systems is known as a **V4** file, and is [further defined here](https://docs.google.com/document/d/1NapvpK6pD0vSI5lIOJUkfkvjw8_ryZ8t/edit)
 - Look at the 'Terminology' section on the [Developer Site](https://developer.ons.gov.uk/) for another take on some of these terms.
