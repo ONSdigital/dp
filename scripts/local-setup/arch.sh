@@ -27,7 +27,7 @@ read SSHUSER
 
 
 go install github.com/smartystreets/goconvey@latest
-go install -u github.com/DarthSim/overmind/v2@latest
+go install github.com/DarthSim/overmind/v2@latest
 
 arr=(
     git@github.com:ONSdigital/dp-cli
