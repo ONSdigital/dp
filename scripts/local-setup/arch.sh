@@ -2,12 +2,32 @@
 
 set -eu
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    yay -S jre8-openjdk docker docker-compose maven cypher-shell go nodejs-lts-fermium go-yq ghostscript vault aws-session-manager-plugin aws-cli-v2 ansible python-boto3 jdk8-openjdk
+
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install openjdk@8 /
+                maven /
+                docker-compose /
+                cyhper-shell /
+                node@14 /
+                go /
+                ghostscript /
+                hasicorp/tap/vault /
+                jq /
+                yq / 
+
+    brew install --cask docker /
+                        session-manager-plugin
+fi
+
 printf "Please write your SSH key name.\nThis is usually FirstnameLastname\n\n"
 read SSHUSER
 
-yay -S jre8-openjdk docker docker-compose maven cypher-shell go nodejs-lts-fermium go-yq ghostscript vault aws-session-manager-plugin
 
 go install github.com/smartystreets/goconvey@latest
+go install -u github.com/DarthSim/overmind/v2@latest
 
 arr=(
     git@github.com:ONSdigital/dp-cli
@@ -15,6 +35,20 @@ arr=(
     git@github.com:ONSdigital/dp-ci
     git@github.com:ONSdigital/dp-code-list-scripts
     git@github.com:ONSdigital/dp-hierarchy-builder
+    git@github.com:ONSdigital/dp-configs
+
+    git@github.com:ONSdigital/babbage
+    git@github.com:ONSdigital/zebedee
+    git@github.com:ONSdigital/sixteens
+
+    git@github.com:ONSdigital/dp-frontend-router
+    git@github.com:ONSdigital/dp-frontend-renderer
+
+    git@github.com:ONSdigital/dp-frontend-homepage-controller
+    git@github.com:ONSdigital/dp-frontend-cookie-controller
+    git@github.com:ONSdigital/dp-frontend-dataset-controller
+
+    git@github.com:ONSdigital/dp-frontend-feedback-controller
 
     git@github.com:ONSdigital/dp-compose
     git@github.com:ONSdigital/florence
@@ -118,7 +152,7 @@ EOF
 if [[ -f ~/.ons_startup_file.lock ]]; then
    echo ""
 else
-    cat "$STARTUP_FILE" > ~/.ons_startup_file
+    echo "$STARTUP_FILE" > ~/.ons_startup_file
     if [[ -f ~/.bashrc ]]; then
         echo "source ~/.ons_startup_file" >> ~/.bashrc
         touch .ons_startup_file.lock
@@ -130,5 +164,7 @@ else
 fi
 source ~/.ons_startup_file
 
-dp-zebedee-content generate -c=~/tmp/content.zip
+mkdir -p "$zebedee_root"
+cp -a ~/Downloads/cms-content.zip $zebedee_root
+dp-zebedee-content generate
 
