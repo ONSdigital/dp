@@ -5,7 +5,7 @@ General guidance on creating a pull request
 ## Pre-reading
 
 - It is useful to have [an understanding of GIT](https://git-scm.com/about) and branches as a way of working
-- Have a look at pull requests in the `#dev-code-review` channel on Slack
+- Have a look at pull requests in the `#dev_code_review` channel on Slack
 - There is also this documentation on our [contributing guidelines](https://github.com/ONSdigital/dp/blob/main/guides/CONTRIBUTING.md#development-work) which covers some aspects of creating pull requests.
 - There is also an option to create a *draft* pull request, these can be created to have a discussion about a feature before it is ready for a code review.
 
