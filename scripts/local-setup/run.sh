@@ -7,19 +7,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew install openjdk@8 /
-                maven /
-                docker-compose /
-                cyhper-shell /
-                node@14 /
-                go /
-                ghostscript /
-                hasicorp/tap/vault /
-                jq /
-                yq / 
-
-    brew install --cask docker /
-                        session-manager-plugin
+    brew install openjdk@8 maven docker-compose cyhper-shell node@14 go ghostscript jq yq
+                
+    # hasicorp/tap/vault /
+    brew install --cask docker session-manager-plugin
 fi
 
 printf "Please write your SSH key name.\nThis is usually FirstnameLastname\n\n"
@@ -131,8 +122,6 @@ echo "$VAR
 $(tail +8 ~/.dp-cli-config.yml)" > ~/.dp-cli-config.yml
 sed -i "s/ssh-user: JamesHetfield/ssh-user: ${SSHUSER}/" ~/.dp-cli-config.yml
 
-dp remote allow sandbox
-
 STARTUP_FILE=$(cat <<'EOF'
 # Digital Publishing services
 export zebedee_root=~/Documents/website/zebedee-content/generated
@@ -149,6 +138,8 @@ export PUBLISHING_THREAD_POOL_SIZE=10
 EOF
 )
 
+(
+ons_
 if [[ -f ~/.ons_startup_file.lock ]]; then
    echo ""
 else
@@ -163,8 +154,12 @@ else
     fi
 fi
 source ~/.ons_startup_file
+)
 
 mkdir -p "$zebedee_root"
 cp -a ~/Downloads/cms-content.zip $zebedee_root
+
+dp remote allow sandbox
 dp-zebedee-content generate
 
+overmind start -f Procfile.web
