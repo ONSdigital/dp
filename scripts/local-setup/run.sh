@@ -149,7 +149,7 @@ else
         touch .ons_startup_file.lock
     fi
     if [[ -f ~/.zshrc ]]; then
-        echo "source ~/.ons_startup_file" >> ~/.bashrc
+        echo "source ~/.ons_startup_file" >> ~/.zshrc
         touch .ons_startup_file.lock
     fi
 fi
