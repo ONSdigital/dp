@@ -34,6 +34,7 @@ arr=(
 
     git@github.com:ONSdigital/dp-frontend-router
     git@github.com:ONSdigital/dp-frontend-renderer
+    git@github.com:ONSdigital/dp-frontend-search-controller
 
     git@github.com:ONSdigital/dp-frontend-homepage-controller
     git@github.com:ONSdigital/dp-frontend-cookie-controller
@@ -110,21 +111,21 @@ done
 
 working_dir=$(cd ../../..; pwd)
 
-VAR=$(cat <<EOF
-dp-setup-path: "$working_dir/dp-setup" # The path to the dp-setup repo on your machine.
-dp-ci-path: "$working_dir/dp-ci" # The path to the dp-ci repo on your machine.
-dp-hierarchy-builder-path: "$working_dir/dp-hierarchy-builder" # The path to the dp-hierarchy-builder repo on your machine.
-dp-code-list-scripts-path: "$working_dir/dp-code-list-scripts" # The path to the dp-code-list-scripts repo on your machine.
-EOF
-)
+#VAR=$(cat <<EOF
+#dp-setup-path: "$working_dir/dp-setup" # The path to the dp-setup repo on your machine.
+#dp-ci-path: "$working_dir/dp-ci" # The path to the dp-ci repo on your machine.
+#dp-hierarchy-builder-path: "$working_dir/dp-hierarchy-builder" # The path to the dp-hierarchy-builder repo on your machine.
+#dp-code-list-scripts-path: "$working_dir/dp-code-list-scripts" # The path to the dp-code-list-scripts repo on your machine.
+#EOF
+#)
 
-echo "$VAR 
-$(tail +8 ~/.dp-cli-config.yml)" > ~/.dp-cli-config.yml
-sed -i "s/ssh-user: JamesHetfield/ssh-user: ${SSHUSER}/" ~/.dp-cli-config.yml
+#echo "$VAR 
+#$(tail +8 ~/.dp-cli-config.yml)" > ~/.dp-cli-config.yml
+#sed -i "s/ssh-user: JamesHetfield/ssh-user: ${SSHUSER}/" ~/.dp-cli-config.yml
 
 STARTUP_FILE=$(cat <<'EOF'
 # Digital Publishing services
-export zebedee_root=~/Documents/website/zebedee-content/generated
+export zebedee_root=${working_dir}/website/zebedee-content/generated
 export ENABLE_PRIVATE_ENDPOINTS=true
 export ENABLE_PERMISSIONS_AUTH=true
 export ENCRYPTION_DISABLED=true
@@ -139,7 +140,6 @@ EOF
 )
 
 (
-ons_
 if [[ -f ~/.ons_startup_file.lock ]]; then
    echo ""
 else
@@ -159,7 +159,7 @@ source ~/.ons_startup_file
 mkdir -p "$zebedee_root"
 cp -a ~/Downloads/cms-content.zip $zebedee_root
 
-dp remote allow sandbox
+#dp remote allow sandbox
 dp-zebedee-content generate
 
-overmind start -f Procfile.web
+overmind start -f Procfile.web -N

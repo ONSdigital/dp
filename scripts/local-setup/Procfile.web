@@ -1,6 +1,6 @@
 babbage: (cd ../../../babbage && ./run.sh)
 zebedee: (cd ../../../zebedee && ./run-reader.sh)
-sixteens: (cd ../../../zebedee && ./run.sh)
+sixteens: (cd ../../../sixteens && ./run.sh)
 dp-frontend-router: (cd ../../../dp-frontend-router && make debug)
 dp-frontend-renderer: (cd ../../../dp-frontend-renderer && make debug)
 dp-frontend-homepage-controller: (cd ../../../dp-frontend-homepage-controller && make debug)
