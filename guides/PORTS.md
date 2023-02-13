@@ -94,7 +94,6 @@ in development without having to configure them individually.
 | 26700 | [dp-cantabular-metadata-exporter](https://github.com/ONSdigital/dp-cantabular-metadata-exporter) |
 | 26800 | [dp-cantabular-xlsx-exporter](https://github.com/ONSdigital/dp-cantabular-xlsx-exporter) |
 | 26900 | [dp-files-api](https://github.com/ONSdigital/dp-files-api) |
-| 27000 | [dp-articles-api](https://github.com/ONSdigital/dp-articles-api) |
 | 27017 | [dp-compose](https://github.com/ONSdigital/dp-compose) : mongo |
 | 27100 | [dp-cantabular-filter-flex-api](https://github.com/ONSdigital/dp-cantabular-filter-flex-api) |
 | 27200 | [dp-cantabular-dimension-api](https://github.com/ONSdigital/dp-cantabular-dimension-api) |
