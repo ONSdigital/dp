@@ -155,11 +155,21 @@ Concurrent file read ... using `errgroup.WithContext`
             mySleepAndTalk(ctx, 5*time.Second, "hello")
         }
 
+        // See this articl for not using time.After in the following code:
+        //   "A story of a memory leak in GO: How to properly use time.After()"
+        //   https://www.arangodb.com/2020/09/a-story-of-a-memory-leak-in-go-how-to-properly-use-time-after/
+
         func mySleepAndTalk(ctx context.Context, d time.Duration, msg string) {
+            delay := time.NewTimer(d)
             select {
-            case <-time.After(d):
+            case <-delay.C(d):
                 fmt.Println(msg)
             case <-ctx.Done():
+                // Ensure timer is stopped and its resources are freed
+                if !delay.Stop() {
+                    // if the timer has been stopped then read from the channel
+                    <-delay.C
+                }
                 log.Print(ctx.Err())
             }
         }
@@ -191,10 +201,16 @@ Concurrent file read ... using `errgroup.WithContext`
             log.Printf("handler started")
             defer log.Printf("Handler ended")
             
+            delay := time.NewTimer(5 * time.Second)
             select {
-            case <-time.After(5 * time.Second):
+            case <-delay.C:
                 fmt.Fprintln(w, "hello")
             case <-ctx.Done():
+                // Ensure timer is stopped and its resources are freed
+                if !delay.Stop() {
+                    // if the timer has been stopped then read from the channel
+                    <-delay.C
+                }
                 err := ctx.Err()
                 log.Print(err)
                 http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -367,10 +383,16 @@ Concurrent file read ... using `errgroup.WithContext`
             log.Println(ctx, "handler started")
             defer log.Println(ctx, "Handler ended")
             
+            delay := time.NewTimer(5 * time.Second)
             select {
-            case <-time.After(5 * time.Second):
+            case <-delay.C:
                 fmt.Fprintln(w, "hello")
             case <-ctx.Done():
+                // Ensure timer is stopped and its resources are freed
+                if !delay.Stop() {
+                    // if the timer has been stopped then read from the channel
+                    <-delay.C
+                }
                 err := ctx.Err()
                 log.Println(ctx, err.Error())
                 http.Error(w, err.Error(), http.StatusInternalServerError)
