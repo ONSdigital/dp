@@ -274,7 +274,7 @@ Run all the services in the [web journey](#web-journey)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
-* [dp-frontend-feedback-controller](https://github.com/ONSdigital-dp-frontend-feedback-controller)
+* [dp-frontend-feedback-controller](https://github.com/ONSdigital/dp-frontend-feedback-controller)
 
 The website will be available at http://localhost:20000
 
