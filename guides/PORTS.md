@@ -110,3 +110,6 @@ in development without having to configure them individually.
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api) |
 | 28500 | [dp-search-reindex-tracker](https://github.com/ONSdigital/dp-search-reindex-tracker) |
 | 28600 | [dp-feedback-api](https://github.com/ONSdigital/dp-feedback-api) |
+| 28700 | [dp-search-scrubber-api](https://github.com/ONSdigital/dp-search-scrubber-api) |
+| 28800 | [dp-nlp-category-api](https://github.com/ONSdigital/dp-nlp-category-api) |
+| 28900 | [dp-nlp-berlin-api](https://github.com/ONSdigital/dp-nlp-berlin-api) |
