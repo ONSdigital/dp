@@ -113,3 +113,4 @@ in development without having to configure them individually.
 | 28700 | [dp-search-scrubber-api](https://github.com/ONSdigital/dp-search-scrubber-api) |
 | 28800 | [dp-nlp-category-api](https://github.com/ONSdigital/dp-nlp-category-api) |
 | 28900 | [dp-nlp-berlin-api](https://github.com/ONSdigital/dp-nlp-berlin-api) |
+| 29000 | [dp-cpih-export](https://github.com/ONSdigital/dp-cpih-export) |
