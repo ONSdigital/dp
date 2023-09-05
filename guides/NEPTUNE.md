@@ -20,7 +20,7 @@ First you need the address of the cluster you want to connect to. You can get th
 
 1. Go to the Neptune section of the [AWS console](https://eu-west-1.console.aws.amazon.com/neptune)
 1. Select Databases from the side menu (it may already be selected)
-1. Click on the link for the cluster you want to connect to. For local development, the `develop-neptune-dev-test-cluster` should be used.
+1. Click on the link for the cluster you want to connect to. For local development, the `sandbox-neptune-dev-test-cluster` should be used.
 
     ![1](../img/neptune_db_select.png)
 
@@ -28,18 +28,18 @@ First you need the address of the cluster you want to connect to. You can get th
 
     ![1](../img/neptune_cluster_address.png)
 
-1. Run the command to port forward to the Neptune cluster, where `{cluster address}` is replaced with the `develop-neptune-dev-test-cluster` cluster endpoint address.
+1. Run the command to port forward to the Neptune cluster, where `{cluster address}` is replaced with the `sandbox-neptune-dev-test-cluster` cluster endpoint address.
 
 #### Using the DP CLI
 
  ```shell
- dp ssh develop publishing 1 -p 8182:{cluster address}:8182
+ dp ssh sandbox publishing 1 -p 8182:{cluster address}:8182
  ```
 
 For example:
 
 ```shell
-dp ssh develop publishing 1 -p 8182:develop-neptune-dev-test-cluster.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com:8182
+dp ssh sandbox publishing 1 -p 8182:sandbox-neptune-dev-test-cluster.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com:8182
 ```
 
 #### If not using the DP CLI
