@@ -18,9 +18,9 @@ Neo4j runs within a docker container as part of the [dp-compose](https://github.
 
 First you need the address of the cluster you want to connect to. You can get this from the AWS console:
 
-1. Go to the Neptune section of the [AWS console](https://eu-west-1.console.aws.amazon.com/neptune)
+1. Go to the Neptune section of the [AWS console](https://eu-west-2.console.aws.amazon.com/neptune/home?region=eu-west-2)
 1. Select Databases from the side menu (it may already be selected)
-1. Click on the link for the cluster you want to connect to. For local development, the `develop-neptune-dev-test-cluster` should be used.
+1. Click on the link for the cluster you want to connect to. For local development, the `sandbox-neptune-cluster` should be used.
 
     ![1](../img/neptune_db_select.png)
 
@@ -28,18 +28,18 @@ First you need the address of the cluster you want to connect to. You can get th
 
     ![1](../img/neptune_cluster_address.png)
 
-1. Run the command to port forward to the Neptune cluster, where `{cluster address}` is replaced with the `develop-neptune-dev-test-cluster` cluster endpoint address.
+1. Run the command to port forward to the Neptune cluster, where `{cluster address}` is replaced with the `sandbox-neptune-cluster` cluster endpoint address.
 
 #### Using the DP CLI
 
  ```shell
- dp ssh develop publishing 1 -p 8182:{cluster address}:8182
+ dp ssh sandbox publishing 1 -p 8182:{cluster address}:8182
  ```
 
 For example:
 
 ```shell
-dp ssh develop publishing 1 -p 8182:develop-neptune-dev-test-cluster.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com:8182
+dp ssh sandbox publishing 1 -p 8182:sandbox-neptune-dev-test-cluster.cluster-cpviojtnaxsj.eu-west-1.neptune.amazonaws.com:8182
 ```
 
 #### If not using the DP CLI
@@ -110,15 +110,19 @@ The [Gremlin console](https://tinkerpop.apache.org/download.html) is a command-l
 Download using the above link, unzip the file, and add the `bin` to your PATH:
 
 ```shell
-cd ~/bin                                                       # does not have to be in this dir
-unzip ~/Downloads/apache-tinkerpop-gremlin-console-3.4.1.zip   # amend these lines for the version you have
-PATH=~/bin/apache-tinkerpop-gremlin-console-3.4.1/bin          # add this line to your startup (~/.zshrc)
-which gremlin.sh                                               # should return the location of that script
+cd ~/bin                                                            # does not have to be in this dir
+unzip ~/Downloads/apache-tinkerpop-gremlin-console-3.7.0-bin.zip    # amend these lines for the version you have
+export PATH=$PATH:~/bin/apache-tinkerpop-gremlin-console-3.7.0/bin  # add this line to your startup (~/.zshrc)
+which gremlin.sh                                                    # should return the location of that script
 ```
 
 #### Using Gremlin Console
 
 For a tutorial, see the [getting started guide](https://tinkerpop.apache.org/docs/3.4.8/tutorials/getting-started/)
+
+To start Gremlin Console run:
+
+```gremlin.sh```
 
 Once the console is running, and your port forwarding is set up, you need to run the following command in the Gremlin Console (**including the colon at the start of the line**):
 
