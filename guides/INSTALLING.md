@@ -34,15 +34,15 @@ Software | Install | Notes
 [dp-compose](https://github.com/ONSdigital/dp-compose)    | `$ git clone git@github.com:ONSdigital/dp-compose`      | See [`dp-compose` README](https://github.com/ONSdigital/dp-compose#dp-compose) for configuration of Docker Desktop resources
 
 [dp-compose](https://github.com/ONSdigital/dp-compose) runs the following services:
-  - Services for Web
+  - Services for the Website
     - Elasticsearch 2.4.2
     - Elasticsearch 7 (on non-standard port)
     - Highcharts
     - Postgres
-  - Services for CMD
     - MongoDB
     - Elasticsearch 6 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
+  - Services for CMD
     - [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
@@ -116,12 +116,10 @@ All the services in the [web] and [publishing] journeys, as well as:
 
 * [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
 * [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
-* [dp-frontend-geography-controller](https://github.com/ONSdigital/dp-frontend-geography-controller)
 
   ```bash
   git clone git@github.com:ONSdigital/dp-dataset-api
   git clone git@github.com:ONSdigital/dp-frontend-filter-dataset-controller
-  git clone git@github.com:ONSdigital/dp-frontend-geography-controller
   ```
 
 #### Import services:
@@ -135,6 +133,7 @@ All the services in the [web] and [publishing] journeys, as well as:
 * [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor)
 * [dp-observation-importer](https://github.com/ONSdigital/dp-observation-importer)
 * [dp-hierarchy-builder](https://github.com/ONSdigital/dp-hierarchy-builder)
+* [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api)
 * [dp-dimension-search-builder](https://github.com/ONSdigital/dp-dimension-search-builder)
 * [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)
 
@@ -148,6 +147,7 @@ All the services in the [web] and [publishing] journeys, as well as:
   git clone git@github.com:ONSdigital/dp-observation-extractor
   git clone git@github.com:ONSdigital/dp-observation-importer
   git clone git@github.com:ONSdigital/dp-hierarchy-builder
+  git clone git@github.com:ONSdigital/dp-hierarchy-api
   git clone git@github.com:ONSdigital/dp-dimension-search-builder
   git clone git@github.com:ONSdigital/dp-publishing-dataset-controller
   ```
@@ -156,31 +156,9 @@ All the services in the [web] and [publishing] journeys, as well as:
 
 [Sequence diagram of cmd import process](https://github.com/ONSdigital/dp-import/tree/main/docs/import-sequence#readme)
 
-#### Cantabular import services:
-
-* [dp-cantabular-server](https://github.com/ONSdigital/dp-cantabular-server)
-* [dp-cantabular-api-ext](https://github.com/ONSdigital/dp-cantabular-api-ext)
-* [zebedee](https://github.com/ONSdigital/zebedee)
-* [dp-recipe-api](https://github.com/ONSdigital/dp-recipe-api)
-* [dp-import-api](https://github.com/ONSdigital/dp-import-api)
-* [dp-dataset-api](https://github.com/ONSdigital/dp-dataset-api)
-* [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset)
-* [dp-import-cantabular-dimension-options](https://github.com/ONSdigital/dp-import-cantabular-dimension-options)
-
-  ```bash
-  git clone git@github.com:ONSdigital/dp-cantabular-server
-  git clone git@github.com:ONSdigital/dp-cantabular-api-ext
-  git clone git@github.com:ONSdigital/zebedee
-  git clone git@github.com:ONSdigital/dp-recipe-api
-  git clone git@github.com:ONSdigital/dp-import-api
-  git clone git@github.com:ONSdigital/dp-dataset-api
-  git clone git@github.com:ONSdigital/dp-import-cantabular-dataset
-  git clone git@github.com:ONSdigital/dp-import-cantabular-dimension-options
-  ```
-
-[See more information and diagrams](https://docs.google.com/document/d/13U5kM3ZwmfNXdy7dq-RX0nZ0hQe5wzgSlDSOvZRP8eU)
-
 #### Filter journey:
+If you have already setup the import journey, you will have the Hierarchy API already. It's still fine to copy the command set below, just be aware that if you hit 1 error for `destination path already exists` that is expected.
+
 * [dp-dimension-search-api](https://github.com/ONSdigital/dp-dimension-search-api)
 * [dp-code-list-api](https://github.com/ONSdigital/dp-code-list-api)
 * [dp-hierarchy-api](https://github.com/ONSdigital/dp-hierarchy-api)
@@ -198,6 +176,14 @@ All the services in the [web] and [publishing] journeys, as well as:
   ```
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
+
+### Cantabular
+
+[dp-compose](https://github.com/ONSdigital/dp-compose/tree/main) contains a few stacks for Cantabular services, including the [Cantabular import journey](https://github.com/ONSdigital/dp-compose/tree/main/cantabular-import#cantabular-import-journey) and [Cantabular metadata publishing](https://github.com/ONSdigital/dp-compose/tree/main/cantabular-metadata-pub)
+
+Both of these stacks rely on variations of an `scs.sh` script, which provides support in cloning, updating and running all the necessary repos for these journeys.
+
+[See more information and diagrams](https://docs.google.com/document/d/13U5kM3ZwmfNXdy7dq-RX0nZ0hQe5wzgSlDSOvZRP8eU)
 
 --------------
 
@@ -249,6 +235,11 @@ export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb9666
 export TRANSACTION_STORE=$zebedee_root/zebedee/transactions
 export WEBSITE=$zebedee_root/zebedee/master
 export PUBLISHING_THREAD_POOL_SIZE=10
+
+# For CMD services
+export GRAPH_DRIVER_TYPE=neptune
+export GRAPH_ADDR=wss://localhost:8182/gremlin
+export NEPTUNE_TLS_SKIP_VERIFY=true
 
 ```
 
@@ -307,6 +298,7 @@ The website will be available at [http://localhost:8081](http://localhost:8081) 
 All of the services in the [web](#web-journey), [publishing](#publishing-journey) and [CMD](#cmd-journeys) journeys need to be run for the full CMD journey to work. This journey includes importing data, publishing it and testing the public journey.
 
 > You will want to make sure you have access to the Neptune test instance as well, if you want the entire CMD journey to be accessible. Details on how to set this up can be found [here](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md).
+
 
 Use the following alternative commands:
 
