@@ -40,9 +40,9 @@ Software | Install | Notes
     - Highcharts
     - Postgres
     - MongoDB
-    - Elasticsearch 6 (on non-standard port)
     - Kafka (plus required Zookeeper dependency)
   - Services for CMD
+    - Elasticsearch 6 (on non-standard port)
     - [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
