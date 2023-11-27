@@ -3,16 +3,23 @@
 Following [Semantic Versioning 2.0.0](https://semver.org/).
 * The first stable release for repositories, either libraries or services, is `1.0.0`
 
-* When creating release branches or tags it is digital publishing standard to not increment the patch version and hence should always be zero; (`Major.Minor.Patch = 1.0.0`)
+The versioning process is different for applications and libraries (see the [release process](RELEASES.md) for additional information):
+* **Applications**
+  * Releases: only major and minor increments are allowed, the patch is always 0. The release branch is branched off `develop` and merged into `master`. For example:
+    ```
+    Current version is 1.1.0
 
-* Any new release will force the version to go up by either a minor or major version, see examples below:
+    * Minor release updates version to 1.2.0
+    * Major release updates version to 2.0.0
+    ```
+  * Hotfixes: only patch increments are allowed. The hotfix branch is branched off `master`. For example:
+    ```
+    Current version is 1.1.0
 
-```
-Current version is 1.1.0
-
-* Minor release updates version to 1.2.0
-* Major release updates version to 2.0.0
-```
+    * Patch release updates version to 1.1.1
+    ```
+* **Libraries**
+  * Releases and hotfixes: any type of increment (major, minor or patch) is allowed. The branch is branched off `main`, as libraries don't have a `develop` branch.
 
 ## Maintaining Old Versions
 
