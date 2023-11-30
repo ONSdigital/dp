@@ -76,15 +76,19 @@ The original logging library was modified in order to manage the change centrall
 
 
 # Instrumenting Go services for OT
-
-The following environment variables need to be set:
+The following environment variables need to be created:
 ```
-OTEL_SERVICE_NAME=<service name>
-OTEL_EXPORTER_OTLP_ENDPOINT=localhost:4317
+	OTServiceName              string        `envconfig:"OTEL_SERVICE_NAME"`
+	OTExporterOTLPEndpoint     string        `envconfig:"OTEL_EXPORTER_OTLP_ENDPOINT"`
 ```
-
-
-Note that the exporter endpoint is <hostname>:<port>, unlike the java configuration there is no protocol identifier
+These can then be set in the config:
+```
+cfg = &Config{
+    OTExporterOTLPEndpoint:     "localhost:4317",
+    OTServiceName:              "service-name",
+}
+```
+Note that the exporter endpoint is `<hostname>:<port>`, unlike the java configuration there is no protocol identifier
 
 Import the shared init library for go dp-otel-go
 
@@ -102,7 +106,6 @@ otelConfig := dpotelgo.Config{
 
 otelShutdown, oErr := dpotelgo.SetupOTelSDK(ctx, otelConfig)
 
-otelShutdown, oErr := dpotelgo.SetupOTelSDK(ctx)
 if oErr != nil {
     log.Fatal(ctx, "error setting up OpenTelemetry - hint: ensure OTEL_EXPORTER_OTLP_ENDPOINT is set", oErr)
     return
@@ -132,7 +135,7 @@ s := &http.Server{
 ```
 
 
-The following ensures that the http route name is included in all subsequent traces:
+Every handler inside a mux router will need to be instrumented to provide any information on a trace. The following ensures that the http route name is included in all subsequent traces:
 ```
 func routes(router *mux.Router, hc *healthcheck.HealthCheck) *RendererAPI {
     api := RendererAPI{router: router}
@@ -147,6 +150,27 @@ func routes(router *mux.Router, hc *healthcheck.HealthCheck) *RendererAPI {
     handleFunc("/render/{render_type}", api.renderTable)
     handleFunc("/parse/html", api.parseHTML)
     return &api
+}
+```
+
+Where the server is configured with an api field:
+```
+return &Service{
+	api:                 searchAPI,
+}
+```
+Handlers can be wrapped as below: 
+```
+
+func (a *SearchAPI) RegisterGetSearch(...) *SearchAPI {
+	a.Router.Handle(
+		"/search",
+		otelhttp.NewHandler(
+			SearchHandlerFunc(
+                ...
+			), "/search"),
+	).Methods(http.MethodGet)
+	return a
 }
 ```
 
