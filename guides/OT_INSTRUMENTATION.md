@@ -4,13 +4,18 @@ Instrumenting ONS services for Open Telemetry
 # Instrumenting Java services for OT
 These lines to be added in the Dockerfile(s), and to any run.sh scripts that are used locally:
 
+`-javaagent:target/dependency/aws-opentelemetry-agent-1.31.0.jar \`
+
+`-Dotel.propagators=tracecontext,baggage \`
+
+For instance:
 ```
 ENTRYPOINT java $JAVA_OPTS \
 -Drestolino.realm=$REALM \
 -Drestolino.files=$RESTOLINO_STATIC \
 -Drestolino.classes=$RESTOLINO_CLASSES \
 -Drestolino.packageprefix=$PACKAGE_PREFIX \
--javaagent:target/dependency/aws-opentelemetry-agent-1.30.0.jar \
+-javaagent:target/dependency/aws-opentelemetry-agent-1.31.0.jar \
 -Dotel.propagators=tracecontext,baggage \
 -cp "target/dependency/*:target/classes/" \
 com.github.davidcarboni.restolino.Main
@@ -21,9 +26,9 @@ The following entry needs to be added to the pom:
 ```
 <!-- OpenTelemetry-->
 <dependency>
-<groupId>software.amazon.opentelemetry</groupId>
-<artifactId>aws-opentelemetry-agent</artifactId>
-<version>1.30.0</version>
+    <groupId>software.amazon.opentelemetry</groupId>
+    <artifactId>aws-opentelemetry-agent</artifactId>
+    <version>1.31.0</version>
 </dependency>
 ```
 
@@ -87,16 +92,24 @@ Import the shared init library for go dp-otel-go
 
 From the init code of the library initialise the otel services:
 ```
-//Set up Openelemetry
+//Set up OpenTelemetry
+cfg, err := config.Get()
+
+otelConfig := dpotelgo.Config{
+    OtelServiceName:          cfg.OTServiceName,
+    OtelExporterOtlpEndpoint: cfg.OTExporterOTLPEndpoint,
+}
+
+otelShutdown, oErr := dpotelgo.SetupOTelSDK(ctx, otelConfig)
 
 otelShutdown, oErr := dpotelgo.SetupOTelSDK(ctx)
 if oErr != nil {
-log.Fatal(ctx, "error setting up OpenTelemetry - hint: ensure OTEL_EXPORTER_OTLP_ENDPOINT is set", oErr)
-return
+    log.Fatal(ctx, "error setting up OpenTelemetry - hint: ensure OTEL_EXPORTER_OTLP_ENDPOINT is set", oErr)
+    return
 }
 // Handle shutdown properly so nothing leaks.
 defer func() {
-err = errors.Join(err, otelShutdown(context.Background()))
+    err = errors.Join(err, otelShutdown(context.Background()))
 }()
 ```
 NB: if this isn't done any calls to the otel service will fail silently. If you find that traces are not coming through, ensure this code is getting called.
@@ -111,10 +124,10 @@ otelHandler := otelhttp.NewHandler(httpHandler,"/")
 log.Info(ctx, "Starting server", log.Data{"config": cfg})
 
 s := &http.Server{
-Handler: otelHandler,
-ReadTimeout: cfg.ProxyTimeout,
-WriteTimeout: cfg.ProxyTimeout,
-IdleTimeout: 120 * time.Second,
+    Handler: otelHandler,
+    ReadTimeout: cfg.ProxyTimeout,
+    WriteTimeout: cfg.ProxyTimeout,
+    IdleTimeout: 120 * time.Second,
 }
 ```
 
@@ -167,7 +180,6 @@ func New(cfg Config) http.Handler {
 
     middleware := alice.New(
         dprequest.HandlerRequestID(16),
-        dpotelgo.OtelLoggingMiddleware,
         otelhttp.NewMiddleware("dp-frontend-router"),
         log.Middleware,
         SecurityHandler,
@@ -179,22 +191,6 @@ func New(cfg Config) http.Handler {
     newAlice := middleware.Then(router)
 }
 ```
-
-
-A slightly different approach has to be taken if using a reverse proxy:
-```
-proxy.Director = func(req *http.Request) {
-    log.Info(req.Context(), "proxying request", log.HTTP(req, 0, 0, nil, nil), log.Data{
-        "destination": proxyURL,
-        "proxy_name": proxyName,
-    })
-    otel.GetTextMapPropagator().Inject(req.Context(), propagation.HeaderCarrier(req.Header))
-    director(req)
-}
-
-return proxy
-```
-
 
 ## Instrumenting http calls
 Outgoing service calls need to be instrumented to include the traceparent header. This can be done as follows:
@@ -216,8 +212,7 @@ import ("go.opentelemetry.io/otel")
 ...
 tracer := otel.GetTracerProvider().Tracer("tablerenderer")
 ctx, span := tracer.Start(r.Context(), "table render span")
-...
-...
+
 defer span.End()
 ```
 
