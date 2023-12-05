@@ -28,10 +28,10 @@ in development without having to configure them individually.
 | 9200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch |
 | 9999  | [dp-compose](https://github.com/ONSdigital/dp-compose) : highcharts |
-| 10200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
-| 10300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
-| 11200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
-| 11300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
+| 10200 | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
+| 10300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch |
+| 11200 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
+| 11300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) |
 | 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 20010 | [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer) |
@@ -111,3 +111,4 @@ in development without having to configure them individually.
 | 28800 | [dp-nlp-category-api](https://github.com/ONSdigital/dp-nlp-category-api) |
 | 28900 | [dp-nlp-berlin-api](https://github.com/ONSdigital/dp-nlp-berlin-api) |
 | 29000 | [dp-cpih-export](https://github.com/ONSdigital/dp-cpih-export) |
+| 29100 | [dp-legacy-cache-api](https://github.com/ONSdigital/dp-legacy-cache-api) |
