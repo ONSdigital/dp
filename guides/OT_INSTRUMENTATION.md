@@ -78,8 +78,8 @@ The original logging library was modified in order to manage the change centrall
 # Instrumenting Go services for OT
 The following environment variables need to be created:
 ```
-	OTServiceName              string        `envconfig:"OTEL_SERVICE_NAME"`
-	OTExporterOTLPEndpoint     string        `envconfig:"OTEL_EXPORTER_OTLP_ENDPOINT"`
+OTServiceName              string        `envconfig:"OTEL_SERVICE_NAME"`
+OTExporterOTLPEndpoint     string        `envconfig:"OTEL_EXPORTER_OTLP_ENDPOINT"`
 ```
 These can then be set in the config:
 ```
@@ -119,19 +119,13 @@ NB: if this isn't done any calls to the otel service will fail silently. If you 
 
 
 ## Instrumenting http handlers
-There are a wide range of different facilities for instrumenting http calls. The simplest (taken here from dp-frontend-router) simply wraps a http handler (or Gorillamux router) with an opentelemetry handler:
+There are a wide range of different facilities for instrumenting http calls. The simplest (taken here from dp-search-api) simply creates a new opentelemetry handler to pass to the server and attaches otelmux middlewarer to the router:
 ```
-httpHandler := router.New(routerConfig)
-otelHandler := otelhttp.NewHandler(httpHandler,"/")
+router := mux.NewRouter()
+otelHandler := otelhttp.NewHandler(router, "/")
+router.Use(otelmux.Middleware(cfg.OTServiceName))
 
-log.Info(ctx, "Starting server", log.Data{"config": cfg})
-
-s := &http.Server{
-    Handler: otelHandler,
-    ReadTimeout: cfg.ProxyTimeout,
-    WriteTimeout: cfg.ProxyTimeout,
-    IdleTimeout: 120 * time.Second,
-}
+server := serviceList.GetHTTPServer(cfg.BindAddr, otelHandler)
 ```
 
 
@@ -161,7 +155,6 @@ return &Service{
 ```
 Handlers can be wrapped as below: 
 ```
-
 func (a *SearchAPI) RegisterGetSearch(...) *SearchAPI {
 	a.Router.Handle(
 		"/search",
@@ -197,22 +190,16 @@ func CreateRendererAPI(ctx context.Context, bindAddr string, allowedOrigins stri
 ```
 
 
-A purley middleware approach can also be taken using Alice. Here you can see the instrumentation and logging middlewares applied:
+A purley middleware approach can also be taken using Alice. Both otelmux and otelhttp are used here to capture all requests with sufficient detail. Here you can see an example instrumentation:
 ```
 func New(cfg Config) http.Handler {
     router := mux.NewRouter()
-
-    middleware := alice.New(
-        dprequest.HandlerRequestID(16),
-        otelhttp.NewMiddleware("dp-frontend-router"),
-        log.Middleware,
-        SecurityHandler,
-        healthcheckHandler(cfg.HealthCheckHandler),
-        serverError.Handler,
-        redirects.Handler,
-    )
-
-    newAlice := middleware.Then(router)
+	router.Use(otelmux.Middleware(cfg.OTServiceName))
+	middleware := []alice.Constructor{
+		otelhttp.NewMiddleware(cfg.OTServiceName),
+        ...
+	}
+	newAlice := alice.New(middleware...).Then(router)
 }
 ```
 
