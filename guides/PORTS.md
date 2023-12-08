@@ -34,7 +34,6 @@ in development without having to configure them individually.
 | 11300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router) |
 | 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
-| 20010 | [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer) |
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver) |
 | 20100 | [dp-frontend-filter-flex-dataset](https://github.com/ONSdigital/dp-frontend-filter-flex-dataset) |
 | 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
