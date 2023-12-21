@@ -80,12 +80,14 @@ The following environment variables need to be created:
 ```
 OTServiceName              string        `envconfig:"OTEL_SERVICE_NAME"`
 OTExporterOTLPEndpoint     string        `envconfig:"OTEL_EXPORTER_OTLP_ENDPOINT"`
+OTBatchTimeout             time.Duration `envconfig:"OTEL_BATCH_TIMEOUT"`
 ```
 These can then be set in the config:
 ```
 cfg = &Config{
     OTExporterOTLPEndpoint:     "localhost:4317",
     OTServiceName:              "service-name",
+    OTBatchTimeout:              5 * time.Second,
 }
 ```
 Note that the exporter endpoint is `<hostname>:<port>`, unlike the java configuration there is no protocol identifier
@@ -102,6 +104,7 @@ cfg, err := config.Get()
 otelConfig := dpotelgo.Config{
     OtelServiceName:          cfg.OTServiceName,
     OtelExporterOtlpEndpoint: cfg.OTExporterOTLPEndpoint,
+    OtelBatchTimeout:         cfg.OTBatchTimeout,
 }
 
 otelShutdown, oErr := dpotelgo.SetupOTelSDK(ctx, otelConfig)
@@ -121,7 +124,11 @@ NB: if this isn't done any calls to the otel service will fail silently. If you 
 ## Instrumenting http handlers
 There are a wide range of different facilities for instrumenting http calls. The simplest (taken here from dp-search-api) simply creates a new opentelemetry handler to pass to the server and attaches otelmux middlewarer to the router:
 ```
+import "go.opentelemetry.io/contrib/instrumentation/github.com/gorilla/mux/otelmux"
+import "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+...
 router := mux.NewRouter()
+mux.Use(otelmux.Middleware(cfg.OTServiceName))
 otelHandler := otelhttp.NewHandler(router, "/")
 router.Use(otelmux.Middleware(cfg.OTServiceName))
 
@@ -129,7 +136,8 @@ server := serviceList.GetHTTPServer(cfg.BindAddr, otelHandler)
 ```
 
 
-Every handler inside a mux router will need to be instrumented to provide any information on a trace. The following ensures that the http route name is included in all subsequent traces:
+Where gorillamux or Chi is not being used for the router, it may be necessary to instrument individual routes as follows:
+
 ```
 func routes(router *mux.Router, hc *healthcheck.HealthCheck) *RendererAPI {
     api := RendererAPI{router: router}
@@ -190,7 +198,7 @@ func CreateRendererAPI(ctx context.Context, bindAddr string, allowedOrigins stri
 ```
 
 
-A purley middleware approach can also be taken using Alice. Both otelmux and otelhttp are used here to capture all requests with sufficient detail. Here you can see an example instrumentation:
+A purely middleware approach can also be taken where Alice is already in place chaining middleware. Both otelmux and otelhttp are used here to capture all requests with sufficient detail. Here you can see an example instrumentation:
 ```
 func New(cfg Config) http.Handler {
     router := mux.NewRouter()
@@ -204,7 +212,7 @@ func New(cfg Config) http.Handler {
 ```
 
 ## Instrumenting http calls
-Outgoing service calls need to be instrumented to include the traceparent header. This can be done as follows:
+Outgoing service calls need to be instrumented to include the traceparent header when the handler itself is not instrumented. This can be done as follows:
 ```
 import ("go.opentelemetry.io/otel"
 "go.opentelemetry.io/otel/propagation")
