@@ -235,6 +235,16 @@ ctx, span := tracer.Start(r.Context(), "table render span")
 defer span.End()
 ```
 
+## Mongo Instrumentation:
+The `dp-mongodb` package has been instrumented centrally as of version 3.7.0. This means that there is no need for additional instrumentation in services that import this package version or above. Make sure this version or above is imported!
+
+
+## Kafka Instrumentation:
+The `dp-kafka` package has also be instrumented centerally as of version 4, this requires the context to be passed in order to work:
+```
+kafkaProducer.Channels().Output <- kafka.BytesMessage{Value: bytes, Context: ctx}
+```
+
 
 ## Logging Implementation
 
