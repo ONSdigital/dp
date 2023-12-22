@@ -252,4 +252,4 @@ Go http request middleware was created to extract the traceId from the tracepare
 
 This will enable log entries to be correlated with trace ids, to zero in on problems quickly and accurately.
 
-The original logging library was modified in order to manage the change centrally and avoid the need for code changes across multiple applications.
+The original logging library was modified in order to manage the change centrally and avoid the need for code changes across multiple applications. Update to >= v2.4.3 to include this functionality in your service.
