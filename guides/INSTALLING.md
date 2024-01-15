@@ -65,7 +65,6 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
 * [zebedee](https://github.com/ONSdigital/zebedee)
 * [sixteens](https://github.com/ONSdigital/sixteens)
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
-* [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
@@ -77,7 +76,6 @@ Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey
   git clone git@github.com:ONSdigital/sixteens
 
   git clone git@github.com:ONSdigital/dp-frontend-router
-  git clone git@github.com:ONSdigital/dp-frontend-renderer
 
   git clone git@github.com:ONSdigital/dp-frontend-homepage-controller
   git clone git@github.com:ONSdigital/dp-frontend-cookie-controller
@@ -261,7 +259,6 @@ Run all the services in the [web journey](#web-journey)
 * [zebedee](https://github.com/ONSdigital/zebedee) - use: `$ ./run-reader.sh`
 * [sixteens](https://github.com/ONSdigital/sixteens) - use: `$ ./run.sh`
 * [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)
-* [dp-frontend-renderer](https://github.com/ONSdigital/dp-frontend-renderer)
 * [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)
 * [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)
 * [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
