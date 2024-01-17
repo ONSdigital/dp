@@ -110,3 +110,4 @@ in development without having to configure them individually.
 | 28900 | [dp-nlp-berlin-api](https://github.com/ONSdigital/dp-nlp-berlin-api) |
 | 29000 | [dp-cpih-export](https://github.com/ONSdigital/dp-cpih-export) |
 | 29100 | [dp-legacy-cache-api](https://github.com/ONSdigital/dp-legacy-cache-api) |
+| 29200 | [dp-legacy-cache-proxy](https://github.com/ONSdigital/dp-legacy-cache-proxy) |
