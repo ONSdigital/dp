@@ -37,7 +37,11 @@ The following environment variables need to be set on the instance:
 
 `OTEL_SERVICE_NAME=<service name>`
 
-`OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317` (http at present, moving to https as TLS is enabled)
+`OTEL_EXPORTER_OTLP_ENDPOINT=http://$NOMAD_IP_http:4317` (http at present, moving to https as TLS is enabled)**
+
+The URL specified has an identifier of http. In fact the protocol in use is GRPC (the collector is only listening
+on GRPC). However, the java URL parsing lib doesn't recognise 'grpc://' as a valid protocol, so the configuration
+requires it to be specified as above.
 
 
 Spans can be created around individual calls within the code as follows:
