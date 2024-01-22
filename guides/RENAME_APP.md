@@ -106,8 +106,6 @@ they would be with APIs.
 - Remove OLD_SERVICE_NAME from dp-setup/ansible/templates/consul-template (web-nginx.http.conf.tpl.j2 for web) and (
   publishing-nginx.http.conf.tpl.j2 for publishing)
 
-- Remove OLD_SERVICE_NAME from dp-setup/splash-page/app.js and add NEW_SERVICE_NAME
-
 - Apply dp-setup ansible for the consul template and vault policies in develop
 
   STEP 4 - https://github.com/ONSdigital/dp-setup#adding-a-new-app
