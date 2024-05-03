@@ -150,4 +150,4 @@ Internal libraries:
 Internal forks of community libraries:
 
 * ~~[dp-cryptolite-java](https://github.com/ONSdigital/dp-cryptolite-java) provides encryption for our Java publishing services.~~ **DEPRECATED**
-* [dp-ssqs](https://github.com/ONSdigital/dp-ssqs) provides a high level wrapper for AWS SQS message consumers, but does not currently meet DP library standards
+* [dp-ssqs](https://github.com/ONSdigital/dp-ssqs) provides a high level wrapper for AWS SQS message consumers, but does not currently meet dissemination library standards

@@ -39,7 +39,7 @@ Follow the guide at [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/la
 
 N.B. follow instructions for the _"Legacy non-refreshable configuration"_. Creating sso-session names will cause a `SSOProviderInvalidToken: the SSO session has expired or is invalid` error for `dp-cli`.
 
-Each environment you have access to will need to be configured. Make sure you name each profile the same as the environment (dp-sandbox, dp-staging, dp-prod, dp-ci) so that it works seamlessly with other DP tooling (dp-cli, terraform). A sample config is included at the end of this guide as a reference.
+Each environment you have access to will need to be configured. Make sure you name each profile the same as the environment (dp-sandbox, dp-staging, dp-prod, dp-ci) so that it works seamlessly with other dissemination tooling (dp-cli, terraform). A sample config is included at the end of this guide as a reference.
 
 ## Sample config for `~/.aws/config`:
 

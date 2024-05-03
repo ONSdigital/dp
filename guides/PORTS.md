@@ -1,14 +1,14 @@
 Port allocations
 ================
 
-These are the port numbers used by DP services.
+These are the port numbers used by dissemination services when running locally.
 
 Using distinct port numbers for each service means we can run everything
 in development without having to configure them individually.
 
 ### Default port numbers
 
-| Port  | Service                                                                                                        | Notes 
+| Port  | Service                                                                                                        | Notes
 |-------|----------------------------------------------------------------------------------------------------------------|-------
 | 2181  | [dp-compose](https://github.com/ONSdigital/dp-compose) : zookeeper                                             |
 | 2222  | [Dylan](https://github.com/ONSdigital/Dylan) : ssh                                                             |
@@ -33,10 +33,10 @@ in development without having to configure them individually.
 | 11200 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch                               |
 | 11300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch                               |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)                                         |
-| 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)   
+| 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver)                                       |
 | 20100 | [dp-frontend-filter-flex-dataset](https://github.com/ONSdigital/dp-frontend-filter-flex-dataset)               |
-| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)                 
+| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter)                                               |
 | 21300 | [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)                                           |
 | 21400 | [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor)                                 |

@@ -23,7 +23,7 @@ Prerequisite: [Codebase](https://12factor.net/codebase)
 
 > One codebase tracked in revision control, many deploys
 
-The app should be tracked using version control. In DP, We create one GitHub repository per application, for example the [dp-image-api](https://github.com/ONSdigital/dp-image-api) repository contains our codebase for that app.
+The app should be tracked using version control. In dissemination, We create one GitHub repository per application, for example the [dp-image-api](https://github.com/ONSdigital/dp-image-api) repository contains our codebase for that app.
 Each _deploy_ of the `dp-image-api` will use a version of the codebase. The version is defined by an annotated tag which references a specific commit in the `dp-image-api` repository. The `production` environment will contain a version deployed from the `master`/`main` branch of the repository, which may be different from the `develop` branch.
 
 Find out more:
@@ -76,7 +76,7 @@ Strict separation means that any change has to go through the stages, rather tha
 We use [Semantic Versioning](https://semver.org/) to give each release a unique id. This allows us to easily rollback to earlier releases.
 
 Find out more:
-- [DP Concourse documentation](../platform-services/PLATFORM.md#concourse)
+- [Concourse documentation](../platform-services/PLATFORM.md#concourse)
 - Head to [concourse.onsdigital.co.uk/](https://concourse.onsdigital.co.uk/) to see our pipelines.
 
 
@@ -87,16 +87,16 @@ Prerequisite: [Processes](https://12factor.net/processes)
 
 A 12-factor app is stateless, i.e. it does not save client data from a session to be used in the next session with that client. This means that restarting the app does not result in different outcomes when processing information or requests.
 
-In DP, data that should persist is stored in a stateful backing service (typically a database like Neptune or MongoDB, but also a message queue, such as kafka).
+In dissemination, data that should persist is stored in a stateful backing service (typically a database like Neptune or MongoDB, but also a message queue, such as kafka).
 
 ### 7. Port binding
 Prerequisite: [Port binding](https://12factor.net/port-binding)
 
 > Export services via port binding
 
-A 12-factor app is self-contained and services are exported by port binding. In DP, we follow this principle, exporting [HTTP and TCP](https://www.extrahop.co.uk/company/blog/2018/tcp-vs-http-differences-explained/) as services to listen to requests and events, respectively.
+A 12-factor app is self-contained and services are exported by port binding. In dissemination, we follow this principle, exporting [HTTP and TCP](https://www.extrahop.co.uk/company/blog/2018/tcp-vs-http-differences-explained/) as services to listen to requests and events, respectively.
 
-Often, apps in DP become backing services for each other by providing their URL in the configuration. You can see examples of this by decrypting some secrets in [dp-configs](https://github.com/ONSdigital/dp-configs/tree/master/secrets). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md).
+Often, apps in dissemination become backing services for each other by providing their URL in the configuration. You can see examples of this by decrypting some secrets in [dp-configs](https://github.com/ONSdigital/dp-configs/tree/master/secrets). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md).
 
 ### 8. Concurrency
 Prerequisite: [Concurrency](https://12factor.net/concurrency)
@@ -151,7 +151,7 @@ Prerequisite: [Admin processes](https://12factor.net/admin-processes)
 
 One-off administrative tasks should be one-off processes shipped with application code. Then the process (admin task) should be run remotely, for example by SSHing to the environment.
 
-In DP, we sometimes write these scripts in a separate git repo [dp-data-tools](https://github.com/ONSdigital/dp-data-tools) and hence it is not deployable; instead, we use flags to allow us to inject the correct configuration for each environment.
+In dissemination, we sometimes write these scripts in a separate git repo [dp-data-tools](https://github.com/ONSdigital/dp-data-tools) and hence it is not deployable; instead, we use flags to allow us to inject the correct configuration for each environment.
 
 ## Next steps
 

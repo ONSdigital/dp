@@ -1,7 +1,7 @@
 Dissemination Platform
 ===========================
 
-The digital publishing platform is a collection of services which provide
+The dissemination platform is a collection of services which provide
 content management and publishing functionality for ONS content, and is
 responsible for the public ONS website.
 

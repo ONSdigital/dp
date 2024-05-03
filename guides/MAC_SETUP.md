@@ -2,7 +2,7 @@
 
 This document is part of the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide.
 
-## Install Applications
+## Install Applications
 
 1. (Strongly recommended) Install [homebrew](https://brew.sh/)
 
@@ -168,5 +168,5 @@ In all cases, the receiver of the data must already have your **public key**. So
   - to systems (e.g. github) that read files we wish to sign (e.g. git commits are effectively files, which we sign) to prove that they came from us
   - to colleagues, so that they may send us files securely
 
-In DP, we use `ssh` to login to remote machines (including our servers in the cloud), and also to secure
+In dissemination, we use `ssh` to login to remote machines (including our servers in the cloud), and also to secure
 our communication with Github.
