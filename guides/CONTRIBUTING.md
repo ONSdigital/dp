@@ -1,4 +1,4 @@
-# Contributing to Digital Publishing repos
+# Contributing to Dissemination repos
 
 ## Development work
 
@@ -30,6 +30,6 @@
 ### Note: if you get a 404 error for any of the below links, then you need to be added to the `ONSdigital` organisation in GitHub
 
 * For direct access to the environments
-    * Setup your [AWS credentials](AWS_CREDENTIALS.md)
-    * Configure your [SSH access](https://github.com/ONSdigital/dp-operations/blob/main/guides/ssh-access.md)
-    * [Ansible](https://github.com/ONSdigital/dp-ci/tree/master/ansible#prerequisites) is required for provisioning to environments
+  * Setup your [AWS credentials](AWS_CREDENTIALS.md)
+  * Configure your [SSH access](https://github.com/ONSdigital/dp-operations/blob/main/guides/ssh-access.md)
+  * [Ansible](https://github.com/ONSdigital/dp-ci/tree/master/ansible#prerequisites) is required for provisioning to environments

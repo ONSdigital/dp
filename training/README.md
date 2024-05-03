@@ -1,9 +1,9 @@
-Training in Digital Publishing
+Training in Dissemination
 ===========================
 
-:warning: **This section is very much a work in progress. Links may not resolve, and content linked to may be unfinished** 
+:warning: **This section is very much a work in progress. Links may not resolve, and content linked to may be unfinished**
 
-When joining Digital Publishing, there can be a lot to learn! We want to give you the benefit of all our previous learning, so we've tried to gather it in one place.
+When joining Dissemination, there can be a lot to learn! We want to give you the benefit of all our previous learning, so we've tried to gather it in one place.
 
 We have collected resources that give you an idea of [all the modules](#modules) some of which you'll be undertaking over your first few weeks. These may also contain links to resources the team have found useful over the years to get more insight on the topics.
 
@@ -15,7 +15,7 @@ Modules
 ----------------------------
 #### Team culture & process
 * [Culture and Inclusion](culture-and-process/CULTURE.md)
-* [What is Digital Publishing?](culture-and-process/DIGITAL_PUBLISHING.md) 
+* [What is Dissemination?](culture-and-process/DISSEMINATION.md)
 * Developer Processes
     * [Opening a Pull Request](culture-and-process/PULL_REQUEST_GUIDANCE.md)
     * [Reviewing a Pull Request](culture-and-process/PR_REVIEW_AND_RESPONSE_GUIDANCE.md)

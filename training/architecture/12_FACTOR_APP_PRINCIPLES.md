@@ -1,7 +1,7 @@
 12 Factor App Principles
 ===========================
 
-In Digital Publishing we build, deploy and manage applications which run as services. The twelve-factor methodology helps us follow best practices and build applications which are portable and resilient. This module will introduce you to the Twelve-factor principles and provide you with examples of how we use them in our team. 
+In Dissemination we build, deploy and manage applications which run as services. The twelve-factor methodology helps us follow best practices and build applications which are portable and resilient. This module will introduce you to the Twelve-factor principles and provide you with examples of how we use them in our team.
 
 Note: The examples refer primarily to Go apps. Please add more details or alternative examples which might be useful.
 
@@ -16,7 +16,7 @@ See Prerequisites in each section.
 
 ## Materials
 
-In this section you can find out how we apply each principle in Digital Publishing:
+In this section you can find out how we apply each principle in Dissemination:
 
 ### 1. Codebase
 Prerequisite: [Codebase](https://12factor.net/codebase)
@@ -27,7 +27,7 @@ The app should be tracked using version control. In DP, We create one GitHub rep
 Each _deploy_ of the `dp-image-api` will use a version of the codebase. The version is defined by an annotated tag which references a specific commit in the `dp-image-api` repository. The `production` environment will contain a version deployed from the `master`/`main` branch of the repository, which may be different from the `develop` branch.
 
 Find out more:
-- How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
+- How we [collaborate on Dissemination repos](../../guides/CONTRIBUTING.md).
 - [Semantic Versioning](https://semver.org/)
 
 ### 2. Dependencies
@@ -84,7 +84,7 @@ Find out more:
 Prerequisite: [Processes](https://12factor.net/processes)
 
 > Execute the app as one or more stateless processes
- 
+
 A 12-factor app is stateless, i.e. it does not save client data from a session to be used in the next session with that client. This means that restarting the app does not result in different outcomes when processing information or requests.
 
 In DP, data that should persist is stored in a stateful backing service (typically a database like Neptune or MongoDB, but also a message queue, such as kafka).
@@ -107,7 +107,7 @@ The applications must be able to scale horizontally. This means creating multipl
 
 To be able to achieve this, the app must share-nothing (following the process model in [section 6](#6-processes)).
 
-In Digital Publishing nearly all of our apps are compliant with this. A notable exception is [Zebedee](https://github.com/ONSdigital/zebedee) (CMS), as the data processed and served by it exists as files on disk.
+In Dissemination nearly all of our apps are compliant with this. A notable exception is [Zebedee](https://github.com/ONSdigital/zebedee) (CMS), as the data processed and served by it exists as files on disk.
 
 ### 9. Disposability
 Prerequisite: [Disposability](https://12factor.net/disposability)
@@ -160,7 +160,7 @@ Further resources
 ----------------------------
 - Using [dp-cli to generate a repository](https://github.com/ONSdigital/dp-cli/blob/main/project_generation/COMPLETE_PROJECT_SETUP.md)
 - [Pull Request guidance](../culture-and-process/PULL_REQUEST_GUIDANCE.md)
-- How we [collaborate on Digital Publishing repos](../../guides/CONTRIBUTING.md).
+- How we [collaborate on Dissemination repos](../../guides/CONTRIBUTING.md).
 - [Semantic Versioning](https://semver.org/)
 - [envconfig](https://github.com/kelseyhightower/envconfig) package
 - [Concourse](https://concourse-ci.org/docs.html#docs) and [Concourse tutorial](https://concoursetutorial.com/)

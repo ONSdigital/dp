@@ -1,6 +1,4 @@
-
-Developer environment options
-=================
+# Developer environment options
 
 We've made a few attempts at simplifying the way we run our microservices locally, but haven't converged on one way of doing things yet. A few options are explored in this guide.
 

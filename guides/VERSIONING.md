@@ -23,7 +23,7 @@ The versioning process is different for applications and libraries (see the [rel
 
 ## Maintaining Old Versions
 
-When upgrading to a new major version, e.g. `1.x` to `2.x` it is Digital Publishing standard to cut a `v1` branch for maintenance of the old major version. Then the `main` branch will continue to contain the latest code for the newest major version (in this scenario v2).
+When upgrading to a new major version, e.g. `1.x` to `2.x` it is Dissemination standard to cut a `v1` branch for maintenance of the old major version. Then the `main` branch will continue to contain the latest code for the newest major version (in this scenario v2).
 
 The purposes of maintaining old versions could be for the following reasons:
 
@@ -33,7 +33,7 @@ The purposes of maintaining old versions could be for the following reasons:
 
 ## Pre-release versioning (Alpha and Beta)
 
-When going to a new major version of an app or library it is advisable to move to a pre-release version using the suffix `-alpha` or `-beta` e.g. `2.0.0-beta`. 
+When going to a new major version of an app or library it is advisable to move to a pre-release version using the suffix `-alpha` or `-beta` e.g. `2.0.0-beta`.
 This allows for further changes that might be breaking backward compatibility without moving quickly to another version.
 
 Any new tag releases should follow the convention to add `.<number>` with the number incrementing by 1 for each new tag, like so `v2.0.0-beta.2`.

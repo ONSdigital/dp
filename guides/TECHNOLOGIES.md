@@ -1,7 +1,7 @@
 Technology choices
 ==================
 
-This is a partially-complete list of technologies used by Digital Publishing.
+This is a partially-complete list of technologies used by Dissemination.
 
 # Client-side
 

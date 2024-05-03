@@ -1,4 +1,4 @@
-Digital Publishing Platform
+Dissemination Platform
 ===========================
 
 The digital publishing platform is a collection of services which provide
@@ -33,7 +33,7 @@ Dev tooling
 
 **[dp command line tool](https://github.com/ONSdigital/dp-cli)**
 
-A command line utility to assist work in Digital Publishing. See its own repository
+A command line utility to assist working on the Dissemination Platform. See its own repository
 ([dp-cli](https://github.com/ONSdigital/dp-cli))
 
 **[dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content)**

@@ -1,11 +1,10 @@
-Web & Publishing Journeys
-===========================
+# Web & Publishing Journeys
 
-The core function of Digital Publishing is to provide a means to prepare, publish and disseminate statistical outputs and analysis content. This requires a Content Management System, used by ONS staff to prepare publications, and a public website for users to access our content. Understanding the services underpinning these journeys is crucial to understanding the service we build and support.
+The core function of the Dissemination Platform is to provide a means to prepare, publish and disseminate statistical outputs and analysis content. This requires a Content Management System–used by ONS staff to prepare publications for release, a Data Management System–used by ONS staff to prepare statistical datasets for release, a public website for users to access our content and data, and an API for users to access our data via automated means. Understanding the services underpinning these journeys is crucial to understanding the service we build and support.
 
 ### Pre-reading
 
-For wider context on where Digital Publishing fits in to government statistical production, you may wish to [read this module](culture-and-process/DIGITAL_PUBLISHING.md) first.
+For wider context on where Dissemination fits in to government statistical production, you may wish to [read this module](culture-and-process/DISSEMINATION.md) first.
 
 ### Prerequisites
 

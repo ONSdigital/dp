@@ -1,5 +1,4 @@
-Install, configure and run services
-===============
+# Install, configure and run services
 
 As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
@@ -9,17 +8,17 @@ As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp
 
 In the below, the installation of each app is typically one of:
 
-- use the `brew` command where provided, or
-- use the link to the website to follow the installation instructions, or
-- follow the link to the Github repo, where you should clone the repo and follow the instructions in the `README.md` file to install/run (within the repo directory)
+* use the `brew` command where provided, or
+* use the link to the website to follow the installation instructions, or
+* follow the link to the Github repo, where you should clone the repo and follow the instructions in the `README.md` file to install/run (within the repo directory)
 
 **Note:** when indicating a command that should be run in your terminal, we use the `$` prefix to indicate your shell prompt.
 
----
+--------------
 
 Software | Install | Notes
 -------- | ------- | ----- |
-[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install openjdk@8 ` | Append `export PATH="/usr/local/opt/openjdk@8/bin:$PATH"` to your shell profile (eg. `.zshrc`) and restart your terminal.
+[Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/) | `$ brew install openjdk@8` | Append `export PATH="/usr/local/opt/openjdk@8/bin:$PATH"` to your shell profile (eg. `.zshrc`) and restart your terminal.
 [Maven](https://maven.apache.org/)                        | `$ brew install maven`
 [Docker](https://www.docker.com/get-started)              | `$ brew install --cask docker`
  Docker Compose                                           | `$ brew install docker-compose`
@@ -34,30 +33,31 @@ Software | Install | Notes
 [dp-compose](https://github.com/ONSdigital/dp-compose)    | `$ git clone git@github.com:ONSdigital/dp-compose`      | See [`dp-compose` README](https://github.com/ONSdigital/dp-compose#dp-compose) for configuration of Docker Desktop resources
 
 [dp-compose](https://github.com/ONSdigital/dp-compose) runs the following services:
-  - Services for the Website
-    - Elasticsearch 2.4.2
-    - Elasticsearch 7 (on non-standard port)
-    - Highcharts
-    - Postgres
-    - MongoDB
-    - Kafka (plus required Zookeeper dependency)
-  - Services for CMD
-    - Elasticsearch 6 (on non-standard port)
-    - [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
+
+* Services for the Website
+  * Elasticsearch 2.4.2
+  * Elasticsearch 7 (on non-standard port)
+  * Highcharts
+  * Postgres
+  * MongoDB
+  * Kafka (plus required Zookeeper dependency)
+* Services for CMD
+  * Elasticsearch 6 (on non-standard port)
+  * [Neptune](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md#migrating-from-neo4j-to-aws-neptune))
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
----
+--------------
 
 ## Clone the services
 
 Clone the GitHub repos for [web](#web-journey), [publishing](#publishing-journey) and/or [CMD](#cmd-journeys) (Customise My Data).
 
-- [Web](#web-journey) - These apps make up the public-facing website providing **read-only access** to published content, and will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets).
+* [Web](#web-journey) - These apps make up the public-facing website providing **read-only access** to published content, and will be enough strictly to work on website content types other than filterable datasets (e.g. bulletins, articles, timeseries, datasets).
 
-- [Publishing](#publishing-journey) - The "publishing journey" gives you all the features of web together with an internal interface to update, preview and publish content. All content is encrypted and requires authentication.
+* [Publishing](#publishing-journey) - The "publishing journey" gives you all the features of web together with an internal interface to update, preview and publish content. All content is encrypted and requires authentication.
 
-- [CMD](#cmd-journeys) - apps will support the filterable dataset journey, and would mean you have every possible service running.
+* [CMD](#cmd-journeys) - apps will support the filterable dataset journey, and would mean you have every possible service running.
 
 ### Web Journey
 
@@ -191,18 +191,18 @@ Both of these stacks rely on variations of an `scs.sh` script, which provides su
 
 Some commands require changes to be made to your shell - e.g.
 
-- to your `PATH` or
-- to add environment variables - these commands take the form `export VAR_NAME=value`
+* to your `PATH` or
+* to add environment variables - these commands take the form `export VAR_NAME=value`
 
 and should be appended to the startup file for your shell:
 
-- for the shell `zsh`, the startup file is `~/.zshrc`
-- for the `bash` shell, the startup file is `~/.bashrc`
+* for the shell `zsh`, the startup file is `~/.zshrc`
+* for the `bash` shell, the startup file is `~/.bashrc`
 
 When the startup files are updated, to load the new changes into your shell, either:
 
-- open a new terminal window, or
-- `$ exec $SHELL -l`
+* open a new terminal window, or
+* `$ exec $SHELL -l`
 
 ### Environment variables
 
@@ -221,7 +221,7 @@ Variable name | note
 After all the various steps, here's an example set of exports and their values that you might now have in your [startup file](#startup-file):
 
 ```bash
-# Digital Publishing services
+# Dissemination services
 export zebedee_root=~/Documents/website/zebedee-content/generated
 export ENABLE_PRIVATE_ENDPOINTS=true
 export ENABLE_PERMISSIONS_AUTH=true
@@ -296,7 +296,6 @@ All of the services in the [web](#web-journey), [publishing](#publishing-journey
 
 > You will want to make sure you have access to the Neptune test instance as well, if you want the entire CMD journey to be accessible. Details on how to set this up can be found [here](https://github.com/ONSdigital/dp/blob/main/guides/NEPTUNE.md).
 
-
 Use the following alternative commands:
 
 * [florence](https://github.com/ONSdigital/florence) - use: `$ make debug ENCRYPTION_DISABLED=true`
@@ -305,7 +304,7 @@ Use the following alternative commands:
 * [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor) - use: `$ make debug ENCRYPTION_DISABLED=true`
 * [dp-observation-extractor](https://github.com/ONSdigital/dp-observation-extractor) - use `$ make debug ENCRYPTION_DISABLED=true`
 
-#### Web
+#### CMD Web
 
 If you already have content, and you just want to run the web journey, you'll need the [dataset](#dataset-journey), [filter](#filter-journey) and [web](#web-journey) services. Again, use the commands:
 

@@ -8,7 +8,7 @@ Read our [Architecture Principles](https://github.com/ONSdigital/dp-standards/bl
 
 ## Materials
 
-Our approach to all things in Digital Publishing should find its roots in the [GDS Service Manual](https://www.gov.uk/service-manual) - particularly for architecture, this means the advice given in the [Technology](https://www.gov.uk/service-manual/technology) section. We don't expect everyone to read the whole service manual, but it can be a helpful resource when exploring new areas.
+Our approach to all things in Dissemination should find its roots in the [GDS Service Manual](https://www.gov.uk/service-manual) - particularly for architecture, this means the advice given in the [Technology](https://www.gov.uk/service-manual/technology) section. We don't expect everyone to read the whole service manual, but it can be a helpful resource when exploring new areas.
 
 We are part of a community of open data publishers, so we have to ensure systems we build not only solve our problems but utilize common standards to help build consistent views of data across the web. [We've blogged](https://digitalblog.ons.gov.uk/2017/01/06/some-open-data-publishing-principles/) about this in the past, and it's worth understanding the [basics of open data](https://opendatahandbook.org/) as it often informs our approach.
 
