@@ -98,6 +98,7 @@ Internal libraries:
 Internal libraries:
 
 * ~~[s3crypto](https://github.com/ONSdigital/s3crypto) to encrypt/decrypt a file stream to S3~~ **DEPRECATED**
+* [java-s3crypto](https://github.com/ONSdigital/java-s3crypto) to encrypt/decrypt a file stream to S3 but now in Java
 * [dp-graph](https://github.com/ONSdigital/dp-graph) wraps all graph behaviour behind a common interface
 * dp-mongo, dp-s3 and dp-kafka all as mentioned at the top of this page
 
