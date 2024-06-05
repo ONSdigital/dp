@@ -45,6 +45,7 @@ These client libraries all serve that high-level wrapping purpose around 3rd par
 * [dp-kafka](https://github.com/ONSdigital/dp-kafka)
 * [dp-otel-go](https://github.com/ONSdigital/dp-otel-go)
 * [dp-graph](https://github.com/ONSdigital/dp-graph)
+* [dp-slack-client-java](https://github.com/ONSdigital/dp-slack-client-java)
 
 As well as libraries we use for communication between internal services:
 
