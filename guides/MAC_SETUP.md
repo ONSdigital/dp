@@ -57,10 +57,10 @@ This document is part of the [Getting Started](https://github.com/ONSdigital/dp/
 
     - In top left corner, Click `Apple Icon`, Click `About This Mac`, Click `Software Update...`
 
-7. Trello
+7. Jira
 
     - the primary Project Organizer within the team/department
-    - you can install it via the App Store, OR access it via your browser
+    - you can access it via your browser
 
 8. (Optional / Recommended) ZSH  ... the Z shell
     - this is an extended version of the `bash` shell

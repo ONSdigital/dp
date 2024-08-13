@@ -47,7 +47,7 @@ A more comprehensive look at how CI/CD works in Dissemination can be found [here
 
 ## Deploying your apps
 
-This section is a continuation of the steps outlined in the "Ready for Release" section [here](TRELLO_BOARD_FLOW.md).
+This section is a continuation of the steps outlined in the "Ready for Release" section [here](JIRA_BOARD_FLOW.md).
 
 1. To deploy an app, you will need to have logged into ONS Digital Concourse via the link above. You can log in via your personal Github account, or email addresss
 2. Once logged into Concourse, you should see the all of the pipelines that are currently running

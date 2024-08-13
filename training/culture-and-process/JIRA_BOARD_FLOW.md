@@ -1,14 +1,14 @@
-# Trello Board - Flow of Stories
+# Jira Board - Flow of Stories
 
-A guide which aims to provide information regarding the flow of work within each teams' Trello board.
+A guide which aims to provide information regarding the flow of work within each teams' Jira board.
 
-## What is Trello?
+## What is Jira?
 
-Trello is primarily a visual collaboration tool that enables you, and your team, to organise and prioritise projects in a flexible way. Trello utilises "boards", which represent a project or a place to keep track of information. At Dissemination, each team has it's own specific board, which you will use to organise your tasks and collaborate with colleagues.
+Jira is primarily a visual collaboration tool that enables you, and your team, to organise and prioritise projects in a flexible way. Jira utilises "boards", which represent a project or a place to keep track of information. At Dissemination, each team has it's own specific board, which you will use to organise your tasks and collaborate with colleagues.
 
 ## Workflow
 
-Trello boards are generally comprised of lists (shown as columns on the board) and cards. Your team board should have a minimum of six lists -
+Jira boards are generally comprised of lists (shown as columns on the board) and cards. Your team board should have a minimum of six lists -
 
 - Sprint Backlog
 - In Progress
@@ -54,7 +54,7 @@ Once you are satisfied that the code is working as expected in `develop`, then t
 
 At this stage, the card should be ready to be reviewed by a tech-lead. The tech-lead will either confirm that the work is ready to be released, or they may request additional work to be done.
 
-This is usually communicated via comments within the card itself, which you will be notified of on the Trello board.
+This is usually communicated via comments within the card itself, which you will be notified of on the Jira board.
 
 Once a tech-lead has confirmed that the work is ready to be released, the card can be moved to the "Ready for Release" column.
 

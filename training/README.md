@@ -19,7 +19,7 @@ Modules
 * Developer Processes
     * [Opening a Pull Request](culture-and-process/PULL_REQUEST_GUIDANCE.md)
     * [Reviewing a Pull Request](culture-and-process/PR_REVIEW_AND_RESPONSE_GUIDANCE.md)
-    * [Trello Board - Flow of Stories](culture-and-process/TRELLO_BOARD_FLOW.md)
+    * [Jira Board - Flow of Stories](culture-and-process/JIRA_BOARD_FLOW.md)
     * [Gitflow](culture-and-process/GITFLOW.md)
     * [CI/CD Process](culture-and-process/CICD.md)
 * [70%, 20%, 10% Time](culture-and-process/70_20_10_TIME.md)

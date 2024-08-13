@@ -1,13 +1,14 @@
 # Contributing to 20% Backlog in Dissemination
 
+> We do not currently have a 20% backlog board - the document below is reflective of previous process that may be brought back in future.
 
-There are many ways in which the Trello 20% backlog board gets populated and then prioritised by the Technical Leads.
+There are many ways in which the 20% backlog gets populated and then prioritised by the Technical Leads.
 
 Below is how you can help to get your ideas and resolving bugbears you may have onto the 20% time board to fix or improve our way of working in development.
 
 ## Pre-reading
 
-- It is useful to have an understanding of the [Trello board and flow of stories](./TRELLO_BOARD_FLOW.md) and how we use it to organise development workflow as it is mentioned in this documentation
+- It is useful to have an understanding of the [Jira board and flow of stories](./JIRA_BOARD_FLOW.md) and how we use it to organise development workflow as it is mentioned in this documentation
 - It is useful to have an understanding of [70%, 20% and 10% time](./70_20_10_TIME.md)
 
 ## How to get ideas onto the 20% Trello Board?

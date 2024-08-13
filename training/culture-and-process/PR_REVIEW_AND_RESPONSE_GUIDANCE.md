@@ -47,7 +47,7 @@ Think of it as a checklist and a reminder of things to consider where relevant.
 
 ### The Review
 
-- Familiarise yourself with the Trello Ticket of the work you are reviewing.
+- Familiarise yourself with the Jira Ticket of the work you are reviewing.
 - Be humble.
 - Suggest ways to improve or simplify the code.
 - Don't just look at whats been done, but also look out for anything that may have been missed.
