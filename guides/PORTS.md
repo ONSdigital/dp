@@ -98,7 +98,6 @@ in development without having to configure them individually.
 | 27900 | [dp-maps-api](https://github.com/ONSdigital/dp-maps-api)                                                       |
 | 28000 | [dp-search-data-finder](https://github.com/ONSdigital/dp-search-data-finder)                                   |
 | 28100 | [dp-census-atlas](https://github.com/onSdigital/dp-census-atlas)                                               |
-| 28200 | [dp-geodata-api](https://github.com/ONSdigital/dp-geodata-api)                                                 |
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api)     |
 | 28500 | [dp-search-reindex-tracker](https://github.com/ONSdigital/dp-search-reindex-tracker)                           |
 | 28600 | [dp-feedback-api](https://github.com/ONSdigital/dp-feedback-api)                                               |
