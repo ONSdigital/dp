@@ -95,7 +95,6 @@ in development without having to configure them individually.
 | 27300 | [dp-population-types-api](https://github.com/ONSdigital/dp-population-types-api)                               |
 | 27700 | [dp-frontend-release-calendar](https://github.com/ONSdigital/dp-frontend-release-calendar)                     |
 | 27800 | [dp-release-calendar-api](https://github.com/ONSdigital/dp-release-calendar-api)                               |
-| 27900 | [dp-maps-api](https://github.com/ONSdigital/dp-maps-api)                                                       |
 | 28000 | [dp-search-data-finder](https://github.com/ONSdigital/dp-search-data-finder)                                   |
 | 28100 | [dp-census-atlas](https://github.com/onSdigital/dp-census-atlas)                                               |
 | 28200 | [dp-geodata-api](https://github.com/ONSdigital/dp-geodata-api)                                                 |
