@@ -107,3 +107,4 @@ in development without having to configure them individually.
 | 29100 | [dp-legacy-cache-api](https://github.com/ONSdigital/dp-legacy-cache-api)                                       |
 | 29200 | [dp-legacy-cache-proxy](https://github.com/ONSdigital/dp-legacy-cache-proxy)                                   |
 | 29300 | [dp-data-api](https://github.com/ONSdigital/dp-data-api)                                                       |
+| 29400 | [dp-data-api](https://github.com/ONSdigital/dp-data-admin-ui)                                                  |
