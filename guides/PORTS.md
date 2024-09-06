@@ -74,7 +74,6 @@ in development without having to configure them individually.
 | 25000 | [dp-frontend-search-controller](https://github.com/ONSdigital/dp-frontend-search-controller)                   |
 | 25100 | [dp-upload-service](https://github.com/ONSdigital/dp-upload-service)                                           |
 | 25200 | [dp-frontend-feedback-controller](https://github.com/ONSdigital/dp-frontend-feedback-controller)               |
-| 25252 | [dp-find-insights-poc-api](https://github.com/ONSdigital/dp-find-insights-poc-api)                             |
 | 25300 | [dp-topic-api](https://github.com/ONSdigital/dp-topic-api)                                                     |
 | 25400 | [dp-permissions-api](https://github.com/ONSdigital/dp-permissions-api)                                         |
 | 25600 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api)                                               |
