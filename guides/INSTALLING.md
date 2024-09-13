@@ -23,7 +23,7 @@ Software | Install | Notes
 [Docker](https://www.docker.com/get-started)              | `$ brew install --cask docker`
  Docker Compose                                           | `$ brew install docker-compose`
 [Cypher Shell](https://neo4j.com/docs/operations-manual/current/tools/cypher-shell/)                                | `$ brew install cypher-shell` | deprecated (not needed if using Neptune over Neo4j)
-[Node.js and npm](https://nodejs.org/en/)                 | `$ brew install node@14` (LTS version) | Append `export PATH="/usr/local/opt/node@14/bin:$PATH"` to your startup files and restart your terminal.
+[nvm](https://github.com/nvm-sh/nvm)         		  | Follow the [git install instructions](https://github.com/nvm-sh/nvm?tab=readme-ov-file#git-install) | Required to allow easy switching between node/npm versions depending on usage within app
 [Go](https://go.dev/dl/) | `$ brew install go` |  The Go installation is processor architecture specific. For the newer Apple M1 processor the ARM installation is required. This is managed by Homebrew. However, if installing manually this is something to be aware of. [Go direct Download](https://go.dev/dl/) |
 [GoConvey](https://github.com/smartystreets/goconvey#installation)  |
 [GhostScript](https://www.ghostscript.com/download.html)  |   `$ brew install ghostscript`                          | Required for [Babbage](https://github.com/onsdigital/babbage)
