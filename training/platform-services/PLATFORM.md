@@ -19,7 +19,7 @@ Please note that if you have prod access, you can run `dp remote allow prod` to 
 
 - Provisioning: [Terraform](PROVISIONING.md#terraform) & [Ansible](PROVISIONING.md#ansible)
 - Deployment and Running: [Concourse](DEPLOYMENT_AND_RUNNING.md#concourse), [Consul](DEPLOYMENT_AND_RUNNING.md#consul), [Nomad](DEPLOYMENT_AND_RUNNING.md#nomad) & [Vault](DEPLOYMENT_AND_RUNNING.md#vault)
-- Monitoring and Alerting: [Kibana](MONITORING_AND_ALERTING.md#kibana), [Grafana]MONITORING_AND_ALERTING.md#grafana) & [Prometheus](MONITORING_AND_ALERTING.md#prometheus)
+- Monitoring and Alerting: [Kibana](MONITORING_AND_ALERTING.md#kibana), [Grafana](MONITORING_AND_ALERTING.md#grafana) & [Prometheus](MONITORING_AND_ALERTING.md#prometheus)
 
 ## Next steps
 
