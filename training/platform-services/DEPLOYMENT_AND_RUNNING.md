@@ -15,10 +15,10 @@ Furthermore, Concourse helps us to identify if an application has been fully dep
 Please note that when deploying changes to the `production` environment (the live website), you need to **manually** deploy the application by doing the following:
 
 1. Go to [Concourse][concourse-ons]
-2. Navigate to the application
-3. Click on `production-ship-it`
-4. <div>Click on the <img src="images/concourse-build.png" title="Concourse Build" width=4% height=4%></div>
-5. Login to concourse as `dp` user (if you do not have the login, please ask anyone in the team)
+2. Login to concourse as `dp` user (if you do not have the login, please ask anyone in the team)
+3. Navigate to the application
+4. Click on `production-ship-it`
+5. <div>Click on the <img src="images/concourse-build.png" title="Concourse Build" width=4% height=4%></div>
 
 More information about Concourse can be found on their website - <https://concourse-ci.org/docs.html>
 
