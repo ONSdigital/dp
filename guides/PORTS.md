@@ -7,7 +7,7 @@ in development without having to configure them individually.
 
 ## Default port numbers
 
-| Port  | Service                                                                                                        | Notes
+| Port  | Service                                                                                                        | Notes 
 |-------|----------------------------------------------------------------------------------------------------------------|-------
 | 2181  | [dp-compose](https://github.com/ONSdigital/dp-compose) : zookeeper                                             |
 | 2222  | [Dylan](https://github.com/ONSdigital/Dylan) : ssh                                                             |
@@ -32,10 +32,10 @@ in development without having to configure them individually.
 | 11200 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch                               |
 | 11300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : site wide elasticsearch                               |
 | 20000 | [dp-frontend-router](https://github.com/ONSdigital/dp-frontend-router)                                         |
-| 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)
+| 20001 | [dp-frontend-filter-dataset-controller](https://github.com/ONSdigital/dp-frontend-filter-dataset-controller)   
 | 20020 | [dp-content-resolver](https://github.com/ONSdigital/dp-content-resolver)                                       |
 | 20100 | [dp-frontend-filter-flex-dataset](https://github.com/ONSdigital/dp-frontend-filter-flex-dataset)               |
-| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)
+| 20200 | [dp-frontend-dataset-controller](https://github.com/ONSdigital/dp-frontend-dataset-controller)                 
 | 21000 | [dp-csv-splitter](https://github.com/ONSdigital/dp-csv-splitter)                                               |
 | 21300 | [dp-import-tracker](https://github.com/ONSdigital/dp-import-tracker)                                           |
 | 21400 | [dp-dimension-extractor](https://github.com/ONSdigital/dp-dimension-extractor)                                 |
@@ -63,7 +63,6 @@ in development without having to configure them individually.
 | 23900 | [dp-search-api](https://github.com/ONSdigital/dp-search-api)                                                   |
 | 24000 | [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)             |
 | 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)                   |
-| 24200 | [dp-bulletin-api](https://github.com/ONSdigital/dp-bulletin-api)                                               |
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer)                                                       |
 | 24400 | [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)               |
 | 24500 | [dp-observation-api](https://github.com/ONSdigital/dp-observation-api)                                         |
