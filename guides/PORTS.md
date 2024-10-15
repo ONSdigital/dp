@@ -18,7 +18,6 @@ in development without having to configure them individually.
 | 8083  | [project-brian](https://github.com/ONSdigital/project-brian)                                                   |
 | 8084  | [The-Train](https://github.com/ONSdigital/The-Train)                                                           |
 | 8085  | [Dylan](https://github.com/ONSdigital/Dylan) : http                                                            |
-| 8086  | [ermintrude](https://github.com/ONSdigital/ermintrude)                                                         |
 | 8888  | [dp-compose](https://github.com/ONSdigital/dp-compose) : mathjax-api                                           |
 | 9000  | [sixteens](https://github.com/ONSdigital/sixteens)                                                             |
 | 9001  | [dp-compose](https://github.com/ONSdigital/dp-compose) : minio                                                 |
