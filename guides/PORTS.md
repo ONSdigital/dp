@@ -75,7 +75,6 @@ in development without having to configure them individually.
 | 25300 | [dp-topic-api](https://github.com/ONSdigital/dp-topic-api)                                                     |
 | 25400 | [dp-permissions-api](https://github.com/ONSdigital/dp-permissions-api)                                         |
 | 25600 | [dp-identity-api](https://github.com/ONSdigital/dp-identity-api)                                               |
-| 25700 | [dp-search-reindex-api](https://github.com/ONSdigital/dp-search-reindex-api)                                   |
 | 25800 | [dp-search-data-extractor](https://github.com/ONSdigital/dp-search-data-extractor)                             |
 | 25900 | [dp-search-data-importer](https://github.com/ONSdigital/dp-search-data-importer)                               |
 | 26100 | [dp-import-cantabular-dataset](https://github.com/ONSdigital/dp-import-cantabular-dataset)                     |
