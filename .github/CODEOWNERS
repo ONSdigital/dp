@@ -1,5 +1,3 @@
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#codeowners-syntax
 
-# The below indicates the code owners of this repo without auto-assigning PRs to the team
-
 .github/* @ONSdigital/dissemination
