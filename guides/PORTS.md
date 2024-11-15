@@ -92,10 +92,8 @@ in development without having to configure them individually.
 | 27300 | [dp-population-types-api](https://github.com/ONSdigital/dp-population-types-api)                               |
 | 27700 | [dp-frontend-release-calendar](https://github.com/ONSdigital/dp-frontend-release-calendar)                     |
 | 27800 | [dp-release-calendar-api](https://github.com/ONSdigital/dp-release-calendar-api)                               |
-| 28000 | [dp-search-data-finder](https://github.com/ONSdigital/dp-search-data-finder)                                   |
 | 28100 | [dp-census-atlas](https://github.com/onSdigital/dp-census-atlas)                                               |
 | 28300 | [dp-cantabular-metadata-extractor-api](https://github.com/ONSdigital/dp-cantabular-metadata-extractor-api)     |
-| 28500 | [dp-search-reindex-tracker](https://github.com/ONSdigital/dp-search-reindex-tracker)                           |
 | 28600 | [dp-feedback-api](https://github.com/ONSdigital/dp-feedback-api)                                               |
 | 28700 | [dp-search-scrubber-api](https://github.com/ONSdigital/dp-search-scrubber-api)                                 |
 | 28800 | [dp-nlp-category-api](https://github.com/ONSdigital/dp-nlp-category-api)                                       |
