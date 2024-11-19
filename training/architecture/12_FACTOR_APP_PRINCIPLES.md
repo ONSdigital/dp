@@ -96,7 +96,7 @@ Prerequisite: [Port binding](https://12factor.net/port-binding)
 
 A 12-factor app is self-contained and services are exported by port binding. In dissemination, we follow this principle, exporting [HTTP and TCP](https://www.extrahop.co.uk/company/blog/2018/tcp-vs-http-differences-explained/) as services to listen to requests and events, respectively.
 
-Often, apps in dissemination become backing services for each other by providing their URL in the configuration. You can see examples of this by decrypting some secrets in [dp-configs](https://github.com/ONSdigital/dp-configs/tree/master/secrets). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md).
+Often, apps in dissemination become backing services for each other by providing their URL in the configuration. You can see examples of this by decrypting some secrets in [dp-configs](https://github.com/ONSdigital/dp-configs/tree/master/secrets). We keep track of [port allocations](https://github.com/ONSdigital/dp-setup/tree/awsb/PORTS.md).
 
 ### 8. Concurrency
 Prerequisite: [Concurrency](https://12factor.net/concurrency)

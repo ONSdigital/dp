@@ -18,7 +18,7 @@ To follow this guide you will need:
 
 * [dp-configs](https://github.com/ONSdigital/dp-configs) repo cloned locally
 
-* The ['magic port'](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md) assigned to your microservice API 
+* The ['magic port'](https://github.com/ONSdigital/dp-setup/tree/awsb/PORTS.md) assigned to your microservice API
 
 Getting started
 ---------------
@@ -27,7 +27,7 @@ Getting started
 
 2. Add a new API URL variable to the dp-api-router [config.go](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L19) and set a [default value](https://github.com/ONSdigital/dp-api-router/blob/develop/config/config.go#L71) using the localhost:port combination the app will default to when running locally. The default ports [should be documented](https://github.com/ONSdigital/dp/blob/main/guides/PORTS.md) if not already.
 
-3. Update the dp-api-router [secrets for relevant environments](https://github.com/ONSdigital/dp-configs/tree/master/secrets) to contain your new API URL environment variable, listing the ['magic port'](https://github.com/ONSdigital/dp-setup/blob/develop/PORTS.md) instead of the default value.
+3. Update the dp-api-router [secrets for relevant environments](https://github.com/ONSdigital/dp-configs/tree/master/secrets) to contain your new API URL environment variable, listing the ['magic port'](https://github.com/ONSdigital/dp-setup/tree/awsb/PORTS.md) instead of the default value.
 
 3. Set up a new API Proxy in [service.go](https://github.com/ONSdigital/dp-api-router/blob/develop/service/service.go#L138), referencing the variable you added to config.go above.
 
@@ -42,4 +42,4 @@ Getting started
 
 7. Merge your changes to both applications and deploy to develop!
 
-You should now see your API reachable through https://api.develop.onsdigital.co.uk/v1/<your-route>
+You should now see your API reachable through https://api.dp.aws.onsdigital.uk/v1/<your-route>

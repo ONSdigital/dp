@@ -46,7 +46,7 @@ For all work in this area you will first need to:
 
 All infrastructure configuration is managed in [dp-setup](https://github.com/ONSdigital/dp-setup) and includes the following pieces of set up:
 
-1. Install the [prerequisites for terraform](https://github.com/ONSdigital/dp-setup/blob/develop/terraform/README.md#prerequisites)
+1. Install the [prerequisites for terraform](https://github.com/ONSdigital/dp-setup/tree/awsb/terraform/README.md#prerequisites)
 2. Install any additional [dependencies for ansible](https://github.com/ONSdigital/dp-setup/tree/awsb/ansible#prerequisites)
 
 ### Continuous Integration (CI)
