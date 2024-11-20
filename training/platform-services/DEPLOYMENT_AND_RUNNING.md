@@ -3,7 +3,7 @@ Deployment and Running
 
 ## Concourse
 
-Visit <https://concourse.onsdigital.co.uk> to access Concourse
+Visit <https://concourse.dp-ci.aws.onsdigital.uk/> to access Concourse
 
 [<img src="images/concourse-home.png" title="Concourse Homepage" alt="concourse ons" width=49.7% height=49.7%/>][concourse-ons] [<img src="images/concourse-pipeline.png" title="Concourse Pipeline" alt="concourse pipeline" width=49.7% height=49.7%/>][concourse-ons]
 

@@ -77,7 +77,7 @@ We use [Semantic Versioning](https://semver.org/) to give each release a unique 
 
 Find out more:
 - [Concourse documentation](../platform-services/PLATFORM.md#concourse)
-- Head to [concourse.onsdigital.co.uk/](https://concourse.onsdigital.co.uk/) to see our pipelines.
+- Head to [concourse.dp-ci.aws.onsdigital.uk/](https://concourse.dp-ci.aws.onsdigital.uk/) to see our pipelines.
 
 
 ### 6. Processes
