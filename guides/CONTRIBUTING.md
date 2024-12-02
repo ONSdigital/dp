@@ -12,7 +12,7 @@
   * 'Who can review' - a list of the most appropriate people to review the pull request,
     e.g. if on a frontend application, a member of the frontend team should review; likewise for backend and platform.
     If the changes are critical or are likely to have severe side-effects then the Tech Lead should review.
-* Ensure your branch contains logical atomic commits before sending a pull request - follow the [alphagov Git styleguide](https://github.com/alphagov/styleguides/blob/master/git.md)
+* Ensure your branch contains logical atomic commits before sending a pull request - follow the [GDS Way styleguide](https://gds-way.digital.cabinet-office.gov.uk/standards/source-code/working-with-git.html#commits)
 * You may rebase your branch after feedback if it's to include relevant updates from the `develop` branch. We prefer a rebase here to a merge commit as we
   prefer a clean and straight history on the `develop` branch, with discrete merge commits for features
 * It is advised to squash commits before pushing to a remote repository
