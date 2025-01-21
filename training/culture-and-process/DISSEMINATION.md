@@ -28,11 +28,9 @@ The UKSA consists of three principal areas:
 
 A visualisation of these departments in the form of an organisational chart can be found [here](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2020/09/UK-Statistics-Authority-organisation-chart-008-JH.pdf), and the statistical system flowchart can be found [here](https://uksa.statisticsauthority.gov.uk/wp-content/uploads/2020/07/1349_UKSA-statisical-system-flowchart.gif)
 
-## Digital Services and Technology
+## Digital Services
 
-Dissemination is part of the Digital Services and Technology (DST) directorate of the ONS. DST is responsible for all systems, devices and technology that supports the ONS. Our purpose is to enable the ONS through delivering critical digital and technology capabilities.
-
-Within DST, Dissemination sits within the Collection and Dissemination division.
+Dissemination is part of the Digital Services (DS) directorate of the ONS. Digital Services is responsible for all systems, devices and technology that supports the ONS. Our purpose is to enable the ONS through delivering critical digital and technology capabilities.
 
 ## Digital Publishing
 
