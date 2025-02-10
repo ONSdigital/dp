@@ -10,7 +10,6 @@ in development without having to configure them individually.
 | Port  | Service                                                                                                        | Notes |
 |-------|----------------------------------------------------------------------------------------------------------------|-------|
 | 2181  | [dp-compose](https://github.com/ONSdigital/dp-compose) : zookeeper                                             |       |
-| 2222  | [Dylan](https://github.com/ONSdigital/Dylan) : ssh                                                             |       |
 | 5432  | [dp-compose](https://github.com/ONSdigital/dp-compose) : postgres                                              |       |
 | 8000  | [dis-wagtail](https://github.com/ONSdigital/dis-wagtail)                                                       |       |
 | 8080  | [babbage](https://github.com/ONSdigital/babbage)                                                               |       |
@@ -18,7 +17,6 @@ in development without having to configure them individually.
 | 8082  | [zebedee](https://github.com/ONSdigital/zebedee)                                                               |       |
 | 8083  | [project-brian](https://github.com/ONSdigital/project-brian)                                                   |       |
 | 8084  | [The-Train](https://github.com/ONSdigital/The-Train)                                                           |       |
-| 8085  | [Dylan](https://github.com/ONSdigital/Dylan) : http                                                            |       |
 | 8888  | [dp-compose](https://github.com/ONSdigital/dp-compose) : mathjax-api                                           |       |
 | 9000  | [sixteens](https://github.com/ONSdigital/sixteens)                                                             |       |
 | 9001  | [dp-compose](https://github.com/ONSdigital/dp-compose) : minio                                                 |       |
