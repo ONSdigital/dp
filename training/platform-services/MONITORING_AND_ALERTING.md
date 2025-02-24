@@ -49,7 +49,7 @@ More information about Grafana can be found on their website - <https://grafana.
 Visit the following to access Prometheus
 
 - SANDBOX:&nbsp;&nbsp;<https://prometheus.dp.aws.onsdigital.uk/>
-- SANDBOX:&nbsp;&nbsp;<https://prometheus.dp-staging.aws.onsdigital.uk/>
+- STAGING:&nbsp;&nbsp;<https://prometheus.dp-staging.aws.onsdigital.uk/>
 - PROD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<https://prometheus.dp-prod.aws.onsdigital.uk>
 
 [<img src="images/prometheus-dev-home.png" title="Prometheus Develop Home" width=49.7% height=49.7%/>][prometheus-dev-home] [<img src="images/prometheus-dev-alerts.png" title="Prometheus Develop Alerts" width=49.7% height=49.7%/>][prometheus-dev-alerts]
