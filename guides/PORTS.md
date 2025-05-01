@@ -104,3 +104,4 @@ in development without having to configure them individually.
 | 29600 | [dis-search-upstream-stub](https://github.com/ONSdigital/dis-search-upstream-stub)                             |       |
 | 29700 | [dis-routing-api-poc](https://github.com/ONSdigital/dis-routing-api-poc)                                       |       |
 | 29800 | [dis-bundle-api](https://github.com/ONSdigital/dis-bundle-api)                                                 |       |
+| 29900 | [dis-redirect-api](https://github.com/ONSdigital/dis-redirect-api)                                                 |       |
