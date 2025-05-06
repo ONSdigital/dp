@@ -5,7 +5,7 @@ Platform services allow us to develop, run and manage applications without the c
 
 ## Prerequisites
 
-You need to complete the [set up your Mac for development work][setup-ons-mac]. If this has not been completed, please click on the link and follow the instructions. Afterwards, return back to this page.
+You need to complete the [set up your Mac for development work](/guides/MAC_SETUP.md). If this has not been completed, please click on the link and follow the instructions. Afterwards, return back to this page.
 
 Run `dp remote allow sandbox` and `dp remote allow ci` to ensure you can access concourse and the sandbox environment.
 Please note that if you have prod access, you can run `dp remote allow prod` to access the prod environment.
