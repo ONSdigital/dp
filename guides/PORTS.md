@@ -56,7 +56,6 @@ in development without having to configure them individually.
 | 23200 | [dp-api-router](https://github.com/ONSdigital/dp-api-router)                                                   |       |
 | 23300 | [dp-table-renderer](https://github.com/ONSdigital/dp-table-renderer)                                           |       |
 | 23400 | [dp-file-downloader](https://github.com/ONSdigital/dp-file-downloader)                                         |       |
-| 23500 | [dp-map-renderer](https://github.com/ONSdigital/dp-map-renderer)                                               |       |
 | 23600 | [dp-developer-site](http://github.com/ONSdigital/dp-developer-site)                                            |       |
 | 23900 | [dp-search-api](https://github.com/ONSdigital/dp-search-api)                                                   |       |
 | 24000 | [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)             |       |
