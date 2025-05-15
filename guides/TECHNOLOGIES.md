@@ -56,7 +56,7 @@ This is a partially-complete list of technologies used by Dissemination.
 * [Molecule](https://molecule.readthedocs.io/en/stable/)
 * [Concourse](https://concourse-ci.org/)
 * [Docker](https://www.docker.com/)
-* [Pingdom](https://www.pingdom.com/)
+* [Uptrends](https://www.uptrends.com/)
 * [CloudFlare](https://www.cloudflare.com/)
 * [Hashicorp](https://www.hashicorp.com/)
   * [Consul](https://www.consul.io/)
