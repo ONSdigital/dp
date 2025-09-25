@@ -118,7 +118,7 @@ Our code - in git repositories - is shared via [Github](https://github.com), so 
 
 --------------
 
-## Making `git` work over `SSH`
+### Making `git` work over `SSH`
 
 In your home directory, run these commands:
 
@@ -131,7 +131,7 @@ Then follow [instructions to add the SSH key in the clipboard to your github acc
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
-### Testing SSH Connection
+#### Testing SSH Connection
 
 To check that you've set up your Git SSH on your terminal, open your favoured terminal and enter:
 
@@ -143,7 +143,7 @@ You will be asked to type *yes* if you're ready to connect. You should be prompt
 
 You can then close your terminal. If it's unsuccessful check you've used the correct email address (email used for Github account) when creating and saving your key.
 
-### Background
+#### Background
 
 SSH (secure shell) is an encryption system for network communications (usually between client-server).
 
@@ -170,3 +170,16 @@ In all cases, the receiver of the data must already have your **public key**. So
 
 In dissemination, we use `ssh` to login to remote machines (including our servers in the cloud), and also to secure
 our communication with Github.
+
+## OSS Index account and configuration
+
+For Java and NodeJS projects, we use [OSS Index](https://ossindex.sonatype.org/) for auditing vulnerabilities.
+
+This requires an account and a corresponding API token to use their services.
+
+To get setup:
+
+- [create an account](https://ossindex.sonatype.org/user/register) with OSS Index with your ONS email
+- append the following variables to your shell startup file (e.g. `~/.zshrc`):
+  - `OSSINDEX_USERNAME` should be set to the email address you signed up to OSS Index with
+  - `OSSINDEX_TOKEN` is your API token which can be retrieved from the profile page in OSS Index
