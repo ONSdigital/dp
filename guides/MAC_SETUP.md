@@ -183,3 +183,71 @@ To get setup:
 - append the following variables to your shell startup file (e.g. `~/.zshrc`):
   - `OSSINDEX_USERNAME` should be set to the email address you signed up to OSS Index with
   - `OSSINDEX_TOKEN` is your API token which can be retrieved from the profile page in OSS Index
+
+## Maven: Local Setup for ossindex:audit
+
+To run mvn `ossindex:audit` or `make audit` successfully in Java projects, you must configure Maven to authenticate with the OSS Index API using your credentials.
+
+Even though you’ve set OSSINDEX_USERNAME and OSSINDEX_TOKEN in your shell, Maven does not read environment variables directly for this plugin. Instead, it uses credentials defined in your Maven settings.xml file.
+
+### Step 1: Confirm Your Environment Variables (Already Done?)
+
+Ensure these are set in your shell profile (e.g. ~/.zshrc, ~/.bashrc):
+
+```sh
+export OSSINDEX_USERNAME="yourname@ons.gov.uk"
+export OSSINDEX_TOKEN="your-api-token-from-ossindex"
+```
+
+### Step 2: Configure Maven settings.xml
+
+Create or edit your Maven settings file:
+
+```sh
+~/.m2/settings.xml
+```
+
+Add the following configuration:
+
+```sh
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+  <servers>
+    <server>
+      <id>ossindex</id>
+      <username>${env.OSSINDEX_USERNAME}</username>
+      <password>${env.OSSINDEX_TOKEN}</password>
+    </server>
+  </servers>
+</settings>
+```
+
+This securely references your environment variables — your token is never stored in plain text in this file.
+
+Make sure the `<id>ossindex</id>` matches exactly — the plugin looks for this server ID by default.
+
+### Step 3: Confirm Java Project is configured properly to use the `ossindex-maven-plugin`
+
+In your project’s pom.xml, configure the ossindex-maven-plugin to use this authentication:
+
+```sh
+<plugin>
+  <groupId>org.sonatype.ossindex.maven</groupId>
+  <artifactId>ossindex-maven-plugin</artifactId>
+  <version>3.2.0</version>
+  <configuration>
+    <authId>ossindex</authId>
+  </configuration>
+</plugin> 
+```  
+
+The `authId` value in `pom.xml` should match that of `server.id` in `~/.m2/settings.xml`.
+
+### Step 4: Reload Shell & Test
+
+Reload your shell config:
+
+```sh
+source ~/.zshrc  # or ~/.bashrc
+```
+
+Now run the audit, If you see a scan result (not a 401 error), you're set!
