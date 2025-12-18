@@ -107,3 +107,4 @@ in development without having to configure them individually.
 | 29900 | [dis-redirect-api](https://github.com/ONSdigital/dis-redirect-api)                                             |       |
 | 30000 | [dis-redirect-proxy](https://github.com/ONSdigital/dis-redirect-proxy)                                         |       |
 | 30100 | [dis-migration-service](https://github.com/ONSdigital/dis-migration-service)                                   |       |
+| 30200 | [dis-cloudflare-stub](https://github.com/ONSdigital/dp-compose/tree/main/v2/stubs/dis-cloudflare-stub)         |       |
