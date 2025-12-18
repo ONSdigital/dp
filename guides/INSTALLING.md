@@ -35,7 +35,6 @@ Software | Install | Notes
 [dp-compose](https://github.com/ONSdigital/dp-compose) runs the following services:
 
 * Services for the Website
-  * Elasticsearch 2.4.2
   * Elasticsearch 7 (on non-standard port)
   * Highcharts
   * Postgres
