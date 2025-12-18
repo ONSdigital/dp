@@ -22,8 +22,6 @@ in development without having to configure them individually.
 | 9001  | [dp-compose](https://github.com/ONSdigital/dp-compose) : minio                                                 |       |
 | 9002  | [dis-design-system-go](https://github.com/ONSdigital/dis-design-system-go)                                     |       |
 | 9092  | [dp-compose](https://github.com/ONSdigital/dp-compose) : kafka                                                 |       |
-| 9200  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch                                         |       |
-| 9300  | [dp-compose](https://github.com/ONSdigital/dp-compose) : elasticsearch                                         |       |
 | 9999  | [dp-compose](https://github.com/ONSdigital/dp-compose) : highcharts                                            |       |
 | 10200 | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch                                     |       |
 | 10300 | [dp-compose](https://github.com/ONSdigital/dp-compose) : cmd elasticsearch                                     |       |
