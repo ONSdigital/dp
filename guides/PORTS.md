@@ -96,7 +96,6 @@ in development without having to configure them individually.
 | 29000 | [dp-cpih-export](https://github.com/ONSdigital/dp-cpih-export)                                                 |       |
 | 29100 | [dp-legacy-cache-api](https://github.com/ONSdigital/dp-legacy-cache-api)                                       |       |
 | 29200 | [dp-legacy-cache-proxy](https://github.com/ONSdigital/dp-legacy-cache-proxy)                                   |       |
-| 29300 | [dp-data-api](https://github.com/ONSdigital/dp-data-api)                                                       |       |
 | 29400 | [dis-data-admin-ui](https://github.com/ONSdigital/dis-data-admin-ui)                                           |       |
 | 29500 | [dis-authentication-stub](https://github.com/ONSdigital/dis-authentication-stub)                               |       |
 | 29600 | [dis-search-upstream-stub](https://github.com/ONSdigital/dis-search-upstream-stub)                             |       |
