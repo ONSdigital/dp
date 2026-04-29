@@ -3,7 +3,7 @@
 This is an overview of the sequence of steps that our tickets (sometimes called *tasks* or *stories*)
 take from initial idea to completion.
 
-We currently have two different processes in place as we are transitioning between them. 
+We currently have two different processes in place as we are transitioning between them.
 
 ## Old process
 
