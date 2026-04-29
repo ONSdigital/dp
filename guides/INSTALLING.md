@@ -211,7 +211,7 @@ Variable name | note
 --- | ---
 `zebedee_root` | path to your zebedee content, typically the directory the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run
 `ENABLE_PRIVATE_ENDPOINTS` | set `true` when running services in publishing, unset for web mode
-`ENABLE_PERMISSIONS_AUTH`| set `true` to ensure that calls to APIs are from registered services or users
+`ENABLE_PERMISSIONS_AUTH` | set `true` to ensure that calls to APIs are from registered services or users
 `ENCRYPTION_DISABLED` | set `true` to disable encryption, making data readable for any debugging purposes
 `DATASET_ROUTES_ENABLED` | `true` will enable the filterable dataset routes (the CMD journey) in some services
 `FORMAT_LOGGING` | if `true` then `zebedee` will format its logs

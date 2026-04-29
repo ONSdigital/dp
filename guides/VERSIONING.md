@@ -1,25 +1,34 @@
 # Version control of Repositories
 
 Following [Semantic Versioning 2.0.0](https://semver.org/).
-* The first stable release for repositories, either libraries or services, is `1.0.0`
+
+- The first stable release for repositories, either libraries or services, is `1.0.0`
 
 The versioning process is different for applications and libraries (see the [release process](RELEASES.md) for additional information):
-* **Applications**
-  * Releases: only major and minor increments are allowed, the patch is always 0. The release branch is branched off `develop` and merged into `master`. For example:
-    ```
+
+- **Applications**
+  - Releases: only major and minor increments are allowed, the patch is always 0.
+    - For the [old branching strategy](./CONTRIBUTING.md#old-branching-strategy) the release branch is branched off `develop` and merged into `master`. For example:
+    - For the [new branching strategy](./CONTRIBUTING.md#new-branching-strategy) all branches are off `main`
+    For example:
+
+    ```txt
     Current version is 1.1.0
 
     * Minor release updates version to 1.2.0
     * Major release updates version to 2.0.0
     ```
-  * Hotfixes: only patch increments are allowed. The hotfix branch is branched off `master`. For example:
-    ```
+
+  - Hotfixes: only patch increments are allowed. The hotfix branch is branched off `master` or `main`. For example:
+
+    ```txt
     Current version is 1.1.0
 
     * Patch release updates version to 1.1.1
     ```
-* **Libraries**
-  * Releases and hotfixes: any type of increment (major, minor or patch) is allowed. The branch is branched off `main`, as libraries don't have a `develop` branch.
+
+- **Libraries**
+  - Releases and hotfixes: any type of increment (major, minor or patch) is allowed. The branch is branched off `main`, as libraries don't have a `develop` branch.
 
 ## Maintaining Old Versions
 
@@ -40,7 +49,7 @@ Any new tag releases should follow the convention to add `.<number>` with the nu
 
 See below example of order of increasing versions:
 
-```
+```txt
 1.3.2 < 2.0.0-alpha < 2.0.0-alpha.1 < 2.0.0-beta < 2.0.0-beta.2 < 2.0.0-beta.11 < 2.0.0-rc.1 < 2.0.0
 ```
 
