@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dp-operations-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+    - uses: tj-actions/changed-files@v46
+      id: changed-files
+      with:
+        files: '**/*.md'
+        separator: ","
+    - uses: DavidAnson/markdownlint-cli2-action@v20
+      if: steps.changed-files.outputs.any_changed == 'true'
+      with:
+        globs: ${{ steps.changed-files.outputs.all_changed_files }}
+        separator: ","

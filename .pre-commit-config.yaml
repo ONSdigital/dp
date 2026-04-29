@@ -1,0 +1,35 @@
+# Keeping the hooks versions up to date can be done by running `pre-commit autoupdate` validate that the examples still pass correctly before pushing the updated version changes
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks: # Available hooks https://github.com/pre-commit/pre-commit-hooks/blob/main/README.md
+    # Git style
+    - id: check-added-large-files # prevents giant files from being committed.
+    - id: check-merge-conflict # checks for files that contain merge conflict strings.
+    - id: check-vcs-permalinks # ensures that links to vcs websites are permalinks.
+    - id: no-commit-to-branch # Protect specific branches from direct commits.
+      args: [--branch, main] # Protected in the repo config. but this will prevent you even getting that far
+    # Common errors
+    - id: end-of-file-fixer # Ensures that a file is either empty, or ends with one newline.
+    - id: trailing-whitespace # Trims trailing whitespace.
+      args: [--markdown-linebreak-ext=md] # Preserve hard line breaks in MD files
+    - id: check-yaml # Attempts to load all yaml files to verify syntax.
+    - id: check-executables-have-shebangs # Checks that non-binary executables have a proper shebang.
+    # Cross platform
+    - id: check-case-conflict # Check for files with names that would conflict on a case-insensitive filesystem like MacOS HFS+ or Windows FAT.
+    - id: mixed-line-ending # Replaces or checks mixed line ending.
+      args: [--fix=lf] # Forces to replace line ending with LF
+    # Security
+    - id: detect-aws-credentials # Checks for the existence of AWS secrets that you have set up with the AWS CLI.
+      args: ['--allow-missing-credentials'] # Allow hook to pass when no credentials are detected.
+    - id: detect-private-key # Checks for the existence of private keys.
+
+- repo: https://github.com/zricethezav/gitleaks
+  rev: v8.23.3
+  hooks:
+    - id: gitleaks
+
+- repo: https://github.com/DavidAnson/markdownlint-cli2
+  rev: v0.18.1
+  hooks:
+    - id: markdownlint-cli2
