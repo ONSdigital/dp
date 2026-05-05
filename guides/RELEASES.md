@@ -120,11 +120,11 @@ Once work/coding is complete:
 - **Columns** are where stories move within Jira - from left-to-right - towards the 'Done' column.
 - All environments are deployed to from the `main` branch and are deployed based on tags:
 
-| Environment | Tag style  | Automated deploy |
-|-------------|------------|------------------|
-| Sandbox     | None       | Yes              |
-| Staging     | 1.2.1-rc.1 | Yes              |
-| Production  | 1.2.1      | No               |
+| Environment | Tag style   | Automated deploy |
+|-------------|-------------|------------------|
+| Sandbox     | None        | Yes              |
+| Staging     | v1.2.1-rc.1 | Yes              |
+| Production  | v1.2.1      | No               |
 
 ### 'Backlog' column
 
@@ -181,10 +181,10 @@ Once work/coding is complete:
 
 ### 'Ready for release' column
 
-- [Create Release candidate tag](TAGS.md) from `main` branch (e.g. `1.2.1-rc.1` see [version control](VERSIONING.md) )
+- [Create Release candidate tag](TAGS.md) from `main` branch (e.g. `v1.2.1-rc.1` see [version control](VERSIONING.md) )
 - **Push Release tag** - this will ship to the `staging` environment.
 - If appropriate, re-test in the staging environment
-- [Create Release tag](TAGS.md) from `main` branch (e.g. `1.2.1` see [version control](VERSIONING.md) )
+- [Create Release tag](TAGS.md) from `main` branch (e.g. `v1.2.1` see [version control](VERSIONING.md) )
 - **Push Release tag** - this will create a PR to your service helm chart
   - tag must be published as a release, with bullet point list of changes in the release notes. These should be obtained from the original pull request description or auto generated from the commits
 
