@@ -123,7 +123,7 @@ Once work/coding is complete:
 | Environment | Tag style   | Automated deploy |
 |-------------|-------------|------------------|
 | Sandbox     | None        | Yes              |
-| Staging     | v1.2.1-rc.1 | No               |
+| Staging     | v1.2.1-rc.1 | Yes              |
 | Production  | v1.2.1      | No               |
 
 ### 'Backlog' column
@@ -181,11 +181,10 @@ Once work/coding is complete:
 
 ### 'Ready for release' column
 
-- [Create Release candidate tag](TAGS.md) from `main` branch (e.g. `v1.2.1-rc.1` see [version control](VERSIONING.md) )
-- **Push Release tag** - this will create PR(s) in your helm chart repository
-- **Merge helm chart PR(s) for staging** - this will ship to the `staging` environment.
+- [Create Release candidate tag](TAGS.md) on `main` branch (e.g. `v1.2.1-rc.1` see [version control](VERSIONING.md) )
+- **Push Release tag** - this will create PR(s) in your helm chart repository, merge and then ship to the `staging` environment.
 - If appropriate, re-test in the staging environment
-- [Create Release tag](TAGS.md) from `main` branch (e.g. `v1.2.1` see [version control](VERSIONING.md) )
+- [Create Release tag](TAGS.md) on `main` branch (e.g. `v1.2.1` see [version control](VERSIONING.md) )
 - **Push Release tag** - this will create PR(s) to your service helm chart
   - tag must be published as a release, with bullet point list of changes in the release notes. These should be obtained from the original pull request description or auto generated from the commits
 - **Merge helm chart PR(s) for production** - this will ship to the `production` environment.
