@@ -2,7 +2,7 @@
 
 As listed step-by-step in the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide. **You must follow the steps in the Getting Started guide** to ensure steps not documented here are not missed.
 
---------------
+---
 
 ## Prerequisites
 
@@ -14,10 +14,10 @@ In the below, the installation of each app is typically one of:
 
 **Note:** when indicating a command that should be run in your terminal, we use the `$` prefix to indicate your shell prompt.
 
---------------
+---
 
 | Software                                                           | Install                                                                                             | Notes                                                                                                                        |
-|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | [Java 8 JDK (OpenJDK)](https://openjdk.java.net/install/)          | `$ brew install openjdk@8`                                                                          | Append `export PATH="/usr/local/opt/openjdk@8/bin:$PATH"` to your shell profile (eg. `.zshrc`) and restart your terminal.    |
 | [Maven](https://maven.apache.org/)                                 | `$ brew install maven`                                                                              |                                                                                                                              |
 | [Docker](https://www.docker.com/get-started)                       | `$ brew install --cask docker`                                                                      |                                                                                                                              |
@@ -44,7 +44,7 @@ In the below, the installation of each app is typically one of:
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
---------------
+---
 
 ## Clone the services
 
@@ -181,7 +181,7 @@ Both of these stacks rely on variations of an `scs.sh` script, which provides su
 
 [See more information and diagrams](https://docs.google.com/document/d/13U5kM3ZwmfNXdy7dq-RX0nZ0hQe5wzgSlDSOvZRP8eU)
 
---------------
+---
 
 ## Configuration
 
@@ -206,31 +206,48 @@ When the startup files are updated, to load the new changes into your shell, eit
 
 You should put the below _env vars_ in your [startup file](#startup-file).
 
-| Variable name              | note                                                                                                                                                                  |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `zebedee_root`             | path to your zebedee content, typically the directory the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to when run |
-| `ENABLE_PRIVATE_ENDPOINTS` | set `true` when running services in publishing, unset for web mode                                                                                                    |
-| `ENABLE_PERMISSIONS_AUTH`  | set `true` to ensure that calls to APIs are from registered services or users                                                                                         |
-| `ENCRYPTION_DISABLED`      | set `true` to disable encryption, making data readable for any debugging purposes                                                                                     |
-| `DATASET_ROUTES_ENABLED`   | `true` will enable the filterable dataset routes (the CMD journey) in some services                                                                                   |
-| `FORMAT_LOGGING`           | if `true` then `zebedee` will format its logs                                                                                                                         |
-| `SERVICE_AUTH_TOKEN`       | a value for `zebedee` to work                                                                                                                                         |
+| Variable name                 | note                                                                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `DP_ZEBEDEE_CONTENT`          | path to your zebedee content, typically the directory the [dp-zebedee-content](https://github.com/ONSdigital/dp-zebedee-content) generation script points to |
+| `zebedee_root`                | path for zebedee cms, should be set to `${DP_ZEBEDEE_CONTENT}/generated/publishing`                                                                          |
+| `content_dir`                 | path for zebedee reader, should be set to `${DP_ZEBEDEE_CONTENT}/generated/web/site`                                                                         |
+| `TRANSACTION_STORE`           | path for the-train transactions, should be set to `${DP_ZEBEDEE_CONTENT}/generated/web/transactions`                                                         |
+| `WEBSITE`                     | path for the-train website, should be set to `${DP_ZEBEDEE_CONTENT}/generated/web/site`                                                                      |
+| `PUBLISHING_THREAD_POOL_SIZE` | thread pool size for publishing tasks, typically set to `10`                                                                                                 |
+| `ENABLE_PRIVATE_ENDPOINTS`    | set `true` when running services in publishing, unset for web mode                                                                                           |
+| `ENABLE_PERMISSIONS_AUTH`     | set `true` to ensure that calls to APIs are from registered services or users                                                                                |
+| `ENCRYPTION_DISABLED`         | set `true` to disable encryption, making data readable for any debugging purposes                                                                            |
+| `DATASET_ROUTES_ENABLED`      | `true` will enable the filterable dataset routes (the CMD journey) in some services                                                                          |
+| `FORMAT_LOGGING`              | if `true` then `zebedee` will format its logs                                                                                                                |
+| `SERVICE_AUTH_TOKEN`          | a value for `zebedee` to work                                                                                                                                |
+| `GRAPH_DRIVER_TYPE`           | graph database driver type, set to `neptune` for CMD services                                                                                                |
+| `GRAPH_ADDR`                  | graph database address, set to `wss://localhost:8182/gremlin` for local Neptune instance                                                                     |
+| `NEPTUNE_TLS_SKIP_VERIFY`     | set `true` to skip TLS verification for Neptune connections                                                                                                  |
 
 After all the various steps, here's an example set of exports and their values that you might now have in your [startup file](#startup-file):
 
 ```bash
 # Dissemination services
-export zebedee_root=~/Documents/website/zebedee-content/generated
+export DP_ZEBEDEE_CONTENT=~/path/to/dp-zebedee-content
+
+# zebedee cms
+export zebedee_root=${DP_ZEBEDEE_CONTENT}/generated/publishing
+
+# zebedee reader
+export content_dir=${DP_ZEBEDEE_CONTENT}/generated/web/site
+
+# the-train
+export TRANSACTION_STORE=${DP_ZEBEDEE_CONTENT}/generated/web/transactions
+export WEBSITE=${DP_ZEBEDEE_CONTENT}/generated/web/site
+export PUBLISHING_THREAD_POOL_SIZE=10
+
+# Additional configurations
 export ENABLE_PRIVATE_ENDPOINTS=true
 export ENABLE_PERMISSIONS_AUTH=true
 export ENCRYPTION_DISABLED=true
 export DATASET_ROUTES_ENABLED=true
 export FORMAT_LOGGING=true
 export SERVICE_AUTH_TOKEN="fc4089e2e12937861377629b0cd96cf79298a4c5d329a2ebb96664c88df77b67"
-
-export TRANSACTION_STORE=$zebedee_root/zebedee/transactions
-export WEBSITE=$zebedee_root/zebedee/master
-export PUBLISHING_THREAD_POOL_SIZE=10
 
 # For CMD services
 export GRAPH_DRIVER_TYPE=neptune
@@ -240,7 +257,7 @@ export NEPTUNE_TLS_SKIP_VERIFY=true
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/main/guides/GETTING_STARTED.md) guide for next steps.
 
---------------
+---
 
 ## Running the apps
 
@@ -281,7 +298,7 @@ If you also want to run Florence with the ability to edit images on the homepage
 - [dp-image-api](https://github.com/ONSdigital/dp-image-api)
 - [dp-image-importer](https://github.com/ONSdigital/dp-image-importer) - use: `make debug ENCRYPTION_DISABLED=true`
 - [dp-upload-service](https://github.com/ONSdigital/dp-upload-service) - use `make debug ENCRYPTION_DISABLED=true`
-- [dp-download-service](https://github.com/ONSdigital/dp-download-service)  - use: `make debug ENCRYPTION_DISABLED=true`
+- [dp-download-service](https://github.com/ONSdigital/dp-download-service) - use: `make debug ENCRYPTION_DISABLED=true`
 
 Florence will be available at [http://localhost:8081/florence/login](http://localhost:8081/florence/login).
 
@@ -311,7 +328,7 @@ If you already have content, and you just want to run the web journey, you'll ne
 
 Return to the [Getting Started](https://github.com/ONSdigital/dp/blob/master/guides/GETTING_STARTED.md) guide for next steps.
 
---------------
+---
 
 ## Setup credentials
 
