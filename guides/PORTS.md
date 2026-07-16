@@ -57,7 +57,6 @@ in development without having to configure them individually.
 | 23600 | [dp-developer-site](http://github.com/ONSdigital/dp-developer-site)                                            |       |
 | 23900 | [dp-search-api](https://github.com/ONSdigital/dp-search-api)                                                   |       |
 | 24000 | [dp-publishing-dataset-controller](https://github.com/ONSdigital/dp-publishing-dataset-controller)             |       |
-| 24100 | [dp-frontend-cookie-controller](https://github.com/ONSdigital/dp-frontend-cookie-controller)                   |       |
 | 24300 | [dp-deployer](https://github.com/ONSdigital/dp-deployer)                                                       |       |
 | 24310 | [dis-web-mount-check](https://https://github.com/ONSdigital/dis-web-mount-check/)                              |       |
 | 24400 | [dp-frontend-homepage-controller](https://github.com/ONSdigital/dp-frontend-homepage-controller)               |       |
