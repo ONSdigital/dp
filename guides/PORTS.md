@@ -104,3 +104,4 @@ in development without having to configure them individually.
 | 30000 | [dis-redirect-proxy](https://github.com/ONSdigital/dis-redirect-proxy)                                         |       |
 | 30100 | [dis-migration-service](https://github.com/ONSdigital/dis-migration-service)                                   |       |
 | 30200 | [dis-cloudflare-stub](https://github.com/ONSdigital/dp-compose/tree/main/v2/stubs/dis-cloudflare-stub)         |       |
+| 30300 | [design-system-chart-exporter](https://github.com/ONSdigital/design-system-chart-exporter)                     |       |
