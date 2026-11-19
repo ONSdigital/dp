@@ -67,8 +67,8 @@ This document is part of the [Getting Started](https://github.com/ONSdigital/dp/
     - if using `brew` for apps:
 
       ```sh
-      $ brew install zsh
-      $ sudo nano /etc/shells
+      brew install zsh
+      sudo nano /etc/shells
       ```
 
       Add the following to the end of the list and save the file:
@@ -137,7 +137,7 @@ To check that you've set up your Git SSH on your terminal, open your favoured te
 
 - `ssh -T git@github.com`
 
-You will be asked to type *yes* if you're ready to connect. You should be prompted with:
+You will be asked to type _yes_ if you're ready to connect. You should be prompted with:
 
 - `Hi [YOUR GIT USERNAME]! You've successfully authenticated, but GitHub does not provide shell access.`
 
@@ -179,7 +179,15 @@ This requires an account and a corresponding API token to use their services.
 
 To get setup:
 
-- [create an account](https://ossindex.sonatype.org/user/register) with OSS Index with your ONS email
+- [create an account](https://guide.sonatype.com/register) with Sonatype with your ONS email address
+- [setup a personal access token](https://help.sonatype.com/en/using-guide-personal-access-tokens-with-oss-index-api-integrations.html#creating-a-guide-personal-access-token)
+
+- append the following variables to your shell startup file (e.g. `~/.zshrc`):
+  - `SONATYPE_GUIDE_TOKEN` is your personal access token setup in the previous step
+
+> [!WARNING]
+> The following is a legacy approach that can no longer be recreated, however not all repositories have converted to Sonatype Guide yet
+
 - append the following variables to your shell startup file (e.g. `~/.zshrc`):
   - `OSSINDEX_USERNAME` should be set to the email address you signed up to OSS Index with
   - `OSSINDEX_TOKEN` is your API token which can be retrieved from the profile page in OSS Index
